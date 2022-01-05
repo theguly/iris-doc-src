@@ -87,7 +87,7 @@ Can I be involved ?
 -------------------
 Absolutely. You can either `contact us <mailto:contact@dfir-iris.org>`_ directly or submit pull requests and ideas on the GitHub. 
 
-How's behind Iris ? 
+Who's behind Iris ? 
 -------------------
 The idea was born in the French CSIRT of Airbus Cybersecurity, and created by a small group of friendly incident response analysts. Iris has been used since its early stage in 2020, on more than a hundred investigations including complex cyberattacks.
 

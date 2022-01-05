@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: IRIS
-  version: '1.0'
+  version: 1.2.1
   description: |
     IRIS API endpoints documentation. An API key is needed and can be found in every user profile under `My settings` > `API Key`. 
 servers:
@@ -2948,8 +2948,7 @@ paths:
                   type: string
                   minLength: 1
                 asset_type_id:
-                  type: string
-                  minLength: 1
+                  type: integer
                   description: Asset type ID
                 asset_description:
                   type: string
@@ -2961,9 +2960,8 @@ paths:
                   type: string
                   description: 'Additional information, not shown on table'
                 analysis_status_id:
-                  type: string
-                  minLength: 1
                   description: Analysis status ID
+                  type: integer
                 cid:
                   type: integer
                   description: Case ID
@@ -2971,6 +2969,8 @@ paths:
                 - asset_name
                 - asset_type_id
                 - analysis_status_id
+                - cid
+            examples: {}
         description: ''
       tags:
         - Case assets

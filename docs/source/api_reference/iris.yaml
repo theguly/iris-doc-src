@@ -6592,8 +6592,7 @@ paths:
         - Bearer <bearer>: []
   /manage/assettype/list:
     get:
-      summary: get-assets-types-list
-      tags: []
+      summary: Get assets types list
       responses:
         '200':
           description: OK
@@ -6702,6 +6701,8 @@ paths:
                     status: success
       operationId: get-manage-assettype-list
       description: Return a list of available assets types
+      tags:
+        - Manage Assets Types
 components:
   schemas: {}
   securitySchemes:

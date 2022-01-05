@@ -83,7 +83,7 @@ Under the hood, Iris relies on :
     - RabbitMQ for the jobs processing
     - Nginx for the reverse proxy
 
-Can I be involved ? 
+Can I be involved ?  
 -------------------
 Absolutely. You can either `contact us <mailto:contact@dfir-iris.org>`_ directly or submit pull requests and ideas on the GitHub. 
 

@@ -6590,6 +6590,118 @@ paths:
       parameters: []
       security:
         - Bearer <bearer>: []
+  /manage/assettype/list:
+    get:
+      summary: get-assets-types-list
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      required: []
+                      properties:
+                        '0':
+                          type: array
+                          uniqueItems: true
+                          items:
+                            required: []
+                            properties: {}
+                  message:
+                    type: string
+                  status:
+                    type: string
+                    minLength: 1
+                required:
+                  - data
+                  - message
+                  - status
+                x-examples:
+                  example-1:
+                    data:
+                      - - Account
+                        - Generic Account
+                        - 1
+                    message: ''
+                    status: success
+              examples:
+                Example 1:
+                  value:
+                    data:
+                      - - Account
+                        - Generic Account
+                        - 1
+                      - - Firewall
+                        - Firewall
+                        - 2
+                      - - Linux - Server
+                        - Linux server
+                        - 3
+                      - - Linux - Computer
+                        - Linux computer
+                        - 4
+                      - - Linux Account
+                        - Linux Account
+                        - 5
+                      - - Mac - Computer
+                        - Mac computer
+                        - 6
+                      - - Phone - Android
+                        - Android Phone
+                        - 7
+                      - - Phone - IOS
+                        - Apple Phone
+                        - 8
+                      - - Windows - Computer
+                        - Standard Windows Computer
+                        - 9
+                      - - Windows - Server
+                        - Standard Windows Server
+                        - 10
+                      - - Windows - DC
+                        - Domain Controller
+                        - 11
+                      - - Router
+                        - Router
+                        - 12
+                      - - Switch
+                        - Switch
+                        - 13
+                      - - VPN
+                        - VPN
+                        - 14
+                      - - WAF
+                        - WAF
+                        - 15
+                      - - Windows Account - Local
+                        - Windows Account - Local
+                        - 16
+                      - - Windows Account - Local - Admin
+                        - Windows Account - Local - Admin
+                        - 17
+                      - - Windows Account - AD
+                        - Windows Account - AD
+                        - 18
+                      - - Windows Account - AD - Admin
+                        - Windows Account - AD - Admin
+                        - 19
+                      - - Windows Account - AD - krbtgt
+                        - Windows Account - AD - krbtgt
+                        - 20
+                      - - Windows Account - AD - Service
+                        - Windows Account - AD - krbtgt
+                        - 21
+                    message: ''
+                    status: success
+      operationId: get-manage-assettype-list
+      description: Return a list of available assets types
 components:
   schemas: {}
   securitySchemes:

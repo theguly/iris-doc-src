@@ -6,7 +6,7 @@ Iris handles upgrades of the database automatically, thus no specific actions ar
 .. admonition::  Caution
   :class: warning
   
-  However, from production environments, it is highly recommended to make backups of the DB in case any issues occur during upgrades.  
+  For production environments, it is highly recommended to make backups of the DB in case any issues occur during upgrades.  
 
 Backing-up DB
 **************

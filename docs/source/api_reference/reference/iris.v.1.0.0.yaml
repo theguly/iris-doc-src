@@ -1,9 +1,15 @@
 openapi: 3.0.3
 info:
   title: IRIS
-  version: 1.2.1
-  description: |
+  version: 1.0.0
+  description: |-
     IRIS API endpoints documentation. An API key is needed and can be found in every user profile under `My settings` > `API Key`. 
+    This API is deprecated. It applies to Iris v1.2.0 and before. 
+  contact:
+    name: DFIR-IRIS
+    email: contact@dfir-iris.org
+  license:
+    name: LGPLv3
 servers:
   - url: 'http://127.0.0.1:8000'
     description: ''
@@ -61,6 +67,7 @@ paths:
                         minLength: 1
                       close_date:
                         type: string
+                        nullable: true
                       open_date:
                         type: string
                         minLength: 1
@@ -1905,18 +1912,25 @@ paths:
               schema:
                 description: ''
                 type: object
+                x-examples:
+                  example-1:
+                    data:
+                      client_id: 70
+                      customer_name: test
+                    message: Customer added
+                    status: success
                 properties:
                   data:
                     type: object
+                    required:
+                      - customer_id
+                      - customer_name
                     properties:
-                      client_id:
+                      customer_id:
                         type: number
                       customer_name:
                         type: string
                         minLength: 1
-                    required:
-                      - client_id
-                      - customer_name
                   message:
                     type: string
                     minLength: 1
@@ -1927,19 +1941,12 @@ paths:
                   - data
                   - message
                   - status
-                x-examples:
-                  example-1:
-                    data:
-                      client_id: 70
-                      customer_name: test
-                    message: Customer added
-                    status: success
               examples:
                 Success addition:
                   value:
                     data:
-                      client_id: 70
-                      customer_name: My customer
+                      customer_id: 70
+                      customer_name: My new customer
                     message: Customer added
                     status: success
         '400':
@@ -2007,6 +2014,10 @@ paths:
               x-examples:
                 example-1:
                   customer_name: test
+            examples:
+              Example:
+                value:
+                  customer_name: My new customer
       security:
         - Bearer <bearer>: []
       tags:

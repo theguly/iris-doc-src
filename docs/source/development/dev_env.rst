@@ -29,7 +29,7 @@ Otherwise they can be installed with the following command (issued in the virtua
 `pip3 install -r source\requirements.txt`
 
 ## Run 
-1. Spin up the docker db `docker compose up db`
+1. Spin up the docker db `docker-compose up db`
 2. Run the Pycharm configuration you created 
 3. The interface should be accessible on http://127.0.0.1:8000 (and https://127.0.0.1:4433 if you started the nginx docker) 
 
@@ -38,9 +38,9 @@ IRIS can now be developed and debugged on the fly.
 ## Tests in docker 
 Once the code is working by running on Pycharm, we highly recommend to test it on Docker. To do so, the app docker need to be erased and rebuilt.    
 
-1. `docker compose rm app`
-2. `docker compose build app`
-3. `docker compose up db app`
+1. `docker-compose rm app`
+2. `docker-compose build app`
+3. `docker-compose up db app`
 
 **Development considerations**   
 If the development results in DB modification, please use Alembic and add a migration script so users don't loose their data when they upgrade. 

@@ -12610,23 +12610,17 @@ paths:
               schema:
                 description: ''
                 type: object
+                x-examples:
+                  example-1:
+                    data:
+                      api_current: 1.0.2
+                      api_min: 1.0.1
+                      iris_current: v1.2.1
+                    message: ''
+                    status: success
                 properties:
                   data:
-                    type: object
-                    properties:
-                      api_current:
-                        type: string
-                        minLength: 1
-                      api_min:
-                        type: string
-                        minLength: 1
-                      iris_current:
-                        type: string
-                        minLength: 1
-                    required:
-                      - api_current
-                      - api_min
-                      - iris_current
+                    type: string
                   message:
                     type: string
                   status:
@@ -12636,22 +12630,11 @@ paths:
                   - data
                   - message
                   - status
-                x-examples:
-                  example-1:
-                    data:
-                      api_current: 1.0.2
-                      api_min: 1.0.1
-                      iris_current: v1.2.1
-                    message: ''
-                    status: success
               examples:
                 example-1:
                   value:
-                    data:
-                      api_current: 1.0.2
-                      api_min: 1.0.1
-                      iris_current: v1.2.1
-                    message: ''
+                    data: []
+                    message: pong
                     status: success
         '401':
           description: Unauthorized

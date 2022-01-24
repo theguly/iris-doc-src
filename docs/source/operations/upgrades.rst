@@ -9,7 +9,7 @@ Iris handles upgrades of the database automatically, thus no specific actions ar
   For production environments, it is highly recommended to make backups of the DB in case any issues occur during upgrades.  
 
 Backing-up DB
-**************
+--------------
 Only if you run in production and data is critical. 
 
 1. List the current running docker containers `docker container list`
@@ -21,7 +21,7 @@ Only if you run in production and data is critical.
 
 
 Upgrading
-**********
+----------
 1. Stop the dockers ``docker compose stop``
 2. Remove the application dockers ``docker compose rm app worker``
 3. Get the last version of Iris ``git checkout master`` - or any tagged versions
@@ -30,7 +30,7 @@ Upgrading
 
 
 Rolling back
-*************
+-------------
 In case something went wrong, you can rollback to your previous version and restore data. 
 
 1. Remove the faulty docker DB ``docker compose down db --volumes``

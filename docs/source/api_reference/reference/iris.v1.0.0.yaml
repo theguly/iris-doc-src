@@ -1900,6 +1900,129 @@ paths:
         in: path
         required: true
         description: ID of the task to change
+  /manage/customers/add:
+    post:
+      summary: Add a customer
+      operationId: post-customer-add
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                x-examples:
+                  example-1:
+                    data:
+                      client_id: 70
+                      customer_name: test
+                    message: Customer added
+                    status: success
+                properties:
+                  data:
+                    type: object
+                    required:
+                      - customer_id
+                      - customer_name
+                    properties:
+                      customer_id:
+                        type: number
+                      customer_name:
+                        type: string
+                        minLength: 1
+                  message:
+                    type: string
+                    minLength: 1
+                  status:
+                    type: string
+                    minLength: 1
+                required:
+                  - data
+                  - message
+                  - status
+              examples:
+                Successful addition:
+                  value:
+                    data:
+                      customer_id: 70
+                      customer_name: My new customer
+                    message: Customer added
+                    status: success
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      customer_name:
+                        type: array
+                        items:
+                          properties: {}
+                    required:
+                      - customer_name
+                  message:
+                    type: string
+                    minLength: 1
+                  status:
+                    type: string
+                    minLength: 1
+                required:
+                  - data
+                  - message
+                  - status
+                x-examples:
+                  example-1:
+                    data:
+                      customer_name:
+                        - Customer already exists
+                    message: Data error
+                    status: error
+              examples:
+                'Existing customer ':
+                  value:
+                    data:
+                      customer_name:
+                        - Customer already exists
+                    message: Data error
+                    status: error
+                Name too short:
+                  value:
+                    data:
+                      customer_name:
+                        - Shorter than minimum length 2.
+                    message: Data error
+                    status: error
+      description: Add a new customer that will be available at case creation.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              properties:
+                customer_name:
+                  type: string
+                  minLength: 1
+              required:
+                - customer_name
+              x-examples:
+                example-1:
+                  customer_name: test
+            examples:
+              Example:
+                value:
+                  customer_name: My new customer
+      security:
+        - Bearer <bearer>: []
+      tags:
+        - Manage customers
+    parameters: []
   /customer/add:
     post:
       summary: Add a customer
@@ -1998,7 +2121,9 @@ paths:
                         - Shorter than minimum length 2.
                     message: Data error
                     status: error
-      description: Add a new customer that will be availble at case creations.
+      description: |-
+        Add a new customer that will be availble at case creations. 
+        This endpoint is non longer available. Please use `/manage/customers/add`.
       requestBody:
         content:
           application/json:
@@ -2022,6 +2147,7 @@ paths:
         - Bearer <bearer>: []
       tags:
         - Manage customers
+      deprecated: true
   /case/summary/update:
     parameters: []
     post:

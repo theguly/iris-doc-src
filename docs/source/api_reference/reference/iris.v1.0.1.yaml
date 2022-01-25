@@ -4705,7 +4705,7 @@ paths:
                   ioc_tags: rewr
                   cid: 12
               properties:
-                ioc_type:
+                ioc_type_id:
                   type: integer
                 ioc_tlp_id:
                   type: integer
@@ -4720,7 +4720,7 @@ paths:
                 cid:
                   type: integer
               required:
-                - ioc_type
+                - ioc_type_id
                 - ioc_tlp_id
                 - ioc_value
                 - ioc_description

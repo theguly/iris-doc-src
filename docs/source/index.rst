@@ -37,6 +37,7 @@ Table of Contents
    development/index.rst
    roadmap
    Q&A <qa>
+   modules/modules.rst
 
 
 Some questions you might have

@@ -10,16 +10,19 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
 
+# sys.path.insert(0, os.path.abspath('.'))
+roo = os.path.abspath('.')
+sys.path.insert(0, roo + '/../../../dfir-iris-client')
+print(roo)
 
 # -- Project information -----------------------------------------------------
 
 project = 'IRIS - Incident Response Platform'
 copyright = '2021, Airbus CyberSecurity'
-author = 'Airbus CyberSecurity'
+author = 'DFIR-IRIS Team'
 
 
 # -- General configuration ---------------------------------------------------
@@ -30,7 +33,8 @@ author = 'Airbus CyberSecurity'
 extensions = [
   'sphinx.ext.todo',
   'sphinx.ext.githubpages',
-  'sphinxcontrib.httpdomain'
+  'sphinxcontrib.httpdomain', 
+  'sphinx.ext.autodoc'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -54,7 +58,4 @@ html_logo = '_static/logo-3.png'
 html_title = 'IRIS Documentation'
 html_show_copyright = True
 
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+

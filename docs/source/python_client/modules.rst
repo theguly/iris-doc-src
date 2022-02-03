@@ -5,6 +5,8 @@ Python client
 
 It relies exclusively on the API, which means output of the methods are the same as specified in the API reference. 
 
+The source code of the project is available `here <https://github.com/dfir-iris/iris-client>`_. 
+
 Versions
 --------
 The Python client version follows the API versions (until the patch level). Meaning for API v1.0.1, one need to install `dfir_iris_client-1.0.1`. 
@@ -12,7 +14,7 @@ The Python client version follows the API versions (until the patch level). Mean
 
 Examples
 --------
-Some examples are available `See here <https://github.com/dfir-iris/iris-client/templates>`_
+Examples of usage are available `See here <https://github.com/dfir-iris/iris-client/tree/master/examples>`_
 
 
 References

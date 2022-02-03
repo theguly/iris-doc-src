@@ -34,10 +34,10 @@ Table of Contents
    Introduction <self>
    quick_start
    operations/index.rst
+   python_client/modules.rst
    development/index.rst
    roadmap
    Q&A <qa>
-   python_client/modules.rst
 
 
 Some questions you might have

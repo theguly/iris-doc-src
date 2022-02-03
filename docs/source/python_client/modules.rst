@@ -14,7 +14,7 @@ The Python client version follows the API versions (until the patch level). Mean
 
 Examples
 --------
-Examples of usage are available `See here <https://github.com/dfir-iris/iris-client/tree/master/examples>`_
+Examples of usage are available `here <https://github.com/dfir-iris/iris-client/tree/master/examples>`_
 
 
 References

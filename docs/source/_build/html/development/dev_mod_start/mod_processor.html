@@ -433,8 +433,23 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#project-structure">
-   Project structure
+  <a class="reference internal nav-link" href="#project-structure-overview">
+   Project structure overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-the-interface">
+   Creating the interface
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-the-configuration">
+   Writing the configuration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subscribing-to-a-hook">
+   Subscribing to a hook
   </a>
  </li>
 </ul>
@@ -458,8 +473,23 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#project-structure">
-   Project structure
+  <a class="reference internal nav-link" href="#project-structure-overview">
+   Project structure overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-the-interface">
+   Creating the interface
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-the-configuration">
+   Writing the configuration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subscribing-to-a-hook">
+   Subscribing to a hook
   </a>
  </li>
 </ul>
@@ -473,21 +503,163 @@
                 
   <div class="section" id="quick-start-processor-modules">
 <h1>Quick start processor modules<a class="headerlink" href="#quick-start-processor-modules" title="Permalink to this headline">¶</a></h1>
-<p>In this tutorial, we demonstrate the steps to write a basic processor module. It is based on the <a class="reference external" href="https://github.com/dfir-iris/iris-check-module">IrisCheck</a> , a simple module that logs every hook it receives.</p>
-<div class="section" id="project-structure">
-<h2>Project structure<a class="headerlink" href="#project-structure" title="Permalink to this headline">¶</a></h2>
-<p>As described in the <a class="reference external" href="dev-module-main:">development module main page</a> , the module should have the following structure.
-While the module could have only one main file <code class="docutils literal notranslate"><span class="pre">IrisCheckInterface.py</span></code>, we recommend splitting its configuration into a new configuration file (here <code class="docutils literal notranslate"><span class="pre">IrisCheckConfig.py</span></code>) to keep the code clear.</p>
-<p>There is no mandatory naming convention for the files or the class or the methods. We chose this one to keep things clear, and we recommend following the same. But it’s up to the developer really.</p>
+<p>In this tutorial, we demonstrate the steps to write a basic processor module which subscribes to a hook, and log what it receives when the hook is triggered. We will add
+a configuration setting to offer our users the ability disable this feature.</p>
+<p>We’ll call it <code class="docutils literal notranslate"><span class="pre">IrisDummyModule</span></code>.</p>
+<div class="section" id="project-structure-overview">
+<h2>Project structure overview<a class="headerlink" href="#project-structure-overview" title="Permalink to this headline">¶</a></h2>
+<p>As described in the <a class="reference external" href="dev-module-main:">development module main page</a> , the module should have the following structure.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">setup</span><span class="o">.</span><span class="n">py</span>                <span class="c1"># Setup configuration to build the module</span>
 <span class="n">README</span><span class="o">.</span><span class="n">md</span>               <span class="c1"># README</span>
-<span class="n">iris_check_module</span>       <span class="c1"># Name of the package</span>
+<span class="n">iris_dummy_module</span>       <span class="c1"># Name of the package</span>
     <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>              <span class="c1"># Declaration of the package and main class</span>
-    <span class="n">IrisCheckConfig</span><span class="o">.</span><span class="n">py</span>       <span class="c1"># Configuration of the module to help keep the main file clean</span>
-    <span class="n">IrisCheckInterface</span><span class="o">.</span><span class="n">py</span>    <span class="c1"># Main class of the module</span>
+    <span class="n">IrisDummyConfig</span><span class="o">.</span><span class="n">py</span>       <span class="c1"># Configuration of the module to help keep the main file clean</span>
+    <span class="n">IrisDummyInterface</span><span class="o">.</span><span class="n">py</span>    <span class="c1"># Main class of the module</span>
 </pre></div>
 </div>
+<p>While the module could have only one main file <code class="docutils literal notranslate"><span class="pre">IrisDummyInterface.py</span></code>, we recommend splitting its configuration into a new configuration file (here <code class="docutils literal notranslate"><span class="pre">IrisDummyConfig.py</span></code>) to keep the code clear.</p>
+<p>There is no mandatory naming convention for the files or the class or the methods. We chose this one to keep things clear, and we recommend following the same. But it’s up to the developer really.</p>
 <p>We will walk over these files one by one during this tutorial.</p>
+</div>
+<div class="section" id="creating-the-interface">
+<h2>Creating the interface<a class="headerlink" href="#creating-the-interface" title="Permalink to this headline">¶</a></h2>
+<p>The interface is the code that talks with IRIS. It implements methods that call and are called by the server. It needs to inherit  <a class="reference external" href="https://github.com/dfir-iris/iris-module-interface/blob/master/iris_interface/IrisModuleInterface.py">IrisModuleInterface class</a> from the <a class="reference external" href="https://github.com/dfir-iris/iris-module-interface">IrisModuleInterface package</a>.  This module handles most of the methods needed by IRIS to recognize, set up and call the module.  By inheriting this class in our interface, we avoid writing that part ourselves.</p>
+<p>Let’s write our basic interface class.  The name of the file has to be the name of the main class, that’s the only constraint. We’ll see later on why.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">iris_dummy_module/IrisDummyInterface.py</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="c1"># Import the IrisInterface class</span>
+<span class="kn">from</span> <span class="nn">iris_interface.IrisModuleInterface</span> <span class="kn">import</span> <span class="n">IrisModuleInterface</span>
+
+<span class="c1"># Create our module class</span>
+<span class="k">class</span> <span class="nc">IrisDummyModule</span><span class="p">(</span><span class="n">IrisModuleInterface</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<p>That’s it ! Actually this class is not doing anything right now. We’ll need to add a few methods to register our hook later.</p>
+<p>But first we need to indicate to IRIS what is our main interface class. Remember, there is no convention restriction, so IRIS has no way to know which class it should instantiate to call our module.</p>
+<p>To do so, we need to set a specific variable in our <cite>__init__.py</cite>.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">iris_dummy_module/__init__.py</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the __iris_module_interface variable to the name of our main class.</span>
+<span class="c1"># When IRIS instantiate the python module, it looks for &quot;module.__iris_module_interface&quot;</span>
+<span class="c1"># And then tries to instantiate the class &quot;__iris_module_interface.__iris_module_interface&quot;, here &#39;IrisDummyModule.IrisDummyModule&#39;.</span>
+<span class="c1"># That&#39;s why the python file must have the same name as the class.</span>
+<span class="n">__iris_module_interface</span> <span class="o">=</span> <span class="s2">&quot;IrisDummyModule&quot;</span>
+</pre></div>
+</div>
+</div>
+<p>Our module is now recognizable by IRIS ! Pretty simple right ?</p>
+</div>
+<div class="section" id="writing-the-configuration">
+<h2>Writing the configuration<a class="headerlink" href="#writing-the-configuration" title="Permalink to this headline">¶</a></h2>
+<p>The next step is to describe what the module is doing, its name, it’s configuration, etc.
+This is done by overwriting predefines variables of the <code class="docutils literal notranslate"><span class="pre">IrisModuleInterface</span></code> class.</p>
+<p>Let’s create our Python configuration file and go through each variables.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">iris_dummy_module/IrisDummyConfig.py</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the module types list,  so we can indicate the type of our module</span>
+<span class="kn">from</span> <span class="nn">iris_interface.IrisModuleInterface</span> <span class="kn">import</span> <span class="n">IrisModuleTypes</span>
+
+<span class="c1"># Human name displayed in the GUI Manage &gt; Modules. This can be anything,</span>
+<span class="c1"># but try to put something meaningful, so users recognize your module.</span>
+<span class="n">module_name</span> <span class="o">=</span> <span class="s2">&quot;IrisDummy&quot;</span>
+
+<span class="c1"># Description displayed when editing the module configuration in the UI.</span>
+<span class="c1"># This can be anything,</span>
+<span class="n">module_description</span> <span class="o">=</span> <span class="s2">&quot;Provides a dummy module that replies to one hook&quot;</span>
+
+<span class="c1"># Set the interface version used. This needs to be the version of</span>
+<span class="c1"># the IrisModuleInterface package. This version is check by the server to</span>
+<span class="c1"># to ensure our module can run on this specific server</span>
+<span class="n">interface_version</span> <span class="o">=</span> <span class="mf">1.1</span>
+
+<span class="c1"># The version of the module itself, it can be anything</span>
+<span class="n">module_version</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+<span class="c1"># The type of the module, here processor</span>
+<span class="n">module_type</span> <span class="o">=</span> <span class="n">IrisModuleTypes</span><span class="o">.</span><span class="n">module_processor</span>
+
+<span class="c1"># Our module is a processor type, so it doesn&#39;t offer any pipeline</span>
+<span class="n">pipeline_support</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Provide no pipeline information as our module don&#39;t implement any</span>
+<span class="n">pipeline_info</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># The configuration of the module that will be displayed and configurable</span>
+<span class="c1"># by administrators on the UI. This describes every parameter that can</span>
+<span class="c1"># be set.</span>
+<span class="n">module_configuration</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;param_name&quot;</span><span class="p">:</span> <span class="s2">&quot;check_log_received_hook&quot;</span><span class="p">,</span>
+
+        <span class="s2">&quot;param_human_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Log received hook&quot;</span><span class="p">,</span>
+
+        <span class="s2">&quot;param_description&quot;</span><span class="p">:</span> <span class="s2">&quot;Logs a message upon hook receiving if set to true. Otherwise do nothing.&quot;</span><span class="p">,</span>
+
+        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+
+        <span class="s2">&quot;mandatory&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bool&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<dl class="simple">
+<dt>The module configuration parameters are the following :</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">param_name</span></code> : The internal parameter name. This will be used by the module itself to fetch the value when needed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">param_human_name</span></code> : The name displayed on the UI for this specific parameter</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">param_description</span></code>: A description explaining what this parameter is doing to help administrators</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">default</span></code>: The default value of our parameter. Here we set to True, so after install our module is already configured and ready to log the hook.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mandatory</span></code>:  Indicates whether the parameter is mandatory or not. If set to True  and no value is provided (either by admin or by default), the module is automatically disabled by IRIS</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>: The type of parameter. Here a boolean, which will be rendered under the form of a checkbox.</p></li>
+</ul>
+</dd>
+</dl>
+<p>A module can have as many parameters as it needs.</p>
+<p>We now need to update our main class to set this configuration.</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">iris_dummy_module/IrisDummyInterface.py</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="c1"># Import the IrisInterface class</span>
+<span class="kn">from</span> <span class="nn">iris_interface.IrisModuleInterface</span> <span class="kn">import</span> <span class="n">IrisModuleInterface</span>
+
+<span class="c1"># Create our module class</span>
+<span class="k">class</span> <span class="nc">IrisDummyModule</span><span class="p">(</span><span class="n">IrisModuleInterface</span><span class="p">):</span>
+    <span class="c1"># Set the configuration</span>
+    <span class="n">_module_name</span> <span class="o">=</span> <span class="n">interface_conf</span><span class="o">.</span><span class="n">module_name</span>
+    <span class="n">_module_description</span> <span class="o">=</span> <span class="n">interface_conf</span><span class="o">.</span><span class="n">module_description</span>
+    <span class="n">_interface_version</span> <span class="o">=</span> <span class="n">interface_conf</span><span class="o">.</span><span class="n">interface_version</span>
+    <span class="n">_module_version</span> <span class="o">=</span> <span class="n">interface_conf</span><span class="o">.</span><span class="n">module_version</span>
+    <span class="n">_pipeline_support</span> <span class="o">=</span> <span class="n">interface_conf</span><span class="o">.</span><span class="n">pipeline_support</span>
+    <span class="n">_pipeline_info</span> <span class="o">=</span> <span class="n">interface_conf</span><span class="o">.</span><span class="n">pipeline_info</span>
+    <span class="n">_module_configuration</span> <span class="o">=</span> <span class="n">interface_conf</span><span class="o">.</span><span class="n">module_configuration</span>
+    <span class="n">_module_type</span> <span class="o">=</span> <span class="n">interface_conf</span><span class="o">.</span><span class="n">module_type</span>
+
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<p>Done ! The module is now providing enough information to IRIS, so it knows exactly what our module do and what needs to be called to run it.</p>
+<p>However, our module is still doing nothing. Let’s make it subscribe to an IRIS hook.</p>
+</div>
+<div class="section" id="subscribing-to-a-hook">
+<h2>Subscribing to a hook<a class="headerlink" href="#subscribing-to-a-hook" title="Permalink to this headline">¶</a></h2>
+<p>Hooks allow to be notified by IRIS when a specific event occurs (IOC creation, deletion, etc). For a comprehensive description of hooks, please see the <a class="reference external" href="dev-iris-hooks">Hooks section</a> of this documentation.</p>
+<dl class="simple">
+<dt>The registration (or subscription) to a hook occurs at two moments during the life of a module :</dt><dd><ul class="simple">
+<li><p>When the module is added to IRIS</p></li>
+<li><p>When the configuration of the module is changed by an Admin. This allows dynamic subscription and deregistration of hooks depending on the config.</p></li>
+</ul>
+</dd>
+</dl>
+<p>These registration/deregistration events are triggered by IRIS, and are propagated to modules through the IrisModuleInterface method <code class="docutils literal notranslate"><span class="pre">register_hooks</span></code> (<a class="reference external" href="https://github.com/dfir-iris/iris-module-interface/blob/d63b358b1861e4545e983b67d9530469e3a87918/iris_interface/IrisModuleInterface.py#L389">ref</a>).</p>
+<p>To register to a hook, we simply need to override this method.</p>
 </div>
 </div>
 

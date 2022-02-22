@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Development</title>
+    <title>IRIS Hooks</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -35,8 +35,6 @@
     <link rel="shortcut icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Setting up an IRIS development environment" href="dev_env.html" />
-    <link rel="prev" title="dfir_iris_client.tests.tests_helper module" href="../python_client/v1.0.1/dfir_iris_client.tests.tests_helper.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -76,7 +74,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../index.html">
    Introduction
@@ -312,11 +310,11 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="index.html">
    Development
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
@@ -402,7 +400,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/development/index.rst.txt"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/development/hooks.rst.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.rst</button></a>
         <!-- Download PDF via print -->
@@ -434,7 +432,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Development</h1>
+                <h1>IRIS Hooks</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -445,41 +443,8 @@
             
               <div>
                 
-  <div class="section" id="development">
-<h1>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="dev_env.html">Developing IRIS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev_env.html#web-app">Web-app</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="dev_docs.html">Documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev_docs.html#pre-requisites">1. Pre-requisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev_docs.html#building">2. Building</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="dev_modules.html">Modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev_modules.html#introduction">Introduction</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dev_mod_start/mod_processor.html">Getting started with processor modules</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="dev_mod_start/mod_processor.html#project-structure-overview">Project structure overview</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_mod_start/mod_processor.html#creating-the-interface">Creating the interface</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_mod_start/mod_processor.html#writing-the-configuration">Writing the configuration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_mod_start/mod_processor.html#subscribing-to-a-hook">Subscribing to a hook</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="dev_modules.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev_modules.html#common-structure">Common structure</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dev_modules.html#directory-structure">Directory structure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dev_modules.html#the-init-py-file">The __init__.py file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dev_modules.html#the-module-configuration">The module configuration</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
+  <div class="section" id="iris-hooks">
+<span id="dev-iris-hooks"></span><h1>IRIS Hooks<a class="headerlink" href="#iris-hooks" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -487,21 +452,7 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../python_client/v1.0.1/dfir_iris_client.tests.tests_helper.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">dfir_iris_client.tests.tests_helper module</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="dev_env.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Setting up an IRIS development environment</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>

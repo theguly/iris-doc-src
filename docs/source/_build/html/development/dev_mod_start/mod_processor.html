@@ -525,8 +525,8 @@ a configuration setting to offer our users the ability disable this feature.</p>
 <h2>Creating the interface<a class="headerlink" href="#creating-the-interface" title="Permalink to this headline">¶</a></h2>
 <p>The interface is the code that talks with IRIS. It implements methods that call and are called by the server. It needs to inherit  <a class="reference external" href="https://github.com/dfir-iris/iris-module-interface/blob/master/iris_interface/IrisModuleInterface.py">IrisModuleInterface class</a> from the <a class="reference external" href="https://github.com/dfir-iris/iris-module-interface">IrisModuleInterface package</a>.  This module handles most of the methods needed by IRIS to recognize, set up and call the module.  By inheriting this class in our interface, we avoid writing that part ourselves.</p>
 <p>Let’s write our basic interface class.  The name of the file has to be the name of the main class, that’s the only constraint. We’ll see later on why.</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">iris_dummy_module/IrisDummyInterface.py</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">iris_dummy_module/IrisDummyInterface.py</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 
 <span class="c1"># Import the IrisInterface class</span>
@@ -541,8 +541,8 @@ a configuration setting to offer our users the ability disable this feature.</p>
 <p>That’s it ! Actually this class is not doing anything right now. We’ll need to add a few methods to register our hook later.</p>
 <p>But first we need to indicate to IRIS what is our main interface class. Remember, there is no convention restriction, so IRIS has no way to know which class it should instantiate to call our module.</p>
 <p>To do so, we need to set a specific variable in our <cite>__init__.py</cite>.</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">iris_dummy_module/__init__.py</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">iris_dummy_module/__init__.py</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the __iris_module_interface variable to the name of our main class.</span>
 <span class="c1"># When IRIS instantiate the python module, it looks for &quot;module.__iris_module_interface&quot;</span>
 <span class="c1"># And then tries to instantiate the class &quot;__iris_module_interface.__iris_module_interface&quot;, here &#39;IrisDummyModule.IrisDummyModule&#39;.</span>
@@ -558,8 +558,8 @@ a configuration setting to offer our users the ability disable this feature.</p>
 <p>The next step is to describe what the module is doing, its name, it’s configuration, etc.
 This is done by overwriting predefines variables of the <code class="docutils literal notranslate"><span class="pre">IrisModuleInterface</span></code> class.</p>
 <p>Let’s create our Python configuration file and go through each variables.</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">iris_dummy_module/IrisDummyConfig.py</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">iris_dummy_module/IrisDummyConfig.py</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the module types list,  so we can indicate the type of our module</span>
 <span class="kn">from</span> <span class="nn">iris_interface.IrisModuleInterface</span> <span class="kn">import</span> <span class="n">IrisModuleTypes</span>
 
@@ -593,7 +593,7 @@ This is done by overwriting predefines variables of the <code class="docutils li
 <span class="c1"># be set.</span>
 <span class="n">module_configuration</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span>
-        <span class="s2">&quot;param_name&quot;</span><span class="p">:</span> <span class="s2">&quot;check_log_received_hook&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;param_name&quot;</span><span class="p">:</span> <span class="s2">&quot;log_received_hook&quot;</span><span class="p">,</span>
 
         <span class="s2">&quot;param_human_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Log received hook&quot;</span><span class="p">,</span>
 
@@ -622,8 +622,8 @@ This is done by overwriting predefines variables of the <code class="docutils li
 </dl>
 <p>A module can have as many parameters as it needs.</p>
 <p>We now need to update our main class to set this configuration.</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">iris_dummy_module/IrisDummyInterface.py</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">iris_dummy_module/IrisDummyInterface.py</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 
 <span class="c1"># Import the IrisInterface class</span>
@@ -668,8 +668,8 @@ This is done by overwriting predefines variables of the <code class="docutils li
 </dd>
 </dl>
 <p>Let’s add this to our main class and register to the <cite>on_postload_ioc_create</cite>. This will notify use each time a new IOC is created and committed to the database.</p>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">iris_dummy_module/IrisDummyInterface.py</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">iris_dummy_module/IrisDummyInterface.py</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 
 <span class="c1"># Import the IrisInterface class</span>
@@ -712,7 +712,71 @@ This is done by overwriting predefines variables of the <code class="docutils li
 </div>
 </div>
 <p>That’s it. Our module has now officially subscribed to a hook and will be notified each time this event happens.</p>
-<p>So how the module is notified ?</p>
+<p>So how the module is notified ? Once again this is done by a method named <code class="docutils literal notranslate"><span class="pre">hooks_handler</span></code> (<a class="reference external" href="https://github.com/dfir-iris/iris-module-interface/blob/d63b358b1861e4545e983b67d9530469e3a87918/iris_interface/IrisModuleInterface.py#L373">ref</a>) that IrisModuleInterface provides, and we need to overwrite.</p>
+<p>This method is called each time one of the event associated to the hook we subscribed to happen. It provides the name of the hook and as well as the data associated to it.  By overwriting this method, we can process the hook and the data !</p>
+<p>We will add a condition in this method, that is if the administrator set the module parameter <code class="docutils literal notranslate"><span class="pre">log_received_hook</span></code> to False, then the module won’t log anything and simply do nothing.</p>
+<p>The current configuration of the module can be accessed with the attribute <code class="docutils literal notranslate"><span class="pre">self._dict_conf</span></code>.</p>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">iris_dummy_module/IrisDummyInterface.py</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+
+<span class="c1"># Import the IrisInterface class</span>
+<span class="kn">from</span> <span class="nn">iris_interface.IrisModuleInterface</span> <span class="kn">import</span> <span class="n">IrisModuleInterface</span>
+
+
+<span class="c1"># Create our module class</span>
+<span class="k">class</span> <span class="nc">IrisDummyModule</span><span class="p">(</span><span class="n">IrisModuleInterface</span><span class="p">):</span>
+    <span class="c1"># Set the configuration</span>
+    <span class="n">_module_name</span> <span class="o">=</span> <span class="n">interface_conf</span><span class="o">.</span><span class="n">module_name</span>
+    <span class="n">_module_description</span> <span class="o">=</span> <span class="n">interface_conf</span><span class="o">.</span><span class="n">module_description</span>
+    <span class="n">_interface_version</span> <span class="o">=</span> <span class="n">interface_conf</span><span class="o">.</span><span class="n">interface_version</span>
+    <span class="n">_module_version</span> <span class="o">=</span> <span class="n">interface_conf</span><span class="o">.</span><span class="n">module_version</span>
+    <span class="n">_pipeline_support</span> <span class="o">=</span> <span class="n">interface_conf</span><span class="o">.</span><span class="n">pipeline_support</span>
+    <span class="n">_pipeline_info</span> <span class="o">=</span> <span class="n">interface_conf</span><span class="o">.</span><span class="n">pipeline_info</span>
+    <span class="n">_module_configuration</span> <span class="o">=</span> <span class="n">interface_conf</span><span class="o">.</span><span class="n">module_configuration</span>
+    <span class="n">_module_type</span> <span class="o">=</span> <span class="n">interface_conf</span><span class="o">.</span><span class="n">module_type</span>
+
+    <span class="k">def</span> <span class="nf">register_hooks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">module_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Called by IRIS indicating it&#39;s time to register hooks.</span>
+
+<span class="sd">        :param module_id: Module ID provided by IRIS.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Call the hook registration method. We need to pass the</span>
+        <span class="c1"># the module_id to this method, otherwise IRIS won&#39;t know</span>
+        <span class="c1"># to whom associate the hook.</span>
+        <span class="c1"># The hook name needs to be a well known hook name by IRIS.</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">register_to_hook</span><span class="p">(</span><span class="n">module_id</span><span class="p">,</span> <span class="n">iris_hook_name</span><span class="o">=</span><span class="s1">&#39;on_postload_ioc_create&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">status</span><span class="o">.</span><span class="n">is_failure</span><span class="p">():</span>
+            <span class="c1"># If we have a failure, log something out</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">status</span><span class="o">.</span><span class="n">get_message</span><span class="p">())</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Log that we successfully registered to the hook</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Successfully subscribed to on_postload_ioc_create hook&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">hooks_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hook_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Called by IRIS each time one of our hook is triggered.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># read the current configuration and only log the call if</span>
+    <span class="c1"># our parameter is set to true</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dict_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;log_received_hook&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Received </span><span class="si">{</span><span class="n">hook_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Received data of type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Return a standardized message to IRIS saying that everything is ok.</span>
+    <span class="c1"># logs=list(self.message_queue) is needed, so the users can see the logs</span>
+    <span class="c1"># our module generated during its execution.</span>
+    <span class="k">return</span> <span class="n">InterfaceStatus</span><span class="o">.</span><span class="n">I2Success</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">logs</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">message_queue</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<p><strong>We are done !</strong>. Our module is now fully ready to register, subscribe to a hook and act when notified.</p>
 </div>
 </div>
 

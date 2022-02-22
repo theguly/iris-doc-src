@@ -110,7 +110,7 @@ Let's create our Python configuration file and go through each variables.
     # be set. 
     module_configuration = [
         {
-            "param_name": "check_log_received_hook",
+            "param_name": "log_received_hook",
 
             "param_human_name": "Log received hook",
 
@@ -232,4 +232,73 @@ Let's add this to our main class and register to the `on_postload_ioc_create`. T
 
 That's it. Our module has now officially subscribed to a hook and will be notified each time this event happens.  
 
-So how the module is notified ? 
+So how the module is notified ? Once again this is done by a method named ``hooks_handler`` (`ref <https://github.com/dfir-iris/iris-module-interface/blob/d63b358b1861e4545e983b67d9530469e3a87918/iris_interface/IrisModuleInterface.py#L373>`_) that IrisModuleInterface provides, and we need to overwrite.  
+
+This method is called each time one of the event associated to the hook we subscribed to happen. It provides the name of the hook and as well as the data associated to it.  By overwriting this method, we can process the hook and the data ! 
+
+We will add a condition in this method, that is if the administrator set the module parameter ``log_received_hook`` to False, then the module won't log anything and simply do nothing.   
+
+The current configuration of the module can be accessed with the attribute ``self._dict_conf``.  
+
+
+.. code-block:: python
+    :caption: iris_dummy_module/IrisDummyInterface.py 
+
+    #!/usr/bin/env python3
+    
+    # Import the IrisInterface class
+    from iris_interface.IrisModuleInterface import IrisModuleInterface
+
+
+    # Create our module class
+    class IrisDummyModule(IrisModuleInterface):
+        # Set the configuration
+        _module_name = interface_conf.module_name
+        _module_description = interface_conf.module_description
+        _interface_version = interface_conf.interface_version
+        _module_version = interface_conf.module_version
+        _pipeline_support = interface_conf.pipeline_support
+        _pipeline_info = interface_conf.pipeline_info
+        _module_configuration = interface_conf.module_configuration
+        _module_type = interface_conf.module_type
+
+        def register_hooks(self, module_id: int):
+            """
+            Called by IRIS indicating it's time to register hooks.  
+            
+            :param module_id: Module ID provided by IRIS.
+            """
+
+            # Call the hook registration method. We need to pass the 
+            # the module_id to this method, otherwise IRIS won't know 
+            # to whom associate the hook. 
+            # The hook name needs to be a well known hook name by IRIS. 
+            status = self.register_to_hook(module_id, iris_hook_name='on_postload_ioc_create')
+
+            if status.is_failure():
+                # If we have a failure, log something out 
+                self.log.error(status.get_message())
+
+            else:
+                # Log that we successfully registered to the hook 
+                self.log.info(f"Successfully subscribed to on_postload_ioc_create hook")
+
+
+    def hooks_handler(self, hook_name: str, data):
+        """
+        Called by IRIS each time one of our hook is triggered. 
+        """
+
+        # read the current configuration and only log the call if 
+        # our parameter is set to true 
+        if self._dict_conf.get('log_received_hook') is True:
+            self.log.info(f'Received {hook_name}')
+            self.log.info(f'Received data of type {type(data)}')
+
+        # Return a standardized message to IRIS saying that everything is ok. 
+        # logs=list(self.message_queue) is needed, so the users can see the logs 
+        # our module generated during its execution.  
+        return InterfaceStatus.I2Success(data=data, logs=list(self.message_queue))
+
+
+**We are done !**. Our module is now fully ready to register, subscribe to a hook and act when notified.  

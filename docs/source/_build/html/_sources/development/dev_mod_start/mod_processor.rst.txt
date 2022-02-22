@@ -176,6 +176,60 @@ The registration (or subscription) to a hook occurs at two moments during the li
 
 These registration/deregistration events are triggered by IRIS, and are propagated to modules through the IrisModuleInterface method ``register_hooks`` (`ref <https://github.com/dfir-iris/iris-module-interface/blob/d63b358b1861e4545e983b67d9530469e3a87918/iris_interface/IrisModuleInterface.py#L389>`_).  
 
-To register to a hook, we simply need to override this method.  
 
 
+To register to a hook, we need to override this method and register our hook within this method.  To do so, IrisModuleInterface offers us another method ``register_to_hook`` (`ref <https://github.com/dfir-iris/iris-module-interface/blob/d63b358b1861e4545e983b67d9530469e3a87918/iris_interface/IrisModuleInterface.py#L401>`_), which we can call for each hook we want to subscribe.  
+
+Here is a summary of the events : 
+    1. IRIS calls ``register_hooks`` of our module. This indicates it is time for us to register our hooks.  
+    2. Within this method, we call ``register_to_hook`` for each hook we want to subscribe
+
+Let's add this to our main class and register to the `on_postload_ioc_create`. This will notify use each time a new IOC is created and committed to the database. 
+
+
+.. code-block:: python
+    :caption: iris_dummy_module/IrisDummyInterface.py 
+
+    #!/usr/bin/env python3
+    
+    # Import the IrisInterface class
+    from iris_interface.IrisModuleInterface import IrisModuleInterface
+
+
+    # Create our module class
+    class IrisDummyModule(IrisModuleInterface):
+        # Set the configuration
+        _module_name = interface_conf.module_name
+        _module_description = interface_conf.module_description
+        _interface_version = interface_conf.interface_version
+        _module_version = interface_conf.module_version
+        _pipeline_support = interface_conf.pipeline_support
+        _pipeline_info = interface_conf.pipeline_info
+        _module_configuration = interface_conf.module_configuration
+        _module_type = interface_conf.module_type
+
+        def register_hooks(self, module_id: int):
+            """
+            Called by IRIS indicating it's time to register hooks.  
+            
+            :param module_id: Module ID provided by IRIS.
+            """
+
+            # Call the hook registration method. We need to pass the 
+            # the module_id to this method, otherwise IRIS won't know 
+            # to whom associate the hook. 
+            # The hook name needs to be a well known hook name by IRIS. 
+            status = self.register_to_hook(module_id, iris_hook_name='on_postload_ioc_create')
+
+            if status.is_failure():
+                # If we have a failure, log something out 
+                self.log.error(status.get_message())
+
+            else:
+                # Log that we successfully registered to the hook 
+                self.log.info(f"Successfully subscribed to on_postload_ioc_create hook")
+ 
+
+That's it. Our module has now officially subscribed to a hook and will be notified each time this event happens.  
+
+So how the module is notified ? 

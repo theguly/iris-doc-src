@@ -21,7 +21,7 @@ print(roo)
 # -- Project information -----------------------------------------------------
 
 project = 'IRIS - Incident Response Platform'
-copyright = '2021, Airbus CyberSecurity'
+copyright = '2022, Airbus CyberSecurity'
 author = 'DFIR-IRIS Team'
 
 
@@ -54,8 +54,8 @@ html_theme = 'sphinx_book_theme'
 import sphinx_book_theme
 html_theme_path = [sphinx_book_theme.get_html_theme_path()]
 
-html_logo = '_static/logo-3.png'
-html_title = 'IRIS Documentation'
+html_logo = '_static/logo_blue.png'
+html_title = ''
 html_show_copyright = True
-
+html_favicon = '_static/logo.ico'
 

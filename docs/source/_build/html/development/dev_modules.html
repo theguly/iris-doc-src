@@ -1,0 +1,677 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modules development</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Roadmap" href="../roadmap.html" />
+    <link rel="prev" title="Documentation build" href="dev_docs.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_blue.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../quick_start.html">
+   Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../operations/index.html">
+   Operations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../operations/api.html">
+     API
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../operations/upgrades.html">
+     Upgrades
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../operations/modules.html">
+     Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../operations/reports.html">
+     Reports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../operations/tutorials.html">
+     Tutorials
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../python_client/modules.html">
+   Python client
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.html">
+     Doc v1.0.1
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.admin.html">
+       dfir_iris_client.admin module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.case.html">
+       dfir_iris_client.case module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.customer.html">
+       dfir_iris_client.customer module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.global_search.html">
+       dfir_iris_client.global_search module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.session.html">
+       dfir_iris_client.session module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.users.html">
+       dfir_iris_client.users module
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.html">
+       dfir_iris_client.helper package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.analysis_status.html">
+         dfir_iris_client.helper.analysis_status module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.assets_type.html">
+         dfir_iris_client.helper.assets_type module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.colors.html">
+         dfir_iris_client.helper.colors module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.errors.html">
+         dfir_iris_client.helper.errors module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.events_categories.html">
+         dfir_iris_client.helper.events_categories module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.ioc_types.html">
+         dfir_iris_client.helper.ioc_types module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.iris_object.html">
+         dfir_iris_client.helper.iris_object module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.objects_def.html">
+         dfir_iris_client.helper.objects_def module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.task_status.html">
+         dfir_iris_client.helper.task_status module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.tlps.html">
+         dfir_iris_client.helper.tlps module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.utils.html">
+         dfir_iris_client.helper.utils module
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.html">
+       dfir_iris_client.tests package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.test_admin.html">
+         dfir_iris_client.tests.test_admin module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.test_analysis_status.html">
+         dfir_iris_client.tests.test_analysis_status module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.test_asset_type.html">
+         dfir_iris_client.tests.test_asset_type module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.test_case.html">
+         dfir_iris_client.tests.test_case module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.test_customer.html">
+         dfir_iris_client.tests.test_customer module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.test_event_categories.html">
+         dfir_iris_client.tests.test_event_categories module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.test_global_search.html">
+         dfir_iris_client.tests.test_global_search module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.test_ioc_types.html">
+         dfir_iris_client.tests.test_ioc_types module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.test_task_status.html">
+         dfir_iris_client.tests.test_task_status module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.test_tlps.html">
+         dfir_iris_client.tests.test_tlps module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.tests_helper.html">
+         dfir_iris_client.tests.tests_helper module
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Development
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="dev_env.html">
+     Developing IRIS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dev_docs.html">
+     Documentation
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Modules
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../roadmap.html">
+   Roadmap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qa.html">
+   Q&amp;A
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/development/dev_modules.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#common-structure">
+   Common structure
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#directory-structure">
+     Directory structure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-init-py-file">
+     The __init__.py file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-module-configuration">
+     The module configuration
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Modules development</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#common-structure">
+   Common structure
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#directory-structure">
+     Directory structure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-init-py-file">
+     The __init__.py file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-module-configuration">
+     The module configuration
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="modules-development">
+<h1>Modules development<a class="headerlink" href="#modules-development" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>A DFIR-IRIS Module (DIM) is a Python package allowing to extend IRIS features.  DIMs are not running constantly and are only called following specific actions done by users.</p>
+<dl class="simple">
+<dt>We distinct two types of modules:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Pipeline</span> <span class="pre">modules</span></code> : Allow uploading and processing of evidences through modular pipelines (eg: EVTX parsing and injection into a database or data visualiser). These are called when a user <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">case</span></code> and select evidences to process.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Processor</span> <span class="pre">modules</span></code> : Allow processing of IRIS data upon predefined actions / hooks. (eg: be notified when a new IOC is created and get VT/MISP insights for it). These are either called automatically upon specific events, or if a user manually triggers them.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Except for some triggers for processor modules, all tasks provided by DIMs are run asynchronously in RabbitMQ tasks, so they don’t impact the UI.</p>
+<p>Both types of DIMs have the same structure, they only differs in their configurations and how they handle the data they receive. For that purpose, every DIM inherit from a common class named <code class="docutils literal notranslate"><span class="pre">IrisModuleInterface</span></code> (available <a class="reference external" href="https://github.com/dfir-iris/iris-module-interface">here</a>) which provides the basic structure and methods of a module.</p>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Modules are instantiated upon actions (hooks, triggers, user actions) and this occurs each time the said actions occur. It implies the initiation of a module is almost instant.</p>
+<p>They can live either in the worker or the web-app, depending on their type and action they are handling. They can also live in both. This implies multiple instances of the same module can
+run at the same time.</p>
+<p>The graph below shows two modules of different types running in the worker and interacting with external elements.</p>
+<img alt="../_images/mods_overview.png" src="../_images/mods_overview.png" />
+<p>Modules don’t have to handle the task creations or resources locks. This is handled by IRIS. They just need to process the data they received and return results in a predefined manner.</p>
+</div>
+<div class="section" id="common-structure">
+<h2>Common structure<a class="headerlink" href="#common-structure" title="Permalink to this headline">¶</a></h2>
+<p>The section below describes the common structure of modules.</p>
+<div class="section" id="directory-structure">
+<h3>Directory structure<a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">setup</span><span class="o">.</span><span class="n">py</span>                <span class="c1"># Setup configuration to build the module</span>
+<span class="n">README</span><span class="o">.</span><span class="n">md</span>               <span class="c1"># README</span>
+<span class="n">iris_example_name</span>       <span class="c1"># Name of the package</span>
+    <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>              <span class="c1"># Declaration of the package and main class</span>
+    <span class="n">IrisExampleConfig</span><span class="o">.</span><span class="n">py</span>     <span class="c1"># Configuration of the module to help keep the main file clean</span>
+    <span class="n">IrisExampleInterface</span><span class="o">.</span><span class="n">py</span>  <span class="c1"># Main class of the module</span>
+    <span class="n">module_helper</span>            <span class="c1"># Sub module containing the helper functions of the module</span>
+      <span class="n">helper</span><span class="o">.</span><span class="n">py</span>              <span class="c1"># for instance access to ext resource, manipulation of data</span>
+      <span class="n">helper2</span><span class="o">.</span><span class="n">py</span>             <span class="c1"># etc.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-init-py-file">
+<h3>The __init__.py file<a class="headerlink" href="#the-init-py-file" title="Permalink to this headline">¶</a></h3>
+<p>Iris loads the modules dynamically. To do so, it needs to know the name of the main class of the module and relies on <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> to find this information.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">__iris_module_interface</span> <span class="o">=</span> <span class="s2">&quot;IrisEXAMPLEInterface&quot;</span>
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">IrisEXAMPLEInterface</span></code> is the main class of the module and inherit of the base class <code class="docutils literal notranslate"><span class="pre">IrisModuleInterface</span></code>.</p>
+<div class="warning admonition">
+<p class="admonition-title">Attention</p>
+<p>Failing to provide the main class in <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> or having the main class inherit from <code class="docutils literal notranslate"><span class="pre">IrisModuleInterface</span></code> will make IRIS fail each time
+it attempts to load the module.</p>
+</div>
+</div>
+<div class="section" id="the-module-configuration">
+<h3>The module configuration<a class="headerlink" href="#the-module-configuration" title="Permalink to this headline">¶</a></h3>
+<p>Iris needs to know what the module is doing and what services it is providing. This is done via the attributes of the main class (let’s say <code class="docutils literal notranslate"><span class="pre">IrisEXAMPLEInterface</span></code>). The attributes are :</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">_module_name</span></code> : string - “human” name presented to users.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_interface_version</span></code> : float - version of <code class="docutils literal notranslate"><span class="pre">IrisModuleInterface</span></code> used. If the version is not supported, the server will refuse to register the module.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_module_version</span></code> : float - version of the module itself to help users keep tracks of evolutions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_module_type</span></code>: string - Type of module. The available modules types are listed in <code class="docutils literal notranslate"><span class="pre">IrisModuleInterface.IrisModuleTypes</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_pipeline_support</span></code> : bool - should be set to True if it implements a pipeline process (aka module of type <code class="docutils literal notranslate"><span class="pre">pipeline_module</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_pipeline_info</span></code> : dict - contains the configuration of the pipeline. The following structure must be followed:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pipeline_info</span> <span class="o">=</span> <span class="p">{</span>
+
+    <span class="c1"># Name of the pipeline used for internal tracking. This</span>
+    <span class="c1"># must be unique among all modules so pick something really unique</span>
+    <span class="s2">&quot;pipeline_internal_name&quot;</span><span class="p">:</span> <span class="s2">&quot;example_pipeline&quot;</span><span class="p">,</span>
+
+    <span class="c1"># The name of the pipeline presented to the user. Use something</span>
+    <span class="c1"># that will help the users to identify the right pipeline</span>
+    <span class="s2">&quot;pipeline_human_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Example Pipeline&quot;</span><span class="p">,</span>
+
+    <span class="c1"># Arguments presented to the users when they select the pipeline</span>
+    <span class="s2">&quot;pipeline_args&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">[</span><span class="s1">&#39;some_index&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;example_argument&#39;</span><span class="p">,</span> <span class="s1">&#39;optional&#39;</span><span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_module_configuration</span></code> : A list of dict. The list contains each field needed by the module. This list is shown in the Iris webpage of the module configuration. Each field in an entry is mandatory.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">_module_configuration</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span>
+      <span class="s2">&quot;param_name&quot;</span><span class="p">:</span> <span class="s2">&quot;vt_api_key&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;param_human_name&quot;</span><span class="p">:</span> <span class="s2">&quot;VT API Key&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;param_description&quot;</span><span class="p">:</span> <span class="s2">&quot;Virus total API key&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+      <span class="s2">&quot;mandatory&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;sensitive_string&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;param_name&quot;</span><span class="p">:</span> <span class="s2">&quot;vt_key_is_premium&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;param_human_name&quot;</span><span class="p">:</span> <span class="s2">&quot;VT Key is premium&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;param_description&quot;</span><span class="p">:</span> <span class="s2">&quot;Set to True if the VT key is premium&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;mandatory&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bool&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+      <span class="s2">&quot;param_name&quot;</span><span class="p">:</span> <span class="s2">&quot;vt_ip_assign_asn_as_tag&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;param_human_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Assign ASN tag to IP&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;param_description&quot;</span><span class="p">:</span> <span class="s2">&quot;Assign a new tag to IOC IPs with the ASN fetched from VT&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+      <span class="s2">&quot;mandatory&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bool&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>The above example results in the following.</p>
+<img alt="../_images/Modules_config_example.png" src="../_images/Modules_config_example.png" />
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="dev_docs.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Documentation build</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../roadmap.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Roadmap</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By DFIR-IRIS Team<br/>
+    
+        &copy; Copyright 2022, Airbus CyberSecurity.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

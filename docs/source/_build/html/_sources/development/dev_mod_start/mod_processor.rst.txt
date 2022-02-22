@@ -301,4 +301,4 @@ The current configuration of the module can be accessed with the attribute ``sel
         return InterfaceStatus.I2Success(data=data, logs=list(self.message_queue))
 
 
-**We are done !**. Our module is now fully ready to register, subscribe to a hook and act when notified.  
+**We are done !** Our module is now fully ready to register, subscribe to a hook and act when notified.  

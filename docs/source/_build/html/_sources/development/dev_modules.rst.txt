@@ -22,7 +22,6 @@ To quickly start writing a new module, one can follow these tutorials:
 .. toctree::
 
   Getting started with processor modules <dev_mod_start/mod_processor>
-  Getting started with pipelines modules <dev_mod_start/mod_pipelines>
 
 
 Overview

@@ -3,6 +3,7 @@ Development
 
 .. toctree::
 
-   Developing IRIS <dev_env>
-   Documentation <dev_docs>
    Modules <dev_modules>
+   Hooks <hooks>
+   Developing IRIS Core <dev_env>
+   Documentation build<dev_docs>

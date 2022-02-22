@@ -1,3 +1,6 @@
+.. _dev-module-main:
+
+
 Modules development
 -------------------
 
@@ -13,6 +16,13 @@ We distinct two types of modules:
 Except for some triggers for processor modules, all tasks provided by DIMs are run asynchronously in RabbitMQ tasks, so they don't impact the UI.  
 
 Both types of DIMs have the same structure, they only differs in their configurations and how they handle the data they receive. For that purpose, every DIM inherit from a common class named ``IrisModuleInterface`` (available `here <https://github.com/dfir-iris/iris-module-interface>`_) which provides the basic structure and methods of a module. 
+
+To quickly start writing a new module, one can follow these tutorials: 
+
+.. toctree::
+
+  Getting started with processor modules <dev_mod_start/mod_processor>
+  Getting started with pipelines modules <dev_mod_start/mod_pipelines>
 
 
 Overview

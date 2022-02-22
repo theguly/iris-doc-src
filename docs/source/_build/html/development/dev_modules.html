@@ -35,7 +35,7 @@
     <link rel="shortcut icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Roadmap" href="../roadmap.html" />
+    <link rel="next" title="Quick start processor modules" href="dev_mod_start/mod_processor.html" />
     <link rel="prev" title="Documentation build" href="dev_docs.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -332,10 +332,22 @@
      Documentation
     </a>
    </li>
-   <li class="toctree-l2 current active">
+   <li class="toctree-l2 current active has-children">
     <a class="current reference internal" href="#">
      Modules
     </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="dev_mod_start/mod_processor.html">
+       Getting started with processor modules
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -514,7 +526,7 @@
               <div>
                 
   <div class="section" id="modules-development">
-<h1>Modules development<a class="headerlink" href="#modules-development" title="Permalink to this headline">¶</a></h1>
+<span id="dev-module-main"></span><h1>Modules development<a class="headerlink" href="#modules-development" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>A DFIR-IRIS Module (DIM) is a Python package allowing to extend IRIS features.  DIMs are not running constantly and are only called following specific actions done by users.</p>
@@ -527,6 +539,15 @@
 </dl>
 <p>Except for some triggers for processor modules, all tasks provided by DIMs are run asynchronously in RabbitMQ tasks, so they don’t impact the UI.</p>
 <p>Both types of DIMs have the same structure, they only differs in their configurations and how they handle the data they receive. For that purpose, every DIM inherit from a common class named <code class="docutils literal notranslate"><span class="pre">IrisModuleInterface</span></code> (available <a class="reference external" href="https://github.com/dfir-iris/iris-module-interface">here</a>) which provides the basic structure and methods of a module.</p>
+<p>To quickly start writing a new module, one can follow these tutorials:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dev_mod_start/mod_processor.html">Getting started with processor modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev_mod_start/mod_processor.html#project-structure">Project structure</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
@@ -646,10 +667,10 @@ it attempts to load the module.</p>
             <p class="prev-next-title">Documentation build</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../roadmap.html" title="next page">
+    <a class='right-next' id="next-link" href="dev_mod_start/mod_processor.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Roadmap</p>
+        <p class="prev-next-title">Quick start processor modules</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

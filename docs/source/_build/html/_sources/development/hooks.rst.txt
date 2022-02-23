@@ -27,9 +27,9 @@ Subscribing and unsubscribing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Two methods are provided by ``IrisModuleInterface`` to subscribe and unsubscribe from hooks. 
   - ``register_to_hook`` (module_id: int, iris_hook_name: str, manual_hook_name: str = None, run_asynchronously: bool = True)
-  - ``deregister_from_hook`` (module_id: int, iris_hook_name: str)  
+  - ``deregister_from_hook`` (module_id: int, iris_hook_name: str) 
 
-
+ 
 
 The registration method expects the following arguments: 
     - ``module_id`` : The ID of the calling module. This information is given by IRIS when the ``register_hooks`` methods is called. 
@@ -43,7 +43,9 @@ The deregistration method expects the following arguments:
     - ``iris_hook_name``: The name of the hook to which unsubscribe. If the module is not subscribe to the specified hook the function returns without errors. 
   
 
-Please see the `modules documentation <dev-module-main>`_ for more details on how to implement these methods.  
+
+
+Please see the `modules documentation <_dev-module-main>`_ for more details on how to implement these methods.  
 
 
 

@@ -35,6 +35,8 @@
     <link rel="shortcut icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Setting up an IRIS development environment" href="dev_env.html" />
+    <link rel="prev" title="Quick start processor modules" href="dev_mod_start/mod_processor.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -74,7 +76,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../index.html">
    Introduction
@@ -310,26 +312,16 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="index.html">
    Development
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="dev_env.html">
-     Developing IRIS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="dev_docs.html">
-     Documentation
-    </a>
-   </li>
+  <ul class="current">
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="dev_modules.html">
      Modules
@@ -346,6 +338,21 @@
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Hooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dev_env.html">
+     Developing IRIS Core
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dev_docs.html">
+     Documentation build
+    </a>
    </li>
   </ul>
  </li>
@@ -436,6 +443,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subscribing-and-unsubscribing">
+   Subscribing and unsubscribing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#available-hooks">
    Available hooks
   </a>
@@ -466,6 +478,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subscribing-and-unsubscribing">
+   Subscribing and unsubscribing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#available-hooks">
    Available hooks
   </a>
@@ -486,12 +503,39 @@
 <h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
 <dt>There are 3 types of hooks.</dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">On</span> <span class="pre">preload</span></code> : Triggered before an object is processed and committed to database. Most of the time it is triggered right after a request is received, and the data associated with the hook is the request content itself.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">On</span> <span class="pre">postload</span></code>: Triggered after an object is processed and committed to database. Most of the time it is triggered after IRIS processed the request and the data associated with the hook is a list of SqlAlchemy objects (such as IOC, Assets, etc).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">On</span> <span class="pre">preload</span></code> : Triggered before an object is processed and committed to database. It is triggered right after a request is received, and the data associated with the hook is usually the request content itself.  <strong>Most of the time modules should not subscribe to these hooks.</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">On</span> <span class="pre">postload</span></code>: Triggered after an object is processed and committed to database. It is triggered after IRIS processed the request and the data associated with the hook is a usually a list of SqlAlchemy objects (such as IOC, Assets, etc).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Manual</span></code>: Triggered by manual action of a user. When a module subscribes to these hooks, it needs to provide a “menu option name” which will be display to users. When they click this option, the associated hook is triggered for this module only.</p></li>
 </ul>
 </dd>
 </dl>
+<div class="warning admonition">
+<p class="admonition-title">Careful</p>
+<p><code class="docutils literal notranslate"><span class="pre">on_preload</span></code> hooks must run synchronously, i.e not queued in RabbitMQ. This has for effects to effectively block the current user request until the module finishes the processing. We highly recommend to only use <code class="docutils literal notranslate"><span class="pre">on_postload</span></code> hooks for a better user experience. These hooks are transparent for users and rely on already verified and committed data. Handling <code class="docutils literal notranslate"><span class="pre">on_preload</span></code> hooks implies the data received is unsafe - directly coming from remote clients - and the module need to process the data as fast as possible.</p>
+</div>
+</div>
+<div class="section" id="subscribing-and-unsubscribing">
+<h2>Subscribing and unsubscribing<a class="headerlink" href="#subscribing-and-unsubscribing" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Two methods are provided by <code class="docutils literal notranslate"><span class="pre">IrisModuleInterface</span></code> to subscribe and unsubscribe from hooks.</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">register_to_hook</span></code> (module_id: int, iris_hook_name: str, manual_hook_name: str = None, run_asynchronously: bool = True)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">deregister_from_hook</span></code> (module_id: int, iris_hook_name: str)</p></li>
+</ul>
+</dd>
+<dt>The registration method expects the following arguments:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">module_id</span></code> : The ID of the calling module. This information is given by IRIS when the <code class="docutils literal notranslate"><span class="pre">register_hooks</span></code> methods is called.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">iris_hook_name</span></code>: The name of the hook to which subscribe. This must be one of the hook listed in the section below.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">manual_hook_name</span></code>: The name of the UI menu that is provided to users if the registration concerns a manual hook. If nothing is provided, IRIS will create a name composed as follows : <code class="docutils literal notranslate"><span class="pre">&lt;module_name&gt;::&lt;hook_name&gt;</span></code>. This value is ignored if the signal is not manual.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">run_asynchronously</span></code>: Set to True (default) to run the module in a RabbitMQ task upon hook triggering. If set to False, the module is called immediately, which have for effect to effectively block the current user request until the module finishes. This is the behavior to use for <code class="docutils literal notranslate"><span class="pre">on_preload</span></code> hooks. <strong>However</strong>, we strongly recommend the use of <code class="docutils literal notranslate"><span class="pre">on_postload</span></code> hooks to prevent any unwanted (see warning section above).</p></li>
+</ul>
+</dd>
+<dt>The deregistration method expects the following arguments:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">module_id</span></code> : The ID of the calling module. This information is given by IRIS when the <code class="docutils literal notranslate"><span class="pre">register_hooks</span></code> methods is called.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">iris_hook_name</span></code>: The name of the hook to which unsubscribe. If the module is not subscribe to the specified hook the function returns without errors.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Please see the <a class="reference external" href="dev-module-main">modules documentation</a> for more details on how to implement these methods.</p>
 </div>
 <div class="section" id="available-hooks">
 <h2>Available hooks<a class="headerlink" href="#available-hooks" title="Permalink to this headline">¶</a></h2>
@@ -689,7 +733,21 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="dev_mod_start/mod_processor.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Quick start processor modules</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="dev_env.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Setting up an IRIS development environment</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

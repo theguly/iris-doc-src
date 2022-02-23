@@ -10,9 +10,42 @@ Types
 ^^^^^ 
 
 There are 3 types of hooks. 
- - ``On preload`` : Triggered before an object is processed and committed to database. Most of the time it is triggered right after a request is received, and the data associated with the hook is the request content itself.  
- - ``On postload``: Triggered after an object is processed and committed to database. Most of the time it is triggered after IRIS processed the request and the data associated with the hook is a list of SqlAlchemy objects (such as IOC, Assets, etc).  
- - ``Manual``: Triggered by manual action of a user. When a module subscribes to these hooks, it needs to provide a "menu option name" which will be display to users. When they click this option, the associated hook is triggered for this module only.  
+ - ``On preload`` : Triggered before an object is processed and committed to database. It is triggered right after a request is received, and the data associated with the hook is usually the request content itself.  **Most of the time modules should not subscribe to these hooks.** 
+ - ``On postload``: Triggered after an object is processed and committed to database. It is triggered after IRIS processed the request and the data associated with the hook is a usually a list of SqlAlchemy objects (such as IOC, Assets, etc). 
+ - ``Manual``: Triggered by manual action of a user. When a module subscribes to these hooks, it needs to provide a "menu option name" which will be display to users. When they click this option, the associated hook is triggered for this module only. 
+
+
+.. admonition:: Careful
+   :class: warning
+
+   ``on_preload`` hooks must run synchronously, i.e not queued in RabbitMQ. This has for effects to effectively block the current user request until the module finishes the processing. We highly recommend to only use ``on_postload`` hooks for a better user experience. These hooks are transparent for users and rely on already verified and committed data. Handling ``on_preload`` hooks implies the data received is unsafe - directly coming from remote clients - and the module need to process the data as fast as possible. 
+
+
+
+
+Subscribing and unsubscribing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Two methods are provided by ``IrisModuleInterface`` to subscribe and unsubscribe from hooks. 
+  - ``register_to_hook`` (module_id: int, iris_hook_name: str, manual_hook_name: str = None, run_asynchronously: bool = True)
+  - ``deregister_from_hook`` (module_id: int, iris_hook_name: str)  
+
+
+
+The registration method expects the following arguments: 
+    - ``module_id`` : The ID of the calling module. This information is given by IRIS when the ``register_hooks`` methods is called. 
+    - ``iris_hook_name``: The name of the hook to which subscribe. This must be one of the hook listed in the section below. 
+    - ``manual_hook_name``: The name of the UI menu that is provided to users if the registration concerns a manual hook. If nothing is provided, IRIS will create a name composed as follows : ``<module_name>::<hook_name>``. This value is ignored if the signal is not manual.  
+    - ``run_asynchronously``: Set to True (default) to run the module in a RabbitMQ task upon hook triggering. If set to False, the module is called immediately, which have for effect to effectively block the current user request until the module finishes. This is the behavior to use for ``on_preload`` hooks. **However**, we strongly recommend the use of ``on_postload`` hooks to prevent any unwanted (see warning section above). 
+
+
+The deregistration method expects the following arguments:
+    - ``module_id`` : The ID of the calling module. This information is given by IRIS when the ``register_hooks`` methods is called. 
+    - ``iris_hook_name``: The name of the hook to which unsubscribe. If the module is not subscribe to the specified hook the function returns without errors. 
+  
+
+Please see the `modules documentation <dev-module-main>`_ for more details on how to implement these methods.  
+
+
 
 
 Available hooks

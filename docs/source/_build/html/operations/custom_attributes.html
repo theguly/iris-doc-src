@@ -448,8 +448,18 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#attributes-structure">
+   Attributes structure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#attributes-taxonomy">
    Attributes taxonomy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#updating-resetting-attributes">
+   Updating / resetting attributes
   </a>
  </li>
 </ul>
@@ -478,8 +488,18 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#attributes-structure">
+   Attributes structure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#attributes-taxonomy">
    Attributes taxonomy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#updating-resetting-attributes">
+   Updating / resetting attributes
   </a>
  </li>
 </ul>
@@ -493,10 +513,16 @@
                 
   <div class="section" id="custom-attributes">
 <h1>Custom Attributes<a class="headerlink" href="#custom-attributes" title="Permalink to this headline">¶</a></h1>
+<p><em>Introduced in IRIS v1.3.1.</em></p>
 <p>All the case objects can be extended with custom attributes. These attributes can be added by :</p>
 <ul class="simple">
 <li><p>Administrators via the GUI</p></li>
 <li><p>Modules (for instance, the VT module adds a <code class="docutils literal notranslate"><span class="pre">VT</span> <span class="pre">Report</span></code> attribute to each it analyses)</p></li>
+</ul>
+<p>Attributes offer the ability to :</p>
+<ul class="simple">
+<li><p>Add inputs for analysts to fill additional details</p></li>
+<li><p>Add static/dynamic content such as HTML/JS for enhanced possibilities.</p></li>
 </ul>
 <p>This section only describes how an administrator can add or delete attributes to an object.</p>
 <div class="section" id="management-page">
@@ -516,10 +542,10 @@
 </dd>
 </dl>
 </div>
-<div class="section" id="attributes-taxonomy">
-<h2>Attributes taxonomy<a class="headerlink" href="#attributes-taxonomy" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="attributes-structure">
+<h2>Attributes structure<a class="headerlink" href="#attributes-structure" title="Permalink to this headline">¶</a></h2>
 <p>Attributes are defined in JSON which describes tabs and fields that makes the attributes.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span>{
     &quot;Tab Name 1&quot;: {                     // Defines a new tab
         &quot;Field 1&quot;: {                    // Defines a new field within the Tab Name 1
             &quot;type&quot;: &quot;input_string&quot;,     // Defines the type of field, here a standard string input
@@ -549,6 +575,31 @@
 <li><p>The new attribute <code class="docutils literal notranslate"><span class="pre">Tab</span> <span class="pre">Name</span> <span class="pre">1</span></code></p></li>
 <li><p>The other new attribute <code class="docutils literal notranslate"><span class="pre">VT</span> <span class="pre">report</span></code></p></li>
 </ol>
+</div>
+<div class="section" id="attributes-taxonomy">
+<h2>Attributes taxonomy<a class="headerlink" href="#attributes-taxonomy" title="Permalink to this headline">¶</a></h2>
+<p>The available fields type are available for rendering :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">input_string</span></code>: Standard input text</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">input_textfield</span></code>: Standard input textfield</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">input_checkbox</span></code>: Standard checkbox</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">input_date</span></code>: Standard date input</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">input_datetime</span></code>: Standard date and time input</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">input_select</span></code>: Standard select input. Need “options” tag to describe the available options, as a list of string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">raw</span></code>: A static content rendered in raw text. HTML is not be interpreted.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">html</span></code>: A static content rendered as HTML. This is by nature prone to abuse, but at the same time allows adding custom JS scripts.</p></li>
+</ul>
+</div>
+<div class="section" id="updating-resetting-attributes">
+<h2>Updating / resetting attributes<a class="headerlink" href="#updating-resetting-attributes" title="Permalink to this headline">¶</a></h2>
+<p>When an attribute is updated, it will try to update all the existing objects with the new attributes. To prevent any data loss from previous attributes and attributes pushed by modules, the update is only made on attributes which don’t have any values set or are type-compatibles (ie string to textfield).</p>
+<p>The migration of an attribute can however be forced in two ways, both resulting in potential attributes data loss.</p>
+<div class="info admonition">
+<p class="admonition-title">Note</p>
+<p>Migrating or overwriting attributes never change the native information of an object. It only applies to custom attributes.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Partial</span> <span class="pre">overwrite</span></code> basically resets all the values of every target objects that matches the current attribute definition. All associated values are lost. This does not impact attributes pushed by modules or previous configuration.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Complete</span> <span class="pre">overwrite</span></code> resets all attributes of every target objects, including the ones created by modules, and then applies the current attributes. All associated values are lost.</p>
 </div>
 </div>
 

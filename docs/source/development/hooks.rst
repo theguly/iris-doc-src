@@ -3,6 +3,7 @@
 
 IRIS Hooks 
 ----------
+*Introduced in IRIS v1.3.1.*
 
 Hooks are a mean for modules to react on specific events that occurs on IRIS. By subscribing to a hook, a module is automatically notified when the associated event occurs.  This offers a multitude of possibilities, from adding insight to IRIS objects, to pushing information to another platform or even changing how IRIS works.  
 
@@ -15,7 +16,7 @@ There are 3 types of hooks.
  - ``Manual``: Triggered by manual action of a user. When a module subscribes to these hooks, it needs to provide a "menu option name" which will be display to users. When they click this option, the associated hook is triggered for this module only. 
 
 
-.. admonition:: Careful
+.. admonition:: Note
    :class: warning
 
    ``on_preload`` hooks must run synchronously, i.e not queued in RabbitMQ. This has for effects to effectively block the current user request until the module finishes the processing. We highly recommend to only use ``on_postload`` hooks for a better user experience. These hooks are transparent for users and rely on already verified and committed data. Handling ``on_preload`` hooks implies the data received is unsafe - directly coming from remote clients - and the module need to process the data as fast as possible. 

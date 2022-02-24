@@ -98,13 +98,8 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../operations/api.html">
-     API
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../operations/upgrades.html">
-     Upgrades
+    <a class="reference internal" href="../operations/custom_attributes.html">
+     Custom Attributes
     </a>
    </li>
    <li class="toctree-l2">
@@ -120,6 +115,16 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../operations/tutorials.html">
      Tutorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../operations/upgrades.html">
+     Upgrades
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../operations/api.html">
+     API
     </a>
    </li>
   </ul>
@@ -498,6 +503,7 @@
                 
   <div class="section" id="iris-hooks">
 <span id="dev-iris-hooks"></span><h1>IRIS Hooks<a class="headerlink" href="#iris-hooks" title="Permalink to this headline">¶</a></h1>
+<p><em>Introduced in IRIS v1.3.1.</em></p>
 <p>Hooks are a mean for modules to react on specific events that occurs on IRIS. By subscribing to a hook, a module is automatically notified when the associated event occurs.  This offers a multitude of possibilities, from adding insight to IRIS objects, to pushing information to another platform or even changing how IRIS works.</p>
 <div class="section" id="types">
 <h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
@@ -510,7 +516,7 @@
 </dd>
 </dl>
 <div class="warning admonition">
-<p class="admonition-title">Careful</p>
+<p class="admonition-title">Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">on_preload</span></code> hooks must run synchronously, i.e not queued in RabbitMQ. This has for effects to effectively block the current user request until the module finishes the processing. We highly recommend to only use <code class="docutils literal notranslate"><span class="pre">on_postload</span></code> hooks for a better user experience. These hooks are transparent for users and rely on already verified and committed data. Handling <code class="docutils literal notranslate"><span class="pre">on_preload</span></code> hooks implies the data received is unsafe - directly coming from remote clients - and the module need to process the data as fast as possible.</p>
 </div>
 </div>

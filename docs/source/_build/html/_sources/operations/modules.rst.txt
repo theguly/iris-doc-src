@@ -16,9 +16,9 @@ Once installed in the Python environment, modules can be managed in ``Advanced``
   This section is only available for users with the Admin role.
 
 By default IRIS embeds multiple DIMs. 
-  - IrisEVTXModule (available but not installed)
-  - IrisVTModule (installed)
-  - IrisMispModule (installed)
+  - IrisEVTXModule (installed but not registered)
+  - IrisVTModule (installed and registered)
+  - IrisMispModule (installed and registered)
   
 Let's take IrisEVTXModule one to explain how one can add and use a new module.
 

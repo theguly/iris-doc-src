@@ -3,8 +3,9 @@ Operations
 
 .. toctree::
 
-   api
-   upgrades
+   custom_attributes
    modules
    reports
    tutorials
+   upgrades
+   api

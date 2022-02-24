@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Operations</title>
+    <title>Modules</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -35,8 +35,6 @@
     <link rel="shortcut icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Custom Attributes" href="custom_attributes.html" />
-    <link rel="prev" title="Quick Start" href="../quick_start.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -76,7 +74,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../index.html">
    Introduction
@@ -87,21 +85,16 @@
    Quick Start
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="index.html">
    Operations
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="custom_attributes.html">
-     Custom Attributes
-    </a>
-   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="modules.html">
      Modules
@@ -412,7 +405,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/operations/index.rst.txt"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/operations/modules copy.rst.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.rst</button></a>
         <!-- Download PDF via print -->
@@ -437,6 +430,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-management">
+   Module management
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-use-the-module">
+   How to use the module
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -444,69 +455,97 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Operations</h1>
+                <h1>Modules</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-management">
+   Module management
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-use-the-module">
+   How to use the module
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="section" id="operations">
-<h1>Operations<a class="headerlink" href="#operations" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="custom_attributes.html">Custom Attributes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="custom_attributes.html#management-page">Management page</a></li>
-<li class="toctree-l2"><a class="reference internal" href="custom_attributes.html#attributes-taxonomy">Attributes taxonomy</a></li>
+  <div class="section" id="modules">
+<h1>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h1>
+<dl class="simple">
+<dt>IRIS can be extended with modules. They can be split in two types:</dt><dd><ul class="simple">
+<li><p>Pipeline modules : Allow upload and process of evidences through modular pipelines (eg: EVTX parsing and injection into a database or data visualiser)</p></li>
+<li><p>Processor modules : Allow processing of IRIS data upon predefined actions / hooks. (eg: be notified when a new IOC is created and get VT/MISP insights for it).</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="modules.html#module-management">Module management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules.html#how-to-use-the-module">How to use the module</a></li>
+</dd>
+</dl>
+<p>Modules (or DIM - DFIR-IRIS Modules) are actually Python packages which must be installed in the Python environment of iris-webapp and the worker (see Quick Start).
+Once installed in the Python environment, modules can be managed in <code class="docutils literal notranslate"><span class="pre">Advanced</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Modules</span></code>.</p>
+<img alt="../_images/Manage_module.png" src="../_images/Manage_module.png" />
+<div class="info admonition">
+<p class="admonition-title">Note</p>
+<p>This section is only available for users with the Admin role.</p>
+</div>
+<dl class="simple">
+<dt>By default IRIS embeds multiple DIMs.</dt><dd><ul class="simple">
+<li><p>IrisEVTXModule (installed but not registered)</p></li>
+<li><p>IrisVTModule (installed and registered)</p></li>
+<li><p>IrisMispModule (installed and registered)</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="reports.html">Reports</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="reports.html#structure-of-templates">Structure of templates</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.html#cases">Cases</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#create-a-new-case">1. Create a new case</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#case-summary">2. Case summary</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#case-notes">3. Case notes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#case-iocs">1. Case IOCs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#case-assets">5. Case assets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#case-timeline">1. Case timeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#case-graph">7. Case graph</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#case-tasks">8. Case tasks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#case-evidences">9. Case evidences</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#case-task-logs">10. Case task logs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#case-reports">12. Case reports</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.html#operations">Operations</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#global-searches">1. Global searches</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="upgrades.html">Upgrades</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrades.html#backing-up-db">Backing-up DB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrades.html#upgrading">Upgrading</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrades.html#rolling-back">Rolling back</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api.html#api-keys">API Keys</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#references">References</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#how-to-use">How to use</a></li>
-</ul>
-</li>
-</ul>
+</dd>
+</dl>
+<p>Let’s take IrisEVTXModule one to explain how one can add and use a new module.</p>
+<div class="section" id="module-management">
+<h2>Module management<a class="headerlink" href="#module-management" title="Permalink to this headline">¶</a></h2>
+<p>To add a module, the user can click on the “+” button:</p>
+<img alt="../_images/Modules_management.png" src="../_images/Modules_management.png" />
+<p>Then the user must enter the name of the pre-installed module. The name of the pip package must be used.</p>
+<img alt="../_images/Modules_management_add.png" src="../_images/Modules_management_add.png" />
+<p>If everything is ok, the module will appear on the list. It is currently disabled, and needs configuration before it can be enabled. To do so, the user can click on the module’s name:</p>
+<img alt="../_images/Modules_management_summary.png" src="../_images/Modules_management_summary.png" />
+<p>A new text box appears, showing information about the module, and a list of parameters to configure. Each mandatory parameter must be configured to enable the module.</p>
+<img alt="../_images/Modules_management_info.png" src="../_images/Modules_management_info.png" />
+<p>After configuring all the mandatory parameters, the “Enable button” is revealed and the user can finally enable the module.</p>
+<img alt="../_images/Modules_management_enable.png" src="../_images/Modules_management_enable.png" />
+<p>That’s all! The user can confirm in the summary that the module is indeed enabled and ready to use.</p>
+<img alt="../_images/Modules_management_enabled.png" src="../_images/Modules_management_enabled.png" />
+<p>Finally, the user can either disable or remove the module by clicking on the according buttons.</p>
+<img alt="../_images/Modules_management_remdis.png" src="../_images/Modules_management_remdis.png" />
+<p>Now that the module is configured and enabled, let’s see how we can use it!</p>
+<p><strong>NB: As a temporary fix, after adding and configuring a module, one must restart the IRIS services (dockers) else the worker won’t have the module installed properly.</strong></p>
+</div>
+<div class="section" id="how-to-use-the-module">
+<h2>How to use the module<a class="headerlink" href="#how-to-use-the-module" title="Permalink to this headline">¶</a></h2>
+<p>As stated in the beginning, a module extends the capabilities of IRIS. For now, it allows to import evidences of your needs into what we call a pipeline, where data will be handled in the module (checking, parsing, ingestion…).
+In our provided module, IrisEVTXModule ingest EVTX files, parse them as JSON, and send the results to a Splunk instance using its HTTP event collector (HEC) endpoint.</p>
+<p>In IRIS, the files are always imported in the context of a case. To import a file, the user can click on <code class="docutils literal notranslate"><span class="pre">Manage</span> <span class="pre">cases</span></code> then <code class="docutils literal notranslate"><span class="pre">Update</span></code> tab.</p>
+<img alt="../_images/Modules_management_import.png" src="../_images/Modules_management_import.png" />
+<p>In <code class="docutils literal notranslate"><span class="pre">Processing</span> <span class="pre">pipeline</span></code>, the user can pick a pipeline that will send the files to the wanted module. In our example, <code class="docutils literal notranslate"><span class="pre">EVTX</span> <span class="pre">pipeline</span></code> refers to the IrisEVTXModule module.
+Below, the user can fill the arguments needed by the according pipeline. Arguments can be optional. Finally, the user can import one or several files and click <code class="docutils literal notranslate"><span class="pre">Update</span></code> to start their processing by the module.</p>
+<p>You can see in the picture below that the user will import four EVTX files.</p>
+<img alt="../_images/Modules_management_evtxup.png" src="../_images/Modules_management_evtxup.png" />
+<p>The user can follow the upload of the different files with their respective progress bars.</p>
+<img alt="../_images/Modules_management_import_progress.png" src="../_images/Modules_management_import_progress.png" />
+<p>Once uploaded, the status of the task can be observed on the <cite>DIM Tasks</cite> page.</p>
+<img alt="../_images/Modules_management_task.png" src="../_images/Modules_management_task.png" />
+<p>Clicking on a Task ID shows information on the task processing.</p>
+<img alt="../_images/Modules_management_import_taskinfo.png" src="../_images/Modules_management_import_taskinfo.png" />
+<p>After the processing of the files by the module, the list of the imported files is stored in the <code class="docutils literal notranslate"><span class="pre">Evidences</span></code> tab of the according case.</p>
+<img alt="../_images/Modules_management_import_evidences.png" src="../_images/Modules_management_import_evidences.png" />
 </div>
 </div>
 
@@ -515,21 +554,7 @@
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../quick_start.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Quick Start</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="custom_attributes.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Custom Attributes</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>

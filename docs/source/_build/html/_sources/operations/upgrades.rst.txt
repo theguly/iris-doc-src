@@ -1,7 +1,7 @@
 Upgrades
 *********
 
-Iris handles upgrades of the database automatically, thus no specific actions are required.  
+Iris handles upgrades of the database automatically when a new version is started, thus no specific actions are required.  
 
 .. admonition::  Caution
   :class: warning

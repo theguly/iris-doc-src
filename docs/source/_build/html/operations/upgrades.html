@@ -322,19 +322,36 @@
    </i>
   </label>
   <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../development/dev_modules.html">
+     Modules
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../development/dev_mod_start/mod_processor.html">
+       Getting started with processor modules
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../development/hooks.html">
+     Hooks
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../development/dev_env.html">
-     Developing IRIS
+     Developing IRIS Core
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../development/dev_docs.html">
-     Documentation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../development/dev_modules.html">
-     Modules
+     Documentation build
     </a>
    </li>
   </ul>
@@ -481,7 +498,7 @@
                 
   <div class="section" id="upgrades">
 <h1>Upgrades<a class="headerlink" href="#upgrades" title="Permalink to this headline">¶</a></h1>
-<p>Iris handles upgrades of the database automatically, thus no specific actions are required.</p>
+<p>Iris handles upgrades of the database automatically when a new version is started, thus no specific actions are required.</p>
 <div class="warning admonition">
 <p class="admonition-title">Caution</p>
 <p>For production environments, it is highly recommended to make backups of the DB in case any issues occur during upgrades.</p>

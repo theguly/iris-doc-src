@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Operations</title>
+    <title>Custom Attributes</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -35,8 +35,8 @@
     <link rel="shortcut icon" href="../_static/logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Custom Attributes" href="custom_attributes.html" />
-    <link rel="prev" title="Quick Start" href="../quick_start.html" />
+    <link rel="next" title="Modules" href="modules.html" />
+    <link rel="prev" title="Operations" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -88,7 +88,7 @@
   </a>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="index.html">
    Operations
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -96,9 +96,9 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="custom_attributes.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Custom Attributes
     </a>
    </li>
@@ -412,7 +412,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/operations/index.rst.txt"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/operations/custom_attributes.rst.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.rst</button></a>
         <!-- Download PDF via print -->
@@ -437,6 +437,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#management-page">
+   Management page
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#attributes-taxonomy">
+   Attributes taxonomy
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -444,69 +462,93 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Operations</h1>
+                <h1>Custom Attributes</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#management-page">
+   Management page
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#attributes-taxonomy">
+   Attributes taxonomy
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="section" id="operations">
-<h1>Operations<a class="headerlink" href="#operations" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="custom_attributes.html">Custom Attributes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="custom_attributes.html#management-page">Management page</a></li>
-<li class="toctree-l2"><a class="reference internal" href="custom_attributes.html#attributes-taxonomy">Attributes taxonomy</a></li>
+  <div class="section" id="custom-attributes">
+<h1>Custom Attributes<a class="headerlink" href="#custom-attributes" title="Permalink to this headline">¶</a></h1>
+<p>All the case objects can be extended with custom attributes. These attributes can be added by :</p>
+<ul class="simple">
+<li><p>Administrators via the GUI</p></li>
+<li><p>Modules (for instance, the VT module adds a <code class="docutils literal notranslate"><span class="pre">VT</span> <span class="pre">Report</span></code> attribute to each it analyses)</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="modules.html#module-management">Module management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules.html#how-to-use-the-module">How to use the module</a></li>
+<p>This section only describes how an administrator can add or delete attributes to an object.</p>
+<div class="section" id="management-page">
+<h2>Management page<a class="headerlink" href="#management-page" title="Permalink to this headline">¶</a></h2>
+<p>Custom attributes can be changed in the <code class="docutils literal notranslate"><span class="pre">Advanced</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Objects</span> <span class="pre">Attributes</span></code> section on the left panel.</p>
+<img alt="../_images/Attributes_menu.png" src="../_images/Attributes_menu.png" />
+<dl class="simple">
+<dt>The page lists the objects for which custom attributes can be added or modified.</dt><dd><ul class="simple">
+<li><p>Cases</p></li>
+<li><p>Evidences</p></li>
+<li><p>Notes</p></li>
+<li><p>Tasks</p></li>
+<li><p>Assets</p></li>
+<li><p>Events</p></li>
+<li><p>IOC</p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="reports.html">Reports</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="reports.html#structure-of-templates">Structure of templates</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.html#cases">Cases</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#create-a-new-case">1. Create a new case</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#case-summary">2. Case summary</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#case-notes">3. Case notes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#case-iocs">1. Case IOCs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#case-assets">5. Case assets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#case-timeline">1. Case timeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#case-graph">7. Case graph</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#case-tasks">8. Case tasks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#case-evidences">9. Case evidences</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#case-task-logs">10. Case task logs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#case-reports">12. Case reports</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials.html#operations">Operations</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tutorials.html#global-searches">1. Global searches</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="upgrades.html">Upgrades</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="upgrades.html#backing-up-db">Backing-up DB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrades.html#upgrading">Upgrading</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrades.html#rolling-back">Rolling back</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api.html#api-keys">API Keys</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#references">References</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#how-to-use">How to use</a></li>
-</ul>
-</li>
-</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="attributes-taxonomy">
+<h2>Attributes taxonomy<a class="headerlink" href="#attributes-taxonomy" title="Permalink to this headline">¶</a></h2>
+<p>Attributes are defined in JSON which describes tabs and fields that makes the attributes.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    &quot;Tab Name 1&quot;: {                     // Defines a new tab
+        &quot;Field 1&quot;: {                    // Defines a new field within the Tab Name 1
+            &quot;type&quot;: &quot;input_string&quot;,     // Defines the type of field, here a standard string input
+            &quot;mandatory&quot;: true,          // Indicates whether the field is mandatory upon saving
+            &quot;value&quot;: &quot;&quot;                 // Default value if any, else empty
+        },
+        &quot;Field 2&quot;: {                    // Defines a second field within the tab Tab Name 1
+            &quot;type&quot;: &quot;input_checkbox&quot;,   // Defines an input checkbox
+            &quot;mandatory&quot;: false,         // Indicates whether the field is mandatory upon saving
+            &quot;value&quot;: &quot;&quot;                 // Default value if any, else empty
+        }
+    },
+    &quot;VT report&quot;: {                      // Defines a second tab named VT report
+        &quot;Content&quot;: {                    // Defines a new field Content within the VT Report
+            &quot;type&quot;: &quot;html&quot;,             // Defines an HTML interpreted content
+            &quot;value&quot;: &quot;&quot;                 // Default value if any, else empty
+        }
+    }
+}
+</pre></div>
+</div>
+<p>The code above would be rendered as :</p>
+<img alt="../_images/attributes_rendering.png" src="../_images/attributes_rendering.png" />
+<p>With :</p>
+<ol class="arabic simple">
+<li><p>The native information of the object. This cannot be changed or updated</p></li>
+<li><p>The new attribute <code class="docutils literal notranslate"><span class="pre">Tab</span> <span class="pre">Name</span> <span class="pre">1</span></code></p></li>
+<li><p>The other new attribute <code class="docutils literal notranslate"><span class="pre">VT</span> <span class="pre">report</span></code></p></li>
+</ol>
 </div>
 </div>
 
@@ -516,17 +558,17 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../quick_start.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Quick Start</p>
+            <p class="prev-next-title">Operations</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="custom_attributes.html" title="next page">
+    <a class='right-next' id="next-link" href="modules.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Custom Attributes</p>
+        <p class="prev-next-title">Modules</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

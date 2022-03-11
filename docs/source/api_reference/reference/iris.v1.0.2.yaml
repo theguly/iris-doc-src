@@ -6265,9 +6265,47 @@ paths:
               schema:
                 description: ''
                 type: object
+                x-examples:
+                  example-1:
+                    data:
+                      case_id: 2
+                      event_added: '2022-01-21T19:15:06.526604'
+                      event_category_id: 1
+                      event_color: '#6861CE99'
+                      event_content: ''
+                      event_date: '2021-12-12T05:45:46.000000'
+                      event_date_wtz: '2021-12-12T05:45:46.000000'
+                      event_id: 14985
+                      event_in_graph: true
+                      event_in_summary: true
+                      event_raw: ''
+                      event_source: ''
+                      event_tags: ''
+                      event_title: Test
+                      event_tz: '+00:00'
+                      user_id: 1
+                    message: Event added
+                    status: success
                 properties:
                   data:
                     type: object
+                    required:
+                      - case_id
+                      - event_added
+                      - event_category_id
+                      - event_color
+                      - event_content
+                      - event_date
+                      - event_date_wtz
+                      - event_id
+                      - event_in_graph
+                      - event_in_summary
+                      - event_raw
+                      - event_source
+                      - event_tags
+                      - event_title
+                      - event_tz
+                      - user_id
                     properties:
                       case_id:
                         type: number
@@ -6307,23 +6345,8 @@ paths:
                         minLength: 1
                       user_id:
                         type: number
-                    required:
-                      - case_id
-                      - event_added
-                      - event_category_id
-                      - event_color
-                      - event_content
-                      - event_date
-                      - event_date_wtz
-                      - event_id
-                      - event_in_graph
-                      - event_in_summary
-                      - event_raw
-                      - event_source
-                      - event_tags
-                      - event_title
-                      - event_tz
-                      - user_id
+                      custom_attributes:
+                        type: object
                   message:
                     type: string
                     minLength: 1
@@ -6334,27 +6357,6 @@ paths:
                   - data
                   - message
                   - status
-                x-examples:
-                  example-1:
-                    data:
-                      case_id: 2
-                      event_added: '2022-01-21T19:15:06.526604'
-                      event_category_id: 1
-                      event_color: '#6861CE99'
-                      event_content: ''
-                      event_date: '2021-12-12T05:45:46.000000'
-                      event_date_wtz: '2021-12-12T05:45:46.000000'
-                      event_id: 14985
-                      event_in_graph: true
-                      event_in_summary: true
-                      event_raw: ''
-                      event_source: ''
-                      event_tags: ''
-                      event_title: Test
-                      event_tz: '+00:00'
-                      user_id: 1
-                    message: Event added
-                    status: success
       description: Create a new event in the timeline
       requestBody:
         content:
@@ -6410,6 +6412,10 @@ paths:
                 event_tz:
                   type: string
                   minLength: 1
+                cid:
+                  type: integer
+                custom_attributes:
+                  type: object
               required:
                 - event_title
                 - event_content
@@ -6439,6 +6445,8 @@ paths:
                   event_date: '2021-12-12T05:45:46.000'
                   event_tags: ''
                   event_tz: '+00:00'
+                  custom_attributes: {}
+                  cid: 1
       parameters: []
       security:
         - Bearer <bearer>: []
@@ -6548,6 +6556,8 @@ paths:
                         minLength: 1
                       user_id:
                         type: number
+                      custom_attributes:
+                        type: object
                   message:
                     type: string
                     minLength: 1
@@ -6670,6 +6680,10 @@ paths:
                 event_tz:
                   type: string
                   minLength: 1
+                custom_attributes:
+                  type: object
+                cid:
+                  type: integer
               required:
                 - event_title
                 - event_content
@@ -6699,6 +6713,8 @@ paths:
                   event_date: '2021-12-12T05:45:46.000'
                   event_tags: ''
                   event_tz: '+00:00'
+                  custom_attributes: {}
+                  cid: 1
       parameters: []
       security:
         - Bearer <bearer>: []
@@ -6720,83 +6736,94 @@ paths:
                 x-examples:
                   example-1:
                     data:
-                      - assets:
-                          - compromised: false
-                            description: My asset 10
-                            ip: ''
-                            name: asset_11 (Linux - Server)
-                          - compromised: true
-                            description: My asset 10
-                            ip: ''
-                            name: asset_4 (Windows Account - Local)
-                        category_name: null
-                        event_color: ''
-                        event_content: My event content @44
-                        event_date: 'Tue, 19 Oct 2021 16:19:09 GMT'
-                        event_id: 2021
-                        event_ioc: null
-                        event_tags: ''
-                        event_title: My event title @44
+                      case_id: 18
+                      custom_attributes: null
+                      event_added: '2022-02-25T07:13:01.545374'
+                      event_assets:
+                        - 7
+                        - 5
+                      event_category_id: 4
+                      event_color: ''
+                      event_content: First time ever Bob logging observed from 82.223.70.24 on VPN
+                      event_date: '2021-10-15T08:00:00.000000'
+                      event_date_wtz: '2021-10-15T08:00:00.000000'
+                      event_id: 8
+                      event_in_graph: true
+                      event_in_summary: false
+                      event_raw: ''
+                      event_source: ''
+                      event_tags: ''
+                      event_title: Bob logs in from 82.223.70.24
+                      event_tz: '+00:00'
+                      user_id: 1
                     message: ''
                     status: success
                 properties:
                   data:
-                    type: array
-                    uniqueItems: true
-                    minItems: 1
-                    items:
-                      type: object
-                      properties:
-                        assets:
-                          type: array
-                          uniqueItems: true
-                          minItems: 1
-                          items:
-                            type: object
-                            properties:
-                              compromised:
-                                type: boolean
-                              description:
-                                type: string
-                                minLength: 1
-                              ip:
-                                type: string
-                              name:
-                                type: string
-                                minLength: 1
-                            required:
-                              - compromised
-                              - description
-                              - ip
-                              - name
-                        category_name:
-                          type: string
-                        event_color:
-                          type: string
-                        event_content:
-                          type: string
-                          minLength: 1
-                        event_date:
-                          type: string
-                          minLength: 1
-                        event_id:
-                          type: number
-                        event_tags:
-                          type: string
-                        event_title:
-                          type: string
-                          minLength: 1
-                        event_in_summary:
-                          type: boolean
-                        event_in_graph:
-                          type: boolean
-                      required:
-                        - event_color
-                        - event_content
-                        - event_date
-                        - event_id
-                        - event_tags
-                        - event_title
+                    type: object
+                    required:
+                      - case_id
+                      - event_added
+                      - event_assets
+                      - event_category_id
+                      - event_color
+                      - event_content
+                      - event_date
+                      - event_date_wtz
+                      - event_id
+                      - event_in_graph
+                      - event_in_summary
+                      - event_raw
+                      - event_source
+                      - event_tags
+                      - event_title
+                      - event_tz
+                      - user_id
+                    properties:
+                      case_id:
+                        type: number
+                      custom_attributes:
+                        type: object
+                      event_added:
+                        type: string
+                        minLength: 1
+                      event_assets:
+                        type: array
+                        items:
+                          type: object
+                      event_category_id:
+                        type: number
+                      event_color:
+                        type: string
+                      event_content:
+                        type: string
+                        minLength: 1
+                      event_date:
+                        type: string
+                        minLength: 1
+                      event_date_wtz:
+                        type: string
+                        minLength: 1
+                      event_id:
+                        type: number
+                      event_in_graph:
+                        type: boolean
+                      event_in_summary:
+                        type: boolean
+                      event_raw:
+                        type: string
+                      event_source:
+                        type: string
+                      event_tags:
+                        type: string
+                      event_title:
+                        type: string
+                        minLength: 1
+                      event_tz:
+                        type: string
+                        minLength: 1
+                      user_id:
+                        type: number
                   message:
                     type: string
                   status:
@@ -6811,6 +6838,7 @@ paths:
                   value:
                     data:
                       case_id: 2
+                      custom_attributes: null
                       event_added: '2022-01-21T19:26:02.871926'
                       event_assets:
                         - 2212

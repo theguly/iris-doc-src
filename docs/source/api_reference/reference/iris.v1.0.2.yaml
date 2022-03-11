@@ -2422,6 +2422,7 @@ paths:
                       - date_update
                       - linked_ioc
                       - user_id
+                      - custom_attributes
                     properties:
                       analysis_status_id:
                         type: number
@@ -2490,6 +2491,8 @@ paths:
                             - type_name
                       user_id:
                         type: number
+                      custom_attributes:
+                        type: object
                   message:
                     type: string
                   status:
@@ -2525,6 +2528,12 @@ paths:
                           ioc_value: Hello
                           type_name: ip-any
                       user_id: 1
+                      custom_attributes:
+                        WHOIS:
+                          Registrant Country:
+                            mandatory: true
+                            type: input_string
+                            value: The registrant country
                     message: ''
                     status: success
       operationId: get-case-asset

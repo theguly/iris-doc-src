@@ -2640,6 +2640,8 @@ paths:
                         minLength: 1
                       user_id:
                         type: number
+                      custom_attributes:
+                        type: object
                   message:
                     type: string
                     minLength: 1
@@ -2668,6 +2670,12 @@ paths:
                       date_added: '2022-01-21T17:51:46.995441'
                       date_update: '2022-01-21T17:51:46.995463'
                       user_id: 1
+                      custom_attributes:
+                        WHOIS:
+                          Registrant Country:
+                            mandatory: true
+                            type: input_string
+                            value: ''
                     message: Asset added
                     status: success
         '400':
@@ -2747,11 +2755,14 @@ paths:
                 cid:
                   type: integer
                   description: Case ID
+                custom_attributes:
+                  type: object
               required:
                 - asset_name
                 - asset_type_id
                 - analysis_status_id
                 - cid
+                - custom_attributes
             examples: {}
         description: ''
       tags:
@@ -2949,16 +2960,21 @@ paths:
                   type: integer
                 ioc_links:
                   type: array
+                  description: IOC ID as a string
                   items:
                     type: string
                 cid:
                   type: integer
                   description: Case ID
+                custom_attributes:
+                  type: object
               required:
                 - asset_name
                 - asset_type_id
                 - analysis_status_id
+                - ioc_links
                 - cid
+                - custom_attributes
             examples: {}
         description: ''
       tags:

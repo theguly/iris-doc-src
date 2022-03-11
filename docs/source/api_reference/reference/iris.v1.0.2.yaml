@@ -7187,27 +7187,42 @@ paths:
                   example-1:
                     data:
                       state:
-                        object_last_update: 'Mon, 10 Jan 2022 17:23:01 GMT'
-                        object_state: 0
-                      tasks: []
+                        object_last_update: 'Fri, 25 Feb 2022 11:46:46 GMT'
+                        object_state: 6
+                      tasks:
+                        - assignee_name: administrator
+                          status_bscolor: success
+                          status_name: Done
+                          task_assignee_id: 1
+                          task_description: fsfsd
+                          task_id: 3
+                          task_open_date: 'Fri, 25 Feb 2022 12:46:24 GMT'
+                          task_status_id: 4
+                          task_tags: fsdfsf
+                          task_title: EWfdsFDS
                       tasks_status:
-                        - id: 14
+                        - id: 1
+                          registry: null
                           status_bscolor: danger
                           status_description: ''
                           status_name: To do
-                        - id: 15
+                        - id: 2
+                          registry: null
                           status_bscolor: warning
                           status_description: ''
                           status_name: In progress
-                        - id: 16
+                        - id: 3
+                          registry: null
                           status_bscolor: muted
                           status_description: ''
                           status_name: On hold
-                        - id: 17
+                        - id: 4
+                          registry: null
                           status_bscolor: success
                           status_description: ''
                           status_name: Done
-                        - id: 18
+                        - id: 5
+                          registry: null
                           status_bscolor: muted
                           status_description: ''
                           status_name: Canceled
@@ -7234,7 +7249,49 @@ paths:
                             type: number
                       tasks:
                         type: array
-                        items: {}
+                        uniqueItems: true
+                        minItems: 0
+                        items:
+                          type: object
+                          properties:
+                            assignee_name:
+                              type: string
+                              minLength: 1
+                            status_bscolor:
+                              type: string
+                              minLength: 1
+                            status_name:
+                              type: string
+                              minLength: 1
+                            task_assignee_id:
+                              type: number
+                            task_description:
+                              type: string
+                              minLength: 1
+                            task_id:
+                              type: number
+                            task_open_date:
+                              type: string
+                              minLength: 1
+                            task_status_id:
+                              type: number
+                            task_tags:
+                              type: string
+                              minLength: 1
+                            task_title:
+                              type: string
+                              minLength: 1
+                          required:
+                            - assignee_name
+                            - status_bscolor
+                            - status_name
+                            - task_assignee_id
+                            - task_description
+                            - task_id
+                            - task_open_date
+                            - task_status_id
+                            - task_tags
+                            - task_title
                       tasks_status:
                         type: array
                         uniqueItems: true
@@ -7244,6 +7301,7 @@ paths:
                           properties:
                             id:
                               type: number
+                            registry: {}
                             status_bscolor:
                               type: string
                               minLength: 1
@@ -7273,7 +7331,17 @@ paths:
                       state:
                         object_last_update: 'Mon, 10 Jan 2022 17:23:01 GMT'
                         object_state: 0
-                      tasks: []
+                      tasks:
+                        - assignee_name: administrator
+                          status_bscolor: success
+                          status_name: Done
+                          task_assignee_id: 1
+                          task_description: A nice task
+                          task_id: 3
+                          task_open_date: 'Fri, 25 Feb 2022 12:46:24 GMT'
+                          task_status_id: 4
+                          task_tags: 'tag1,tag2'
+                          task_title: My task
                       tasks_status:
                         - id: 14
                           status_bscolor: danger

@@ -3334,16 +3334,76 @@ paths:
                 type: object
                 x-examples:
                   example-1:
-                    data: []
-                    message: Group ID 35 deleted
+                    data:
+                      group_creationdate: 'Wed, 16 Feb 2022 18:48:00 GMT'
+                      group_id: 14
+                      group_lastupdate: 'Wed, 16 Feb 2022 18:48:00 GMT'
+                      group_title: Group 14
+                      notes:
+                        - note_id: 20
+                          note_lastupdate: 'Tue, 22 Feb 2022 14:21:29 GMT'
+                          note_title: Untitled note
+                          user: administrator
+                        - note_id: 21
+                          note_lastupdate: 'Sun, 06 Mar 2022 17:45:54 GMT'
+                          note_title: Untitled note
+                          user: administrator
+                        - note_id: 22
+                          note_lastupdate: 'Fri, 25 Feb 2022 07:20:41 GMT'
+                          note_title: Untitled note
+                          user: administrator
+                        - note_id: 23
+                          note_lastupdate: 'Fri, 25 Feb 2022 07:20:42 GMT'
+                          note_title: Untitled note
+                          user: administrator
+                    message: ''
                     status: success
                 properties:
                   data:
-                    type: array
-                    items: {}
+                    type: object
+                    required:
+                      - group_creationdate
+                      - group_id
+                      - group_lastupdate
+                      - group_title
+                      - notes
+                    properties:
+                      group_creationdate:
+                        type: string
+                        minLength: 1
+                      group_id:
+                        type: number
+                      group_lastupdate:
+                        type: string
+                        minLength: 1
+                      group_title:
+                        type: string
+                        minLength: 1
+                      notes:
+                        type: array
+                        uniqueItems: true
+                        minItems: 0
+                        items:
+                          type: object
+                          properties:
+                            note_id:
+                              type: number
+                            note_lastupdate:
+                              type: string
+                              minLength: 1
+                            note_title:
+                              type: string
+                              minLength: 1
+                            user:
+                              type: string
+                              minLength: 1
+                          required:
+                            - note_id
+                            - note_lastupdate
+                            - note_title
+                            - user
                   message:
                     type: string
-                    minLength: 1
                   status:
                     type: string
                     minLength: 1
@@ -3354,8 +3414,21 @@ paths:
               examples:
                 example-1:
                   value:
-                    data: []
-                    message: Group ID 35 deleted
+                    data:
+                      group_creationdate: 'Wed, 16 Feb 2022 18:48:00 GMT'
+                      group_id: 14
+                      group_lastupdate: 'Wed, 16 Feb 2022 18:48:00 GMT'
+                      group_title: Group 14
+                      notes:
+                        - note_id: 20
+                          note_lastupdate: 'Tue, 22 Feb 2022 14:21:29 GMT'
+                          note_title: Untitled note
+                          user: administrator
+                        - note_id: 21
+                          note_lastupdate: 'Sun, 06 Mar 2022 17:45:54 GMT'
+                          note_title: Untitled note
+                          user: administrator
+                    message: ''
                     status: success
         '400':
           description: Bad Request
@@ -3469,7 +3542,7 @@ paths:
                   - data
                   - message
                   - status
-      operationId: get-case-groups-delete
+      operationId: get-case-groups-fetch
       description: Fetch a notes group
       security:
         - Bearer <bearer>: []

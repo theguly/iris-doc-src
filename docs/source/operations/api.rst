@@ -29,8 +29,12 @@ It can be found on the left panel, under username and My Settings.
 References
 ##########
 
+
+
 - `API v1.0.0 <../_static/iris_api_reference_v1.0.0.html>`_ (applies to Iris <= v1.2.1)
-- `API v1.0.1 <../_static/iris_api_reference_v1.0.1.html>`_ (applies to Iris > v1.2.1)
+- `API v1.0.1 <../_static/iris_api_reference_v1.0.1.html>`_ (applies to Iris > v1.2.1) 
+- `API v1.0.2 <../_static/iris_api_reference_v1.0.2.html>`_ (applies to Iris > v1.4.0)
+
 
 How to use
 ########## 

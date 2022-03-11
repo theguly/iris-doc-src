@@ -5,6 +5,9 @@ info:
   description: |-
     IRIS API endpoints documentation. An API key is needed and can be found in every user profile under `My settings` > `API Key`. 
     Applies to Iris v1.4.0 and onward. 
+
+
+    Iris v1.4.0 introduces the concept of custom attributes. These are maleable JSON objects that are stored into almost all case objects such as Assets, IOCs, etc. 
   contact:
     name: DFIR-IRIS
     email: contact@dfir-iris.org

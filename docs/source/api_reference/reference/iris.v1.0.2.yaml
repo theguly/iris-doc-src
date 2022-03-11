@@ -4120,6 +4120,8 @@ paths:
                       note_title:
                         type: string
                         minLength: 1
+                      custom_attributes:
+                        type: object
                   message:
                     type: string
                   status:
@@ -4140,6 +4142,7 @@ paths:
                       note_id: 58
                       note_lastupdate: '2022-01-21T18:22:33.394261'
                       note_title: Untitled note
+                      custom_attributes: {}
                     message: ''
                     status: success
         '400':
@@ -4303,14 +4306,94 @@ paths:
               schema:
                 description: ''
                 type: object
+                x-examples:
+                  example-1:
+                    data:
+                      custom_attributes:
+                        WHOIS:
+                          My new field:
+                            mandatory: false
+                            type: input_checkbox
+                            value: true
+                          Registrant Country:
+                            mandatory: true
+                            type: input_string
+                            value: adasda
+                          Registrar:
+                            mandatory: false
+                            type: input_datetime
+                            value: ''
+                          Select:
+                            mandatory: false
+                            options:
+                              - Option 2
+                              - Option 2
+                              - Option 3
+                            type: input_select
+                            value: Option 3
+                          title:
+                            mandatory: true
+                            type: html
+                            value: <h1>New section</h1>
+                      group_id: 15
+                      group_title: Group 15
+                      note_content: |-
+                        ## Edit me with the right pencil button
+
+                        da
+                        dasd
+                        a
+                        da
+                        d
+                        ad
+                        a
+                        da
+                        dsvdsv fdsf
+                        asf
+                        as 
+                        fasd
+                      note_creationdate: '2022-02-25T11:41:44.514669'
+                      note_id: 25
+                      note_lastupdate: '2022-03-06T17:42:33.108936'
+                      note_title: Untitled note
+                    message: ''
+                    status: success
                 properties:
                   data:
-                    type: array
-                    items:
-                      properties: {}
+                    type: object
+                    required:
+                      - custom_attributes
+                      - group_id
+                      - group_title
+                      - note_content
+                      - note_creationdate
+                      - note_id
+                      - note_lastupdate
+                      - note_title
+                    properties:
+                      custom_attributes:
+                        type: object
+                      group_id:
+                        type: number
+                      group_title:
+                        type: string
+                        minLength: 1
+                      note_content:
+                        type: string
+                        minLength: 1
+                      note_creationdate:
+                        type: string
+                        minLength: 1
+                      note_id:
+                        type: number
+                      note_lastupdate:
+                        type: string
+                        minLength: 1
+                      note_title:
+                        type: string
+                        minLength: 1
                   message:
                     type: string
-                    minLength: 1
                   status:
                     type: string
                     minLength: 1
@@ -4318,16 +4401,19 @@ paths:
                   - data
                   - message
                   - status
-                x-examples:
-                  example-1:
-                    data: []
-                    message: Note ID 2360 saved
-                    status: success
               examples:
                 Example:
                   value:
-                    data: []
-                    message: Note ID 2360 saved
+                    data:
+                      custom_attributes: {}
+                      group_id: 15
+                      group_title: Group 15
+                      note_content: New content
+                      note_creationdate: '2022-02-25T11:41:44.514669'
+                      note_id: 25
+                      note_lastupdate: '2022-03-06T17:42:33.108936'
+                      note_title: New title
+                    message: ''
                     status: success
         '':
           content:
@@ -4401,6 +4487,8 @@ paths:
                 note_content:
                   type: string
                   minLength: 1
+                custom_attributes:
+                  type: object
                 cid:
                   type: integer
               required:
@@ -4411,6 +4499,7 @@ paths:
                 value:
                   note_title: New title
                   note_content: New content
+                  custom_attributes: {}
                   cid: 5
         description: ''
       tags:

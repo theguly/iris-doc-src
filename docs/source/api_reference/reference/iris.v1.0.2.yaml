@@ -3916,6 +3916,157 @@ paths:
         in: path
         required: true
         description: ID of the group to delete
+  /case/notes/add:
+    parameters: []
+    post:
+      summary: Add a new note
+      operationId: post-case-notes-add
+      responses:
+        '200':
+          description: 'Upon success, returns the new added note information'
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                x-examples:
+                  example-1:
+                    data:
+                      note_content: string
+                      note_creationdate: '2021-10-25T06:31:39.881552'
+                      note_id: 2362
+                      note_lastupdate: '2021-10-25T06:31:39.881552'
+                      note_title: string
+                    message: ''
+                    status: success
+                properties:
+                  data:
+                    type: object
+                    required:
+                      - note_content
+                      - note_creationdate
+                      - note_id
+                      - note_lastupdate
+                      - note_title
+                    properties:
+                      note_content:
+                        type: string
+                        minLength: 1
+                      note_creationdate:
+                        type: string
+                        minLength: 1
+                      note_id:
+                        type: number
+                      note_lastupdate:
+                        type: string
+                        minLength: 1
+                      note_title:
+                        type: string
+                        minLength: 1
+                      custom_attributes:
+                        type: object
+                  message:
+                    type: string
+                  status:
+                    type: string
+                    minLength: 1
+                required:
+                  - data
+                  - message
+                  - status
+              examples:
+                Example:
+                  value:
+                    data:
+                      note_content: Content of the note
+                      note_creationdate: '2021-10-25T06:44:23.163205'
+                      note_id: 2364
+                      note_lastupdate: '2021-10-25T06:44:23.163205'
+                      note_title: Title of the note
+                      custom_attributes: {}
+                    message: ''
+                    status: success
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                x-examples:
+                  example-1:
+                    data:
+                      note_tile:
+                        - Unknown field.
+                      note_title:
+                        - Missing data for required field.
+                    message: Data error
+                    status: error
+                properties:
+                  data:
+                    type: object
+                  message:
+                    type: string
+                    minLength: 1
+                  status:
+                    type: string
+                    minLength: 1
+                required:
+                  - data
+                  - message
+                  - status
+              examples:
+                Missing field:
+                  value:
+                    data:
+                      note_tile:
+                        - Unknown field.
+                      note_title:
+                        - Missing data for required field.
+                    message: Data error
+                    status: error
+      description: 'Add a new note to an existing group. '
+      parameters: []
+      security:
+        - Bearer <bearer>: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              properties:
+                note_title:
+                  type: string
+                  minLength: 1
+                note_content:
+                  type: string
+                  minLength: 1
+                group_id:
+                  type: number
+                cid:
+                  type: number
+              required:
+                - note_title
+                - note_content
+                - group_id
+                - cid
+              x-examples:
+                example-1:
+                  note_title: string
+                  note_content: string
+                  group_id: 36
+                  cid: 2
+            examples:
+              example-1:
+                value:
+                  note_title: Title of the note
+                  note_content: Content of the note
+                  group_id: 36
+                  cid: 2
+        description: ''
+      tags:
+        - Case notes
   '/case/notes/{note_id}':
     get:
       summary: Fetch a note
@@ -4043,154 +4194,6 @@ paths:
         in: path
         required: true
         description: ID of the note to fetch
-  /case/notes/add:
-    parameters: []
-    post:
-      summary: Add a new note
-      operationId: post-case-notes-add
-      responses:
-        '200':
-          description: 'Upon success, returns the new added note information'
-          content:
-            application/json:
-              schema:
-                description: ''
-                type: object
-                properties:
-                  data:
-                    type: object
-                    properties:
-                      note_content:
-                        type: string
-                        minLength: 1
-                      note_creationdate:
-                        type: string
-                        minLength: 1
-                      note_id:
-                        type: number
-                      note_lastupdate:
-                        type: string
-                        minLength: 1
-                      note_title:
-                        type: string
-                        minLength: 1
-                    required:
-                      - note_content
-                      - note_creationdate
-                      - note_id
-                      - note_lastupdate
-                      - note_title
-                  message:
-                    type: string
-                  status:
-                    type: string
-                    minLength: 1
-                required:
-                  - data
-                  - message
-                  - status
-                x-examples:
-                  example-1:
-                    data:
-                      note_content: string
-                      note_creationdate: '2021-10-25T06:31:39.881552'
-                      note_id: 2362
-                      note_lastupdate: '2021-10-25T06:31:39.881552'
-                      note_title: string
-                    message: ''
-                    status: success
-              examples:
-                Example:
-                  value:
-                    data:
-                      note_content: Content of the note
-                      note_creationdate: '2021-10-25T06:44:23.163205'
-                      note_id: 2364
-                      note_lastupdate: '2021-10-25T06:44:23.163205'
-                      note_title: Title of the note
-                    message: ''
-                    status: success
-        '400':
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                description: ''
-                type: object
-                x-examples:
-                  example-1:
-                    data:
-                      note_tile:
-                        - Unknown field.
-                      note_title:
-                        - Missing data for required field.
-                    message: Data error
-                    status: error
-                properties:
-                  data:
-                    type: object
-                  message:
-                    type: string
-                    minLength: 1
-                  status:
-                    type: string
-                    minLength: 1
-                required:
-                  - data
-                  - message
-                  - status
-              examples:
-                Missing field:
-                  value:
-                    data:
-                      note_tile:
-                        - Unknown field.
-                      note_title:
-                        - Missing data for required field.
-                    message: Data error
-                    status: error
-      description: 'Add a new note to an existing group. '
-      parameters: []
-      security:
-        - Bearer <bearer>: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              description: ''
-              type: object
-              properties:
-                note_title:
-                  type: string
-                  minLength: 1
-                note_content:
-                  type: string
-                  minLength: 1
-                group_id:
-                  type: number
-                cid:
-                  type: number
-              required:
-                - note_title
-                - note_content
-                - group_id
-                - cid
-              x-examples:
-                example-1:
-                  note_title: string
-                  note_content: string
-                  group_id: 36
-                  cid: 2
-            examples:
-              example-1:
-                value:
-                  note_title: Title of the note
-                  note_content: Content of the note
-                  group_id: 36
-                  cid: 2
-        description: ''
-      tags:
-        - Case notes
   '/case/notes/delete/{note_id}':
     get:
       summary: Delete a note

@@ -7478,9 +7478,39 @@ paths:
               schema:
                 description: ''
                 type: object
+                x-examples:
+                  example-1:
+                    data:
+                      id: 26
+                      task_assignee_id: 1
+                      task_case_id: 2
+                      task_close_date: null
+                      task_description: Task
+                      task_last_update: '2022-01-21T19:31:15.964472'
+                      task_open_date: '2022-01-21T19:31:15.964472'
+                      task_status_id: 15
+                      task_tags: tas
+                      task_title: Super task
+                      task_userid_close: null
+                      task_userid_open: 1
+                      task_userid_update: 1
+                    message: ''
+                    status: success
                 properties:
                   data:
                     type: object
+                    required:
+                      - id
+                      - task_assignee_id
+                      - task_case_id
+                      - task_description
+                      - task_last_update
+                      - task_open_date
+                      - task_status_id
+                      - task_tags
+                      - task_title
+                      - task_userid_open
+                      - task_userid_update
                     properties:
                       id:
                         type: number
@@ -7511,18 +7541,8 @@ paths:
                         type: number
                       task_userid_update:
                         type: number
-                    required:
-                      - id
-                      - task_assignee_id
-                      - task_case_id
-                      - task_description
-                      - task_last_update
-                      - task_open_date
-                      - task_status_id
-                      - task_tags
-                      - task_title
-                      - task_userid_open
-                      - task_userid_update
+                      custom_attributes:
+                        type: object
                   message:
                     type: string
                   status:
@@ -7532,24 +7552,6 @@ paths:
                   - data
                   - message
                   - status
-                x-examples:
-                  example-1:
-                    data:
-                      id: 26
-                      task_assignee_id: 1
-                      task_case_id: 2
-                      task_close_date: null
-                      task_description: Task
-                      task_last_update: '2022-01-21T19:31:15.964472'
-                      task_open_date: '2022-01-21T19:31:15.964472'
-                      task_status_id: 15
-                      task_tags: tas
-                      task_title: Super task
-                      task_userid_close: null
-                      task_userid_open: 1
-                      task_userid_update: 1
-                    message: ''
-                    status: success
               examples:
                 example-1:
                   value:
@@ -7567,6 +7569,7 @@ paths:
                       task_userid_close: null
                       task_userid_open: 1
                       task_userid_update: 1
+                      custom_attributes: {}
                     message: ''
                     status: success
         '400':
@@ -7632,9 +7635,39 @@ paths:
               schema:
                 description: ''
                 type: object
+                x-examples:
+                  example-1:
+                    data:
+                      id: 29
+                      task_assignee_id: 1
+                      task_case_id: 2
+                      task_close_date: null
+                      task_description: string
+                      task_last_update: '2022-01-21T19:36:48.866979'
+                      task_open_date: '2022-01-21T19:36:48.866979'
+                      task_status_id: 16
+                      task_tags: string
+                      task_title: string
+                      task_userid_close: null
+                      task_userid_open: 1
+                      task_userid_update: 1
+                    message: ''
+                    status: success
                 properties:
                   data:
                     type: object
+                    required:
+                      - id
+                      - task_assignee_id
+                      - task_case_id
+                      - task_description
+                      - task_last_update
+                      - task_open_date
+                      - task_status_id
+                      - task_tags
+                      - task_title
+                      - task_userid_open
+                      - task_userid_update
                     properties:
                       id:
                         type: number
@@ -7665,18 +7698,8 @@ paths:
                         type: number
                       task_userid_update:
                         type: number
-                    required:
-                      - id
-                      - task_assignee_id
-                      - task_case_id
-                      - task_description
-                      - task_last_update
-                      - task_open_date
-                      - task_status_id
-                      - task_tags
-                      - task_title
-                      - task_userid_open
-                      - task_userid_update
+                      custom_attributes:
+                        type: object
                   message:
                     type: string
                   status:
@@ -7686,24 +7709,6 @@ paths:
                   - data
                   - message
                   - status
-                x-examples:
-                  example-1:
-                    data:
-                      id: 29
-                      task_assignee_id: 1
-                      task_case_id: 2
-                      task_close_date: null
-                      task_description: string
-                      task_last_update: '2022-01-21T19:36:48.866979'
-                      task_open_date: '2022-01-21T19:36:48.866979'
-                      task_status_id: 16
-                      task_tags: string
-                      task_title: string
-                      task_userid_close: null
-                      task_userid_open: 1
-                      task_userid_update: 1
-                    message: ''
-                    status: success
               examples:
                 example-1:
                   value:
@@ -7721,6 +7726,7 @@ paths:
                       task_userid_close: null
                       task_userid_open: 1
                       task_userid_update: 1
+                      custom_attributes: {}
                     message: ''
                     status: success
       description: ''
@@ -7752,6 +7758,10 @@ paths:
                 task_tags:
                   type: string
                   minLength: 1
+                custom_attributes:
+                  type: object
+                cid:
+                  type: integer
               required:
                 - task_assignee_id
                 - task_status_id
@@ -7766,6 +7776,8 @@ paths:
                   task_title: A new task
                   task_description: with its description
                   task_tags: 'and,tags'
+                  custom_attributes: {}
+                  cid: 1
       parameters: []
       security:
         - Bearer <bearer>: []
@@ -7790,9 +7802,39 @@ paths:
               schema:
                 description: ''
                 type: object
+                x-examples:
+                  example-1:
+                    data:
+                      id: 26
+                      task_assignee_id: 1
+                      task_case_id: 2
+                      task_close_date: null
+                      task_description: string
+                      task_last_update: '2022-01-21T19:39:12.731056'
+                      task_open_date: '2022-01-21T19:31:15.964472'
+                      task_status_id: 16
+                      task_tags: string
+                      task_title: string
+                      task_userid_close: null
+                      task_userid_open: 1
+                      task_userid_update: 1
+                    message: ''
+                    status: success
                 properties:
                   data:
                     type: object
+                    required:
+                      - id
+                      - task_assignee_id
+                      - task_case_id
+                      - task_description
+                      - task_last_update
+                      - task_open_date
+                      - task_status_id
+                      - task_tags
+                      - task_title
+                      - task_userid_open
+                      - task_userid_update
                     properties:
                       id:
                         type: number
@@ -7823,18 +7865,8 @@ paths:
                         type: number
                       task_userid_update:
                         type: number
-                    required:
-                      - id
-                      - task_assignee_id
-                      - task_case_id
-                      - task_description
-                      - task_last_update
-                      - task_open_date
-                      - task_status_id
-                      - task_tags
-                      - task_title
-                      - task_userid_open
-                      - task_userid_update
+                      custom_attributes:
+                        type: object
                   message:
                     type: string
                   status:
@@ -7844,24 +7876,6 @@ paths:
                   - data
                   - message
                   - status
-                x-examples:
-                  example-1:
-                    data:
-                      id: 26
-                      task_assignee_id: 1
-                      task_case_id: 2
-                      task_close_date: null
-                      task_description: string
-                      task_last_update: '2022-01-21T19:39:12.731056'
-                      task_open_date: '2022-01-21T19:31:15.964472'
-                      task_status_id: 16
-                      task_tags: string
-                      task_title: string
-                      task_userid_close: null
-                      task_userid_open: 1
-                      task_userid_update: 1
-                    message: ''
-                    status: success
               examples:
                 example-1:
                   value:
@@ -7879,6 +7893,7 @@ paths:
                       task_userid_close: null
                       task_userid_open: 1
                       task_userid_update: 1
+                      custom_attributes: {}
                     message: ''
                     status: success
       description: ''
@@ -7910,6 +7925,10 @@ paths:
                 task_tags:
                   type: string
                   minLength: 1
+                custom_attributes:
+                  type: object
+                cid:
+                  type: integer
               required:
                 - task_assignee_id
                 - task_status_id
@@ -7924,6 +7943,8 @@ paths:
                   task_title: New title
                   task_description: new content
                   task_tags: new tags
+                  cid: 1
+                  custom_attributes: {}
       parameters: []
       security:
         - Bearer <bearer>: []

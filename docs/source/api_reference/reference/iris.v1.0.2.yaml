@@ -186,6 +186,7 @@ paths:
                 - case_customer
                 - case_name
                 - case_description
+                - cid
             examples:
               Valid request:
                 value:
@@ -1991,11 +1992,15 @@ paths:
               schema:
                 description: ''
                 type: object
+                x-examples:
+                  example-1:
+                    data: []
+                    message: Done
+                    status: success
                 properties:
                   data:
                     type: array
-                    items:
-                      properties: {}
+                    items: {}
                   message:
                     type: string
                     minLength: 1
@@ -2006,11 +2011,6 @@ paths:
                   - data
                   - message
                   - status
-                x-examples:
-                  example-1:
-                    data: []
-                    message: Done
-                    status: success
               examples:
                 Success:
                   value:
@@ -2027,19 +2027,19 @@ paths:
             schema:
               type: object
               properties:
-                summary:
+                case_description:
                   type: string
                   description: The updated summary
                 cid:
                   type: integer
                   description: Case ID
               required:
-                - summary
+                - case_description
                 - cid
             examples:
               example-1:
                 value:
-                  summary: |-
+                  case_description: |-
                     # A nice summary
                     With some information
                   cid: 1

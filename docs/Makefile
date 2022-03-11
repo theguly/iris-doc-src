@@ -19,4 +19,5 @@ help:
 %: Makefile
 	redoc-cli bundle -o source/_static/iris_api_reference_v1.0.0.html source/api_reference/reference/iris.v1.0.0.yaml
 	redoc-cli bundle -o source/_static/iris_api_reference_v1.0.1.html source/api_reference/reference/iris.v1.0.1.yaml
+	redoc-cli bundle -o source/_static/iris_api_reference_v1.0.2.html source/api_reference/reference/iris.v1.0.2.yaml
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)

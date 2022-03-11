@@ -4765,46 +4765,6 @@ paths:
               schema:
                 description: ''
                 type: object
-                properties:
-                  data:
-                    type: object
-                    properties:
-                      ioc_description:
-                        type: string
-                      ioc_id:
-                        type: number
-                      ioc_misp: {}
-                      ioc_tags:
-                        type: string
-                      ioc_tlp_id:
-                        type: number
-                      ioc_type:
-                        type: number
-                      ioc_type_id:
-                        type: number
-                      ioc_value:
-                        type: string
-                        minLength: 1
-                      user_id:
-                        type: number
-                    required:
-                      - ioc_description
-                      - ioc_id
-                      - ioc_tags
-                      - ioc_tlp_id
-                      - ioc_type
-                      - ioc_type_id
-                      - ioc_value
-                      - user_id
-                  message:
-                    type: string
-                  status:
-                    type: string
-                    minLength: 1
-                required:
-                  - data
-                  - message
-                  - status
                 x-examples:
                   example-1:
                     data:
@@ -4819,6 +4779,58 @@ paths:
                       user_id: 1
                     message: ''
                     status: success
+                properties:
+                  data:
+                    type: object
+                    required:
+                      - ioc_description
+                      - ioc_id
+                      - ioc_tags
+                      - ioc_tlp_id
+                      - ioc_type
+                      - ioc_type_id
+                      - ioc_value
+                      - user_id
+                    properties:
+                      ioc_description:
+                        type: string
+                      ioc_id:
+                        type: number
+                      ioc_misp:
+                        description: Will be removed in future versions
+                      ioc_tags:
+                        type: string
+                      ioc_tlp_id:
+                        type: number
+                      ioc_type:
+                        type: number
+                      ioc_type_id:
+                        type: number
+                      ioc_value:
+                        type: string
+                        minLength: 1
+                      user_id:
+                        type: number
+                      link:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            case_id:
+                              type: string
+                            case_name:
+                              type: string
+                            client_name:
+                              type: string
+                  message:
+                    type: string
+                  status:
+                    type: string
+                    minLength: 1
+                required:
+                  - data
+                  - message
+                  - status
               examples:
                 example-1:
                   value:
@@ -4831,6 +4843,10 @@ paths:
                       ioc_type: 76
                       ioc_type_id: 76
                       ioc_value: hello
+                      link:
+                        - case_id: 1
+                          case_name: '#1 - Initial Demo'
+                          client_name: IrisInitialClient
                       user_id: 1
                     message: ''
                     status: success
@@ -4898,9 +4914,32 @@ paths:
               schema:
                 description: ''
                 type: object
+                x-examples:
+                  example-1:
+                    data:
+                      ioc_description: rewrw
+                      ioc_id: 34
+                      ioc_misp: null
+                      ioc_tags: ''
+                      ioc_tlp_id: 2
+                      ioc_type: 1
+                      ioc_type_id: 1
+                      ioc_value: 8.8.8.8
+                      user_id: 1
+                    message: IOC added
+                    status: success
                 properties:
                   data:
                     type: object
+                    required:
+                      - ioc_description
+                      - ioc_id
+                      - ioc_tags
+                      - ioc_tlp_id
+                      - ioc_type
+                      - ioc_type_id
+                      - ioc_value
+                      - user_id
                     properties:
                       ioc_description:
                         type: string
@@ -4921,15 +4960,8 @@ paths:
                         minLength: 1
                       user_id:
                         type: number
-                    required:
-                      - ioc_description
-                      - ioc_id
-                      - ioc_tags
-                      - ioc_tlp_id
-                      - ioc_type
-                      - ioc_type_id
-                      - ioc_value
-                      - user_id
+                      custom_attributes:
+                        type: object
                   message:
                     type: string
                     minLength: 1
@@ -4940,20 +4972,6 @@ paths:
                   - data
                   - message
                   - status
-                x-examples:
-                  example-1:
-                    data:
-                      ioc_description: rewrw
-                      ioc_id: 34
-                      ioc_misp: null
-                      ioc_tags: ''
-                      ioc_tlp_id: 2
-                      ioc_type: 1
-                      ioc_type_id: 1
-                      ioc_value: 8.8.8.8
-                      user_id: 1
-                    message: IOC added
-                    status: success
               examples:
                 Success:
                   value:
@@ -5042,6 +5060,8 @@ paths:
                   minLength: 1
                 ioc_tags:
                   type: string
+                custom_attributes:
+                  type: object
                 cid:
                   type: integer
               required:
@@ -5059,6 +5079,7 @@ paths:
                   ioc_value: 8.8.8.8
                   ioc_description: rewrw
                   ioc_tags: ''
+                  custom_attributes: {}
                   cid: 2
         description: ''
       tags:
@@ -5074,11 +5095,15 @@ paths:
               schema:
                 description: ''
                 type: object
+                x-examples:
+                  example-1:
+                    data: []
+                    message: Deleted
+                    status: success
                 properties:
                   data:
                     type: array
-                    items:
-                      properties: {}
+                    items: {}
                   message:
                     type: string
                     minLength: 1
@@ -5089,11 +5114,6 @@ paths:
                   - data
                   - message
                   - status
-                x-examples:
-                  example-1:
-                    data: []
-                    message: Deleted
-                    status: success
               examples:
                 Success 1:
                   value:
@@ -5175,9 +5195,32 @@ paths:
               schema:
                 description: ''
                 type: object
+                x-examples:
+                  example-1:
+                    data:
+                      ioc_description: IOC description
+                      ioc_id: 1
+                      ioc_misp: null
+                      ioc_tags: 'tag1,tag2'
+                      ioc_tlp_id: 2
+                      ioc_type: 1
+                      ioc_type_id: 1
+                      ioc_value: evil
+                      user_id: 1
+                    message: Updated ioc evil
+                    status: success
                 properties:
                   data:
                     type: object
+                    required:
+                      - ioc_description
+                      - ioc_id
+                      - ioc_tags
+                      - ioc_tlp_id
+                      - ioc_type
+                      - ioc_type_id
+                      - ioc_value
+                      - user_id
                     properties:
                       ioc_description:
                         type: string
@@ -5199,15 +5242,8 @@ paths:
                         minLength: 1
                       user_id:
                         type: number
-                    required:
-                      - ioc_description
-                      - ioc_id
-                      - ioc_tags
-                      - ioc_tlp_id
-                      - ioc_type
-                      - ioc_type_id
-                      - ioc_value
-                      - user_id
+                      custom_attributes:
+                        type: object
                   message:
                     type: string
                     minLength: 1
@@ -5218,20 +5254,6 @@ paths:
                   - data
                   - message
                   - status
-                x-examples:
-                  example-1:
-                    data:
-                      ioc_description: IOC description
-                      ioc_id: 1
-                      ioc_misp: null
-                      ioc_tags: 'tag1,tag2'
-                      ioc_tlp_id: 2
-                      ioc_type: 1
-                      ioc_type_id: 1
-                      ioc_value: evil
-                      user_id: 1
-                    message: Updated ioc evil
-                    status: success
               examples:
                 example-1:
                   value:
@@ -5244,6 +5266,7 @@ paths:
                       ioc_type: 1
                       ioc_type_id: 1
                       ioc_value: evil
+                      custom_attributes: {}
                       user_id: 1
                     message: Updated ioc evil
                     status: success
@@ -5312,6 +5335,8 @@ paths:
                   type: string
                 ioc_tags:
                   type: string
+                custom_attributes:
+                  type: object
               required:
                 - ioc_type_id
                 - ioc_tlp_id
@@ -5326,6 +5351,7 @@ paths:
                   ioc_value: evil
                   ioc_description: IOC description
                   ioc_tags: 'tag1,tag2'
+                  custom_attributes: {}
                   cid: 12
         description: ''
       tags:

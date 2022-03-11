@@ -8052,7 +8052,7 @@ paths:
   '/case/evidences/{evidence_id}':
     get:
       summary: Get an evidence
-      operationId: get-case-evidences-lid
+      operationId: get-case-evidence
       responses:
         '200':
           description: OK
@@ -8061,9 +8061,27 @@ paths:
               schema:
                 description: ''
                 type: object
+                x-examples:
+                  example-1:
+                    data:
+                      date_added: '2021-10-27T12:01:30.734407'
+                      file_description: string
+                      file_hash: string
+                      file_size: 5
+                      filename: string
+                      id: 2
+                    message: ''
+                    status: success
                 properties:
                   data:
                     type: object
+                    required:
+                      - date_added
+                      - file_description
+                      - file_hash
+                      - file_size
+                      - filename
+                      - id
                     properties:
                       date_added:
                         type: string
@@ -8081,13 +8099,8 @@ paths:
                         minLength: 1
                       id:
                         type: number
-                    required:
-                      - date_added
-                      - file_description
-                      - file_hash
-                      - file_size
-                      - filename
-                      - id
+                      custom_attributes:
+                        type: object
                   message:
                     type: string
                   status:
@@ -8097,17 +8110,19 @@ paths:
                   - data
                   - message
                   - status
-                x-examples:
-                  example-1:
+              examples:
+                example-1:
+                  value:
                     data:
-                      date_added: '2021-10-27T12:01:30.734407'
+                      date_added: string
                       file_description: string
                       file_hash: string
-                      file_size: 5
+                      file_size: 0
                       filename: string
-                      id: 2
-                    message: ''
-                    status: success
+                      id: 0
+                      custom_attributes: {}
+                    message: string
+                    status: string
       description: Returns information of a specific evidence
       security:
         - Bearer <bearer>: []
@@ -8179,7 +8194,7 @@ paths:
   '/case/evidences/update/{evidence_id}':
     post:
       summary: Update an evidence
-      operationId: post-case-evidences-list---copy
+      operationId: post-case-evidences-update
       responses:
         '200':
           description: OK
@@ -8188,9 +8203,27 @@ paths:
               schema:
                 description: ''
                 type: object
+                x-examples:
+                  example-1:
+                    data:
+                      date_added: '2021-10-27T12:01:09.752077'
+                      file_description: string
+                      file_hash: string
+                      file_size: 0
+                      filename: string
+                      id: 1
+                    message: ''
+                    status: success
                 properties:
                   data:
                     type: object
+                    required:
+                      - date_added
+                      - file_description
+                      - file_hash
+                      - file_size
+                      - filename
+                      - id
                     properties:
                       date_added:
                         type: string
@@ -8208,13 +8241,8 @@ paths:
                         minLength: 1
                       id:
                         type: number
-                    required:
-                      - date_added
-                      - file_description
-                      - file_hash
-                      - file_size
-                      - filename
-                      - id
+                      custom_attributes:
+                        type: object
                   message:
                     type: string
                   status:
@@ -8224,17 +8252,19 @@ paths:
                   - data
                   - message
                   - status
-                x-examples:
-                  example-1:
+              examples:
+                example-1:
+                  value:
                     data:
-                      date_added: '2021-10-27T12:01:09.752077'
+                      date_added: string
                       file_description: string
                       file_hash: string
                       file_size: 0
                       filename: string
-                      id: 1
-                    message: ''
-                    status: success
+                      id: 0
+                      custom_attributes: {}
+                    message: string
+                    status: string
       description: ''
       parameters: []
       security:
@@ -8264,6 +8294,8 @@ paths:
                 file_description:
                   type: string
                   minLength: 1
+                custom_attributes:
+                  type: object
                 cid:
                   type: integer
               required:
@@ -8272,6 +8304,15 @@ paths:
                 - file_hash
                 - file_description
                 - cid
+            examples:
+              example-1:
+                value:
+                  filename: string
+                  file_size: 0
+                  file_hash: string
+                  file_description: string
+                  custom_attributes: {}
+                  cid: 0
       tags:
         - Case evidences
     parameters:
@@ -8292,9 +8333,27 @@ paths:
               schema:
                 description: ''
                 type: object
+                x-examples:
+                  example-1:
+                    data:
+                      date_added: '2021-10-30T11:16:01.120370'
+                      file_description: string
+                      file_hash: string
+                      file_size: 0
+                      filename: string
+                      id: 9
+                    message: ''
+                    status: success
                 properties:
                   data:
                     type: object
+                    required:
+                      - date_added
+                      - file_description
+                      - file_hash
+                      - file_size
+                      - filename
+                      - id
                     properties:
                       date_added:
                         type: string
@@ -8312,13 +8371,8 @@ paths:
                         minLength: 1
                       id:
                         type: number
-                    required:
-                      - date_added
-                      - file_description
-                      - file_hash
-                      - file_size
-                      - filename
-                      - id
+                      custom_attributes:
+                        type: object
                   message:
                     type: string
                   status:
@@ -8328,17 +8382,19 @@ paths:
                   - data
                   - message
                   - status
-                x-examples:
-                  example-1:
+              examples:
+                example-1:
+                  value:
                     data:
-                      date_added: '2021-10-30T11:16:01.120370'
+                      date_added: string
                       file_description: string
                       file_hash: string
                       file_size: 0
                       filename: string
-                      id: 9
-                    message: ''
-                    status: success
+                      id: 0
+                      custom_attributes: {}
+                    message: string
+                    status: string
       description: Link a new evidence to the case
       parameters: []
       security:
@@ -8368,6 +8424,8 @@ paths:
                 file_description:
                   type: string
                   minLength: 1
+                custom_attributes:
+                  type: object
                 cid:
                   type: integer
               required:
@@ -8376,6 +8434,15 @@ paths:
                 - file_hash
                 - file_description
                 - cid
+            examples:
+              example-1:
+                value:
+                  filename: string
+                  file_size: 0
+                  file_hash: string
+                  file_description: string
+                  custom_attributes: {}
+                  cid: 0
         description: ''
       tags:
         - Case evidences

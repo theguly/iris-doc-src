@@ -7,7 +7,7 @@ info:
     Applies to Iris v1.4.0 and onward. 
 
 
-    This version introduces the concept of custom attributes. These JSON objects that are stored into almost all case objects such as Assets, IOCs, etc. These structures are defined by administrators or modules and can vary from on objet to another despite being of the same type.  Because of this, no definitive structure should be expected from these fields. They are all named "custom_attributes". 
+    This version introduces the concept of custom attributes. These JSON objects that are stored into almost all case objects such as Assets, IOCs, etc. They are defined by administrators or modules and can vary from one objet to another despite being of the same type.  Because of this, no definitive structure can be expected from these fields. They are all named ``custom_attributes``. 
   contact:
     name: DFIR-IRIS
     email: contact@dfir-iris.org

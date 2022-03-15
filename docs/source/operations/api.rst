@@ -22,7 +22,7 @@ It can be found on the left panel, under username and My Settings.
    :class: warning
 
    In case the token is exposed and needs to be change, a new one can be generated with the `Renew` option.
-   Renewing a token revokes the previous one. 
+   Renewing a token revokes the previous . 
 
 
 

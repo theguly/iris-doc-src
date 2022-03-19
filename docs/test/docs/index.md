@@ -57,10 +57,11 @@ You can head to the Github of the project and create an issue with the idea.
 Iris is mostly coded in Python 3. There is also some HTML, CSS and javascript for the interface. 
 
 Under the hood, Iris relies on :
-    - Flask for the web engine 
-    - SQLAlchemy and PostgresSQL for the database 
-    - RabbitMQ for the jobs processing
-    - Nginx for the reverse proxy
+
+- Flask for the web engine 
+- SQLAlchemy and PostgresSQL for the database 
+- RabbitMQ for the jobs processing
+- Nginx for the reverse proxy
 
 ## Can I be involved ?  
 Absolutely. You can either [contact us](mailto:contact@dfir-iris.org>) directly or submit pull requests and ideas on the GitHub. 

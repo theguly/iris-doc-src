@@ -1,43 +1,42 @@
-Custom Attributes 
-==================
+# Custom Attributes 
 
-*Introduced in IRIS v1.3.1.*
+!!! tip "*Introduced in IRIS v1.4.0*"
 
 All the case objects can be extended with custom attributes. These attributes can be added by : 
 
-* Administrators via the GUI 
-* Modules (for instance, the VT module adds a ``VT Report`` attribute to each it analyses)
+- Administrators via the GUI 
+- Modules (for instance, the VT module adds a ``VT Report`` attribute to each objects it analyses)
 
 Attributes offer the ability to :
 
-* Add inputs for analysts to fill additional details 
-* Add static/dynamic content such as HTML/JS for enhanced possibilities.  
+- Add inputs for analysts to fill additional details 
+- Add static/dynamic content such as HTML/JS for enhanced possibilities.  
 
 This section only describes how an administrator can add or delete attributes to an object.  
 
-Management page
-----------------
+## Management page
 
 Custom attributes can be changed in the ``Advanced`` > ``Objects Attributes`` section on the left panel. 
 
-.. image:: ../_static/Attributes_menu.png
+![Attributes menu](../_static/Attributes_menu.png)
 
 
 The page lists the objects for which custom attributes can be added or modified. 
-  - Cases 
-  - Evidences 
-  - Notes
-  - Tasks
-  - Assets
-  - Events 
-  - IOC 
 
-Attributes structure 
---------------------
+- Cases 
+- Customers
+- Evidences 
+- Notes
+- Tasks
+- Assets
+- Events 
+- IOC 
+
+## Attributes structure 
 
 Attributes are defined in JSON which describes tabs and fields that makes the attributes.    
 
-.. code-block:: JSON
+``` json
 
   {
       "Tab Name 1": {                     // Defines a new tab 
@@ -59,21 +58,20 @@ Attributes are defined in JSON which describes tabs and fields that makes the at
           }
       }
   }
-
+```
 
 The code above would be rendered as : 
 
-.. image:: ../_static/attributes_rendering.png
+![Attributes rendering](../_static/attributes_rendering.png)
 
 With : 
 
-#. The native information of the object. This cannot be changed or updated
-#. The new attribute ``Tab Name 1`` 
-#. The other new attribute ``VT report``
+1. The native information of the object. This cannot be changed or updated
+2. The new attribute ``Tab Name 1`` 
+3. The other new attribute ``VT report``
 
 
-Attributes taxonomy 
---------------------
+## Attributes taxonomy 
 The available fields type are available for rendering : 
 
 - ``input_string``: Standard input text
@@ -86,17 +84,14 @@ The available fields type are available for rendering :
 - ``html``: A static content rendered as HTML. This is by nature prone to abuse, but at the same time allows adding custom JS scripts. 
 
 
-Updating / resetting attributes 
---------------------------------
+## Updating / resetting attributes 
 
 When an attribute is updated, it will try to update all the existing objects with the new attributes. To prevent any data loss from previous attributes and attributes pushed by modules, the update is only made on attributes which don't have any values set or are type-compatibles (ie string to textfield).  
 
 The migration of an attribute can however be forced in two ways, both resulting in potential attributes data loss.  
 
-.. admonition:: Note
-   :class: info 
-
-   Migrating or overwriting attributes never change the native information of an object. It only applies to custom attributes.  
+!!! tip "Good to know"
+    Migrating or overwriting attributes never change the native information of an object. It only applies to custom attributes.  
 
 
 ``Partial overwrite`` basically resets all the values of every target objects that matches the current attribute definition. All associated values are lost. This does not impact attributes pushed by modules or previous configuration.

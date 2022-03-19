@@ -49,7 +49,7 @@ The deregistration method expects the following arguments:
 
 
 
-Please see the [modules documentation](dev-module-main) for more details on how to implement these methods.  
+Please see the [modules documentation](/development/modules/) for more details on how to implement these methods.  
 
 
 

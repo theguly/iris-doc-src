@@ -1,8 +1,8 @@
-site_name: DFIR-IRIS Docs
+site_name: Documentation
 theme:
   name: material
-  logo: _static/logo_blue.png
-  favicon: _static/logo.ico
+  logo: _static/logo-white.png
+  favicon: _static/ico_white.png
   icon:
     repo: fontawesome/brands/github
   features:
@@ -11,6 +11,9 @@ theme:
   palette:
     primary: indigo
     accent: indigo
+
+extra_css:
+  - stylesheets/extra.css
 
 markdown_extensions:
   - admonition
@@ -36,4 +39,9 @@ extra:
 
 repo_url: https://github.com/dfir-iris/iris-web
 repo_name: IRIS Web
+edit_uri: ""
+
 copyright: Copyright &copy; 2021 - 2022 DFIR-IRIS Team
+
+plugins:
+  - git-revision-date

@@ -1,0 +1,36 @@
+site_name: DFIR-IRIS Docs
+theme:
+  name: material
+  logo: _static/logo_blue.png
+  favicon: _static/logo.ico
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.expand
+    - toc.follow
+  palette:
+    primary: indigo
+    accent: indigo
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter 
+      link: https://twitter.com/dfir_iris
+    - icon: fontawesome/brands/github 
+      link: https://github.com/dfir-iris
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:<contact@dfir-iris.org>
+
+repo_url: https://github.com/dfir-iris/iris-web
+repo_name: IRIS Web
+copyright: Copyright &copy; 2021 - 2022 DFIR-IRIS Team

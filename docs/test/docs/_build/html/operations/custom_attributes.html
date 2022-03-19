@@ -1,0 +1,647 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Attributes</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Modules" href="modules.html" />
+    <link rel="prev" title="Operations" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_blue.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../quick_start.html">
+   Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Operations
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Custom Attributes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modules.html">
+     Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="reports.html">
+     Reports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorials.html">
+     Tutorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="upgrades.html">
+     Upgrades
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="api.html">
+     API
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../python_client/modules.html">
+   Python client
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.html">
+     Doc v1.0.1
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.admin.html">
+       dfir_iris_client.admin module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.case.html">
+       dfir_iris_client.case module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.customer.html">
+       dfir_iris_client.customer module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.global_search.html">
+       dfir_iris_client.global_search module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.session.html">
+       dfir_iris_client.session module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.users.html">
+       dfir_iris_client.users module
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.html">
+       dfir_iris_client.helper package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.analysis_status.html">
+         dfir_iris_client.helper.analysis_status module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.assets_type.html">
+         dfir_iris_client.helper.assets_type module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.colors.html">
+         dfir_iris_client.helper.colors module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.errors.html">
+         dfir_iris_client.helper.errors module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.events_categories.html">
+         dfir_iris_client.helper.events_categories module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.ioc_types.html">
+         dfir_iris_client.helper.ioc_types module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.iris_object.html">
+         dfir_iris_client.helper.iris_object module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.objects_def.html">
+         dfir_iris_client.helper.objects_def module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.task_status.html">
+         dfir_iris_client.helper.task_status module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.tlps.html">
+         dfir_iris_client.helper.tlps module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.helper.utils.html">
+         dfir_iris_client.helper.utils module
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.html">
+       dfir_iris_client.tests package
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.test_admin.html">
+         dfir_iris_client.tests.test_admin module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.test_analysis_status.html">
+         dfir_iris_client.tests.test_analysis_status module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.test_asset_type.html">
+         dfir_iris_client.tests.test_asset_type module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.test_case.html">
+         dfir_iris_client.tests.test_case module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.test_customer.html">
+         dfir_iris_client.tests.test_customer module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.test_event_categories.html">
+         dfir_iris_client.tests.test_event_categories module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.test_global_search.html">
+         dfir_iris_client.tests.test_global_search module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.test_ioc_types.html">
+         dfir_iris_client.tests.test_ioc_types module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.test_task_status.html">
+         dfir_iris_client.tests.test_task_status module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.test_tlps.html">
+         dfir_iris_client.tests.test_tlps module
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../python_client/v1.0.1/dfir_iris_client.tests.tests_helper.html">
+         dfir_iris_client.tests.tests_helper module
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../development/index.html">
+   Development
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../development/dev_modules.html">
+     Modules
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../development/dev_mod_start/mod_processor.html">
+       Getting started with processor modules
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../development/hooks.html">
+     Hooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../development/dev_env.html">
+     Developing IRIS Core
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../development/dev_docs.html">
+     Documentation build
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../roadmap.html">
+   Roadmap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qa.html">
+   Q&amp;A
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/operations/custom_attributes.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#management-page">
+   Management page
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#attributes-structure">
+   Attributes structure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#attributes-taxonomy">
+   Attributes taxonomy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#updating-resetting-attributes">
+   Updating / resetting attributes
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Custom Attributes</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#management-page">
+   Management page
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#attributes-structure">
+   Attributes structure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#attributes-taxonomy">
+   Attributes taxonomy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#updating-resetting-attributes">
+   Updating / resetting attributes
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="custom-attributes">
+<h1>Custom Attributes<a class="headerlink" href="#custom-attributes" title="Permalink to this headline">¶</a></h1>
+<p><em>Introduced in IRIS v1.3.1.</em></p>
+<p>All the case objects can be extended with custom attributes. These attributes can be added by :</p>
+<ul class="simple">
+<li><p>Administrators via the GUI</p></li>
+<li><p>Modules (for instance, the VT module adds a <code class="docutils literal notranslate"><span class="pre">VT</span> <span class="pre">Report</span></code> attribute to each it analyses)</p></li>
+</ul>
+<p>Attributes offer the ability to :</p>
+<ul class="simple">
+<li><p>Add inputs for analysts to fill additional details</p></li>
+<li><p>Add static/dynamic content such as HTML/JS for enhanced possibilities.</p></li>
+</ul>
+<p>This section only describes how an administrator can add or delete attributes to an object.</p>
+<div class="section" id="management-page">
+<h2>Management page<a class="headerlink" href="#management-page" title="Permalink to this headline">¶</a></h2>
+<p>Custom attributes can be changed in the <code class="docutils literal notranslate"><span class="pre">Advanced</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Objects</span> <span class="pre">Attributes</span></code> section on the left panel.</p>
+<img alt="../_images/Attributes_menu.png" src="../_images/Attributes_menu.png" />
+<dl class="simple">
+<dt>The page lists the objects for which custom attributes can be added or modified.</dt><dd><ul class="simple">
+<li><p>Cases</p></li>
+<li><p>Evidences</p></li>
+<li><p>Notes</p></li>
+<li><p>Tasks</p></li>
+<li><p>Assets</p></li>
+<li><p>Events</p></li>
+<li><p>IOC</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="attributes-structure">
+<h2>Attributes structure<a class="headerlink" href="#attributes-structure" title="Permalink to this headline">¶</a></h2>
+<p>Attributes are defined in JSON which describes tabs and fields that makes the attributes.</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span>{
+    &quot;Tab Name 1&quot;: {                     // Defines a new tab
+        &quot;Field 1&quot;: {                    // Defines a new field within the Tab Name 1
+            &quot;type&quot;: &quot;input_string&quot;,     // Defines the type of field, here a standard string input
+            &quot;mandatory&quot;: true,          // Indicates whether the field is mandatory upon saving
+            &quot;value&quot;: &quot;&quot;                 // Default value if any, else empty
+        },
+        &quot;Field 2&quot;: {                    // Defines a second field within the tab Tab Name 1
+            &quot;type&quot;: &quot;input_checkbox&quot;,   // Defines an input checkbox
+            &quot;mandatory&quot;: false,         // Indicates whether the field is mandatory upon saving
+            &quot;value&quot;: &quot;&quot;                 // Default value if any, else empty
+        }
+    },
+    &quot;VT report&quot;: {                      // Defines a second tab named VT report
+        &quot;Content&quot;: {                    // Defines a new field Content within the VT Report
+            &quot;type&quot;: &quot;html&quot;,             // Defines an HTML interpreted content
+            &quot;value&quot;: &quot;&quot;                 // Default value if any, else empty
+        }
+    }
+}
+</pre></div>
+</div>
+<p>The code above would be rendered as :</p>
+<img alt="../_images/attributes_rendering.png" src="../_images/attributes_rendering.png" />
+<p>With :</p>
+<ol class="arabic simple">
+<li><p>The native information of the object. This cannot be changed or updated</p></li>
+<li><p>The new attribute <code class="docutils literal notranslate"><span class="pre">Tab</span> <span class="pre">Name</span> <span class="pre">1</span></code></p></li>
+<li><p>The other new attribute <code class="docutils literal notranslate"><span class="pre">VT</span> <span class="pre">report</span></code></p></li>
+</ol>
+</div>
+<div class="section" id="attributes-taxonomy">
+<h2>Attributes taxonomy<a class="headerlink" href="#attributes-taxonomy" title="Permalink to this headline">¶</a></h2>
+<p>The available fields type are available for rendering :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">input_string</span></code>: Standard input text</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">input_textfield</span></code>: Standard input textfield</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">input_checkbox</span></code>: Standard checkbox</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">input_date</span></code>: Standard date input</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">input_datetime</span></code>: Standard date and time input</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">input_select</span></code>: Standard select input. Need “options” tag to describe the available options, as a list of string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">raw</span></code>: A static content rendered in raw text. HTML is not be interpreted.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">html</span></code>: A static content rendered as HTML. This is by nature prone to abuse, but at the same time allows adding custom JS scripts.</p></li>
+</ul>
+</div>
+<div class="section" id="updating-resetting-attributes">
+<h2>Updating / resetting attributes<a class="headerlink" href="#updating-resetting-attributes" title="Permalink to this headline">¶</a></h2>
+<p>When an attribute is updated, it will try to update all the existing objects with the new attributes. To prevent any data loss from previous attributes and attributes pushed by modules, the update is only made on attributes which don’t have any values set or are type-compatibles (ie string to textfield).</p>
+<p>The migration of an attribute can however be forced in two ways, both resulting in potential attributes data loss.</p>
+<div class="info admonition">
+<p class="admonition-title">Note</p>
+<p>Migrating or overwriting attributes never change the native information of an object. It only applies to custom attributes.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Partial</span> <span class="pre">overwrite</span></code> basically resets all the values of every target objects that matches the current attribute definition. All associated values are lost. This does not impact attributes pushed by modules or previous configuration.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Complete</span> <span class="pre">overwrite</span></code> resets all attributes of every target objects, including the ones created by modules, and then applies the current attributes. All associated values are lost.</p>
+</div>
+</div>
+
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Operations</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="modules.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Modules</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By DFIR-IRIS Team<br/>
+    
+        &copy; Copyright 2022, Airbus CyberSecurity.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

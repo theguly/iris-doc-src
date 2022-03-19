@@ -6,7 +6,6 @@ theme:
   icon:
     repo: fontawesome/brands/github
   features:
-    - navigation.expand
     - toc.follow
   palette:
     primary: indigo

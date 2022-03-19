@@ -3,15 +3,13 @@
 Upgrades
 *********
 
-Most of the time, Iris handles upgrades of the database automatically when a new version is started, thus no specific actions are required.  
-Please use the table below to assess if a manual action is required or not. 
-
+Most of the time, Iris handles upgrades of the database automatically when a new version is started, thus no specific actions are required. 
+**However**, some breaking changes might need manual intervention.  Please use the table below to assess if a manual action is required. 
 
 .. csv-table:: Versions upgrades
    :file: _rsrcs/versions_upgrades.csv
    :header-rows: 1
    :class: longtable
-
 
 .. admonition::  Caution
   :class: warning
@@ -20,7 +18,7 @@ Please use the table below to assess if a manual action is required or not.
 
 Backing-up DB
 --------------
-Only if you run in production and data is critical. 
+Only if you run in production and/or data is critical. 
 
 1. List the current running docker containers `docker container list`
 2. Spot the IRIS DB container name or ID, and execute the backup

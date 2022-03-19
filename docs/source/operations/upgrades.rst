@@ -27,6 +27,12 @@ Only if you run in production and/or data is critical.
 
   docker exec <container> pg_dump -U postgres iris_db | gzip > ../iris_db_backup.gz
 
+3. Ensure the backup was successful by looking at the gz file 
+
+.. code:: bash 
+
+  zcat ../iris_db_backup.gz | less 
+
 
 Upgrading
 ----------
@@ -60,13 +66,44 @@ Version specific upgrades
 
 v1.4.0
 -------
-v1.4.0 brings breaking changes in the DB docker by adding a named volume. This implies that previous existing database is scrapped
-if not manual migration is done. To prevent this, please **strictly follow the guide below**. 
+This version brings breaking changes in the DB docker by adding a named volume instead of the default one.
+This implies that previous existing database is ignored as the new docker won't know which volume was previously used. 
+To prevent this, please **strictly follow the guide below**. This will copy the data of the existing volume, to the new named one. 
 
-1. Fetch the current db volume ID with ``docker inspect <iris_db>``
-2. Stop the DB docker : ``docker-compose stop db``
-3. Create a new empty volume : ``docker volume create --name iris-web_db_data`` 
-4. Run a volume copy via a dummy image : ``docker run --rm -it -v <previous_db_volume_id> /from:ro -v iris-web_db_data:/to alpine ash -c "cd /from ; cp -av . /to``
-5. Rebuild and restart docker DB : ``docker compose build db, docker compose up db``
-6. The data is normally successfully transferred.
+1. Spot the IRIS DB container with ``docker container list``. It should look like `iris-web-db-x`
+2. Fetch the current db volume ID (`name` field with the command below)
+   
+.. code:: bash 
+
+  docker inspect <iris_db> | grep -A5 "Mounts"
+
+  # Example of output
+  "Mounts": [
+    {
+        "Type": "volume",
+        "Name": "a90b9998a3233a68438c8e099bd0ba98d9f62c9734e40297b8067f9fdb921eb9",
+        "Source": "/var/lib/docker/volumes/a90b9998a3233a68438c8e099bd0ba98d9f62c9734e40297b8067f9fdb921eb9/_data",
+        "Destination": "/var/lib/postgresql/data",
+
+3. Stop all the IRIS dockers : ``docker-compose stop``
+4. Create a new empty volume : ``docker volume create --name iris-web_db_data`` 
+5. Run a volume copy via a dummy image : 
+   
+.. code:: bash 
+
+  docker run --rm -it -v <previous_db_volume_id>:/from:ro -v iris-web_db_data:/to alpine ash -c "cd /from ; cp -av . /to"
+  
+  # With the example of 2., this gives 
+  docker run --rm -it -v a90b9998a3233a68438c8e099bd0ba98d9f62c9734e40297b8067f9fdb921eb9:/from:ro -v iris-web_db_data:/to alpine ash -c "cd /from ; cp -av . /to"
+
+1. Pull the last changes from the repository, checkout to `v1.4.0`, build and run. 
+  
+.. code:: bash 
+  
+  git pull origin 
+  git checkout v1.4.0
+  docker-compose build 
+  docker-compose up 
+
+1. The data should be successfully transferred.
 

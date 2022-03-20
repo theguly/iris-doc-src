@@ -1,16 +1,20 @@
 # IRIS Documentation 
 
-The documentation is built with [Sphinx](https://www.sphinx-doc.org).
+The documentation is built with [MkDocs Materials](https://squidfunk.github.io/mkdocs-material).
 
 ## Installation
 To install an environment in which you can build the doc (works on Windows and Linux):
 
-    pip3 install sphinx
-    pip3 install sphinx-book-theme
-    pip3 install sphinxcontrib.httpdomain
+    pip3 install mkdocs-material
+    pip3 install mkdocs-git-revision-date-plugin
     git clone git@github.com:Iris-Tim/iris-doc-src.git
     cd iris-doc-src/docs
-    make html
+    
+    # To preview the changes while writing 
+    mkdocs serve 
+
+    # To build 
+    mkdocs build
 
 ## License
 

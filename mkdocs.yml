@@ -7,9 +7,11 @@ theme:
     repo: fontawesome/brands/github
   features:
     - toc.follow
+    - navigation.top
   palette:
     primary: indigo
     accent: indigo
+
 
 extra_css:
   - stylesheets/extra.css
@@ -37,6 +39,10 @@ extra:
       link: mailto:<contact@dfir-iris.org>
 
 repo_url: https://github.com/dfir-iris/iris-web
+site_url: https://dfir-iris.github.io
+site_description: "DFIR-IRIS Documentation - An incident response collaborative platform"
+site_author: "DFIR-IRIS Team"
+
 repo_name: IRIS Web
 edit_uri: ""
 

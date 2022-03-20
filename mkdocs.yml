@@ -23,6 +23,7 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.highlight
   - attr_list
   - md_in_html
   - pymdownx.emoji:
@@ -51,3 +52,12 @@ copyright: Copyright &copy; 2021 - 2022 DFIR-IRIS Team
 plugins:
   - git-revision-date
   - search
+  - mkdocstrings:
+      default_handler: python
+      handlers: 
+        python:
+          rendering:
+            show_source: true
+            docstring_style: sphinx
+            docstring_section_style: list
+      watch: [../dfir-iris-client]

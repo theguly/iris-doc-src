@@ -1,5 +1,0 @@
-From / To,	v1.2.1,	v1.3.0,	v1.3.1,	v1.4.0,
-v1.2.1,	X,	Auto,	Auto,	:text-danger:`Action needed` - See :ref:`upgrade_to_v1_4_0`,
-v1.3.0,	X,	X,	Auto,	:text-danger:`Action needed` - See :ref:`upgrade_to_v1_4_0`,
-v1.3.1,	X,	X,	X,	:text-danger:`Action needed` - See :ref:`upgrade_to_v1_4_0`,
-v1.4.0,	X,	X,	X,	X,

@@ -32,7 +32,7 @@ You can :
 - For each investigation:  
     - Associate a customer    
     - Create a high level summary   
-    - Create notes under the form of a Kandan board  
+    - Create notes under the form of a Kanban board  
     - Create IOCs  
     - Create assets (computers, servers, accounts, firewalls, or anything you want)  
     - Associate IOCs with assets   
@@ -40,12 +40,14 @@ You can :
     - Create a proper timeline referencing assets and IOCs  
     - Create an automated graph of the attack from the timeline   
     - Register evidences   
-    - Upload and process of evidences through modular pipelines (eg: EVTX parsing and injection into a database or data visualiser)  
+    - Upload and process of evidences through modular pipelines (eg: EVTX parsing and injection into a database or data visualizer)  
+    - Enrich any mentioned case objects with external sources
     - Set and attribute tasks to people to keep track of everything   
-    - Register every steps of the investigation  
+    - Register every step of the investigation  
     - Generate a report based on templates, automatically filled with the elements registered in the investigation   
-    - Generate a report of activity with every steps registered as well as the auto-registered entries for each analyst   
+    - Generate a report of activity with every step registered as well as the auto-registered entries for each analyst   
 - Search notes and IOCs across all investigations  
+- Extend the mentioned case objects to fit your needs
 - Integrates IRIS with your current infrastructure thanks to the API and the modules, which allows to extend the platform features. 
 
 ## What can I not do with Iris ?  

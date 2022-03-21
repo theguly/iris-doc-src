@@ -11,10 +11,18 @@ There is no coming back unless you have made backups of the database (which we r
 No. Every object such as IOCs, assets, events, notes, etc are immediately deleted from the database and changes are committed. 
 
 **Can I add a new asset type ?**  
-Yes. From a user with administrative rights, go to Advanced > Assets Types. 
+Yes. With a user that have administrative rights, go to `Advanced` > `Assets Types`. 
 
 **Can I add a new IOC type ?**  
 Yes. Starting from v1.3.0, IOC types can be manipulated.  
+
+**Can I add new fields to case objects such as IOCs, Assets, etc ?**  
+Yes. Starting from v1.4.0, all case objects can be extended thanks to custom attributes. 
+With a user that have administrative rights, go to `Advanced` > `Objects Attributes`. 
+
+**Can I search into custom attributes fields** 
+Not for now. The searches in each case objects page are done client-side, and the attributes are not fetched.  
+We will however implement a server side search in next releases.  
 
 **Can I create two cases with the same name for the same customer ?**  
 Yes. Cases are identified with a unique number, so they can have the same name. 

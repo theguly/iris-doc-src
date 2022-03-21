@@ -2,7 +2,7 @@
 
 The most straight forward and recommended way to use IRIS is with Docker. This is presented here. 
 
-## 1. Pre-requisites
+## Pre-requisites
 ### Hardware
 
 Iris is not very resourceful and can be run on a small laptop (4 cores, 8Gb of RAM). However, for large organization and heavy usage, 
@@ -17,7 +17,7 @@ the official website of [Docker](https://docs.docker.com/get-docker/).
 The platform is tested on Linux and MacOS (including Apple Silicon). While it should work on Windows, some path needed by the dockers to store permanent files might need to be changed in the dockerfiles. 
 
 
-## 2. Build
+## Build and run
 
 You have found a home for Iris and installed Docker and Docker compose, it is time to build the containers.
 
@@ -29,7 +29,7 @@ Iris is split on 5 Docker services, each with a different role.
 - ``worker``: Jobs handler relying on RabbitMQ
 - ``nginx``: A NGINX reverse proxy
 
-Each service can be built independently, which is useful when developing. In this QuickStart everything will be built at once.
+Each service can be built independently, which is useful when developing. In this QuickStart everything is built at once.
 
 ``` bash
 #  Clone the iris-web repository
@@ -42,7 +42,18 @@ cp .env.model .env
 
 # Build the dockers
 docker-compose build
+
+# Run IRIS 
+docker-compose up
 ```
+
+Iris will be available on the host interface, port 4433, HTTPS protocol.  
+By default, an ``administrator`` account is created. The password is printed in stdout the very first time Iris is started. It won't be printed anymore after that.  
+You can search for ``WARNING :: post_init :: create_safe_admin :: >>>`` in the logs to find the password.  
+
+If you want to define an admin password at the first start, you can also create and define the environment variable **IRIS_ADM_PASSWORD** in the `app` docker instance (see the webApp Dockerfile). This has no effects once the administrator account is created.   
+
+## Optional configuration
 
 You can skip this part if you just want to try or develop. If used in production, please configure the .env file at the root of the project:
 
@@ -52,17 +63,6 @@ You can skip this part if you just want to try or develop. If used in production
 
 The very first time the app builds might take quite a while. After that if a service needs an update, the building process is faster.
 
-## 3. Run
-One last command is needed to bring all dockers up. 
 
-```bash
-docker-compose up
-```
-
-Iris will be available on the web interface, port 4433, HTTPS protocol.  
-By default, an ``administrator`` account is created. The password is printed in stdout the very first time Iris is started. It won't be printed anymore after that.  
-You can search for ``WARNING :: post_init :: create_safe_admin :: >>>`` in the logs to find the password.  
-
-If you want to define an admin password at the first start, you can also create and define the environment variable **IRIS_ADM_PASSWORD** in the `app` docker instance (see the webApp Dockerfile). This has no effects once the administrator account is created.   
 
 

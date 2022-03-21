@@ -1,11 +1,11 @@
 # API
-Iris is meant to be plug-able to fit and integrates with the existing environments.   
+Iris is meant to be plug-able and be integrated with the existing environments.   
 
-Through the REST API, one can do almost as much as it is possible to do through the web interface.  
+Through the REST API, one can do almost as much as it is possible to do through the web interface. Under the hood, the web interface is actually talking to the API. 
 
 ## API Keys
 
-The first step is to obtain an API key. Each user is automatically attributed an API token.  
+The first step is to obtain an API key. Each user is automatically attributed one when it is created.  
 It can be found on the left panel, under username and My Settings. 
 
 ![Access Token](../_static/token_access.png)
@@ -17,6 +17,8 @@ It can be found on the left panel, under username and My Settings.
 
 
 ## References
+The API constantly evolves with IRIS and thus multiple versions and endpoints exists.  
+Use the references below to check which API version applies to your Iris version.  
 
 - [API v1.0.0](../_static/iris_api_reference_v1.0.0.html) (applies to Iris <= v1.2.1)
 - [API v1.0.1](../_static/iris_api_reference_v1.0.1.html) (applies to Iris > v1.2.1) 
@@ -24,7 +26,7 @@ It can be found on the left panel, under username and My Settings.
 
 
 ## How to use 
-The API token is a Bearer and needs to be present in the header `Authorization` when issuing requests. 
+The API token is used as a Bearer and needs to be present in the header `Authorization` when issuing requests. 
 For example, to list all the cases: 
 
 ```bash

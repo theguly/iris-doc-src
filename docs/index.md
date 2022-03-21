@@ -46,8 +46,7 @@ You can :
     - Generate a report based on templates, automatically filled with the elements registered in the investigation   
     - Generate a report of activity with every steps registered as well as the auto-registered entries for each analyst   
 - Search notes and IOCs across all investigations  
-- Develop your own module and pipeline to process evidences and fit your needs. These are processed through RabbitMQ.   
-
+- Integrates IRIS with your current infrastructure thanks to the API and the modules, which allows to extend the platform features. 
 
 ## What can I not do with Iris ?  
 This is the part where we need you. Iris aims to be a collaborative project, so any idea is welcome.     

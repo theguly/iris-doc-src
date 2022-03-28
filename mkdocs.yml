@@ -61,3 +61,6 @@ plugins:
             docstring_style: sphinx
             docstring_section_style: list
       watch: [../dfir-iris-client]
+
+
+dev_addr: '127.0.0.1:8081'

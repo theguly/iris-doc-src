@@ -3233,7 +3233,7 @@
 <a id="__codelineno-0-363" name="__codelineno-0-363"></a>            <span class="s2">&quot;note_title&quot;</span><span class="p">:</span> <span class="n">note_title</span><span class="p">,</span>
 <a id="__codelineno-0-364" name="__codelineno-0-364"></a>            <span class="s2">&quot;note_content&quot;</span><span class="p">:</span> <span class="n">note_content</span><span class="p">,</span>
 <a id="__codelineno-0-365" name="__codelineno-0-365"></a>            <span class="s2">&quot;group_id&quot;</span><span class="p">:</span> <span class="n">group_id</span><span class="p">,</span>
-<a id="__codelineno-0-366" name="__codelineno-0-366"></a>            <span class="s2">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="n">custom_attributes</span><span class="p">,</span>
+<a id="__codelineno-0-366" name="__codelineno-0-366"></a>            <span class="s2">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="n">custom_attributes</span> <span class="k">if</span> <span class="n">custom_attributes</span> <span class="k">else</span> <span class="p">{},</span>
 <a id="__codelineno-0-367" name="__codelineno-0-367"></a>            <span class="s2">&quot;cid&quot;</span><span class="p">:</span> <span class="n">cid</span>
 <a id="__codelineno-0-368" name="__codelineno-0-368"></a>        <span class="p">}</span>
 <a id="__codelineno-0-369" name="__codelineno-0-369"></a>
@@ -3344,7 +3344,7 @@
 <a id="__codelineno-0-474" name="__codelineno-0-474"></a>            <span class="n">body</span><span class="p">[</span><span class="s1">&#39;asset_compromised&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">compromised</span>
 <a id="__codelineno-0-475" name="__codelineno-0-475"></a>        <span class="k">if</span> <span class="n">tags</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 <a id="__codelineno-0-476" name="__codelineno-0-476"></a>            <span class="n">body</span><span class="p">[</span><span class="s1">&#39;asset_tags&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span>
-<a id="__codelineno-0-477" name="__codelineno-0-477"></a>        <span class="k">if</span> <span class="n">tags</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-477" name="__codelineno-0-477"></a>        <span class="k">if</span> <span class="n">custom_attributes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 <a id="__codelineno-0-478" name="__codelineno-0-478"></a>            <span class="n">body</span><span class="p">[</span><span class="s1">&#39;custom_attributes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">custom_attributes</span>
 <a id="__codelineno-0-479" name="__codelineno-0-479"></a>
 <a id="__codelineno-0-480" name="__codelineno-0-480"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_s</span><span class="o">.</span><span class="n">pi_post</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;case/assets/add&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">body</span><span class="p">)</span>
@@ -3539,7 +3539,7 @@
 <a id="__codelineno-0-669" name="__codelineno-0-669"></a>            <span class="s2">&quot;ioc_value&quot;</span><span class="p">:</span> <span class="n">value</span><span class="p">,</span>
 <a id="__codelineno-0-670" name="__codelineno-0-670"></a>            <span class="s2">&quot;ioc_tlp_id&quot;</span><span class="p">:</span> <span class="n">ioc_tlp</span> <span class="k">if</span> <span class="n">ioc_tlp</span> <span class="k">else</span> <span class="mi">2</span><span class="p">,</span>
 <a id="__codelineno-0-671" name="__codelineno-0-671"></a>            <span class="s2">&quot;ioc_type_id&quot;</span><span class="p">:</span> <span class="n">ioc_type</span><span class="p">,</span>
-<a id="__codelineno-0-672" name="__codelineno-0-672"></a>            <span class="s2">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="n">custom_attributes</span><span class="p">,</span>
+<a id="__codelineno-0-672" name="__codelineno-0-672"></a>            <span class="s2">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="n">custom_attributes</span> <span class="k">if</span> <span class="n">custom_attributes</span> <span class="k">else</span> <span class="p">{},</span>
 <a id="__codelineno-0-673" name="__codelineno-0-673"></a>            <span class="s2">&quot;cid&quot;</span><span class="p">:</span> <span class="n">cid</span>
 <a id="__codelineno-0-674" name="__codelineno-0-674"></a>        <span class="p">}</span>
 <a id="__codelineno-0-675" name="__codelineno-0-675"></a>
@@ -3731,7 +3731,7 @@
 <a id="__codelineno-0-861" name="__codelineno-0-861"></a>            <span class="s2">&quot;event_date&quot;</span><span class="p">:</span> <span class="n">date_time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">T%H:%M:%S.</span><span class="si">%f</span><span class="s1">&#39;</span><span class="p">),</span>
 <a id="__codelineno-0-862" name="__codelineno-0-862"></a>            <span class="s2">&quot;event_tags&quot;</span><span class="p">:</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span> <span class="k">if</span> <span class="n">tags</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
 <a id="__codelineno-0-863" name="__codelineno-0-863"></a>            <span class="s2">&quot;event_tz&quot;</span><span class="p">:</span> <span class="n">timezone_string</span> <span class="k">if</span> <span class="n">timezone_string</span> <span class="k">else</span> <span class="s2">&quot;+00:00&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-864" name="__codelineno-0-864"></a>            <span class="s2">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="n">custom_attributes</span><span class="p">,</span>
+<a id="__codelineno-0-864" name="__codelineno-0-864"></a>            <span class="s2">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="n">custom_attributes</span> <span class="k">if</span> <span class="n">custom_attributes</span> <span class="k">else</span> <span class="p">{},</span>
 <a id="__codelineno-0-865" name="__codelineno-0-865"></a>            <span class="s2">&quot;cid&quot;</span><span class="p">:</span> <span class="n">cid</span>
 <a id="__codelineno-0-866" name="__codelineno-0-866"></a>        <span class="p">}</span>
 <a id="__codelineno-0-867" name="__codelineno-0-867"></a>
@@ -3921,7 +3921,7 @@
 <a id="__codelineno-0-1051" name="__codelineno-0-1051"></a>            <span class="s2">&quot;task_status_id&quot;</span><span class="p">:</span> <span class="n">status</span><span class="p">,</span>
 <a id="__codelineno-0-1052" name="__codelineno-0-1052"></a>            <span class="s2">&quot;task_tags&quot;</span><span class="p">:</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span> <span class="k">if</span> <span class="n">tags</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-1053" name="__codelineno-0-1053"></a>            <span class="s2">&quot;task_title&quot;</span><span class="p">:</span>  <span class="n">title</span><span class="p">,</span>
-<a id="__codelineno-0-1054" name="__codelineno-0-1054"></a>            <span class="s2">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="n">custom_attributes</span><span class="p">,</span>
+<a id="__codelineno-0-1054" name="__codelineno-0-1054"></a>            <span class="s2">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="n">custom_attributes</span> <span class="k">if</span> <span class="n">custom_attributes</span> <span class="k">else</span> <span class="p">{},</span>
 <a id="__codelineno-0-1055" name="__codelineno-0-1055"></a>            <span class="s2">&quot;cid&quot;</span><span class="p">:</span> <span class="n">cid</span>
 <a id="__codelineno-0-1056" name="__codelineno-0-1056"></a>        <span class="p">}</span>
 <a id="__codelineno-0-1057" name="__codelineno-0-1057"></a>
@@ -4057,7 +4057,7 @@
 <a id="__codelineno-0-1187" name="__codelineno-0-1187"></a>            <span class="s2">&quot;file_size&quot;</span><span class="p">:</span> <span class="n">file_size</span><span class="p">,</span>
 <a id="__codelineno-0-1188" name="__codelineno-0-1188"></a>            <span class="s2">&quot;file_description&quot;</span><span class="p">:</span> <span class="n">description</span><span class="p">,</span>
 <a id="__codelineno-0-1189" name="__codelineno-0-1189"></a>            <span class="s2">&quot;file_hash&quot;</span><span class="p">:</span> <span class="n">file_hash</span><span class="p">,</span>
-<a id="__codelineno-0-1190" name="__codelineno-0-1190"></a>            <span class="s2">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="n">custom_attributes</span><span class="p">,</span>
+<a id="__codelineno-0-1190" name="__codelineno-0-1190"></a>            <span class="s2">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="n">custom_attributes</span> <span class="k">if</span> <span class="n">custom_attributes</span> <span class="k">else</span> <span class="p">{},</span>
 <a id="__codelineno-0-1191" name="__codelineno-0-1191"></a>            <span class="s2">&quot;cid&quot;</span><span class="p">:</span> <span class="n">cid</span>
 <a id="__codelineno-0-1192" name="__codelineno-0-1192"></a>        <span class="p">}</span>
 <a id="__codelineno-0-1193" name="__codelineno-0-1193"></a>
@@ -4521,7 +4521,7 @@ by administrators in the UI otherwise it is ignored.</p>
 <a id="__codelineno-0-474" name="__codelineno-0-474"></a>        <span class="n">body</span><span class="p">[</span><span class="s1">&#39;asset_compromised&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">compromised</span>
 <a id="__codelineno-0-475" name="__codelineno-0-475"></a>    <span class="k">if</span> <span class="n">tags</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 <a id="__codelineno-0-476" name="__codelineno-0-476"></a>        <span class="n">body</span><span class="p">[</span><span class="s1">&#39;asset_tags&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span>
-<a id="__codelineno-0-477" name="__codelineno-0-477"></a>    <span class="k">if</span> <span class="n">tags</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-477" name="__codelineno-0-477"></a>    <span class="k">if</span> <span class="n">custom_attributes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 <a id="__codelineno-0-478" name="__codelineno-0-478"></a>        <span class="n">body</span><span class="p">[</span><span class="s1">&#39;custom_attributes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">custom_attributes</span>
 <a id="__codelineno-0-479" name="__codelineno-0-479"></a>
 <a id="__codelineno-0-480" name="__codelineno-0-480"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_s</span><span class="o">.</span><span class="n">pi_post</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;case/assets/add&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">body</span><span class="p">)</span>
@@ -4852,7 +4852,7 @@ by administrators in the UI otherwise it is ignored.</p>
 <a id="__codelineno-0-861" name="__codelineno-0-861"></a>        <span class="s2">&quot;event_date&quot;</span><span class="p">:</span> <span class="n">date_time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">T%H:%M:%S.</span><span class="si">%f</span><span class="s1">&#39;</span><span class="p">),</span>
 <a id="__codelineno-0-862" name="__codelineno-0-862"></a>        <span class="s2">&quot;event_tags&quot;</span><span class="p">:</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span> <span class="k">if</span> <span class="n">tags</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
 <a id="__codelineno-0-863" name="__codelineno-0-863"></a>        <span class="s2">&quot;event_tz&quot;</span><span class="p">:</span> <span class="n">timezone_string</span> <span class="k">if</span> <span class="n">timezone_string</span> <span class="k">else</span> <span class="s2">&quot;+00:00&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-864" name="__codelineno-0-864"></a>        <span class="s2">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="n">custom_attributes</span><span class="p">,</span>
+<a id="__codelineno-0-864" name="__codelineno-0-864"></a>        <span class="s2">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="n">custom_attributes</span> <span class="k">if</span> <span class="n">custom_attributes</span> <span class="k">else</span> <span class="p">{},</span>
 <a id="__codelineno-0-865" name="__codelineno-0-865"></a>        <span class="s2">&quot;cid&quot;</span><span class="p">:</span> <span class="n">cid</span>
 <a id="__codelineno-0-866" name="__codelineno-0-866"></a>    <span class="p">}</span>
 <a id="__codelineno-0-867" name="__codelineno-0-867"></a>
@@ -4951,7 +4951,7 @@ by administrators in the UI otherwise it is ignored.</p>
 <a id="__codelineno-0-1187" name="__codelineno-0-1187"></a>        <span class="s2">&quot;file_size&quot;</span><span class="p">:</span> <span class="n">file_size</span><span class="p">,</span>
 <a id="__codelineno-0-1188" name="__codelineno-0-1188"></a>        <span class="s2">&quot;file_description&quot;</span><span class="p">:</span> <span class="n">description</span><span class="p">,</span>
 <a id="__codelineno-0-1189" name="__codelineno-0-1189"></a>        <span class="s2">&quot;file_hash&quot;</span><span class="p">:</span> <span class="n">file_hash</span><span class="p">,</span>
-<a id="__codelineno-0-1190" name="__codelineno-0-1190"></a>        <span class="s2">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="n">custom_attributes</span><span class="p">,</span>
+<a id="__codelineno-0-1190" name="__codelineno-0-1190"></a>        <span class="s2">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="n">custom_attributes</span> <span class="k">if</span> <span class="n">custom_attributes</span> <span class="k">else</span> <span class="p">{},</span>
 <a id="__codelineno-0-1191" name="__codelineno-0-1191"></a>        <span class="s2">&quot;cid&quot;</span><span class="p">:</span> <span class="n">cid</span>
 <a id="__codelineno-0-1192" name="__codelineno-0-1192"></a>    <span class="p">}</span>
 <a id="__codelineno-0-1193" name="__codelineno-0-1193"></a>
@@ -5239,7 +5239,7 @@ by administrators in the UI otherwise it is ignored.</p>
 <a id="__codelineno-0-669" name="__codelineno-0-669"></a>        <span class="s2">&quot;ioc_value&quot;</span><span class="p">:</span> <span class="n">value</span><span class="p">,</span>
 <a id="__codelineno-0-670" name="__codelineno-0-670"></a>        <span class="s2">&quot;ioc_tlp_id&quot;</span><span class="p">:</span> <span class="n">ioc_tlp</span> <span class="k">if</span> <span class="n">ioc_tlp</span> <span class="k">else</span> <span class="mi">2</span><span class="p">,</span>
 <a id="__codelineno-0-671" name="__codelineno-0-671"></a>        <span class="s2">&quot;ioc_type_id&quot;</span><span class="p">:</span> <span class="n">ioc_type</span><span class="p">,</span>
-<a id="__codelineno-0-672" name="__codelineno-0-672"></a>        <span class="s2">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="n">custom_attributes</span><span class="p">,</span>
+<a id="__codelineno-0-672" name="__codelineno-0-672"></a>        <span class="s2">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="n">custom_attributes</span> <span class="k">if</span> <span class="n">custom_attributes</span> <span class="k">else</span> <span class="p">{},</span>
 <a id="__codelineno-0-673" name="__codelineno-0-673"></a>        <span class="s2">&quot;cid&quot;</span><span class="p">:</span> <span class="n">cid</span>
 <a id="__codelineno-0-674" name="__codelineno-0-674"></a>    <span class="p">}</span>
 <a id="__codelineno-0-675" name="__codelineno-0-675"></a>
@@ -5338,7 +5338,7 @@ by administrators in the UI otherwise it is ignored.</p>
 <a id="__codelineno-0-363" name="__codelineno-0-363"></a>        <span class="s2">&quot;note_title&quot;</span><span class="p">:</span> <span class="n">note_title</span><span class="p">,</span>
 <a id="__codelineno-0-364" name="__codelineno-0-364"></a>        <span class="s2">&quot;note_content&quot;</span><span class="p">:</span> <span class="n">note_content</span><span class="p">,</span>
 <a id="__codelineno-0-365" name="__codelineno-0-365"></a>        <span class="s2">&quot;group_id&quot;</span><span class="p">:</span> <span class="n">group_id</span><span class="p">,</span>
-<a id="__codelineno-0-366" name="__codelineno-0-366"></a>        <span class="s2">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="n">custom_attributes</span><span class="p">,</span>
+<a id="__codelineno-0-366" name="__codelineno-0-366"></a>        <span class="s2">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="n">custom_attributes</span> <span class="k">if</span> <span class="n">custom_attributes</span> <span class="k">else</span> <span class="p">{},</span>
 <a id="__codelineno-0-367" name="__codelineno-0-367"></a>        <span class="s2">&quot;cid&quot;</span><span class="p">:</span> <span class="n">cid</span>
 <a id="__codelineno-0-368" name="__codelineno-0-368"></a>    <span class="p">}</span>
 <a id="__codelineno-0-369" name="__codelineno-0-369"></a>
@@ -5554,7 +5554,7 @@ by administrators in the UI otherwise it is ignored.</p>
 <a id="__codelineno-0-1051" name="__codelineno-0-1051"></a>        <span class="s2">&quot;task_status_id&quot;</span><span class="p">:</span> <span class="n">status</span><span class="p">,</span>
 <a id="__codelineno-0-1052" name="__codelineno-0-1052"></a>        <span class="s2">&quot;task_tags&quot;</span><span class="p">:</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span> <span class="k">if</span> <span class="n">tags</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-1053" name="__codelineno-0-1053"></a>        <span class="s2">&quot;task_title&quot;</span><span class="p">:</span>  <span class="n">title</span><span class="p">,</span>
-<a id="__codelineno-0-1054" name="__codelineno-0-1054"></a>        <span class="s2">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="n">custom_attributes</span><span class="p">,</span>
+<a id="__codelineno-0-1054" name="__codelineno-0-1054"></a>        <span class="s2">&quot;custom_attributes&quot;</span><span class="p">:</span> <span class="n">custom_attributes</span> <span class="k">if</span> <span class="n">custom_attributes</span> <span class="k">else</span> <span class="p">{},</span>
 <a id="__codelineno-0-1055" name="__codelineno-0-1055"></a>        <span class="s2">&quot;cid&quot;</span><span class="p">:</span> <span class="n">cid</span>
 <a id="__codelineno-0-1056" name="__codelineno-0-1056"></a>    <span class="p">}</span>
 <a id="__codelineno-0-1057" name="__codelineno-0-1057"></a>

@@ -19,7 +19,7 @@ There are 3 types of hooks.
 
 ## Subscribing and unsubscribing
 
-Two methods are provided by ``IrisModuleInterface`` to subscribe and unsubscribe from hooks.   
+Two methods are provided by ``IrisModuleInterface`` to subscribe and unsubscribe to hooks.   
 
 ```python 
   def register_to_hook(module_id: int, 

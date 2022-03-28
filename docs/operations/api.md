@@ -17,13 +17,16 @@ It can be found on the left panel, under username and My Settings.
 
 
 ## References
-The API constantly evolves with IRIS and thus multiple versions and endpoints exists.  
-Use the references below to check which API version applies to your Iris version.  
+The API constantly evolves with IRIS and thus multiple versions exists.  
+Use the references below to check which API version applies to your Iris version.  Starting from Iris v1.4.0, the supported API version can also be checked in the UI `Advanced` > `Server settings`.
 
-- [API v1.0.0](../_static/iris_api_reference_v1.0.0.html) (applies to Iris <= v1.2.1)
-- [API v1.0.1](../_static/iris_api_reference_v1.0.1.html) (applies to Iris > v1.2.1) 
-- [API v1.0.2](../_static/iris_api_reference_v1.0.2.html) (applies to Iris > v1.4.0)
-
+| IRIS Version|	API Version & Reference |
+|-------------|---------|
+| v1.2.0|	[API v1.0.0](../_static/iris_api_reference_v1.0.0.html) |
+| v1.2.1|	[API v1.0.0](../_static/iris_api_reference_v1.0.0.html) |
+| v1.3.0|	[API v1.0.1](../_static/iris_api_reference_v1.0.1.html) |
+| v1.3.1|	[API v1.0.1](../_static/iris_api_reference_v1.0.1.html) |
+| v1.4.0|	[API v1.0.2](../_static/iris_api_reference_v1.0.2.html) |
 
 ## How to use 
 The API token is used as a Bearer and needs to be present in the header `Authorization` when issuing requests. 

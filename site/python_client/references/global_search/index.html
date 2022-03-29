@@ -543,20 +543,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dfir_iris_client/" class="md-nav__link">
-        Table of Contents
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../modules/" class="md-nav__link">
         Python client
       </a>
@@ -576,18 +562,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_7_3">
+        <label class="md-nav__link" for="__nav_7_2">
           References
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="References" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_3">
+        <label class="md-nav__title" for="__nav_7_2">
           <span class="md-nav__icon md-icon"></span>
           References
         </label>
@@ -833,56 +819,59 @@
     <div class="doc doc-contents ">
 
       <p>Searches an IOC across all investigation</p>
-<p>:param session: Client Session to use for request
-:param search_term: Search term to search for IOC
-:return: ApiResponse object</p>
 
-        <details class="quote">
-          <summary>Source code in <code>dfir_iris_client/global_search.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-22">22</a></span>
-<span class="normal"><a href="#__codelineno-0-23">23</a></span>
-<span class="normal"><a href="#__codelineno-0-24">24</a></span>
-<span class="normal"><a href="#__codelineno-0-25">25</a></span>
-<span class="normal"><a href="#__codelineno-0-26">26</a></span>
-<span class="normal"><a href="#__codelineno-0-27">27</a></span>
-<span class="normal"><a href="#__codelineno-0-28">28</a></span>
-<span class="normal"><a href="#__codelineno-0-29">29</a></span>
-<span class="normal"><a href="#__codelineno-0-30">30</a></span>
-<span class="normal"><a href="#__codelineno-0-31">31</a></span>
-<span class="normal"><a href="#__codelineno-0-32">32</a></span>
-<span class="normal"><a href="#__codelineno-0-33">33</a></span>
-<span class="normal"><a href="#__codelineno-0-34">34</a></span>
-<span class="normal"><a href="#__codelineno-0-35">35</a></span>
-<span class="normal"><a href="#__codelineno-0-36">36</a></span>
-<span class="normal"><a href="#__codelineno-0-37">37</a></span>
-<span class="normal"><a href="#__codelineno-0-38">38</a></span>
-<span class="normal"><a href="#__codelineno-0-39">39</a></span>
-<span class="normal"><a href="#__codelineno-0-40">40</a></span>
-<span class="normal"><a href="#__codelineno-0-41">41</a></span>
-<span class="normal"><a href="#__codelineno-0-42">42</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="k">def</span> <span class="nf">global_search_ioc</span><span class="p">(</span><span class="n">session</span><span class="p">:</span> <span class="n">ClientSession</span><span class="p">,</span> <span class="n">search_term</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ApiResponse</span><span class="p">:</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="sd">    Searches an IOC across all investigation</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a>
-<a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="sd">    :param session: Client Session to use for request</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="sd">    :param search_term: Search term to search for IOC</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="sd">    :return: ApiResponse object</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">session</span><span class="p">:</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31"></a>        <span class="k">return</span> <span class="n">ClientApiError</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;session is not a valid. Expected ClientSession got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">session</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32"></a>
-<a id="__codelineno-0-33" name="__codelineno-0-33"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">search_term</span><span class="p">:</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34"></a>        <span class="k">return</span> <span class="n">ClientApiError</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;search_term cannot be null. Use </span><span class="si">% f</span><span class="s1">or wildcard&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a>
-<a id="__codelineno-0-36" name="__codelineno-0-36"></a>    <span class="n">body</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-37" name="__codelineno-0-37"></a>        <span class="s2">&quot;search_value&quot;</span><span class="p">:</span> <span class="n">search_term</span><span class="p">,</span>
-<a id="__codelineno-0-38" name="__codelineno-0-38"></a>        <span class="s2">&quot;search_type&quot;</span><span class="p">:</span> <span class="s2">&quot;ioc&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39"></a>        <span class="s2">&quot;cid&quot;</span><span class="p">:</span> <span class="mi">1</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40"></a>    <span class="p">}</span>
-<a id="__codelineno-0-41" name="__codelineno-0-41"></a>
-<a id="__codelineno-0-42" name="__codelineno-0-42"></a>    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">pi_post</span><span class="p">(</span><span class="s1">&#39;search&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">body</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-        </details>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>session</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="dfir_iris_client.session.ClientSession" href="../session/#dfir_iris_client.session.ClientSession">ClientSession</a></code>
+          </td>
+          <td><p>Client Session to use for request</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>search_term</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>Search term to search for IOC</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="dfir_iris_client.helper.utils.ApiResponse">ApiResponse</span></code>
+          </td>
+          <td><p>ApiResponse object</p></td>
+        </tr>
+    </tbody>
+  </table>
+
     </div>
 
   </div>
@@ -903,56 +892,59 @@
     <div class="doc doc-contents ">
 
       <p>Searches in note contents across all investigation</p>
-<p>:param session: Client Session to use for request
-:param search_term: Search term to search for notes
-:return: ApiResponse object</p>
 
-        <details class="quote">
-          <summary>Source code in <code>dfir_iris_client/global_search.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-45">45</a></span>
-<span class="normal"><a href="#__codelineno-0-46">46</a></span>
-<span class="normal"><a href="#__codelineno-0-47">47</a></span>
-<span class="normal"><a href="#__codelineno-0-48">48</a></span>
-<span class="normal"><a href="#__codelineno-0-49">49</a></span>
-<span class="normal"><a href="#__codelineno-0-50">50</a></span>
-<span class="normal"><a href="#__codelineno-0-51">51</a></span>
-<span class="normal"><a href="#__codelineno-0-52">52</a></span>
-<span class="normal"><a href="#__codelineno-0-53">53</a></span>
-<span class="normal"><a href="#__codelineno-0-54">54</a></span>
-<span class="normal"><a href="#__codelineno-0-55">55</a></span>
-<span class="normal"><a href="#__codelineno-0-56">56</a></span>
-<span class="normal"><a href="#__codelineno-0-57">57</a></span>
-<span class="normal"><a href="#__codelineno-0-58">58</a></span>
-<span class="normal"><a href="#__codelineno-0-59">59</a></span>
-<span class="normal"><a href="#__codelineno-0-60">60</a></span>
-<span class="normal"><a href="#__codelineno-0-61">61</a></span>
-<span class="normal"><a href="#__codelineno-0-62">62</a></span>
-<span class="normal"><a href="#__codelineno-0-63">63</a></span>
-<span class="normal"><a href="#__codelineno-0-64">64</a></span>
-<span class="normal"><a href="#__codelineno-0-65">65</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="k">def</span> <span class="nf">global_search_notes</span><span class="p">(</span><span class="n">session</span><span class="p">:</span> <span class="n">ClientSession</span><span class="p">,</span> <span class="n">search_term</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ApiResponse</span><span class="p">:</span>
-<a id="__codelineno-0-46" name="__codelineno-0-46"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="sd">    Searches in note contents across all investigation</span>
-<a id="__codelineno-0-48" name="__codelineno-0-48"></a>
-<a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="sd">    :param session: Client Session to use for request</span>
-<a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="sd">    :param search_term: Search term to search for notes</span>
-<a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="sd">    :return: ApiResponse object</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-53" name="__codelineno-0-53"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">session</span><span class="p">:</span>
-<a id="__codelineno-0-54" name="__codelineno-0-54"></a>        <span class="k">return</span> <span class="n">ClientApiError</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;session is not a valid. Expected ClientSession got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">session</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-55" name="__codelineno-0-55"></a>
-<a id="__codelineno-0-56" name="__codelineno-0-56"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">search_term</span><span class="p">:</span>
-<a id="__codelineno-0-57" name="__codelineno-0-57"></a>        <span class="k">return</span> <span class="n">ClientApiError</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;search_term cannot be null. Use </span><span class="si">% f</span><span class="s1">or wildcard&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-58" name="__codelineno-0-58"></a>
-<a id="__codelineno-0-59" name="__codelineno-0-59"></a>    <span class="n">body</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-60" name="__codelineno-0-60"></a>        <span class="s2">&quot;search_value&quot;</span><span class="p">:</span> <span class="n">search_term</span><span class="p">,</span>
-<a id="__codelineno-0-61" name="__codelineno-0-61"></a>        <span class="s2">&quot;search_type&quot;</span><span class="p">:</span> <span class="s2">&quot;notes&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-62" name="__codelineno-0-62"></a>        <span class="s2">&quot;cid&quot;</span><span class="p">:</span> <span class="mi">1</span>
-<a id="__codelineno-0-63" name="__codelineno-0-63"></a>    <span class="p">}</span>
-<a id="__codelineno-0-64" name="__codelineno-0-64"></a>
-<a id="__codelineno-0-65" name="__codelineno-0-65"></a>    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">pi_post</span><span class="p">(</span><span class="s1">&#39;search&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">body</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-        </details>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>session</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="dfir_iris_client.session.ClientSession" href="../session/#dfir_iris_client.session.ClientSession">ClientSession</a></code>
+          </td>
+          <td><p>Client Session to use for request</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>search_term</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>Search term to search for notes</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="dfir_iris_client.helper.utils.ApiResponse">ApiResponse</span></code>
+          </td>
+          <td><p>ApiResponse object</p></td>
+        </tr>
+    </tbody>
+  </table>
+
     </div>
 
   </div>

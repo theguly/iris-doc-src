@@ -543,20 +543,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dfir_iris_client/" class="md-nav__link">
-        Table of Contents
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../modules/" class="md-nav__link">
         Python client
       </a>
@@ -576,18 +562,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_7_3">
+        <label class="md-nav__link" for="__nav_7_2">
           References
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="References" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_3">
+        <label class="md-nav__title" for="__nav_7_2">
           <span class="md-nav__icon md-icon"></span>
           References
         </label>
@@ -878,104 +864,6 @@
       <p>Handles the customer methods</p>
 
 
-          <details class="quote">
-            <summary>Source code in <code>dfir_iris_client/customer.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-21">21</a></span>
-<span class="normal"><a href="#__codelineno-0-22">22</a></span>
-<span class="normal"><a href="#__codelineno-0-23">23</a></span>
-<span class="normal"><a href="#__codelineno-0-24">24</a></span>
-<span class="normal"><a href="#__codelineno-0-25">25</a></span>
-<span class="normal"><a href="#__codelineno-0-26">26</a></span>
-<span class="normal"><a href="#__codelineno-0-27">27</a></span>
-<span class="normal"><a href="#__codelineno-0-28">28</a></span>
-<span class="normal"><a href="#__codelineno-0-29">29</a></span>
-<span class="normal"><a href="#__codelineno-0-30">30</a></span>
-<span class="normal"><a href="#__codelineno-0-31">31</a></span>
-<span class="normal"><a href="#__codelineno-0-32">32</a></span>
-<span class="normal"><a href="#__codelineno-0-33">33</a></span>
-<span class="normal"><a href="#__codelineno-0-34">34</a></span>
-<span class="normal"><a href="#__codelineno-0-35">35</a></span>
-<span class="normal"><a href="#__codelineno-0-36">36</a></span>
-<span class="normal"><a href="#__codelineno-0-37">37</a></span>
-<span class="normal"><a href="#__codelineno-0-38">38</a></span>
-<span class="normal"><a href="#__codelineno-0-39">39</a></span>
-<span class="normal"><a href="#__codelineno-0-40">40</a></span>
-<span class="normal"><a href="#__codelineno-0-41">41</a></span>
-<span class="normal"><a href="#__codelineno-0-42">42</a></span>
-<span class="normal"><a href="#__codelineno-0-43">43</a></span>
-<span class="normal"><a href="#__codelineno-0-44">44</a></span>
-<span class="normal"><a href="#__codelineno-0-45">45</a></span>
-<span class="normal"><a href="#__codelineno-0-46">46</a></span>
-<span class="normal"><a href="#__codelineno-0-47">47</a></span>
-<span class="normal"><a href="#__codelineno-0-48">48</a></span>
-<span class="normal"><a href="#__codelineno-0-49">49</a></span>
-<span class="normal"><a href="#__codelineno-0-50">50</a></span>
-<span class="normal"><a href="#__codelineno-0-51">51</a></span>
-<span class="normal"><a href="#__codelineno-0-52">52</a></span>
-<span class="normal"><a href="#__codelineno-0-53">53</a></span>
-<span class="normal"><a href="#__codelineno-0-54">54</a></span>
-<span class="normal"><a href="#__codelineno-0-55">55</a></span>
-<span class="normal"><a href="#__codelineno-0-56">56</a></span>
-<span class="normal"><a href="#__codelineno-0-57">57</a></span>
-<span class="normal"><a href="#__codelineno-0-58">58</a></span>
-<span class="normal"><a href="#__codelineno-0-59">59</a></span>
-<span class="normal"><a href="#__codelineno-0-60">60</a></span>
-<span class="normal"><a href="#__codelineno-0-61">61</a></span>
-<span class="normal"><a href="#__codelineno-0-62">62</a></span>
-<span class="normal"><a href="#__codelineno-0-63">63</a></span>
-<span class="normal"><a href="#__codelineno-0-64">64</a></span>
-<span class="normal"><a href="#__codelineno-0-65">65</a></span>
-<span class="normal"><a href="#__codelineno-0-66">66</a></span>
-<span class="normal"><a href="#__codelineno-0-67">67</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="k">class</span> <span class="nc">Customer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="sd">    Handles the customer methods</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session</span><span class="p">):</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_s</span> <span class="o">=</span> <span class="n">session</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27"></a>
-<a id="__codelineno-0-28" name="__codelineno-0-28"></a>    <span class="k">def</span> <span class="nf">lookup_customer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">customer_name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ApiResponse</span><span class="p">:</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a>        <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="sd">        Returns a customer ID if customer name is found. Customer names are unique in the database.</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="sd">        Customer ID is in the data section of the API response aka id = parse_api_data(resp.get_data(), &#39;customer_id&#39;)</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32"></a>
-<a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="sd">        :param: Customer name</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="sd">        :return: ApiResponse object</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36"></a>        <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_s</span><span class="o">.</span><span class="n">pi_get</span><span class="p">(</span><span class="s1">&#39;/manage/customers/list&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-37" name="__codelineno-0-37"></a>
-<a id="__codelineno-0-38" name="__codelineno-0-38"></a>        <span class="k">if</span> <span class="n">resp</span><span class="o">.</span><span class="n">is_success</span><span class="p">():</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39"></a>
-<a id="__codelineno-0-40" name="__codelineno-0-40"></a>            <span class="n">customer_list</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
-<a id="__codelineno-0-41" name="__codelineno-0-41"></a>
-<a id="__codelineno-0-42" name="__codelineno-0-42"></a>            <span class="k">for</span> <span class="n">customer</span> <span class="ow">in</span> <span class="n">customer_list</span><span class="p">:</span>
-<a id="__codelineno-0-43" name="__codelineno-0-43"></a>                <span class="k">if</span> <span class="n">customer</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;customer_name&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">customer_name</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44"></a>                    <span class="n">response</span> <span class="o">=</span> <span class="n">ClientApiData</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">customer</span><span class="p">)</span>
-<a id="__codelineno-0-45" name="__codelineno-0-45"></a>                    <span class="k">return</span> <span class="n">ApiResponse</span><span class="p">(</span><span class="n">response</span><span class="o">=</span><span class="n">response</span><span class="p">,</span> <span class="n">uri</span><span class="o">=</span><span class="n">resp</span><span class="o">.</span><span class="n">get_uri</span><span class="p">())</span>
-<a id="__codelineno-0-46" name="__codelineno-0-46"></a>
-<a id="__codelineno-0-47" name="__codelineno-0-47"></a>        <span class="k">return</span> <span class="n">ClientApiError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Customer </span><span class="si">{</span><span class="n">customer_name</span><span class="si">}</span><span class="s2"> not found&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-48" name="__codelineno-0-48"></a>
-<a id="__codelineno-0-49" name="__codelineno-0-49"></a>    <span class="k">def</span> <span class="nf">get_customer_by_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">customer_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ApiResponse</span><span class="p">:</span>
-<a id="__codelineno-0-50" name="__codelineno-0-50"></a>        <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="sd">        Returns a customer from its ID</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52"></a>
-<a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="sd">        :param customer_id: Customer ID to look up</span>
-<a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="sd">        :return: ApiResponse object</span>
-<a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-56" name="__codelineno-0-56"></a>        <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_s</span><span class="o">.</span><span class="n">pi_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;/manage/customers/</span><span class="si">{</span><span class="n">customer_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-57" name="__codelineno-0-57"></a>
-<a id="__codelineno-0-58" name="__codelineno-0-58"></a>        <span class="k">return</span> <span class="n">resp</span>
-<a id="__codelineno-0-59" name="__codelineno-0-59"></a>
-<a id="__codelineno-0-60" name="__codelineno-0-60"></a>    <span class="k">def</span> <span class="nf">list_customers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ApiResponse</span><span class="p">:</span>
-<a id="__codelineno-0-61" name="__codelineno-0-61"></a>        <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="sd">        Returns a list of the available customers</span>
-<a id="__codelineno-0-63" name="__codelineno-0-63"></a>
-<a id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="sd">        :return: ApiResponse object</span>
-<a id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-66" name="__codelineno-0-66"></a>
-<a id="__codelineno-0-67" name="__codelineno-0-67"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_s</span><span class="o">.</span><span class="n">pi_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;/manage/customers/list&#39;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-          </details>
 
 
 
@@ -1004,33 +892,49 @@
     <div class="doc doc-contents ">
 
       <p>Returns a customer from its ID</p>
-<p>:param customer_id: Customer ID to look up
-:return: ApiResponse object</p>
 
-        <details class="quote">
-          <summary>Source code in <code>dfir_iris_client/customer.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-49">49</a></span>
-<span class="normal"><a href="#__codelineno-0-50">50</a></span>
-<span class="normal"><a href="#__codelineno-0-51">51</a></span>
-<span class="normal"><a href="#__codelineno-0-52">52</a></span>
-<span class="normal"><a href="#__codelineno-0-53">53</a></span>
-<span class="normal"><a href="#__codelineno-0-54">54</a></span>
-<span class="normal"><a href="#__codelineno-0-55">55</a></span>
-<span class="normal"><a href="#__codelineno-0-56">56</a></span>
-<span class="normal"><a href="#__codelineno-0-57">57</a></span>
-<span class="normal"><a href="#__codelineno-0-58">58</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="k">def</span> <span class="nf">get_customer_by_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">customer_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ApiResponse</span><span class="p">:</span>
-<a id="__codelineno-0-50" name="__codelineno-0-50"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="sd">    Returns a customer from its ID</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52"></a>
-<a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="sd">    :param customer_id: Customer ID to look up</span>
-<a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="sd">    :return: ApiResponse object</span>
-<a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-56" name="__codelineno-0-56"></a>    <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_s</span><span class="o">.</span><span class="n">pi_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;/manage/customers/</span><span class="si">{</span><span class="n">customer_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-57" name="__codelineno-0-57"></a>
-<a id="__codelineno-0-58" name="__codelineno-0-58"></a>    <span class="k">return</span> <span class="n">resp</span>
-</code></pre></div>
-</td></tr></table>
-        </details>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>customer_id</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td><p>Customer ID to look up</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="dfir_iris_client.helper.utils.ApiResponse">ApiResponse</span></code>
+          </td>
+          <td><p>ApiResponse object</p></td>
+        </tr>
+    </tbody>
+  </table>
+
     </div>
 
   </div>
@@ -1053,26 +957,24 @@
       <p>Returns a list of the available customers</p>
 <p>:return: ApiResponse object</p>
 
-        <details class="quote">
-          <summary>Source code in <code>dfir_iris_client/customer.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-60">60</a></span>
-<span class="normal"><a href="#__codelineno-0-61">61</a></span>
-<span class="normal"><a href="#__codelineno-0-62">62</a></span>
-<span class="normal"><a href="#__codelineno-0-63">63</a></span>
-<span class="normal"><a href="#__codelineno-0-64">64</a></span>
-<span class="normal"><a href="#__codelineno-0-65">65</a></span>
-<span class="normal"><a href="#__codelineno-0-66">66</a></span>
-<span class="normal"><a href="#__codelineno-0-67">67</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="k">def</span> <span class="nf">list_customers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ApiResponse</span><span class="p">:</span>
-<a id="__codelineno-0-61" name="__codelineno-0-61"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="sd">    Returns a list of the available customers</span>
-<a id="__codelineno-0-63" name="__codelineno-0-63"></a>
-<a id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="sd">    :return: ApiResponse object</span>
-<a id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-66" name="__codelineno-0-66"></a>
-<a id="__codelineno-0-67" name="__codelineno-0-67"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_s</span><span class="o">.</span><span class="n">pi_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;/manage/customers/list&#39;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-        </details>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="dfir_iris_client.helper.utils.ApiResponse">ApiResponse</span></code>
+          </td>
+          <td><p>ApiResponse object</p></td>
+        </tr>
+    </tbody>
+  </table>
+
     </div>
 
   </div>
@@ -1094,53 +996,48 @@
 
       <p>Returns a customer ID if customer name is found. Customer names are unique in the database.
 Customer ID is in the data section of the API response aka id = parse_api_data(resp.get_data(), 'customer_id')</p>
-<p>:param: Customer name
-:return: ApiResponse object</p>
 
-        <details class="quote">
-          <summary>Source code in <code>dfir_iris_client/customer.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-28">28</a></span>
-<span class="normal"><a href="#__codelineno-0-29">29</a></span>
-<span class="normal"><a href="#__codelineno-0-30">30</a></span>
-<span class="normal"><a href="#__codelineno-0-31">31</a></span>
-<span class="normal"><a href="#__codelineno-0-32">32</a></span>
-<span class="normal"><a href="#__codelineno-0-33">33</a></span>
-<span class="normal"><a href="#__codelineno-0-34">34</a></span>
-<span class="normal"><a href="#__codelineno-0-35">35</a></span>
-<span class="normal"><a href="#__codelineno-0-36">36</a></span>
-<span class="normal"><a href="#__codelineno-0-37">37</a></span>
-<span class="normal"><a href="#__codelineno-0-38">38</a></span>
-<span class="normal"><a href="#__codelineno-0-39">39</a></span>
-<span class="normal"><a href="#__codelineno-0-40">40</a></span>
-<span class="normal"><a href="#__codelineno-0-41">41</a></span>
-<span class="normal"><a href="#__codelineno-0-42">42</a></span>
-<span class="normal"><a href="#__codelineno-0-43">43</a></span>
-<span class="normal"><a href="#__codelineno-0-44">44</a></span>
-<span class="normal"><a href="#__codelineno-0-45">45</a></span>
-<span class="normal"><a href="#__codelineno-0-46">46</a></span>
-<span class="normal"><a href="#__codelineno-0-47">47</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="k">def</span> <span class="nf">lookup_customer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">customer_name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ApiResponse</span><span class="p">:</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="sd">    Returns a customer ID if customer name is found. Customer names are unique in the database.</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="sd">    Customer ID is in the data section of the API response aka id = parse_api_data(resp.get_data(), &#39;customer_id&#39;)</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32"></a>
-<a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="sd">    :param: Customer name</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="sd">    :return: ApiResponse object</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36"></a>    <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_s</span><span class="o">.</span><span class="n">pi_get</span><span class="p">(</span><span class="s1">&#39;/manage/customers/list&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-37" name="__codelineno-0-37"></a>
-<a id="__codelineno-0-38" name="__codelineno-0-38"></a>    <span class="k">if</span> <span class="n">resp</span><span class="o">.</span><span class="n">is_success</span><span class="p">():</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39"></a>
-<a id="__codelineno-0-40" name="__codelineno-0-40"></a>        <span class="n">customer_list</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
-<a id="__codelineno-0-41" name="__codelineno-0-41"></a>
-<a id="__codelineno-0-42" name="__codelineno-0-42"></a>        <span class="k">for</span> <span class="n">customer</span> <span class="ow">in</span> <span class="n">customer_list</span><span class="p">:</span>
-<a id="__codelineno-0-43" name="__codelineno-0-43"></a>            <span class="k">if</span> <span class="n">customer</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;customer_name&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">customer_name</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44"></a>                <span class="n">response</span> <span class="o">=</span> <span class="n">ClientApiData</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">customer</span><span class="p">)</span>
-<a id="__codelineno-0-45" name="__codelineno-0-45"></a>                <span class="k">return</span> <span class="n">ApiResponse</span><span class="p">(</span><span class="n">response</span><span class="o">=</span><span class="n">response</span><span class="p">,</span> <span class="n">uri</span><span class="o">=</span><span class="n">resp</span><span class="o">.</span><span class="n">get_uri</span><span class="p">())</span>
-<a id="__codelineno-0-46" name="__codelineno-0-46"></a>
-<a id="__codelineno-0-47" name="__codelineno-0-47"></a>    <span class="k">return</span> <span class="n">ClientApiError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Customer </span><span class="si">{</span><span class="n">customer_name</span><span class="si">}</span><span class="s2"> not found&quot;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-        </details>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>customer_name</code></td>
+          <td>
+          </td>
+          <td><p>Name of the customer to lookup</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="dfir_iris_client.helper.utils.ApiResponse">ApiResponse</span></code>
+          </td>
+          <td><p>ApiResponse object</p></td>
+        </tr>
+    </tbody>
+  </table>
+
     </div>
 
   </div>

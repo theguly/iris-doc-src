@@ -44,7 +44,7 @@ site_url: https://dfir-iris.github.io
 site_description: "DFIR-IRIS Documentation - An incident response collaborative platform"
 site_author: "DFIR-IRIS Team"
 
-repo_name: IRIS Web
+repo_name: DFIR-IRIS Web
 edit_uri: ""
 
 copyright: Copyright &copy; 2021 - 2022 DFIR-IRIS Team
@@ -57,10 +57,9 @@ plugins:
       handlers: 
         python:
           rendering:
-            show_source: true
-            docstring_style: sphinx
-            docstring_section_style: list
+            show_source: false
+            docstring_style: google
       watch: [../dfir-iris-client]
 
 
-dev_addr: '127.0.0.1:8081'
+dev_addr: '127.0.0.1:8080'

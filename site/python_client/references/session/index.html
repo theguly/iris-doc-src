@@ -543,20 +543,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dfir_iris_client/" class="md-nav__link">
-        Table of Contents
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../modules/" class="md-nav__link">
         Python client
       </a>
@@ -576,18 +562,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_7_3">
+        <label class="md-nav__link" for="__nav_7_2">
           References
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="References" data-md-level="2">
-        <label class="md-nav__title" for="__nav_7_3">
+        <label class="md-nav__title" for="__nav_7_2">
           <span class="md-nav__icon md-icon"></span>
           References
         </label>
@@ -1028,356 +1014,6 @@ it can handles. </p>
 to the server.</p>
 
 
-          <details class="quote">
-            <summary>Source code in <code>dfir_iris_client/session.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-41"> 41</a></span>
-<span class="normal"><a href="#__codelineno-0-42"> 42</a></span>
-<span class="normal"><a href="#__codelineno-0-43"> 43</a></span>
-<span class="normal"><a href="#__codelineno-0-44"> 44</a></span>
-<span class="normal"><a href="#__codelineno-0-45"> 45</a></span>
-<span class="normal"><a href="#__codelineno-0-46"> 46</a></span>
-<span class="normal"><a href="#__codelineno-0-47"> 47</a></span>
-<span class="normal"><a href="#__codelineno-0-48"> 48</a></span>
-<span class="normal"><a href="#__codelineno-0-49"> 49</a></span>
-<span class="normal"><a href="#__codelineno-0-50"> 50</a></span>
-<span class="normal"><a href="#__codelineno-0-51"> 51</a></span>
-<span class="normal"><a href="#__codelineno-0-52"> 52</a></span>
-<span class="normal"><a href="#__codelineno-0-53"> 53</a></span>
-<span class="normal"><a href="#__codelineno-0-54"> 54</a></span>
-<span class="normal"><a href="#__codelineno-0-55"> 55</a></span>
-<span class="normal"><a href="#__codelineno-0-56"> 56</a></span>
-<span class="normal"><a href="#__codelineno-0-57"> 57</a></span>
-<span class="normal"><a href="#__codelineno-0-58"> 58</a></span>
-<span class="normal"><a href="#__codelineno-0-59"> 59</a></span>
-<span class="normal"><a href="#__codelineno-0-60"> 60</a></span>
-<span class="normal"><a href="#__codelineno-0-61"> 61</a></span>
-<span class="normal"><a href="#__codelineno-0-62"> 62</a></span>
-<span class="normal"><a href="#__codelineno-0-63"> 63</a></span>
-<span class="normal"><a href="#__codelineno-0-64"> 64</a></span>
-<span class="normal"><a href="#__codelineno-0-65"> 65</a></span>
-<span class="normal"><a href="#__codelineno-0-66"> 66</a></span>
-<span class="normal"><a href="#__codelineno-0-67"> 67</a></span>
-<span class="normal"><a href="#__codelineno-0-68"> 68</a></span>
-<span class="normal"><a href="#__codelineno-0-69"> 69</a></span>
-<span class="normal"><a href="#__codelineno-0-70"> 70</a></span>
-<span class="normal"><a href="#__codelineno-0-71"> 71</a></span>
-<span class="normal"><a href="#__codelineno-0-72"> 72</a></span>
-<span class="normal"><a href="#__codelineno-0-73"> 73</a></span>
-<span class="normal"><a href="#__codelineno-0-74"> 74</a></span>
-<span class="normal"><a href="#__codelineno-0-75"> 75</a></span>
-<span class="normal"><a href="#__codelineno-0-76"> 76</a></span>
-<span class="normal"><a href="#__codelineno-0-77"> 77</a></span>
-<span class="normal"><a href="#__codelineno-0-78"> 78</a></span>
-<span class="normal"><a href="#__codelineno-0-79"> 79</a></span>
-<span class="normal"><a href="#__codelineno-0-80"> 80</a></span>
-<span class="normal"><a href="#__codelineno-0-81"> 81</a></span>
-<span class="normal"><a href="#__codelineno-0-82"> 82</a></span>
-<span class="normal"><a href="#__codelineno-0-83"> 83</a></span>
-<span class="normal"><a href="#__codelineno-0-84"> 84</a></span>
-<span class="normal"><a href="#__codelineno-0-85"> 85</a></span>
-<span class="normal"><a href="#__codelineno-0-86"> 86</a></span>
-<span class="normal"><a href="#__codelineno-0-87"> 87</a></span>
-<span class="normal"><a href="#__codelineno-0-88"> 88</a></span>
-<span class="normal"><a href="#__codelineno-0-89"> 89</a></span>
-<span class="normal"><a href="#__codelineno-0-90"> 90</a></span>
-<span class="normal"><a href="#__codelineno-0-91"> 91</a></span>
-<span class="normal"><a href="#__codelineno-0-92"> 92</a></span>
-<span class="normal"><a href="#__codelineno-0-93"> 93</a></span>
-<span class="normal"><a href="#__codelineno-0-94"> 94</a></span>
-<span class="normal"><a href="#__codelineno-0-95"> 95</a></span>
-<span class="normal"><a href="#__codelineno-0-96"> 96</a></span>
-<span class="normal"><a href="#__codelineno-0-97"> 97</a></span>
-<span class="normal"><a href="#__codelineno-0-98"> 98</a></span>
-<span class="normal"><a href="#__codelineno-0-99"> 99</a></span>
-<span class="normal"><a href="#__codelineno-0-100">100</a></span>
-<span class="normal"><a href="#__codelineno-0-101">101</a></span>
-<span class="normal"><a href="#__codelineno-0-102">102</a></span>
-<span class="normal"><a href="#__codelineno-0-103">103</a></span>
-<span class="normal"><a href="#__codelineno-0-104">104</a></span>
-<span class="normal"><a href="#__codelineno-0-105">105</a></span>
-<span class="normal"><a href="#__codelineno-0-106">106</a></span>
-<span class="normal"><a href="#__codelineno-0-107">107</a></span>
-<span class="normal"><a href="#__codelineno-0-108">108</a></span>
-<span class="normal"><a href="#__codelineno-0-109">109</a></span>
-<span class="normal"><a href="#__codelineno-0-110">110</a></span>
-<span class="normal"><a href="#__codelineno-0-111">111</a></span>
-<span class="normal"><a href="#__codelineno-0-112">112</a></span>
-<span class="normal"><a href="#__codelineno-0-113">113</a></span>
-<span class="normal"><a href="#__codelineno-0-114">114</a></span>
-<span class="normal"><a href="#__codelineno-0-115">115</a></span>
-<span class="normal"><a href="#__codelineno-0-116">116</a></span>
-<span class="normal"><a href="#__codelineno-0-117">117</a></span>
-<span class="normal"><a href="#__codelineno-0-118">118</a></span>
-<span class="normal"><a href="#__codelineno-0-119">119</a></span>
-<span class="normal"><a href="#__codelineno-0-120">120</a></span>
-<span class="normal"><a href="#__codelineno-0-121">121</a></span>
-<span class="normal"><a href="#__codelineno-0-122">122</a></span>
-<span class="normal"><a href="#__codelineno-0-123">123</a></span>
-<span class="normal"><a href="#__codelineno-0-124">124</a></span>
-<span class="normal"><a href="#__codelineno-0-125">125</a></span>
-<span class="normal"><a href="#__codelineno-0-126">126</a></span>
-<span class="normal"><a href="#__codelineno-0-127">127</a></span>
-<span class="normal"><a href="#__codelineno-0-128">128</a></span>
-<span class="normal"><a href="#__codelineno-0-129">129</a></span>
-<span class="normal"><a href="#__codelineno-0-130">130</a></span>
-<span class="normal"><a href="#__codelineno-0-131">131</a></span>
-<span class="normal"><a href="#__codelineno-0-132">132</a></span>
-<span class="normal"><a href="#__codelineno-0-133">133</a></span>
-<span class="normal"><a href="#__codelineno-0-134">134</a></span>
-<span class="normal"><a href="#__codelineno-0-135">135</a></span>
-<span class="normal"><a href="#__codelineno-0-136">136</a></span>
-<span class="normal"><a href="#__codelineno-0-137">137</a></span>
-<span class="normal"><a href="#__codelineno-0-138">138</a></span>
-<span class="normal"><a href="#__codelineno-0-139">139</a></span>
-<span class="normal"><a href="#__codelineno-0-140">140</a></span>
-<span class="normal"><a href="#__codelineno-0-141">141</a></span>
-<span class="normal"><a href="#__codelineno-0-142">142</a></span>
-<span class="normal"><a href="#__codelineno-0-143">143</a></span>
-<span class="normal"><a href="#__codelineno-0-144">144</a></span>
-<span class="normal"><a href="#__codelineno-0-145">145</a></span>
-<span class="normal"><a href="#__codelineno-0-146">146</a></span>
-<span class="normal"><a href="#__codelineno-0-147">147</a></span>
-<span class="normal"><a href="#__codelineno-0-148">148</a></span>
-<span class="normal"><a href="#__codelineno-0-149">149</a></span>
-<span class="normal"><a href="#__codelineno-0-150">150</a></span>
-<span class="normal"><a href="#__codelineno-0-151">151</a></span>
-<span class="normal"><a href="#__codelineno-0-152">152</a></span>
-<span class="normal"><a href="#__codelineno-0-153">153</a></span>
-<span class="normal"><a href="#__codelineno-0-154">154</a></span>
-<span class="normal"><a href="#__codelineno-0-155">155</a></span>
-<span class="normal"><a href="#__codelineno-0-156">156</a></span>
-<span class="normal"><a href="#__codelineno-0-157">157</a></span>
-<span class="normal"><a href="#__codelineno-0-158">158</a></span>
-<span class="normal"><a href="#__codelineno-0-159">159</a></span>
-<span class="normal"><a href="#__codelineno-0-160">160</a></span>
-<span class="normal"><a href="#__codelineno-0-161">161</a></span>
-<span class="normal"><a href="#__codelineno-0-162">162</a></span>
-<span class="normal"><a href="#__codelineno-0-163">163</a></span>
-<span class="normal"><a href="#__codelineno-0-164">164</a></span>
-<span class="normal"><a href="#__codelineno-0-165">165</a></span>
-<span class="normal"><a href="#__codelineno-0-166">166</a></span>
-<span class="normal"><a href="#__codelineno-0-167">167</a></span>
-<span class="normal"><a href="#__codelineno-0-168">168</a></span>
-<span class="normal"><a href="#__codelineno-0-169">169</a></span>
-<span class="normal"><a href="#__codelineno-0-170">170</a></span>
-<span class="normal"><a href="#__codelineno-0-171">171</a></span>
-<span class="normal"><a href="#__codelineno-0-172">172</a></span>
-<span class="normal"><a href="#__codelineno-0-173">173</a></span>
-<span class="normal"><a href="#__codelineno-0-174">174</a></span>
-<span class="normal"><a href="#__codelineno-0-175">175</a></span>
-<span class="normal"><a href="#__codelineno-0-176">176</a></span>
-<span class="normal"><a href="#__codelineno-0-177">177</a></span>
-<span class="normal"><a href="#__codelineno-0-178">178</a></span>
-<span class="normal"><a href="#__codelineno-0-179">179</a></span>
-<span class="normal"><a href="#__codelineno-0-180">180</a></span>
-<span class="normal"><a href="#__codelineno-0-181">181</a></span>
-<span class="normal"><a href="#__codelineno-0-182">182</a></span>
-<span class="normal"><a href="#__codelineno-0-183">183</a></span>
-<span class="normal"><a href="#__codelineno-0-184">184</a></span>
-<span class="normal"><a href="#__codelineno-0-185">185</a></span>
-<span class="normal"><a href="#__codelineno-0-186">186</a></span>
-<span class="normal"><a href="#__codelineno-0-187">187</a></span>
-<span class="normal"><a href="#__codelineno-0-188">188</a></span>
-<span class="normal"><a href="#__codelineno-0-189">189</a></span>
-<span class="normal"><a href="#__codelineno-0-190">190</a></span>
-<span class="normal"><a href="#__codelineno-0-191">191</a></span>
-<span class="normal"><a href="#__codelineno-0-192">192</a></span>
-<span class="normal"><a href="#__codelineno-0-193">193</a></span>
-<span class="normal"><a href="#__codelineno-0-194">194</a></span>
-<span class="normal"><a href="#__codelineno-0-195">195</a></span>
-<span class="normal"><a href="#__codelineno-0-196">196</a></span>
-<span class="normal"><a href="#__codelineno-0-197">197</a></span>
-<span class="normal"><a href="#__codelineno-0-198">198</a></span>
-<span class="normal"><a href="#__codelineno-0-199">199</a></span>
-<span class="normal"><a href="#__codelineno-0-200">200</a></span>
-<span class="normal"><a href="#__codelineno-0-201">201</a></span>
-<span class="normal"><a href="#__codelineno-0-202">202</a></span>
-<span class="normal"><a href="#__codelineno-0-203">203</a></span>
-<span class="normal"><a href="#__codelineno-0-204">204</a></span>
-<span class="normal"><a href="#__codelineno-0-205">205</a></span>
-<span class="normal"><a href="#__codelineno-0-206">206</a></span>
-<span class="normal"><a href="#__codelineno-0-207">207</a></span>
-<span class="normal"><a href="#__codelineno-0-208">208</a></span>
-<span class="normal"><a href="#__codelineno-0-209">209</a></span>
-<span class="normal"><a href="#__codelineno-0-210">210</a></span>
-<span class="normal"><a href="#__codelineno-0-211">211</a></span>
-<span class="normal"><a href="#__codelineno-0-212">212</a></span>
-<span class="normal"><a href="#__codelineno-0-213">213</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="k">class</span> <span class="nc">ClientSession</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-<a id="__codelineno-0-42" name="__codelineno-0-42"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="sd">    Represents a client that can interacts with Iris. It is basic wrapper handling authentication and the requests</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="sd">    to the server.</span>
-<a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-46" name="__codelineno-0-46"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">apikey</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">agent</span><span class="o">=</span><span class="s2">&quot;iris-client&quot;</span><span class="p">,</span> <span class="n">ssl_verify</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">proxy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">120</span><span class="p">):</span>
-<a id="__codelineno-0-47" name="__codelineno-0-47"></a>        <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="sd">        Initialize the ClientSession. APIKey validity is verified as well as API compatibility between the client</span>
-<a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="sd">        and the server.</span>
-<a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="sd">        Version verification expects to fall into the following schema :</span>
-<a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="sd">            `Version(server_min_api_version) &lt;= Version(client_api_version) &lt;= Version(server_max_api_version)`</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52"></a>
-<a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="sd">        If the client does not find itself compatible, an exception is raised.</span>
-<a id="__codelineno-0-54" name="__codelineno-0-54"></a>
-<a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="sd">        Once successfully initialized, the session become available through global var client_session.</span>
-<a id="__codelineno-0-56" name="__codelineno-0-56"></a>
-<a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="sd">        :param apikey: A valid API key. It can be fetched from My profile &gt; API Key</span>
-<a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="sd">        :param host: Target IRIS server full URL eg https://iris.local:9443</span>
-<a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="sd">        :param agent: User agent to issue the requests with</span>
-<a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="sd">        :param ssl_verify: Set or unset SSL verification</span>
-<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="sd">        :param proxy: Proxy parameters - For future use only</span>
-<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="sd">        :param timeout: Default timeout for requests</span>
-<a id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-64" name="__codelineno-0-64"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_apikey</span> <span class="o">=</span> <span class="n">apikey</span>
-<a id="__codelineno-0-65" name="__codelineno-0-65"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_host</span> <span class="o">=</span> <span class="n">host</span>
-<a id="__codelineno-0-66" name="__codelineno-0-66"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_agent</span> <span class="o">=</span> <span class="n">agent</span>
-<a id="__codelineno-0-67" name="__codelineno-0-67"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_ssl_verify</span> <span class="o">=</span> <span class="n">ssl_verify</span>
-<a id="__codelineno-0-68" name="__codelineno-0-68"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_proxy</span> <span class="o">=</span> <span class="n">proxy</span>
-<a id="__codelineno-0-69" name="__codelineno-0-69"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_timeout</span> <span class="o">=</span> <span class="n">timeout</span>
-<a id="__codelineno-0-70" name="__codelineno-0-70"></a>
-<a id="__codelineno-0-71" name="__codelineno-0-71"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ssl_verify</span><span class="p">:</span>
-<a id="__codelineno-0-72" name="__codelineno-0-72"></a>            <span class="n">requests</span><span class="o">.</span><span class="n">packages</span><span class="o">.</span><span class="n">urllib3</span><span class="o">.</span><span class="n">disable_warnings</span><span class="p">(</span><span class="n">InsecureRequestWarning</span><span class="p">)</span>
-<a id="__codelineno-0-73" name="__codelineno-0-73"></a>
-<a id="__codelineno-0-74" name="__codelineno-0-74"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_check_apikey_validity</span><span class="p">()</span>
-<a id="__codelineno-0-75" name="__codelineno-0-75"></a>
-<a id="__codelineno-0-76" name="__codelineno-0-76"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_check_api_compatibility</span><span class="p">()</span>
-<a id="__codelineno-0-77" name="__codelineno-0-77"></a>
-<a id="__codelineno-0-78" name="__codelineno-0-78"></a>        <span class="k">global</span> <span class="n">client_session</span>
-<a id="__codelineno-0-79" name="__codelineno-0-79"></a>        <span class="n">client_session</span> <span class="o">=</span> <span class="bp">self</span>
-<a id="__codelineno-0-80" name="__codelineno-0-80"></a>
-<a id="__codelineno-0-81" name="__codelineno-0-81"></a>    <span class="k">def</span> <span class="nf">preload_base_objects</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-82" name="__codelineno-0-82"></a>        <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-83" name="__codelineno-0-83"></a><span class="sd">        Preload the base objects most commonly used. This simply init the BaseObjects</span>
-<a id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="sd">        class, which in turns requests and build all the most common objects such as</span>
-<a id="__codelineno-0-85" name="__codelineno-0-85"></a><span class="sd">        AnalysisStatus, EventCategory, EventType, etc.</span>
-<a id="__codelineno-0-86" name="__codelineno-0-86"></a>
-<a id="__codelineno-0-87" name="__codelineno-0-87"></a><span class="sd">        For future use only</span>
-<a id="__codelineno-0-88" name="__codelineno-0-88"></a>
-<a id="__codelineno-0-89" name="__codelineno-0-89"></a><span class="sd">        :return: None</span>
-<a id="__codelineno-0-90" name="__codelineno-0-90"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-91" name="__codelineno-0-91"></a>        <span class="k">pass</span>
-<a id="__codelineno-0-92" name="__codelineno-0-92"></a>
-<a id="__codelineno-0-93" name="__codelineno-0-93"></a>    <span class="k">def</span> <span class="nf">_check_api_compatibility</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<a id="__codelineno-0-94" name="__codelineno-0-94"></a>        <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-95" name="__codelineno-0-95"></a><span class="sd">        Checks that the server and client can work together.</span>
-<a id="__codelineno-0-96" name="__codelineno-0-96"></a><span class="sd">        The methods expects the following :</span>
-<a id="__codelineno-0-97" name="__codelineno-0-97"></a><span class="sd">        `Version(server_min_api_version) &lt;= Version(client_api_version) &lt;= Version(server_max_api_version)`</span>
-<a id="__codelineno-0-98" name="__codelineno-0-98"></a>
-<a id="__codelineno-0-99" name="__codelineno-0-99"></a><span class="sd">        If API is not compatible, an exception is raised.</span>
-<a id="__codelineno-0-100" name="__codelineno-0-100"></a>
-<a id="__codelineno-0-101" name="__codelineno-0-101"></a><span class="sd">        :raises: Exception if not API compatible</span>
-<a id="__codelineno-0-102" name="__codelineno-0-102"></a><span class="sd">        :return: bool</span>
-<a id="__codelineno-0-103" name="__codelineno-0-103"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-104" name="__codelineno-0-104"></a>        <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pi_get</span><span class="p">(</span><span class="s1">&#39;api/versions&#39;</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-0-105" name="__codelineno-0-105"></a>        <span class="k">if</span> <span class="n">resp</span><span class="o">.</span><span class="n">is_error</span><span class="p">():</span>
-<a id="__codelineno-0-106" name="__codelineno-0-106"></a>            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unable to contact endpoint api/versions. </span><span class="si">{</span><span class="n">resp</span><span class="o">.</span><span class="n">get_msg</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-107" name="__codelineno-0-107"></a>
-<a id="__codelineno-0-108" name="__codelineno-0-108"></a>        <span class="n">versions</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
-<a id="__codelineno-0-109" name="__codelineno-0-109"></a>        <span class="n">min_ver</span> <span class="o">=</span> <span class="n">versions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;api_min&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-110" name="__codelineno-0-110"></a>        <span class="n">max_ver</span> <span class="o">=</span> <span class="n">versions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;api_current&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-111" name="__codelineno-0-111"></a>
-<a id="__codelineno-0-112" name="__codelineno-0-112"></a>        <span class="k">if</span> <span class="n">Version</span><span class="p">(</span><span class="n">min_ver</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">Version</span><span class="p">(</span><span class="n">API_VERSION</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">Version</span><span class="p">(</span><span class="n">max_ver</span><span class="p">):</span>
-<a id="__codelineno-0-113" name="__codelineno-0-113"></a>            <span class="k">return</span> <span class="kc">True</span>
-<a id="__codelineno-0-114" name="__codelineno-0-114"></a>
-<a id="__codelineno-0-115" name="__codelineno-0-115"></a>        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Incompatible API version. Server expects </span><span class="si">{</span><span class="n">min_ver</span><span class="si">}</span><span class="s1"> -&gt; </span><span class="si">{</span><span class="n">max_ver</span><span class="si">}</span><span class="s1"> but client is </span><span class="si">{</span><span class="n">API_VERSION</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-116" name="__codelineno-0-116"></a>
-<a id="__codelineno-0-117" name="__codelineno-0-117"></a>    <span class="k">def</span> <span class="nf">_check_apikey_validity</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<a id="__codelineno-0-118" name="__codelineno-0-118"></a>        <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-119" name="__codelineno-0-119"></a><span class="sd">        Checks the validity of the provided API key (emptiness, string and authorized).</span>
-<a id="__codelineno-0-120" name="__codelineno-0-120"></a><span class="sd">        If the key is invalid, a ValueError exception is raised.</span>
-<a id="__codelineno-0-121" name="__codelineno-0-121"></a>
-<a id="__codelineno-0-122" name="__codelineno-0-122"></a><span class="sd">        :raises: ValueError if the API key is invalid</span>
-<a id="__codelineno-0-123" name="__codelineno-0-123"></a><span class="sd">        :return: bool</span>
-<a id="__codelineno-0-124" name="__codelineno-0-124"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-125" name="__codelineno-0-125"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_apikey</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<a id="__codelineno-0-126" name="__codelineno-0-126"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;API key must be a string&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-127" name="__codelineno-0-127"></a>
-<a id="__codelineno-0-128" name="__codelineno-0-128"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_apikey</span><span class="p">:</span>
-<a id="__codelineno-0-129" name="__codelineno-0-129"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;API key can not be an empty string&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-130" name="__codelineno-0-130"></a>
-<a id="__codelineno-0-131" name="__codelineno-0-131"></a>        <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pi_get</span><span class="p">(</span><span class="s1">&#39;api/ping&#39;</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-0-132" name="__codelineno-0-132"></a>        <span class="k">if</span> <span class="n">resp</span><span class="o">.</span><span class="n">is_error</span><span class="p">():</span>
-<a id="__codelineno-0-133" name="__codelineno-0-133"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Invalid API key. </span><span class="si">{</span><span class="n">resp</span><span class="o">.</span><span class="n">get_msg</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-134" name="__codelineno-0-134"></a>
-<a id="__codelineno-0-135" name="__codelineno-0-135"></a>        <span class="k">return</span> <span class="kc">True</span>
-<a id="__codelineno-0-136" name="__codelineno-0-136"></a>
-<a id="__codelineno-0-137" name="__codelineno-0-137"></a>    <span class="k">def</span> <span class="nf">_pi_uri</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uri</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-<a id="__codelineno-0-138" name="__codelineno-0-138"></a>        <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-139" name="__codelineno-0-139"></a><span class="sd">        Wraps the provided uri around the URL.</span>
-<a id="__codelineno-0-140" name="__codelineno-0-140"></a>
-<a id="__codelineno-0-141" name="__codelineno-0-141"></a><span class="sd">        :param uri: URI to request</span>
-<a id="__codelineno-0-142" name="__codelineno-0-142"></a><span class="sd">        :return: Str - URL to request</span>
-<a id="__codelineno-0-143" name="__codelineno-0-143"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-144" name="__codelineno-0-144"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">uri</span>
-<a id="__codelineno-0-145" name="__codelineno-0-145"></a>
-<a id="__codelineno-0-146" name="__codelineno-0-146"></a>    <span class="k">def</span> <span class="nf">pi_get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uri</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cid</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ApiResponse</span><span class="p">:</span>
-<a id="__codelineno-0-147" name="__codelineno-0-147"></a>        <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-148" name="__codelineno-0-148"></a><span class="sd">        Adds the CID information needed by the server when issuing GET requests</span>
-<a id="__codelineno-0-149" name="__codelineno-0-149"></a><span class="sd">        and then issue the request itself.</span>
-<a id="__codelineno-0-150" name="__codelineno-0-150"></a>
-<a id="__codelineno-0-151" name="__codelineno-0-151"></a><span class="sd">        :param uri: URI endpoint to request</span>
-<a id="__codelineno-0-152" name="__codelineno-0-152"></a><span class="sd">        :param cid: Target case ID</span>
-<a id="__codelineno-0-153" name="__codelineno-0-153"></a><span class="sd">        :return: ApiResponse object</span>
-<a id="__codelineno-0-154" name="__codelineno-0-154"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-155" name="__codelineno-0-155"></a>        <span class="k">if</span> <span class="n">cid</span><span class="p">:</span>
-<a id="__codelineno-0-156" name="__codelineno-0-156"></a>            <span class="n">uri</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">uri</span><span class="si">}</span><span class="s2">?cid=</span><span class="si">{</span><span class="n">cid</span><span class="si">}</span><span class="s2">&quot;</span>
-<a id="__codelineno-0-157" name="__codelineno-0-157"></a>
-<a id="__codelineno-0-158" name="__codelineno-0-158"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pi_request</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;GET&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-159" name="__codelineno-0-159"></a>
-<a id="__codelineno-0-160" name="__codelineno-0-160"></a>    <span class="k">def</span> <span class="nf">pi_post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uri</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ApiResponse</span><span class="p">:</span>
-<a id="__codelineno-0-161" name="__codelineno-0-161"></a>        <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-162" name="__codelineno-0-162"></a><span class="sd">        Issues a POSt request with the provided data. Simple wrapper around _pi_request</span>
-<a id="__codelineno-0-163" name="__codelineno-0-163"></a>
-<a id="__codelineno-0-164" name="__codelineno-0-164"></a><span class="sd">        :param uri: URI endpoint to request</span>
-<a id="__codelineno-0-165" name="__codelineno-0-165"></a><span class="sd">        :param data: data to be posted. Expect a dict</span>
-<a id="__codelineno-0-166" name="__codelineno-0-166"></a><span class="sd">        :return: ApiResponse object</span>
-<a id="__codelineno-0-167" name="__codelineno-0-167"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-168" name="__codelineno-0-168"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pi_request</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
-<a id="__codelineno-0-169" name="__codelineno-0-169"></a>
-<a id="__codelineno-0-170" name="__codelineno-0-170"></a>    <span class="k">def</span> <span class="nf">_pi_request</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uri</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ApiResponse</span><span class="p">:</span>
-<a id="__codelineno-0-171" name="__codelineno-0-171"></a>        <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-172" name="__codelineno-0-172"></a><span class="sd">        Make a request (GET or POST) and handle the errors. The authentication header is added.</span>
-<a id="__codelineno-0-173" name="__codelineno-0-173"></a>
-<a id="__codelineno-0-174" name="__codelineno-0-174"></a><span class="sd">        :raises: Exception if server can&#39;t be reached or if server replied 500</span>
-<a id="__codelineno-0-175" name="__codelineno-0-175"></a><span class="sd">        :param uri: URI to request</span>
-<a id="__codelineno-0-176" name="__codelineno-0-176"></a><span class="sd">        :param type: Type of the request [POST or GET]</span>
-<a id="__codelineno-0-177" name="__codelineno-0-177"></a><span class="sd">        :param data: dict to send if request type is POST</span>
-<a id="__codelineno-0-178" name="__codelineno-0-178"></a><span class="sd">        :return: ApiResponse object</span>
-<a id="__codelineno-0-179" name="__codelineno-0-179"></a><span class="sd">        &quot;&quot;&quot;</span>
-<a id="__codelineno-0-180" name="__codelineno-0-180"></a>
-<a id="__codelineno-0-181" name="__codelineno-0-181"></a>        <span class="k">try</span><span class="p">:</span>
-<a id="__codelineno-0-182" name="__codelineno-0-182"></a>
-<a id="__codelineno-0-183" name="__codelineno-0-183"></a>            <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-184" name="__codelineno-0-184"></a>                <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-185" name="__codelineno-0-185"></a>                <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s2">&quot;Bearer &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_apikey</span>
-<a id="__codelineno-0-186" name="__codelineno-0-186"></a>                <span class="p">}</span>
-<a id="__codelineno-0-187" name="__codelineno-0-187"></a>            <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="s2">&quot;POST&quot;</span><span class="p">:</span>
-<a id="__codelineno-0-188" name="__codelineno-0-188"></a>                <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;POST : </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_pi_uri</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-189" name="__codelineno-0-189"></a>                <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_pi_uri</span><span class="p">(</span><span class="n">uri</span><span class="p">),</span>
-<a id="__codelineno-0-190" name="__codelineno-0-190"></a>                                         <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
-<a id="__codelineno-0-191" name="__codelineno-0-191"></a>                                         <span class="n">verify</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_ssl_verify</span><span class="p">,</span>
-<a id="__codelineno-0-192" name="__codelineno-0-192"></a>                                         <span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_timeout</span><span class="p">,</span>
-<a id="__codelineno-0-193" name="__codelineno-0-193"></a>                                         <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
-<a id="__codelineno-0-194" name="__codelineno-0-194"></a>            <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s2">&quot;GET&quot;</span><span class="p">:</span>
-<a id="__codelineno-0-195" name="__codelineno-0-195"></a>                <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;GET : </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_pi_uri</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-196" name="__codelineno-0-196"></a>                <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_pi_uri</span><span class="p">(</span><span class="n">uri</span><span class="p">),</span>
-<a id="__codelineno-0-197" name="__codelineno-0-197"></a>                                        <span class="n">verify</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_ssl_verify</span><span class="p">,</span>
-<a id="__codelineno-0-198" name="__codelineno-0-198"></a>                                        <span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_timeout</span><span class="p">,</span>
-<a id="__codelineno-0-199" name="__codelineno-0-199"></a>                                        <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
-<a id="__codelineno-0-200" name="__codelineno-0-200"></a>
-<a id="__codelineno-0-201" name="__codelineno-0-201"></a>            <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-0-202" name="__codelineno-0-202"></a>                <span class="k">return</span> <span class="n">ApiResponse</span><span class="p">()</span>
-<a id="__codelineno-0-203" name="__codelineno-0-203"></a>
-<a id="__codelineno-0-204" name="__codelineno-0-204"></a>        <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">ConnectionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<a id="__codelineno-0-205" name="__codelineno-0-205"></a>            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Unable to connect to endpoint </span><span class="si">{host}</span><span class="s2">. Please check URL and ports&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">uri</span><span class="p">))</span>
-<a id="__codelineno-0-206" name="__codelineno-0-206"></a>
-<a id="__codelineno-0-207" name="__codelineno-0-207"></a>        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">500</span><span class="p">:</span>
-<a id="__codelineno-0-208" name="__codelineno-0-208"></a>            <span class="n">log</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s1">&#39;Server replied 500&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-209" name="__codelineno-0-209"></a>            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Server side error. Please check server logs for more information&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-210" name="__codelineno-0-210"></a>
-<a id="__codelineno-0-211" name="__codelineno-0-211"></a>        <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Server replied with status </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-212" name="__codelineno-0-212"></a>
-<a id="__codelineno-0-213" name="__codelineno-0-213"></a>        <span class="k">return</span> <span class="n">ApiResponse</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">uri</span><span class="o">=</span><span class="n">uri</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-          </details>
 
 
 
@@ -1417,85 +1053,75 @@ to the server.</p>
 and the server.
 If the client does not find itself compatible, an exception is raised.</p>
 <p>Once successfully initialized, the session become available through global var client_session.</p>
-<p>:param apikey: A valid API key. It can be fetched from My profile &gt; API Key
-:param host: Target IRIS server full URL eg https://iris.local:9443
-:param agent: User agent to issue the requests with
-:param ssl_verify: Set or unset SSL verification
-:param proxy: Proxy parameters - For future use only
-:param timeout: Default timeout for requests</p>
 
-        <details class="quote">
-          <summary>Source code in <code>dfir_iris_client/session.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-46">46</a></span>
-<span class="normal"><a href="#__codelineno-0-47">47</a></span>
-<span class="normal"><a href="#__codelineno-0-48">48</a></span>
-<span class="normal"><a href="#__codelineno-0-49">49</a></span>
-<span class="normal"><a href="#__codelineno-0-50">50</a></span>
-<span class="normal"><a href="#__codelineno-0-51">51</a></span>
-<span class="normal"><a href="#__codelineno-0-52">52</a></span>
-<span class="normal"><a href="#__codelineno-0-53">53</a></span>
-<span class="normal"><a href="#__codelineno-0-54">54</a></span>
-<span class="normal"><a href="#__codelineno-0-55">55</a></span>
-<span class="normal"><a href="#__codelineno-0-56">56</a></span>
-<span class="normal"><a href="#__codelineno-0-57">57</a></span>
-<span class="normal"><a href="#__codelineno-0-58">58</a></span>
-<span class="normal"><a href="#__codelineno-0-59">59</a></span>
-<span class="normal"><a href="#__codelineno-0-60">60</a></span>
-<span class="normal"><a href="#__codelineno-0-61">61</a></span>
-<span class="normal"><a href="#__codelineno-0-62">62</a></span>
-<span class="normal"><a href="#__codelineno-0-63">63</a></span>
-<span class="normal"><a href="#__codelineno-0-64">64</a></span>
-<span class="normal"><a href="#__codelineno-0-65">65</a></span>
-<span class="normal"><a href="#__codelineno-0-66">66</a></span>
-<span class="normal"><a href="#__codelineno-0-67">67</a></span>
-<span class="normal"><a href="#__codelineno-0-68">68</a></span>
-<span class="normal"><a href="#__codelineno-0-69">69</a></span>
-<span class="normal"><a href="#__codelineno-0-70">70</a></span>
-<span class="normal"><a href="#__codelineno-0-71">71</a></span>
-<span class="normal"><a href="#__codelineno-0-72">72</a></span>
-<span class="normal"><a href="#__codelineno-0-73">73</a></span>
-<span class="normal"><a href="#__codelineno-0-74">74</a></span>
-<span class="normal"><a href="#__codelineno-0-75">75</a></span>
-<span class="normal"><a href="#__codelineno-0-76">76</a></span>
-<span class="normal"><a href="#__codelineno-0-77">77</a></span>
-<span class="normal"><a href="#__codelineno-0-78">78</a></span>
-<span class="normal"><a href="#__codelineno-0-79">79</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">apikey</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">agent</span><span class="o">=</span><span class="s2">&quot;iris-client&quot;</span><span class="p">,</span> <span class="n">ssl_verify</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">proxy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">120</span><span class="p">):</span>
-<a id="__codelineno-0-47" name="__codelineno-0-47"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="sd">    Initialize the ClientSession. APIKey validity is verified as well as API compatibility between the client</span>
-<a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="sd">    and the server.</span>
-<a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="sd">    Version verification expects to fall into the following schema :</span>
-<a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="sd">        `Version(server_min_api_version) &lt;= Version(client_api_version) &lt;= Version(server_max_api_version)`</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52"></a>
-<a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="sd">    If the client does not find itself compatible, an exception is raised.</span>
-<a id="__codelineno-0-54" name="__codelineno-0-54"></a>
-<a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="sd">    Once successfully initialized, the session become available through global var client_session.</span>
-<a id="__codelineno-0-56" name="__codelineno-0-56"></a>
-<a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="sd">    :param apikey: A valid API key. It can be fetched from My profile &gt; API Key</span>
-<a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="sd">    :param host: Target IRIS server full URL eg https://iris.local:9443</span>
-<a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="sd">    :param agent: User agent to issue the requests with</span>
-<a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="sd">    :param ssl_verify: Set or unset SSL verification</span>
-<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="sd">    :param proxy: Proxy parameters - For future use only</span>
-<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="sd">    :param timeout: Default timeout for requests</span>
-<a id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-64" name="__codelineno-0-64"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_apikey</span> <span class="o">=</span> <span class="n">apikey</span>
-<a id="__codelineno-0-65" name="__codelineno-0-65"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_host</span> <span class="o">=</span> <span class="n">host</span>
-<a id="__codelineno-0-66" name="__codelineno-0-66"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_agent</span> <span class="o">=</span> <span class="n">agent</span>
-<a id="__codelineno-0-67" name="__codelineno-0-67"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_ssl_verify</span> <span class="o">=</span> <span class="n">ssl_verify</span>
-<a id="__codelineno-0-68" name="__codelineno-0-68"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_proxy</span> <span class="o">=</span> <span class="n">proxy</span>
-<a id="__codelineno-0-69" name="__codelineno-0-69"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_timeout</span> <span class="o">=</span> <span class="n">timeout</span>
-<a id="__codelineno-0-70" name="__codelineno-0-70"></a>
-<a id="__codelineno-0-71" name="__codelineno-0-71"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ssl_verify</span><span class="p">:</span>
-<a id="__codelineno-0-72" name="__codelineno-0-72"></a>        <span class="n">requests</span><span class="o">.</span><span class="n">packages</span><span class="o">.</span><span class="n">urllib3</span><span class="o">.</span><span class="n">disable_warnings</span><span class="p">(</span><span class="n">InsecureRequestWarning</span><span class="p">)</span>
-<a id="__codelineno-0-73" name="__codelineno-0-73"></a>
-<a id="__codelineno-0-74" name="__codelineno-0-74"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_check_apikey_validity</span><span class="p">()</span>
-<a id="__codelineno-0-75" name="__codelineno-0-75"></a>
-<a id="__codelineno-0-76" name="__codelineno-0-76"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_check_api_compatibility</span><span class="p">()</span>
-<a id="__codelineno-0-77" name="__codelineno-0-77"></a>
-<a id="__codelineno-0-78" name="__codelineno-0-78"></a>    <span class="k">global</span> <span class="n">client_session</span>
-<a id="__codelineno-0-79" name="__codelineno-0-79"></a>    <span class="n">client_session</span> <span class="o">=</span> <span class="bp">self</span>
-</code></pre></div>
-</td></tr></table>
-        </details>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>apikey</code></td>
+          <td>
+          </td>
+          <td><p>A valid API key. It can be fetched from My profile &gt; API Key</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>host</code></td>
+          <td>
+          </td>
+          <td><p>Target IRIS server full URL eg https://iris.local:9443</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>agent</code></td>
+          <td>
+          </td>
+          <td><p>User agent to issue the requests with</p></td>
+          <td>
+                <code>&#39;iris-client&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>ssl_verify</code></td>
+          <td>
+          </td>
+          <td><p>Set or unset SSL verification</p></td>
+          <td>
+                <code>True</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>proxy</code></td>
+          <td>
+          </td>
+          <td><p>Proxy parameters - For future use only</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>timeout</code></td>
+          <td>
+          </td>
+          <td><p>Default timeout for requests</p></td>
+          <td>
+                <code>120</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
     </div>
 
   </div>
@@ -1519,59 +1145,25 @@ If the client does not find itself compatible, an exception is raised.</p>
 The methods expects the following :
 <code>Version(server_min_api_version) &lt;= Version(client_api_version) &lt;= Version(server_max_api_version)</code></p>
 <p>If API is not compatible, an exception is raised.</p>
-<p>:raises: Exception if not API compatible
-:return: bool</p>
 
-        <details class="quote">
-          <summary>Source code in <code>dfir_iris_client/session.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-93"> 93</a></span>
-<span class="normal"><a href="#__codelineno-0-94"> 94</a></span>
-<span class="normal"><a href="#__codelineno-0-95"> 95</a></span>
-<span class="normal"><a href="#__codelineno-0-96"> 96</a></span>
-<span class="normal"><a href="#__codelineno-0-97"> 97</a></span>
-<span class="normal"><a href="#__codelineno-0-98"> 98</a></span>
-<span class="normal"><a href="#__codelineno-0-99"> 99</a></span>
-<span class="normal"><a href="#__codelineno-0-100">100</a></span>
-<span class="normal"><a href="#__codelineno-0-101">101</a></span>
-<span class="normal"><a href="#__codelineno-0-102">102</a></span>
-<span class="normal"><a href="#__codelineno-0-103">103</a></span>
-<span class="normal"><a href="#__codelineno-0-104">104</a></span>
-<span class="normal"><a href="#__codelineno-0-105">105</a></span>
-<span class="normal"><a href="#__codelineno-0-106">106</a></span>
-<span class="normal"><a href="#__codelineno-0-107">107</a></span>
-<span class="normal"><a href="#__codelineno-0-108">108</a></span>
-<span class="normal"><a href="#__codelineno-0-109">109</a></span>
-<span class="normal"><a href="#__codelineno-0-110">110</a></span>
-<span class="normal"><a href="#__codelineno-0-111">111</a></span>
-<span class="normal"><a href="#__codelineno-0-112">112</a></span>
-<span class="normal"><a href="#__codelineno-0-113">113</a></span>
-<span class="normal"><a href="#__codelineno-0-114">114</a></span>
-<span class="normal"><a href="#__codelineno-0-115">115</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-0-93" name="__codelineno-0-93"></a><span class="k">def</span> <span class="nf">_check_api_compatibility</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<a id="__codelineno-0-94" name="__codelineno-0-94"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-95" name="__codelineno-0-95"></a><span class="sd">    Checks that the server and client can work together.</span>
-<a id="__codelineno-0-96" name="__codelineno-0-96"></a><span class="sd">    The methods expects the following :</span>
-<a id="__codelineno-0-97" name="__codelineno-0-97"></a><span class="sd">    `Version(server_min_api_version) &lt;= Version(client_api_version) &lt;= Version(server_max_api_version)`</span>
-<a id="__codelineno-0-98" name="__codelineno-0-98"></a>
-<a id="__codelineno-0-99" name="__codelineno-0-99"></a><span class="sd">    If API is not compatible, an exception is raised.</span>
-<a id="__codelineno-0-100" name="__codelineno-0-100"></a>
-<a id="__codelineno-0-101" name="__codelineno-0-101"></a><span class="sd">    :raises: Exception if not API compatible</span>
-<a id="__codelineno-0-102" name="__codelineno-0-102"></a><span class="sd">    :return: bool</span>
-<a id="__codelineno-0-103" name="__codelineno-0-103"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-104" name="__codelineno-0-104"></a>    <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pi_get</span><span class="p">(</span><span class="s1">&#39;api/versions&#39;</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-0-105" name="__codelineno-0-105"></a>    <span class="k">if</span> <span class="n">resp</span><span class="o">.</span><span class="n">is_error</span><span class="p">():</span>
-<a id="__codelineno-0-106" name="__codelineno-0-106"></a>        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unable to contact endpoint api/versions. </span><span class="si">{</span><span class="n">resp</span><span class="o">.</span><span class="n">get_msg</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-107" name="__codelineno-0-107"></a>
-<a id="__codelineno-0-108" name="__codelineno-0-108"></a>    <span class="n">versions</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
-<a id="__codelineno-0-109" name="__codelineno-0-109"></a>    <span class="n">min_ver</span> <span class="o">=</span> <span class="n">versions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;api_min&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-110" name="__codelineno-0-110"></a>    <span class="n">max_ver</span> <span class="o">=</span> <span class="n">versions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;api_current&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-111" name="__codelineno-0-111"></a>
-<a id="__codelineno-0-112" name="__codelineno-0-112"></a>    <span class="k">if</span> <span class="n">Version</span><span class="p">(</span><span class="n">min_ver</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">Version</span><span class="p">(</span><span class="n">API_VERSION</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">Version</span><span class="p">(</span><span class="n">max_ver</span><span class="p">):</span>
-<a id="__codelineno-0-113" name="__codelineno-0-113"></a>        <span class="k">return</span> <span class="kc">True</span>
-<a id="__codelineno-0-114" name="__codelineno-0-114"></a>
-<a id="__codelineno-0-115" name="__codelineno-0-115"></a>    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Incompatible API version. Server expects </span><span class="si">{</span><span class="n">min_ver</span><span class="si">}</span><span class="s1"> -&gt; </span><span class="si">{</span><span class="n">max_ver</span><span class="si">}</span><span class="s1"> but client is </span><span class="si">{</span><span class="n">API_VERSION</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-        </details>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>bool</code>
+          </td>
+          <td><p>bool</p></td>
+        </tr>
+    </tbody>
+  </table>
+
     </div>
 
   </div>
@@ -1593,51 +1185,25 @@ The methods expects the following :
 
       <p>Checks the validity of the provided API key (emptiness, string and authorized).
 If the key is invalid, a ValueError exception is raised.</p>
-<p>:raises: ValueError if the API key is invalid
-:return: bool</p>
 
-        <details class="quote">
-          <summary>Source code in <code>dfir_iris_client/session.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-117">117</a></span>
-<span class="normal"><a href="#__codelineno-0-118">118</a></span>
-<span class="normal"><a href="#__codelineno-0-119">119</a></span>
-<span class="normal"><a href="#__codelineno-0-120">120</a></span>
-<span class="normal"><a href="#__codelineno-0-121">121</a></span>
-<span class="normal"><a href="#__codelineno-0-122">122</a></span>
-<span class="normal"><a href="#__codelineno-0-123">123</a></span>
-<span class="normal"><a href="#__codelineno-0-124">124</a></span>
-<span class="normal"><a href="#__codelineno-0-125">125</a></span>
-<span class="normal"><a href="#__codelineno-0-126">126</a></span>
-<span class="normal"><a href="#__codelineno-0-127">127</a></span>
-<span class="normal"><a href="#__codelineno-0-128">128</a></span>
-<span class="normal"><a href="#__codelineno-0-129">129</a></span>
-<span class="normal"><a href="#__codelineno-0-130">130</a></span>
-<span class="normal"><a href="#__codelineno-0-131">131</a></span>
-<span class="normal"><a href="#__codelineno-0-132">132</a></span>
-<span class="normal"><a href="#__codelineno-0-133">133</a></span>
-<span class="normal"><a href="#__codelineno-0-134">134</a></span>
-<span class="normal"><a href="#__codelineno-0-135">135</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-0-117" name="__codelineno-0-117"></a><span class="k">def</span> <span class="nf">_check_apikey_validity</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<a id="__codelineno-0-118" name="__codelineno-0-118"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-119" name="__codelineno-0-119"></a><span class="sd">    Checks the validity of the provided API key (emptiness, string and authorized).</span>
-<a id="__codelineno-0-120" name="__codelineno-0-120"></a><span class="sd">    If the key is invalid, a ValueError exception is raised.</span>
-<a id="__codelineno-0-121" name="__codelineno-0-121"></a>
-<a id="__codelineno-0-122" name="__codelineno-0-122"></a><span class="sd">    :raises: ValueError if the API key is invalid</span>
-<a id="__codelineno-0-123" name="__codelineno-0-123"></a><span class="sd">    :return: bool</span>
-<a id="__codelineno-0-124" name="__codelineno-0-124"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-125" name="__codelineno-0-125"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_apikey</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<a id="__codelineno-0-126" name="__codelineno-0-126"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;API key must be a string&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-127" name="__codelineno-0-127"></a>
-<a id="__codelineno-0-128" name="__codelineno-0-128"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_apikey</span><span class="p">:</span>
-<a id="__codelineno-0-129" name="__codelineno-0-129"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;API key can not be an empty string&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-130" name="__codelineno-0-130"></a>
-<a id="__codelineno-0-131" name="__codelineno-0-131"></a>    <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pi_get</span><span class="p">(</span><span class="s1">&#39;api/ping&#39;</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-0-132" name="__codelineno-0-132"></a>    <span class="k">if</span> <span class="n">resp</span><span class="o">.</span><span class="n">is_error</span><span class="p">():</span>
-<a id="__codelineno-0-133" name="__codelineno-0-133"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Invalid API key. </span><span class="si">{</span><span class="n">resp</span><span class="o">.</span><span class="n">get_msg</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-134" name="__codelineno-0-134"></a>
-<a id="__codelineno-0-135" name="__codelineno-0-135"></a>    <span class="k">return</span> <span class="kc">True</span>
-</code></pre></div>
-</td></tr></table>
-        </details>
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>bool</code>
+          </td>
+          <td><p>bool</p></td>
+        </tr>
+    </tbody>
+  </table>
+
     </div>
 
   </div>
@@ -1658,104 +1224,69 @@ If the key is invalid, a ValueError exception is raised.</p>
     <div class="doc doc-contents ">
 
       <p>Make a request (GET or POST) and handle the errors. The authentication header is added.</p>
-<p>:raises: Exception if server can't be reached or if server replied 500
-:param uri: URI to request
-:param type: Type of the request [POST or GET]
-:param data: dict to send if request type is POST
-:return: ApiResponse object</p>
 
-        <details class="quote">
-          <summary>Source code in <code>dfir_iris_client/session.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-170">170</a></span>
-<span class="normal"><a href="#__codelineno-0-171">171</a></span>
-<span class="normal"><a href="#__codelineno-0-172">172</a></span>
-<span class="normal"><a href="#__codelineno-0-173">173</a></span>
-<span class="normal"><a href="#__codelineno-0-174">174</a></span>
-<span class="normal"><a href="#__codelineno-0-175">175</a></span>
-<span class="normal"><a href="#__codelineno-0-176">176</a></span>
-<span class="normal"><a href="#__codelineno-0-177">177</a></span>
-<span class="normal"><a href="#__codelineno-0-178">178</a></span>
-<span class="normal"><a href="#__codelineno-0-179">179</a></span>
-<span class="normal"><a href="#__codelineno-0-180">180</a></span>
-<span class="normal"><a href="#__codelineno-0-181">181</a></span>
-<span class="normal"><a href="#__codelineno-0-182">182</a></span>
-<span class="normal"><a href="#__codelineno-0-183">183</a></span>
-<span class="normal"><a href="#__codelineno-0-184">184</a></span>
-<span class="normal"><a href="#__codelineno-0-185">185</a></span>
-<span class="normal"><a href="#__codelineno-0-186">186</a></span>
-<span class="normal"><a href="#__codelineno-0-187">187</a></span>
-<span class="normal"><a href="#__codelineno-0-188">188</a></span>
-<span class="normal"><a href="#__codelineno-0-189">189</a></span>
-<span class="normal"><a href="#__codelineno-0-190">190</a></span>
-<span class="normal"><a href="#__codelineno-0-191">191</a></span>
-<span class="normal"><a href="#__codelineno-0-192">192</a></span>
-<span class="normal"><a href="#__codelineno-0-193">193</a></span>
-<span class="normal"><a href="#__codelineno-0-194">194</a></span>
-<span class="normal"><a href="#__codelineno-0-195">195</a></span>
-<span class="normal"><a href="#__codelineno-0-196">196</a></span>
-<span class="normal"><a href="#__codelineno-0-197">197</a></span>
-<span class="normal"><a href="#__codelineno-0-198">198</a></span>
-<span class="normal"><a href="#__codelineno-0-199">199</a></span>
-<span class="normal"><a href="#__codelineno-0-200">200</a></span>
-<span class="normal"><a href="#__codelineno-0-201">201</a></span>
-<span class="normal"><a href="#__codelineno-0-202">202</a></span>
-<span class="normal"><a href="#__codelineno-0-203">203</a></span>
-<span class="normal"><a href="#__codelineno-0-204">204</a></span>
-<span class="normal"><a href="#__codelineno-0-205">205</a></span>
-<span class="normal"><a href="#__codelineno-0-206">206</a></span>
-<span class="normal"><a href="#__codelineno-0-207">207</a></span>
-<span class="normal"><a href="#__codelineno-0-208">208</a></span>
-<span class="normal"><a href="#__codelineno-0-209">209</a></span>
-<span class="normal"><a href="#__codelineno-0-210">210</a></span>
-<span class="normal"><a href="#__codelineno-0-211">211</a></span>
-<span class="normal"><a href="#__codelineno-0-212">212</a></span>
-<span class="normal"><a href="#__codelineno-0-213">213</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-0-170" name="__codelineno-0-170"></a><span class="k">def</span> <span class="nf">_pi_request</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uri</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ApiResponse</span><span class="p">:</span>
-<a id="__codelineno-0-171" name="__codelineno-0-171"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-172" name="__codelineno-0-172"></a><span class="sd">    Make a request (GET or POST) and handle the errors. The authentication header is added.</span>
-<a id="__codelineno-0-173" name="__codelineno-0-173"></a>
-<a id="__codelineno-0-174" name="__codelineno-0-174"></a><span class="sd">    :raises: Exception if server can&#39;t be reached or if server replied 500</span>
-<a id="__codelineno-0-175" name="__codelineno-0-175"></a><span class="sd">    :param uri: URI to request</span>
-<a id="__codelineno-0-176" name="__codelineno-0-176"></a><span class="sd">    :param type: Type of the request [POST or GET]</span>
-<a id="__codelineno-0-177" name="__codelineno-0-177"></a><span class="sd">    :param data: dict to send if request type is POST</span>
-<a id="__codelineno-0-178" name="__codelineno-0-178"></a><span class="sd">    :return: ApiResponse object</span>
-<a id="__codelineno-0-179" name="__codelineno-0-179"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-180" name="__codelineno-0-180"></a>
-<a id="__codelineno-0-181" name="__codelineno-0-181"></a>    <span class="k">try</span><span class="p">:</span>
-<a id="__codelineno-0-182" name="__codelineno-0-182"></a>
-<a id="__codelineno-0-183" name="__codelineno-0-183"></a>        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-0-184" name="__codelineno-0-184"></a>            <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-185" name="__codelineno-0-185"></a>            <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s2">&quot;Bearer &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_apikey</span>
-<a id="__codelineno-0-186" name="__codelineno-0-186"></a>            <span class="p">}</span>
-<a id="__codelineno-0-187" name="__codelineno-0-187"></a>        <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="s2">&quot;POST&quot;</span><span class="p">:</span>
-<a id="__codelineno-0-188" name="__codelineno-0-188"></a>            <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;POST : </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_pi_uri</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-189" name="__codelineno-0-189"></a>            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_pi_uri</span><span class="p">(</span><span class="n">uri</span><span class="p">),</span>
-<a id="__codelineno-0-190" name="__codelineno-0-190"></a>                                     <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
-<a id="__codelineno-0-191" name="__codelineno-0-191"></a>                                     <span class="n">verify</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_ssl_verify</span><span class="p">,</span>
-<a id="__codelineno-0-192" name="__codelineno-0-192"></a>                                     <span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_timeout</span><span class="p">,</span>
-<a id="__codelineno-0-193" name="__codelineno-0-193"></a>                                     <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
-<a id="__codelineno-0-194" name="__codelineno-0-194"></a>        <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s2">&quot;GET&quot;</span><span class="p">:</span>
-<a id="__codelineno-0-195" name="__codelineno-0-195"></a>            <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;GET : </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_pi_uri</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-196" name="__codelineno-0-196"></a>            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_pi_uri</span><span class="p">(</span><span class="n">uri</span><span class="p">),</span>
-<a id="__codelineno-0-197" name="__codelineno-0-197"></a>                                    <span class="n">verify</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_ssl_verify</span><span class="p">,</span>
-<a id="__codelineno-0-198" name="__codelineno-0-198"></a>                                    <span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_timeout</span><span class="p">,</span>
-<a id="__codelineno-0-199" name="__codelineno-0-199"></a>                                    <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
-<a id="__codelineno-0-200" name="__codelineno-0-200"></a>
-<a id="__codelineno-0-201" name="__codelineno-0-201"></a>        <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-0-202" name="__codelineno-0-202"></a>            <span class="k">return</span> <span class="n">ApiResponse</span><span class="p">()</span>
-<a id="__codelineno-0-203" name="__codelineno-0-203"></a>
-<a id="__codelineno-0-204" name="__codelineno-0-204"></a>    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">ConnectionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<a id="__codelineno-0-205" name="__codelineno-0-205"></a>        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Unable to connect to endpoint </span><span class="si">{host}</span><span class="s2">. Please check URL and ports&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">uri</span><span class="p">))</span>
-<a id="__codelineno-0-206" name="__codelineno-0-206"></a>
-<a id="__codelineno-0-207" name="__codelineno-0-207"></a>    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">500</span><span class="p">:</span>
-<a id="__codelineno-0-208" name="__codelineno-0-208"></a>        <span class="n">log</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s1">&#39;Server replied 500&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-209" name="__codelineno-0-209"></a>        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Server side error. Please check server logs for more information&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-210" name="__codelineno-0-210"></a>
-<a id="__codelineno-0-211" name="__codelineno-0-211"></a>    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Server replied with status </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<a id="__codelineno-0-212" name="__codelineno-0-212"></a>
-<a id="__codelineno-0-213" name="__codelineno-0-213"></a>    <span class="k">return</span> <span class="n">ApiResponse</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">uri</span><span class="o">=</span><span class="n">uri</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-        </details>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>uri</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>URI to request</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>type</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>Type of the request [POST or GET]</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>data</code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td><p>dict to send if request type is POST</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="dfir_iris_client.helper.utils.ApiResponse">ApiResponse</span></code>
+          </td>
+          <td><p>ApiResponse object</p></td>
+        </tr>
+    </tbody>
+  </table>
+
     </div>
 
   </div>
@@ -1776,29 +1307,48 @@ If the key is invalid, a ValueError exception is raised.</p>
     <div class="doc doc-contents ">
 
       <p>Wraps the provided uri around the URL.</p>
-<p>:param uri: URI to request
-:return: Str - URL to request</p>
 
-        <details class="quote">
-          <summary>Source code in <code>dfir_iris_client/session.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-137">137</a></span>
-<span class="normal"><a href="#__codelineno-0-138">138</a></span>
-<span class="normal"><a href="#__codelineno-0-139">139</a></span>
-<span class="normal"><a href="#__codelineno-0-140">140</a></span>
-<span class="normal"><a href="#__codelineno-0-141">141</a></span>
-<span class="normal"><a href="#__codelineno-0-142">142</a></span>
-<span class="normal"><a href="#__codelineno-0-143">143</a></span>
-<span class="normal"><a href="#__codelineno-0-144">144</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-0-137" name="__codelineno-0-137"></a><span class="k">def</span> <span class="nf">_pi_uri</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uri</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-<a id="__codelineno-0-138" name="__codelineno-0-138"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-139" name="__codelineno-0-139"></a><span class="sd">    Wraps the provided uri around the URL.</span>
-<a id="__codelineno-0-140" name="__codelineno-0-140"></a>
-<a id="__codelineno-0-141" name="__codelineno-0-141"></a><span class="sd">    :param uri: URI to request</span>
-<a id="__codelineno-0-142" name="__codelineno-0-142"></a><span class="sd">    :return: Str - URL to request</span>
-<a id="__codelineno-0-143" name="__codelineno-0-143"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-144" name="__codelineno-0-144"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">uri</span>
-</code></pre></div>
-</td></tr></table>
-        </details>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>uri</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>URI to request</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td><p>Str - URL to request</p></td>
+        </tr>
+    </tbody>
+  </table>
+
     </div>
 
   </div>
@@ -1820,40 +1370,59 @@ If the key is invalid, a ValueError exception is raised.</p>
 
       <p>Adds the CID information needed by the server when issuing GET requests
 and then issue the request itself.</p>
-<p>:param uri: URI endpoint to request
-:param cid: Target case ID
-:return: ApiResponse object</p>
 
-        <details class="quote">
-          <summary>Source code in <code>dfir_iris_client/session.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-146">146</a></span>
-<span class="normal"><a href="#__codelineno-0-147">147</a></span>
-<span class="normal"><a href="#__codelineno-0-148">148</a></span>
-<span class="normal"><a href="#__codelineno-0-149">149</a></span>
-<span class="normal"><a href="#__codelineno-0-150">150</a></span>
-<span class="normal"><a href="#__codelineno-0-151">151</a></span>
-<span class="normal"><a href="#__codelineno-0-152">152</a></span>
-<span class="normal"><a href="#__codelineno-0-153">153</a></span>
-<span class="normal"><a href="#__codelineno-0-154">154</a></span>
-<span class="normal"><a href="#__codelineno-0-155">155</a></span>
-<span class="normal"><a href="#__codelineno-0-156">156</a></span>
-<span class="normal"><a href="#__codelineno-0-157">157</a></span>
-<span class="normal"><a href="#__codelineno-0-158">158</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-0-146" name="__codelineno-0-146"></a><span class="k">def</span> <span class="nf">pi_get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uri</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cid</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ApiResponse</span><span class="p">:</span>
-<a id="__codelineno-0-147" name="__codelineno-0-147"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-148" name="__codelineno-0-148"></a><span class="sd">    Adds the CID information needed by the server when issuing GET requests</span>
-<a id="__codelineno-0-149" name="__codelineno-0-149"></a><span class="sd">    and then issue the request itself.</span>
-<a id="__codelineno-0-150" name="__codelineno-0-150"></a>
-<a id="__codelineno-0-151" name="__codelineno-0-151"></a><span class="sd">    :param uri: URI endpoint to request</span>
-<a id="__codelineno-0-152" name="__codelineno-0-152"></a><span class="sd">    :param cid: Target case ID</span>
-<a id="__codelineno-0-153" name="__codelineno-0-153"></a><span class="sd">    :return: ApiResponse object</span>
-<a id="__codelineno-0-154" name="__codelineno-0-154"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-155" name="__codelineno-0-155"></a>    <span class="k">if</span> <span class="n">cid</span><span class="p">:</span>
-<a id="__codelineno-0-156" name="__codelineno-0-156"></a>        <span class="n">uri</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">uri</span><span class="si">}</span><span class="s2">?cid=</span><span class="si">{</span><span class="n">cid</span><span class="si">}</span><span class="s2">&quot;</span>
-<a id="__codelineno-0-157" name="__codelineno-0-157"></a>
-<a id="__codelineno-0-158" name="__codelineno-0-158"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pi_request</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;GET&#39;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-        </details>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>uri</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>URI endpoint to request</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>cid</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td><p>Target case ID</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="dfir_iris_client.helper.utils.ApiResponse">ApiResponse</span></code>
+          </td>
+          <td><p>ApiResponse object</p></td>
+        </tr>
+    </tbody>
+  </table>
+
     </div>
 
   </div>
@@ -1874,32 +1443,59 @@ and then issue the request itself.</p>
     <div class="doc doc-contents ">
 
       <p>Issues a POSt request with the provided data. Simple wrapper around _pi_request</p>
-<p>:param uri: URI endpoint to request
-:param data: data to be posted. Expect a dict
-:return: ApiResponse object</p>
 
-        <details class="quote">
-          <summary>Source code in <code>dfir_iris_client/session.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-160">160</a></span>
-<span class="normal"><a href="#__codelineno-0-161">161</a></span>
-<span class="normal"><a href="#__codelineno-0-162">162</a></span>
-<span class="normal"><a href="#__codelineno-0-163">163</a></span>
-<span class="normal"><a href="#__codelineno-0-164">164</a></span>
-<span class="normal"><a href="#__codelineno-0-165">165</a></span>
-<span class="normal"><a href="#__codelineno-0-166">166</a></span>
-<span class="normal"><a href="#__codelineno-0-167">167</a></span>
-<span class="normal"><a href="#__codelineno-0-168">168</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-0-160" name="__codelineno-0-160"></a><span class="k">def</span> <span class="nf">pi_post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uri</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ApiResponse</span><span class="p">:</span>
-<a id="__codelineno-0-161" name="__codelineno-0-161"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-162" name="__codelineno-0-162"></a><span class="sd">    Issues a POSt request with the provided data. Simple wrapper around _pi_request</span>
-<a id="__codelineno-0-163" name="__codelineno-0-163"></a>
-<a id="__codelineno-0-164" name="__codelineno-0-164"></a><span class="sd">    :param uri: URI endpoint to request</span>
-<a id="__codelineno-0-165" name="__codelineno-0-165"></a><span class="sd">    :param data: data to be posted. Expect a dict</span>
-<a id="__codelineno-0-166" name="__codelineno-0-166"></a><span class="sd">    :return: ApiResponse object</span>
-<a id="__codelineno-0-167" name="__codelineno-0-167"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-168" name="__codelineno-0-168"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pi_request</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-        </details>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>uri</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>URI endpoint to request</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>data</code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td><p>data to be posted. Expect a dict</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="dfir_iris_client.helper.utils.ApiResponse">ApiResponse</span></code>
+          </td>
+          <td><p>ApiResponse object</p></td>
+        </tr>
+    </tbody>
+  </table>
+
     </div>
 
   </div>
@@ -1923,34 +1519,7 @@ and then issue the request itself.</p>
 class, which in turns requests and build all the most common objects such as
 AnalysisStatus, EventCategory, EventType, etc.</p>
 <p>For future use only</p>
-<p>:return: None</p>
 
-        <details class="quote">
-          <summary>Source code in <code>dfir_iris_client/session.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-81">81</a></span>
-<span class="normal"><a href="#__codelineno-0-82">82</a></span>
-<span class="normal"><a href="#__codelineno-0-83">83</a></span>
-<span class="normal"><a href="#__codelineno-0-84">84</a></span>
-<span class="normal"><a href="#__codelineno-0-85">85</a></span>
-<span class="normal"><a href="#__codelineno-0-86">86</a></span>
-<span class="normal"><a href="#__codelineno-0-87">87</a></span>
-<span class="normal"><a href="#__codelineno-0-88">88</a></span>
-<span class="normal"><a href="#__codelineno-0-89">89</a></span>
-<span class="normal"><a href="#__codelineno-0-90">90</a></span>
-<span class="normal"><a href="#__codelineno-0-91">91</a></span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="k">def</span> <span class="nf">preload_base_objects</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-82" name="__codelineno-0-82"></a>    <span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-83" name="__codelineno-0-83"></a><span class="sd">    Preload the base objects most commonly used. This simply init the BaseObjects</span>
-<a id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="sd">    class, which in turns requests and build all the most common objects such as</span>
-<a id="__codelineno-0-85" name="__codelineno-0-85"></a><span class="sd">    AnalysisStatus, EventCategory, EventType, etc.</span>
-<a id="__codelineno-0-86" name="__codelineno-0-86"></a>
-<a id="__codelineno-0-87" name="__codelineno-0-87"></a><span class="sd">    For future use only</span>
-<a id="__codelineno-0-88" name="__codelineno-0-88"></a>
-<a id="__codelineno-0-89" name="__codelineno-0-89"></a><span class="sd">    :return: None</span>
-<a id="__codelineno-0-90" name="__codelineno-0-90"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-91" name="__codelineno-0-91"></a>    <span class="k">pass</span>
-</code></pre></div>
-</td></tr></table>
-        </details>
     </div>
 
   </div>

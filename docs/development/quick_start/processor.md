@@ -49,7 +49,7 @@ To do so, we need to set a specific variable in our `__init__.py`.
 
 ```python title="iris_dummy_module/__init__.py"
 # Set the __iris_module_interface variable to the name of our main class. 
-# When IRIS instantiate the python module, it looks for "module.__iris_module_interface"
+# When IRIS instantiates the python module, it looks for "module.__iris_module_interface"
 # And then tries to instantiate the class "__iris_module_interface.__iris_module_interface", here 'IrisDummyModule.IrisDummyModule'. 
 # That's why the python file must have the same name as the class.  
 
@@ -61,8 +61,8 @@ Our module is now recognizable by IRIS :heart: Pretty simple right ?
 
 ## Writing the configuration 
 
-The next step is to describe what the module is doing, its name, it's configuration, etc.   
-This is done by overwriting predefines variables of the ``IrisModuleInterface`` class.   
+The next step is to describe what the module is doing, its name, its configuration, etc.   
+This is done by overwriting predefined variables of the ``IrisModuleInterface`` class.   
 
 Let's create our Python configuration file and go through each variables.  
 
@@ -153,7 +153,7 @@ class IrisDummyModule(IrisModuleInterface):
     pass 
 ```
 
-Done ! The module is now providing enough information to IRIS, so it knows exactly what our module do and what needs to be called to run it.  
+Done! The module is now providing enough information to IRIS, so it knows exactly what our module do and what needs to be called to run it.  
 
 However, our module is still doing nothing. Let's make it subscribe to an IRIS hook.  
 
@@ -162,7 +162,7 @@ However, our module is still doing nothing. Let's make it subscribe to an IRIS h
 ## Subscribing to a hook 
 Hooks allow to be notified by IRIS when a specific event occurs (IOC creation, deletion, etc). For a comprehensive description of hooks, please see the [Hooks section](/development/hooks/) of this documentation.  
 
-The registration (or subscription) to a hook occurs at two moments during the life of a module : 
+The registration (or subscription) to a hook occurs at two moments during the life of a module: 
 
 - When the module is added to IRIS 
 - When the configuration of the module is changed by an Admin. This allows dynamic subscription and deregistration of hooks depending on the config. 
@@ -174,7 +174,7 @@ These registration/deregistration events are triggered by IRIS, and are propagat
 
 To register to a hook, we need to override this method and register our hook within this method.  To do so, `IrisModuleInterface` offers us another method ``register_to_hook`` [[ref](https://github.com/dfir-iris/iris-module-interface/blob/d63b358b1861e4545e983b67d9530469e3a87918/iris_interface/IrisModuleInterface.py#L401)], which we can call for each hook we want to subscribe.  
 
-Here is a summary of the events :   
+Here is a summary of the events:   
 
 1. IRIS calls ``register_hooks`` of our module. This indicates it is time for us to register our hooks.  
 2. Within this method, we call ``register_to_hook`` for each hook we want to subscribe
@@ -223,14 +223,14 @@ class IrisDummyModule(IrisModuleInterface):
             self.log.info(f"Successfully subscribed to on_postload_ioc_create hook")
 ```
 
-That's it ! :partying_face: Our module has now officially subscribed to a hook and will be notified each time an IOC is created.  
+That's it! :partying_face: Our module has now officially subscribed to a hook and will be notified each time an IOC is created.  
 
 
-So how the module is notified ? Once again this is done by a method named ``hooks_handler`` [[ref](https://github.com/dfir-iris/iris-module-interface/blob/d63b358b1861e4545e983b67d9530469e3a87918/iris_interface/IrisModuleInterface.py#L373)] that `IrisModuleInterface` provides, and we need to overwrite.  
+So how the module is notified? Once again this is done by a method named ``hooks_handler`` [[ref](https://github.com/dfir-iris/iris-module-interface/blob/d63b358b1861e4545e983b67d9530469e3a87918/iris_interface/IrisModuleInterface.py#L373)] that `IrisModuleInterface` provides, and we need to overwrite.  
 
-This method is called each time one of the event associated to the hook we subscribed is triggered. It provides the name of the hook and as well as the data associated to it.  By overwriting this method, we can process the hook and the data ! 
+This method is called each time one of the event associated to the hook we subscribed is triggered. It provides the name of the hook and as well as the data associated to it.  By overwriting this method, we can process the hook and the data! 
 
-We will add a condition in this method, that is if the administrator set the module parameter ``log_received_hook`` to False, then the module won't log anything and simply return the data.    
+We will add a condition in this method, that is if the administrator sets the module parameter ``log_received_hook`` to False, then the module won't log anything and simply return the data.    
 
 !!! hint 
         The current configuration of the module can be accessed with the attribute ``self._dict_conf``.  

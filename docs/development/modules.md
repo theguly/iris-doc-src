@@ -6,19 +6,19 @@ A DFIR-IRIS Module (DIM) is a Python package allowing to extend IRIS features.  
 
 We distinct two types of modules: 
 
-- ``Pipeline modules`` : Allow uploading and processing of evidences through modular pipelines (eg: EVTX parsing and injection into a database or data visualiser). These are called when a user ``Update case`` and select evidences to process. 
-- ``Processor modules`` : Allow processing of IRIS data upon predefined actions / hooks. (eg: be notified when a new IOC is created and get VT/MISP insights for it). These are either called automatically upon specific events, or if a user manually triggers them. 
+- ``Pipeline modules``: Allow uploading and processing of evidences through modular pipelines (eg: EVTX parsing and injection into a database or data visualiser). These are called when a user queries ``Update case`` and select evidences to process. 
+- ``Processor modules``: Allow processing of IRIS data upon predefined actions / hooks. (eg: be notified when a new IOC is created and get VT/MISP insights for it). These are either called automatically upon specific events, or if a user manually triggers them. 
 
 
 Except for some triggers for processor modules, all tasks provided by DIMs are run asynchronously in RabbitMQ tasks, so they don't impact the UI.  
 
-Both types of DIMs have the same structure, they only differs in their configurations and how they handle the data they receive. For that purpose, every DIM inherit from a common class named ``IrisModuleInterface`` - available [here](https://github.com/dfir-iris/iris-module-interface) - which provides the basic structure and methods of a module. 
+Both types of DIMs have the same structure, they only differ in their configurations and how they handle the data they receive. For that purpose, every DIM inherit from a common class named ``IrisModuleInterface`` - available [here](https://github.com/dfir-iris/iris-module-interface) - which provides the basic structure and methods of a module. 
 
 !!! hint 
     To quickly start writing a new module, one can follow [these tutorials](/development/quick_start/processor/).
 
 ## Overview
-Modules are instantiated upon actions (hooks, triggers, user actions) and this occurs each time the said actions occur. It implies the initiation of a module has to be very quick. In most of the case, the ``__init__``method should not even be overwritten.   
+Modules are instantiated upon actions (hooks, triggers, user actions) and this occurs each time the said actions occur. It implies the initiation of a module has to be very quick. In most of the case, the ``__init__`` method should not even be overwritten.   
 
 
 They can live either in the worker or the web-app, depending on their type and action they are handling. They can also live in both. This implies multiple instances of the same module can run at the same time.  
@@ -27,7 +27,7 @@ The graph below shows two modules of different types running in the worker and i
 
 ![](../_static/mods_overview.png)
 
-Modules don't have to handle the task creations or resources locks. This is handled by IRIS. They just need to process the data they received and return results in a predefined manner.   
+Modules don't have to handle the task creations or resource locks. This is handled by IRIS. They just need to process the data they received and return results in a predefined manner.   
 
 ## Common structure
 
@@ -55,7 +55,7 @@ Iris loads the modules dynamically. To do so, it needs to know the name of the m
 __iris_module_interface = "IrisEXAMPLEInterface"
 ```
 
-Where ``IrisEXAMPLEInterface`` is the main class of the module and inherit of the base class ``IrisModuleInterface``. 
+Where ``IrisEXAMPLEInterface`` is the main class of the module and inherits of the base class ``IrisModuleInterface``. 
 
 !!! Caution
     Failing to provide the main class in ``__init__.py`` or having the main class inherit from ``IrisModuleInterface`` will make IRIS fail each time 

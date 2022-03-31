@@ -35,7 +35,7 @@ Only if you run in production and/or data is critical.
 1. Stop the dockers ``docker-compose stop``
 2. Remove the application dockers ``docker-compose rm app worker``
 3. Get the last version of Iris ``git checkout master`` - or any tagged versions
-4. Build the new versions ``docker-compose build app worker --no-cache``
+4. Build the new versions ``docker-compose build --no-cache app worker``
 5. Run IRIS again. The app will handle the DB migration ``docker-compose up``
 
 -------------

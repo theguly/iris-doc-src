@@ -1,6 +1,5 @@
 nav:
   - Home: index.md
-  - Introduction: introduction.md
   - Quick Start: getting_started.md
   - Operations: operations
   - Python client: python_client

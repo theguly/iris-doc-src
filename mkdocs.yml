@@ -6,12 +6,14 @@ theme:
   icon:
     repo: fontawesome/brands/github
   features:
-    - toc.follow
     - navigation.top
+    - navigation.indexes
+    - content.code.annotate
   palette:
     primary: indigo
     accent: indigo
-
+  custom_dir: overrides
+  
 
 extra_css:
   - stylesheets/extra.css
@@ -29,6 +31,8 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 extra:
   social:
@@ -38,6 +42,8 @@ extra:
       link: https://github.com/dfir-iris
     - icon: fontawesome/solid/paper-plane
       link: mailto:<contact@dfir-iris.org>
+    - icon: material/discord
+      link: https://discord.gg/76tM6QUJza
 
 repo_url: https://github.com/dfir-iris/iris-web
 site_url: https://dfir-iris.github.io
@@ -47,11 +53,12 @@ site_author: "DFIR-IRIS Team"
 repo_name: DFIR-IRIS Web
 edit_uri: ""
 
-copyright: Copyright &copy; 2021 - 2022 DFIR-IRIS Team
+copyright: Copyright &copy; 2021-2022 - DFIR-IRIS Team
 
 plugins:
   - git-revision-date
   - search
+  - awesome-pages
   - mkdocstrings:
       default_handler: python
       handlers: 
@@ -59,7 +66,6 @@ plugins:
           rendering:
             show_source: false
             docstring_style: google
-      watch: [../dfir-iris-client]
-
 
 dev_addr: '127.0.0.1:8080'
+

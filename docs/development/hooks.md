@@ -1,4 +1,4 @@
-# IRIS Hooks 
+# Hooks 
 
 !!! tip "*Introduced in IRIS v1.4.0*"
 
@@ -116,6 +116,4 @@ Hook name| Description|
 |on_preload_report_create|Triggered on report creation, before generation in DB|
 |on_postload_report_create|Triggered on report creation, before download of the document|
 |on_preload_activities_report_create|Triggered on activities report creation, before generation in DB|
-|on_postload_activities_report_create|Triggered on activities report creation, before download of the document
-
-
+|on_postload_activities_report_create|Triggered on activities report creation, before download of the document|

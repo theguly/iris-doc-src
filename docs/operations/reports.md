@@ -18,6 +18,13 @@ The templates can have any forms as soon as they respect the tags. We are provid
 - Example of investigation template : [Download](example_reports/iris_report_template.docx) 
 - Example of activities report template : [Download](example_reports/iris_activity_report_template.docx)
 
+!!! info 
+    The templates includes a few lines that describes how to handle styles. These should not be removed. 
+    They are be present in the generated reports and need to be removed manually. 
+
+    ![docx](../_static/docx_templating_lines.png)
+
+## Available tags
 The following tags are available. None are mandatory. If a tag is mistyped, the generation step will produce an error message.   
 
 !!! hint 
@@ -82,3 +89,103 @@ The following tags are available. None are mandatory. If a tag is mistyped, the 
     - ``event.last_edited_by``: User who last edited the event 
     - ``event.assets``: List of assets names linked to the event
     - ``event.custom_attributes``: Custom attributes of the event
+
+
+## Examples 
+### Full documents 
+We are providing two example of full reports. 
+
+- Example of investigation template : [Download](example_reports/iris_report_template.docx) 
+- Example of activities report template : [Download](example_reports/iris_activity_report_template.docx)
+
+
+### Snippets 
+The following snippets aimed to be placed directly in the DOCX documents.   
+
+#### Loops and tables 
+##### Standard loops
+A loop needs to be used for list objects. 
+``` title="Loop on IOC example"
+The IOCs of this case are : 
+
+{% for ioc in case.iocs %}
+    - {{ ioc.ioc_value }}
+    - {{ ioc.ioc_description }}
+{% endfor %}
+```
+
+##### Table loops
+To use a loop in a table, a `tr` tag needs to be added to the loop and the loop directly integrated in the table. 
+``` title="Loop on IOC table example"
+The IOCs of this case are in the following table : 
+
+{%tr for ioc in case.iocs %}
+    {{ ioc.ioc_value }}
+    {{ ioc.type_name }}
+    {{ ioc.ioc_description }}
+{%tr endfor %}
+```
+Such as : 
+
+![docx](../_static/docx_ioc_loop.png)
+
+##### Nested loops
+Loops can be nested. Don't forget to close each loop. 
+
+``` title="Nested loop"
+{%for ioc in case.iocs %}
+
+    Custom attributes of {{ ioc.ioc_value }} :
+
+    {% for attribute in ioc.custom_attributes %}
+
+        - {{ attribute }}
+
+    {% endfor %}
+
+{% endfor %}
+```
+
+### Conditions 
+#### Standard 
+``` title="Check if asset is compromised"
+{% for asset in assets %} 
+    
+    {% if asset.compromised %}
+        Asset {{ asset.asset_name }} is compromised
+    {% endif %}
+
+{% endfor %}
+```
+
+#### List is not empty
+To check if a list of objects is not empty, use the processor tag `count`.  
+
+``` title="Check if case has assets"
+{% if assets|count %} 
+    The case has assets
+{% endif %}
+```
+
+#### Markdown handling
+The case summary and notes are in markdown. A processor tag should thus be added `|markdown`.  
+``` title="Summary as markdown"
+This is an example of summary : 
+
+{{ case.description|markdown }}
+```
+
+``` title="Loop over notes"
+This is an example of recursive notes  : 
+
+{% for note in case.notes %}
+
+    My note named {{ note.note_title }} : 
+    {{ note.note_content|markdown }}
+
+{% endfor %}
+```
+
+## Troubleshoot 
+Most of the time an error of generation is due to misspelled tag or a missing closing tag (`{% endfor %}`, `{% endif %}`, etc).  
+In case you cannot figure out what is going wrong, don't hesitate to reach us on Discord.

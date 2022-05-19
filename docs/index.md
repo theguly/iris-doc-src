@@ -1,4 +1,4 @@
-# Introduction
+# DFIR-IRIS
 
 In a nutshell, IRIS is a collaborative platform for incident response analysts allowing to share investigations at a technical level.  
 It's web application, so it can be either installed on a fixed-server, or on a laptop for roaming investigations where internet might not be available. 

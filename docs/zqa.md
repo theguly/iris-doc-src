@@ -88,7 +88,7 @@ Passwords are hashed so they can't be recovered. But you can change it.
     / # su postgres
     / # psql
     postgres=# \c iris_db 
-    postgres=# UPDATE "user" SET password = '<hash>' WHERE "user".name == 'administrator';
+    postgres=# UPDATE "user" SET password = '<hash>' WHERE "user".name = 'administrator';
     ```
 
 #### Can I delete a user ?

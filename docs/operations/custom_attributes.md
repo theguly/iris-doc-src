@@ -48,7 +48,7 @@ Attributes are defined in JSON which describes tabs and fields that makes the at
           "Field 2": {                    // Defines a second field within the tab Tab Name 1
               "type": "input_checkbox",   // Defines an input checkbox
               "mandatory": false,         // Indicates whether the field is mandatory upon saving
-              "value": ""                 // Default value if any, else empty
+              "value": false              // Default value - must be set for booleans
           }
       },
       "VT report": {                      // Defines a second tab named VT report
@@ -97,3 +97,142 @@ The migration of an attribute can however be forced in two ways, both resulting 
 ``Partial overwrite`` basically resets all the values of every target objects that matches the current attribute definition. All associated values are lost. This does not impact attributes pushed by modules or previous configuration.
 
 ``Complete overwrite`` resets all attributes of every target objects, including the ones created by modules, and then applies the current attributes. All associated values are lost.
+
+
+## Example 
+Custom attributes can be more complex than what presented above. With the `html` type, it is possible to build almost anything.  
+Below is an example of the custom attributes used in the IrisVT module. The ``{{ }}`` are used withing the module to generates the page with data received from VT.  
+
+**Note** : This example won't work as is, the value field is expanded here for reability.  
+
+
+```json title="IrisVT default custom attribute"
+{
+    "VT report": {                      
+        "Content": {                    
+            "type": "html",             
+            "value": "<div class='row'>
+                    <div class='col-12'>
+                        <h3>Basic information</h3>
+                        <dl class='row'>
+                            {% if results.as_owner %}
+                            <dt class='col-sm-3'>AS owner</dt>
+                            <dd class='col-sm-9'>{{ results.as_owner }}</dd>
+                            {% endif %}
+                            
+                            {% if country %}
+                            <dt class='col-sm-3'>Country</dt>
+                            <dd class='col-sm-9'>{{ results.country }}</dd>
+                            {% endif %}
+                        </dl>
+                    </div>
+                </div>    
+
+                {% if nb_detected_urls %}
+                <div class='row'>
+                    <div class='col-12'>
+                        <h3>Detected URLS</h3>
+                        <dl class='row'>
+                            <dt class='col-sm-3'>Total detected URLs</dt>
+                            <dd class='col-sm-9'>{{ nb_detected_urls }}</dd>
+                            
+                            <dt class='col-sm-3'>Average detection ratio</dt>
+                            <dd class='col-sm-9'>{{ avg_urls_detect_ratio }}</dd>
+                        </dl>
+                    </div>
+                </div>    
+                {% endif %}
+
+                {% if nb_detected_samples %}
+                <div class='row'>
+                    <div class='col-12'>
+                        <h3>Detected communicating samples</h3>
+                        <dl class='row'>
+                            <dt class='col-sm-3'>Total detected samples</dt>
+                            <dd class='col-sm-9'>{{ nb_detected_samples }}</dd>
+                            
+                            <dt class='col-sm-3'>Average detection ratio</dt>
+                            <dd class='col-sm-9'>{{ avg_samples_detect_ratio }}</dd>
+                        </dl>
+                    </div>
+                </div>    
+                {% endif %}
+
+                <div class='row'>
+                    <div class='col-12'>
+                        <div class='accordion'>
+                            <h3>Additional information</h3>
+
+                            {% if results.resolutions %}
+                            <div class='card'>
+                                <div class='card-header collapsed' id='drop_res' data-toggle='collapse' data-target='#drop_resolutions' aria-expanded='false' aria-controls='drop_resolutions' role='button'>
+                                    <div class='span-icon'>
+                                        <div class='flaticon-file'></div>
+                                    </div>
+                                    <div class='span-title'>
+                                        Resolutions history
+                                    </div>
+                                    <div class='span-mode'></div>
+                                </div>
+                                <div id='drop_resolutions' class='collapse' aria-labelledby='drop_res' style=''>
+                                    <div class='card-body'>
+                                        <ul>
+                                            {% for resolution in results.resolutions %} 
+                                            <li>{{ resolution.hostname }} ( Last resolved on {{resolution.last_resolved}} )</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class='row'>
+                    <div class='col-12'>
+                        <div class='accordion'>
+                            <h3>Raw report</h3>
+
+                            <div class='card'>
+                                <div class='card-header collapsed' id='drop_r' data-toggle='collapse' data-target='#drop_raw' aria-expanded='false' aria-controls='drop_raw' role='button'>
+                                    <div class='span-icon'>
+                                        <div class='flaticon-file'></div>
+                                    </div>
+                                    <div class='span-title'>
+                                        Raw report
+                                    </div>
+                                    <div class='span-mode'></div>
+                                </div>
+                                <div id='drop_raw' class='collapse' aria-labelledby='drop_r' style=''>
+                                    <div class='card-body'>
+                                        <div id='vt_raw_ace'>{{ results| tojson(indent=4) }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <script>
+                var vt_in_raw = ace.edit('vt_raw_ace',
+                {
+                    autoScrollEditorIntoView: true,
+                    minLines: 30,
+                });
+                vt_in_raw.setReadOnly(true);
+                vt_in_raw.setTheme('ace/theme/tomorrow');
+                vt_in_raw.session.setMode('ace/mode/json');
+                vt_in_raw.renderer.setShowGutter(true);
+                vt_in_raw.setOption('showLineNumbers', true);
+                vt_in_raw.setOption('showPrintMargin', false);
+                vt_in_raw.setOption('displayIndentGuides', true);
+                vt_in_raw.setOption('maxLines', 'Infinity');
+                vt_in_raw.session.setUseWrapMode(true);
+                vt_in_raw.setOption('indentedSoftWrap', true);
+                vt_in_raw.renderer.setScrollMargin(8, 5);
+                </script>"                 
+        }
+    }
+}
+```

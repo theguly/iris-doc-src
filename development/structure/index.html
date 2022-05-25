@@ -1251,7 +1251,7 @@ For instance, for the dashboard template : <code>source &gt; app &gt; blueprints
 It provides a Python overlay which allows to talk to the DB with objects.   </p>
 <h3 id="models">Models</h3>
 <p>Each table of the app is defined by a model.  These are defined in <code>source &gt; app &gt; model</code>.  When IRIS starts, it looks for the already created tables and creates the missing ones if needed.<br />
-If changes are done on a table or field, then a migration is needed. This is explained in <code>Alembic migration scripts</code>.  </p>
+If changes are done on a table or field, then a migration is needed. This is explained in <a href="/development/db-migration/">Alembic migrations</a>.  </p>
 <h3 id="requests">Requests</h3>
 <p>To help structuring the code, we are trying to move the DB code from the routes code. This is partially done and work in progress.<br />
 If your route requests the DB, please put the DB code in <code>source &gt; app &gt; datamgmt</code>.  </p>
@@ -1259,17 +1259,17 @@ If your route requests the DB, please put the DB code in <code>source &gt; app &
 <p>To apply schema migration without the need to rebuild the DB, IRIS uses <a href="https://alembic.sqlalchemy.org/en/latest/">Alembic</a>.<br />
 It allows to define migration scheme and IRIS calls it when it starts so users can upgrade without too much hassles. </p>
 <h2 id="hooks-modules-and-tasks">Hooks, modules and tasks</h2>
-<p>Modules are handled via tasks thanks to Celery and RabbitMQ. <a href="hooks/">More info here</a> and <a href="http://127.0.0.1:8080/development/modules/">here</a>. </p>
+<p>Modules are handled via tasks thanks to Celery and RabbitMQ. <a href="/development/hooks/">More info here</a> and <a href="/development/modules/">here</a>. </p>
 <h2 id="iris-startup">IRIS startup</h2>
-<p>When starting-up, IRIS initiates a bunch of DB objects, whether it is started for the first time or just restarted. Objects already created are not recreated, but the missing ones are applied. This ensure a smoot migration between versions.<br />
-These are defined in <code>source &gt; app &gt; post_init.py</code>.  The scripts also contains the code allow DB migration with Alembic.  </p>
+<p>When starting-up, IRIS initiates a bunch of DB objects, whether it is started for the first time or just restarted. Objects already created are not recreated, but the missing ones are applied. This ensure a smooth migration between versions.<br />
+These are defined in <code>source &gt; app &gt; post_init.py</code>.  The scripts also contains the code that runs th DB migration with Alembic.  </p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-05-18
+      2022-05-25
     
   </small>
 </div>

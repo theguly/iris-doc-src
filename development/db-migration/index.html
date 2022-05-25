@@ -1037,13 +1037,17 @@
 
 
 <h1 id="db-migrations">DB Migrations</h1>
-<p>In case a DB migration is needed, you need to provide an alembic migration script.  </p>
+<p>In case a DB migration is needed, you need to provide an alembic migration script. </p>
+<div class="admonition warning">
+<p class="admonition-title">Test your migration</p>
+<p>Please try out your migration as this is an important peace of the upgrades. Spin up an old version of IRIS, input some data and then try to start your new version. Ensure that everything was migrated as expected.  </p>
+</div>
 <p><strong>In a terminal and from within the IRIS virtual env</strong> :  </p>
 <ol>
 <li>Go to <code>source</code> </li>
 <li>Issue the following command : <code>alembic -c app/alembic.ini revision -m "A few words to describe your changes"</code> </li>
 </ol>
-<p>This creates a new revision file <code>source &gt; app &gt; alembic &gt; versions</code>.  It's a Python file that basically describes what needs to be updated DB-wise. You can take example from the ones we already have generated. </p>
+<p>This creates a new revision file <code>source &gt; app &gt; alembic &gt; versions</code>.  It's a Python file that basically describes what needs to be updated DB-wise. You can take example from the ones we already have generated in the same folder. </p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>During your tests you might face the issue that Alembic does not apply your changes after you executed it once. It's because it keeps tracks of the latest applied revision in a table <code>alembic_version</code>. It doesn't know you changed the revision file.<br />
@@ -1064,7 +1068,7 @@ If you're using the DB docker you can use the following:</p>
   <small>
     
       Last update:
-      2022-05-18
+      2022-05-25
     
   </small>
 </div>

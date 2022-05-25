@@ -12,6 +12,8 @@ theme:
   palette:
     primary: indigo
     accent: indigo
+  custom_dir: overrides
+
   
 extra_css:
   - stylesheets/extra.css

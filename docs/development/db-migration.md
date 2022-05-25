@@ -1,12 +1,15 @@
 # DB Migrations 
-In case a DB migration is needed, you need to provide an alembic migration script.  
+In case a DB migration is needed, you need to provide an alembic migration script. 
+
+!!! warning "Test your migration"
+    Please try out your migration as this is an important peace of the upgrades. Spin up an old version of IRIS, input some data and then try to start your new version. Ensure that everything was migrated as expected.  
 
 **In a terminal and from within the IRIS virtual env** :  
 
 1. Go to `source` 
 2. Issue the following command : `alembic -c app/alembic.ini revision -m "A few words to describe your changes"` 
 
-This creates a new revision file `source > app > alembic > versions`.  It's a Python file that basically describes what needs to be updated DB-wise. You can take example from the ones we already have generated. 
+This creates a new revision file `source > app > alembic > versions`.  It's a Python file that basically describes what needs to be updated DB-wise. You can take example from the ones we already have generated in the same folder. 
 
 !!! hint 
 

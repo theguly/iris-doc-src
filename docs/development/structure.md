@@ -24,7 +24,7 @@ It provides a Python overlay which allows to talk to the DB with objects.
 
 ### Models 
 Each table of the app is defined by a model.  These are defined in `source > app > model`.  When IRIS starts, it looks for the already created tables and creates the missing ones if needed.  
-If changes are done on a table or field, then a migration is needed. This is explained in [Alembic migration scripts](development/db-migration/).  
+If changes are done on a table or field, then a migration is needed. This is explained in [Alembic migrations](/development/db-migration/).  
 
 
 ### Requests 
@@ -37,7 +37,7 @@ To apply schema migration without the need to rebuild the DB, IRIS uses [Alembic
 It allows to define migration scheme and IRIS calls it when it starts so users can upgrade without too much hassles. 
 
 ## Hooks, modules and tasks 
-Modules are handled via tasks thanks to Celery and RabbitMQ. [More info here](hooks/) and [here](http://127.0.0.1:8080/development/modules/). 
+Modules are handled via tasks thanks to Celery and RabbitMQ. [More info here](/development/hooks/) and [here](/development/modules/). 
 
 
 ## IRIS startup

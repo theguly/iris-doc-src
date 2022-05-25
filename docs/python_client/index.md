@@ -2,7 +2,7 @@
 
 `dfir_iris_client` offers a Python interface to communicate with IRIS.  
 
-It relies exclusively on the API, which means output of the methods are the same as specified in the [API reference](https://dfir-iris.github.io/operations/api/#references). 
+It relies exclusively on the API, which means output of the methods are the same as specified in the [API reference](https://docs.dfir-iris.org/operations/api/#references). 
 
 
 ## Installation

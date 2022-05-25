@@ -1,7 +1,7 @@
 # Changelog
 
 For upgrades instructions, please see the [Upgrades page](/operations/upgrades). 
-!!! danger "Please read [upgrades instructions](https://dfir-iris.github.io/operations/upgrades/#v141) if you are upgrading from v1.3.1 or lower." 
+!!! danger "Please read [upgrades instructions](https://docs.dfir-iris.org/operations/upgrades/#v141) if you are upgrading from v1.3.1 or lower." 
 
 
 ## [v1.4.4](https://github.com/dfir-iris/iris-web/releases/tag/v1.4.4) <small>_ May 18, 2022 _</small> 

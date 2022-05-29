@@ -1,5 +1,5 @@
 # API
-Iris is meant to be plug-able and be integrated with the existing environments.   
+IRIS is meant to be plug-able and be integrated with the existing environments.   
 
 Through the REST API, one can do almost as much as it is possible to do through the web interface. Under the hood, the web interface is actually talking to the API. 
 
@@ -18,7 +18,7 @@ It can be found on the left panel, under username and My Settings.
 
 ## References
 The API constantly evolves with IRIS and thus multiple versions exists.  
-Use the references below to check which API version applies to your Iris version.  Starting from Iris v1.4.0, the supported API version can also be checked in the UI `Advanced` > `Server settings`.
+Use the references below to check which API version applies to your IRIS version.  Starting from IRIS v1.4.0, the supported API version can also be checked in the UI `Advanced` > `Server settings`.
 
 | IRIS Version|	API Version & Reference |
 |-------------|---------|
@@ -46,4 +46,5 @@ For example, to list all the cases:
 The only way to revoke a token is to renew the current one. Once done, the previous API token does not exist anymore
 on the database and it becomes ineffective. 
 
-A Python client is available [here](https://github.com/dfir-iris/iris-client) to ease the automation.  
+!!! hint
+    A Python client is available [here](https://github.com/dfir-iris/iris-client) to ease the automation.  

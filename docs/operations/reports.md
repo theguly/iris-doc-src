@@ -1,6 +1,6 @@
 # Reports
 
-Iris has the ability to generate reports based on the data of an investigation.    
+IRIS has the ability to generate reports based on the data of an investigation.    
 The reports templates can be managed in ``Advanced`` > ``Templates``.
 
 !!! info
@@ -12,7 +12,7 @@ There is two types of reports :
 - **Activities**; these contains activities done on the case and can be used as a follow-up  
 
 ## Structure of templates
-Reports templates are made of tags, which are then processed and filed by the template engine of Iris.   
+Reports templates are made of tags, which are then processed and filed by the template engine of IRIS.   
 The templates can have any forms as soon as they respect the tags. We are providing two example of reports. 
 
 - Example of investigation template : [Download](example_reports/iris_report_template.docx) 

@@ -16,7 +16,7 @@ This section only describes how an administrator can add or delete attributes to
 
 ## Management page
 
-Custom attributes can be changed in the ``Advanced`` > ``Objects Attributes`` section on the left panel. 
+Custom attributes can be changed in the ``Advanced`` > ``Custom Attributes`` section on the left panel. 
 
 ![Attributes menu](../_static/Attributes_menu.png)
 

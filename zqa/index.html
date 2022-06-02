@@ -1490,7 +1490,7 @@ We will however implement a server side search in next releases.  </p>
 <p>These changes are not possible for now but it might be implemented in future versions. </p>
 <h2 id="operations">Operations</h2>
 <h4 id="what-is-the-password-policy-can-it-be-changed">What is the password policy ? Can it be changed ?</h4>
-<p>For now the password policy is hardcoded and cannot be changed. <br />
+<p>Before v1.4.5, the password policy is hardcoded and cannot be changed. <br />
 It should be 12 characters minimum and contains a capital letter and a number. </p>
 <h4 id="can-i-change-my-profile-picture">Can I change my profile picture ?</h4>
 <p>No, not for now. This wasn't a priority for us, it will be released in future versions. </p>
@@ -1537,7 +1537,7 @@ You can however disable them to prevent them appearing in the UI and connecting 
 <h4 id="can-i-create-more-roles">Can I create more roles ?</h4>
 <p>No. It might be possible in future versions but for now it is better to spin up a new instance for restricted cases. </p>
 <h4 id="can-i-prevent-backrefs-of-assets-and-iocs">Can I prevent backrefs of assets and IOCs ?</h4>
-<p>No. It might be possible in future versions but for now it is better to spin up a new instance for restricted cases. </p>
+<p>No. It might be possible in future versions but for now it is better to spin up a new instance for restricted cases. The backref is however automatically disabled for performance reasons, for cases with more than 300 assets. We are working on a more efficient way to backref. </p>
 <h4 id="my-report-template-is-not-generated-and-generates-an-error">My report template is not generated and generates an error</h4>
 <p>Please triple check typos in tags as there is no fault tolerance. </p>
 <h1 id="integration">Integration</h1>

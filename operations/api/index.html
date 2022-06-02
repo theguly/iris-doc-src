@@ -1165,13 +1165,17 @@ Use the references below to check which API version applies to your IRIS version
 <td>v1.4.3</td>
 <td><a href="../../_static/iris_api_reference_v1.0.3.html">API v1.0.3</a></td>
 </tr>
+<tr>
+<td>v1.4.4</td>
+<td><a href="../../_static/iris_api_reference_v1.0.3.html">API v1.0.3</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="how-to-use">How to use</h2>
 <p>The API token is used as a Bearer and needs to be present in the header <code>Authorization</code> when issuing requests. 
 For example, to list all the cases: </p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>   curl --request GET <span class="se">\</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  --url http://localhost:8000/manage/cases/list <span class="se">\</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  --url http://localhost:8000/manage/cases/list?cid<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  --header <span class="s1">&#39;Authorization: Bearer mWpCUVNzBMU5EnbIAK50jLPhYjKBTHZjobdogc_n_yixpJTmt9tzAf8WYDI7m5XgB9wCJnlaXlHIh9RZjtp2fA&#39;</span> <span class="se">\</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  --header <span class="s1">&#39;Content-Type: application/json&#39;</span>
 </code></pre></div>

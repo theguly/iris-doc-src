@@ -2,7 +2,7 @@
 In case a DB migration is needed, you need to provide an alembic migration script. 
 
 !!! warning "Test your migration"
-    Please try out your migration as this is an important peace of the upgrades. Spin up an old version of IRIS, input some data and then try to start your new version. Ensure that everything was migrated as expected.  
+    Please try out your migration as this is an important piece of the upgrades. Spin up an old version of IRIS, input some data and then try to start your new version. Ensure that everything is migrated as expected.  
 
 **In a terminal and from within the IRIS virtual env** :  
 

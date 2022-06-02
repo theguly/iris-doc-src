@@ -17,6 +17,7 @@ For a short term roadmap, you can head to the [Github project](https://github.co
 #### How can I contact the DFIR-IRIS team ?
 You can reach us on [discord](https://discord.gg/76tM6QUJza), [Twitter](https://twitter.com/dfir_iris) or by [email](mailto:<contact@dfir-iris.org>).
 
+
 ## Cases
 
 #### Can I recover a deleted case ?  
@@ -54,7 +55,7 @@ Operations
 ----------
 
 #### What is the password policy ? Can it be changed ?
-For now the password policy is hardcoded and cannot be changed.   
+Before v1.4.5, the password policy is hardcoded and cannot be changed.   
 It should be 12 characters minimum and contains a capital letter and a number. 
 
 #### Can I change my profile picture ?
@@ -105,7 +106,7 @@ No. It might be possible in future versions but for now it is better to spin up 
 No. It might be possible in future versions but for now it is better to spin up a new instance for restricted cases. 
 
 #### Can I prevent backrefs of assets and IOCs ?
-No. It might be possible in future versions but for now it is better to spin up a new instance for restricted cases. 
+No. It might be possible in future versions but for now it is better to spin up a new instance for restricted cases. The backref is however automatically disabled for performance reasons, for cases with more than 300 assets. We are working on a more efficient way to backref. 
 
 #### My report template is not generated and generates an error
 Please triple check typos in tags as there is no fault tolerance. 

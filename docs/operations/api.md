@@ -30,15 +30,16 @@ Use the references below to check which API version applies to your IRIS version
 | v1.4.1|	[API v1.0.2](../_static/iris_api_reference_v1.0.2.html) |
 | v1.4.2|	[API v1.0.2](../_static/iris_api_reference_v1.0.2.html) |
 | v1.4.3|	[API v1.0.3](../_static/iris_api_reference_v1.0.3.html) |
+| v1.4.4|	[API v1.0.3](../_static/iris_api_reference_v1.0.3.html) |
+
 
 ## How to use 
 The API token is used as a Bearer and needs to be present in the header `Authorization` when issuing requests. 
 For example, to list all the cases: 
 
 ```bash
-
    curl --request GET \
-  --url http://localhost:8000/manage/cases/list \
+  --url http://localhost:8000/manage/cases/list?cid=1 \
   --header 'Authorization: Bearer mWpCUVNzBMU5EnbIAK50jLPhYjKBTHZjobdogc_n_yixpJTmt9tzAf8WYDI7m5XgB9wCJnlaXlHIh9RZjtp2fA' \
   --header 'Content-Type: application/json'
 ```

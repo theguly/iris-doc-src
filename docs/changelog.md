@@ -3,6 +3,26 @@
 For upgrades instructions, please see the [Upgrades page](/operations/upgrades). 
 !!! danger "Please read [upgrades instructions](https://docs.dfir-iris.org/operations/upgrades/#v141) if you are upgrading from v1.3.1 or lower." 
 
+## [v1.4.5](https://github.com/dfir-iris/iris-web/releases/tag/v1.4.4) <small>_ June 9, 2022 _</small> 
+
+**What's Changed**
+
+* Added a datastore in [#115](https://github.com/dfir-iris/iris-web/pull/115), fixes [#30](https://github.com/dfir-iris/iris-web/issues/30) : 
+    * Upload and store any files on IRIS 
+    * Password protect them as an option 
+    * Download
+    * Add to IOC and/or evidences automatically 
+    * Reference to files in notes, summary or any textual input 
+    * Copy/paste of images directly in notes and summary 
+    * Virtual folders to arrange files
+* Ability to configure password policy in [#117](https://github.com/dfir-iris/iris-web/pull/117), fixes [#116](https://github.com/dfir-iris/iris-web/issues/116)
+* Dark mode improved, flickering removed 
+* Multiples bugs fixes 
+* Security fixes 
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v1.4.4...v1.4.5)  
+
+**Notes**: Changes are made to the Nginx docker to allow upload of big files, hence specific upgrades are needed and auto-updates is not yet supported for this version. Please see the [upgrades instruction](https://docs.dfir-iris.org/operations/upgrades/#v145) for more details. 
 
 ## [v1.4.4](https://github.com/dfir-iris/iris-web/releases/tag/v1.4.4) <small>_ May 18, 2022 _</small> 
 

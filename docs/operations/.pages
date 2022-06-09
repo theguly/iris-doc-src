@@ -1,5 +1,6 @@
 nav:
   - API: api.md
+  - Datastore: datastore.md
   - Reports: reports.md
   - Custom attributes: custom_attributes.md
   - Server settings: server_settings.md

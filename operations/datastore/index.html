@@ -12,21 +12,21 @@
         <meta name="author" content="DFIR-IRIS Team">
       
       
-        <link rel="canonical" href="https://dfir-iris.org/python_client/references/session/">
+        <link rel="canonical" href="https://dfir-iris.org/operations/datastore/">
       
-      <link rel="icon" href="../../../_static/ico_white.png">
+      <link rel="icon" href="../../_static/ico_white.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
-        <title>Session - Documentation</title>
+        <title>Datastore - Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -45,11 +45,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dfir_iris_client.session" class="md-skip">
+        <a href="#datastore" class="md-skip">
           Skip to content
         </a>
       
@@ -91,9 +91,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Documentation" class="md-header__button md-logo" aria-label="Documentation" data-md-component="logo">
+    <a href="../.." title="Documentation" class="md-header__button md-logo" aria-label="Documentation" data-md-component="logo">
       
-  <img src="../../../_static/logo-white.png" alt="logo">
+  <img src="../../_static/logo-white.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Session
+              Datastore
             
           </span>
         </div>
@@ -188,9 +188,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
+    <a href="../.." title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
       
-  <img src="../../../_static/logo-white.png" alt="logo">
+  <img src="../../_static/logo-white.png" alt="logo">
 
     </a>
     Documentation
@@ -218,7 +218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -233,7 +233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting_started/" class="md-nav__link">
+      <a href="../../getting_started/" class="md-nav__link">
         Quick Start
       </a>
     </li>
@@ -246,12 +246,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -292,7 +294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operations/api/" class="md-nav__link">
+      <a href="../api/" class="md-nav__link">
         API
       </a>
     </li>
@@ -304,11 +306,127 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../operations/datastore/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Datastore
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Datastore
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#accessing-the-datastore" class="md-nav__link">
+    Accessing the datastore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-file" class="md-nav__link">
+    Adding a file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#files-operations" class="md-nav__link">
+    Files operations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pasting-in-notes-and-summary" class="md-nav__link">
+    Pasting in notes and summary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folders" class="md-nav__link">
+    Folders
+  </a>
+  
+    <nav class="md-nav" aria-label="Folders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-folder" class="md-nav__link">
+    Adding a folder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moving-folders" class="md-nav__link">
+    Moving folders
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#searching" class="md-nav__link">
+    Searching
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#under-the-hood" class="md-nav__link">
+    Under the hood
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -320,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operations/reports/" class="md-nav__link">
+      <a href="../reports/" class="md-nav__link">
         Reports
       </a>
     </li>
@@ -334,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operations/custom_attributes/" class="md-nav__link">
+      <a href="../custom_attributes/" class="md-nav__link">
         Custom attributes
       </a>
     </li>
@@ -348,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operations/server_settings/" class="md-nav__link">
+      <a href="../server_settings/" class="md-nav__link">
         Server settings
       </a>
     </li>
@@ -383,7 +501,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../operations/modules/">Modules</a>
+          <a href="../modules/">Modules</a>
           
             <label for="__nav_3_6">
               <span class="md-nav__icon md-icon"></span>
@@ -406,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operations/modules/mod_management/" class="md-nav__link">
+      <a href="../modules/mod_management/" class="md-nav__link">
         Management
       </a>
     </li>
@@ -452,7 +570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operations/modules/natives/IrisMISP/" class="md-nav__link">
+      <a href="../modules/natives/IrisMISP/" class="md-nav__link">
         Module IRIS MISP
       </a>
     </li>
@@ -466,7 +584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operations/modules/natives/IrisVT/" class="md-nav__link">
+      <a href="../modules/natives/IrisVT/" class="md-nav__link">
         Module IRIS VT
       </a>
     </li>
@@ -494,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operations/upgrades/" class="md-nav__link">
+      <a href="../upgrades/" class="md-nav__link">
         Upgrades
       </a>
     </li>
@@ -508,7 +626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../operations/tutorials/" class="md-nav__link">
+      <a href="../tutorials/" class="md-nav__link">
         Tutorials
       </a>
     </li>
@@ -528,14 +646,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
@@ -551,7 +667,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">Python client</a>
+          <a href="../../python_client/">Python client</a>
           
             <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
@@ -572,14 +688,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
       
       
       
@@ -616,7 +730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../admin/" class="md-nav__link">
+      <a href="../../python_client/references/admin/" class="md-nav__link">
         Admin
       </a>
     </li>
@@ -630,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../case/" class="md-nav__link">
+      <a href="../../python_client/references/case/" class="md-nav__link">
         Case
       </a>
     </li>
@@ -644,7 +758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../customer/" class="md-nav__link">
+      <a href="../../python_client/references/customer/" class="md-nav__link">
         Customer
       </a>
     </li>
@@ -658,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../global_search/" class="md-nav__link">
+      <a href="../../python_client/references/global_search/" class="md-nav__link">
         Global search
       </a>
     </li>
@@ -670,131 +784,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Session
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../python_client/references/session/" class="md-nav__link">
         Session
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dfir_iris_client.session" class="md-nav__link">
-    dfir_iris_client.session
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.API_VERSION" class="md-nav__link">
-    API_VERSION
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.log" class="md-nav__link">
-    log
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.ClientSession" class="md-nav__link">
-    ClientSession
-  </a>
-  
-    <nav class="md-nav" aria-label="ClientSession">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.ClientSession.__init__" class="md-nav__link">
-    __init__()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.ClientSession._check_api_compatibility" class="md-nav__link">
-    _check_api_compatibility()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.ClientSession._check_apikey_validity" class="md-nav__link">
-    _check_apikey_validity()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.ClientSession._pi_request" class="md-nav__link">
-    _pi_request()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.ClientSession._pi_uri" class="md-nav__link">
-    _pi_uri()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.ClientSession.pi_get" class="md-nav__link">
-    pi_get()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.ClientSession.pi_post" class="md-nav__link">
-    pi_post()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.ClientSession.preload_base_objects" class="md-nav__link">
-    preload_base_objects()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -806,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../users/" class="md-nav__link">
+      <a href="../../python_client/references/users/" class="md-nav__link">
         Users
       </a>
     </li>
@@ -864,7 +858,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../development/">Development</a>
+          <a href="../../development/">Development</a>
           
             <label for="__nav_5">
               <span class="md-nav__icon md-icon"></span>
@@ -887,7 +881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../development/structure/" class="md-nav__link">
+      <a href="../../development/structure/" class="md-nav__link">
         Structure overview
       </a>
     </li>
@@ -901,7 +895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../development/environment/" class="md-nav__link">
+      <a href="../../development/environment/" class="md-nav__link">
         Environment setup
       </a>
     </li>
@@ -915,7 +909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../development/code-tips/" class="md-nav__link">
+      <a href="../../development/code-tips/" class="md-nav__link">
         Coding tips
       </a>
     </li>
@@ -929,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../development/db-migration/" class="md-nav__link">
+      <a href="../../development/db-migration/" class="md-nav__link">
         DB Migration
       </a>
     </li>
@@ -943,7 +937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../development/hooks/" class="md-nav__link">
+      <a href="../../development/hooks/" class="md-nav__link">
         Hooks
       </a>
     </li>
@@ -976,7 +970,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../development/modules/">Modules</a>
+          <a href="../../development/modules/">Modules</a>
           
             <label for="__nav_5_7">
               <span class="md-nav__icon md-icon"></span>
@@ -1029,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../development/modules/quick_start/processor/" class="md-nav__link">
+      <a href="../../development/modules/quick_start/processor/" class="md-nav__link">
         Processor modules
       </a>
     </li>
@@ -1065,7 +1059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../zqa/" class="md-nav__link">
+      <a href="../../zqa/" class="md-nav__link">
         Q&A
       </a>
     </li>
@@ -1080,7 +1074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../roadmap/" class="md-nav__link">
+      <a href="../../roadmap/" class="md-nav__link">
         Roadmap
       </a>
     </li>
@@ -1095,7 +1089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contact/" class="md-nav__link">
+      <a href="../../contact/" class="md-nav__link">
         Contact
       </a>
     </li>
@@ -1110,7 +1104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/" class="md-nav__link">
+      <a href="../../changelog/" class="md-nav__link">
         Changelog
       </a>
     </li>
@@ -1125,7 +1119,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../credits/" class="md-nav__link">
+      <a href="../../credits/" class="md-nav__link">
         Credits
       </a>
     </li>
@@ -1149,6 +1143,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1157,92 +1153,84 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dfir_iris_client.session" class="md-nav__link">
-    dfir_iris_client.session
+  <a href="#accessing-the-datastore" class="md-nav__link">
+    Accessing the datastore
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.API_VERSION" class="md-nav__link">
-    API_VERSION
+  <a href="#files" class="md-nav__link">
+    Files
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.log" class="md-nav__link">
-    log
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.ClientSession" class="md-nav__link">
-    ClientSession
-  </a>
-  
-    <nav class="md-nav" aria-label="ClientSession">
+    <nav class="md-nav" aria-label="Files">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.ClientSession.__init__" class="md-nav__link">
-    __init__()
+  <a href="#adding-a-file" class="md-nav__link">
+    Adding a file
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.ClientSession._check_api_compatibility" class="md-nav__link">
-    _check_api_compatibility()
+  <a href="#files-operations" class="md-nav__link">
+    Files operations
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.ClientSession._check_apikey_validity" class="md-nav__link">
-    _check_apikey_validity()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.ClientSession._pi_request" class="md-nav__link">
-    _pi_request()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.ClientSession._pi_uri" class="md-nav__link">
-    _pi_uri()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.ClientSession.pi_get" class="md-nav__link">
-    pi_get()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.ClientSession.pi_post" class="md-nav__link">
-    pi_post()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dfir_iris_client.session.ClientSession.preload_base_objects" class="md-nav__link">
-    preload_base_objects()
+  <a href="#pasting-in-notes-and-summary" class="md-nav__link">
+    Pasting in notes and summary
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folders" class="md-nav__link">
+    Folders
+  </a>
+  
+    <nav class="md-nav" aria-label="Folders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-folder" class="md-nav__link">
+    Adding a folder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moving-folders" class="md-nav__link">
+    Moving folders
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#searching" class="md-nav__link">
+    Searching
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#under-the-hood" class="md-nav__link">
+    Under the hood
+  </a>
   
 </li>
       
@@ -1260,633 +1248,102 @@
                 
 
 
-  <h1>Session</h1>
-
-<div class="doc doc-object doc-module">
-
-<a id="dfir_iris_client.session"></a>
-    <div class="doc doc-contents first">
-
-
-
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-  <div class="doc doc-object doc-attribute">
-
-
-
-<h2 id="dfir_iris_client.session.API_VERSION" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">API_VERSION</span> <span class="o">=</span> <span class="s1">&#39;1.0.2&#39;</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span>
-
-</h2>
-
-
-    <div class="doc doc-contents ">
-
-      <p>client_session
-Defines a global session, accessible by all classes. client_session is of type ClientSession.</p>
-    </div>
-
-  </div>
-
-
-
-
-  <div class="doc doc-object doc-attribute">
-
-
-
-<h2 id="dfir_iris_client.session.log" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">log</span> <span class="o">=</span> <span class="n">logger</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-  </span>
-
-</h2>
-
-
-    <div class="doc doc-contents ">
-
-      <p>API_VERSION
-The API version is not directly correlated with Iris version. 
-Server has an endpoint /api/versions which should returns the API compatible versions 
-it can handles. </p>
-    </div>
-
-  </div>
-
-
-
-
-  <div class="doc doc-object doc-class">
-
-
-
-<h2 id="dfir_iris_client.session.ClientSession" class="doc doc-heading">
-          <code>ClientSession</code>
-
-
-
-</h2>
-
-
-    <div class="doc doc-contents ">
-        <p class="doc doc-class-bases">
-          Bases: <code>object</code></p>
-
-
-      <p>Represents a client that can interacts with Iris. It is basic wrapper handling authentication and the requests
-to the server.</p>
-
-
-
-
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="doc doc-object doc-function">
-
-
-
-<h3 id="dfir_iris_client.session.ClientSession.__init__" class="doc doc-heading">
-<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">apikey</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">agent</span><span class="o">=</span><span class="s1">&#39;iris-client&#39;</span><span class="p">,</span> <span class="n">ssl_verify</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">proxy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">120</span><span class="p">)</span></code>
-
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-
-<details class="version-verification-expects-to-fall-into-the-following-schema-">
-  <summary>Version verification expects to fall into the following schema</summary>
-  <p><code>Version(server_min_api_version) &lt;= Version(client_api_version) &lt;= Version(server_max_api_version)</code></p>
-</details>      <p>Initialize the ClientSession. APIKey validity is verified as well as API compatibility between the client
-and the server.
-If the client does not find itself compatible, an exception is raised.</p>
-<p>Once successfully initialized, the session become available through global var client_session.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>apikey</code></td>
-          <td>
-          </td>
-          <td><p>A valid API key. It can be fetched from My profile &gt; API Key</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>host</code></td>
-          <td>
-          </td>
-          <td><p>Target IRIS server full URL eg https://iris.local:9443</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>agent</code></td>
-          <td>
-          </td>
-          <td><p>User agent to issue the requests with</p></td>
-          <td>
-                <code>&#39;iris-client&#39;</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>ssl_verify</code></td>
-          <td>
-          </td>
-          <td><p>Set or unset SSL verification</p></td>
-          <td>
-                <code>True</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>proxy</code></td>
-          <td>
-          </td>
-          <td><p>Proxy parameters - For future use only</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>timeout</code></td>
-          <td>
-          </td>
-          <td><p>Default timeout for requests</p></td>
-          <td>
-                <code>120</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-function">
-
-
-
-<h3 id="dfir_iris_client.session.ClientSession._check_api_compatibility" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">_check_api_compatibility</span><span class="p">()</span></code>
-
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-      <p>Checks that the server and client can work together.
-The methods expects the following :
-<code>Version(server_min_api_version) &lt;= Version(client_api_version) &lt;= Version(server_max_api_version)</code></p>
-<p>If API is not compatible, an exception is raised.</p>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code>bool</code>
-          </td>
-          <td><p>bool</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-function">
-
-
-
-<h3 id="dfir_iris_client.session.ClientSession._check_apikey_validity" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">_check_apikey_validity</span><span class="p">()</span></code>
-
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-      <p>Checks the validity of the provided API key (emptiness, string and authorized).
-If the key is invalid, a ValueError exception is raised.</p>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code>bool</code>
-          </td>
-          <td><p>bool</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-function">
-
-
-
-<h3 id="dfir_iris_client.session.ClientSession._pi_request" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">_pi_request</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-      <p>Make a request (GET or POST) and handle the errors. The authentication header is added.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>uri</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td><p>URI to request</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>type</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td><p>Type of the request [POST or GET]</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>data</code></td>
-          <td>
-                <code>dict</code>
-          </td>
-          <td><p>dict to send if request type is POST</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="dfir_iris_client.helper.utils.ApiResponse">ApiResponse</span></code>
-          </td>
-          <td><p>ApiResponse object</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-function">
-
-
-
-<h3 id="dfir_iris_client.session.ClientSession._pi_uri" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">_pi_uri</span><span class="p">(</span><span class="n">uri</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-      <p>Wraps the provided uri around the URL.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>uri</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td><p>URI to request</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-          </td>
-          <td><p>Str - URL to request</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-function">
-
-
-
-<h3 id="dfir_iris_client.session.ClientSession.pi_get" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">pi_get</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span> <span class="n">cid</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-      <p>Adds the CID information needed by the server when issuing GET requests
-and then issue the request itself.</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>uri</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td><p>URI endpoint to request</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>cid</code></td>
-          <td>
-                <code>int</code>
-          </td>
-          <td><p>Target case ID</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="dfir_iris_client.helper.utils.ApiResponse">ApiResponse</span></code>
-          </td>
-          <td><p>ApiResponse object</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-function">
-
-
-
-<h3 id="dfir_iris_client.session.ClientSession.pi_post" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">pi_post</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></code>
-
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-      <p>Issues a POSt request with the provided data. Simple wrapper around _pi_request</p>
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>uri</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td><p>URI endpoint to request</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>data</code></td>
-          <td>
-                <code>dict</code>
-          </td>
-          <td><p>data to be posted. Expect a dict</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><span title="dfir_iris_client.helper.utils.ApiResponse">ApiResponse</span></code>
-          </td>
-          <td><p>ApiResponse object</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-function">
-
-
-
-<h3 id="dfir_iris_client.session.ClientSession.preload_base_objects" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">preload_base_objects</span><span class="p">()</span></code>
-
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-      <p>Preload the base objects most commonly used. This simply init the BaseObjects
-class, which in turns requests and build all the most common objects such as
-AnalysisStatus, EventCategory, EventType, etc.</p>
-<p>For future use only</p>
-
-    </div>
-
-  </div>
-
-
-
-
-
-  </div>
-
-    </div>
-
-  </div>
-
-
-
-
-
-
-  </div>
-
-    </div>
-
-  </div>
+<h1 id="datastore">Datastore</h1>
+<div class="admonition tip">
+<p class="admonition-title"><em>Introduced in IRIS v1.4.5</em></p>
+</div>
+<p>The datastore offers a way to store files directly in the context of a case. Documents, IOCs, evidences, etc, anything can be uploaded and managed through IRIS.  </p>
+<h2 id="accessing-the-datastore">Accessing the datastore</h2>
+<p>The datastore can be accessed from any page with the top-right shortcut.  </p>
+<p><img alt="DS Access" src="../../_static/ds_access.png" /></p>
+<p>A new pane will open, with a default folder tree created for the case.  </p>
+<h2 id="files">Files</h2>
+<h3 id="adding-a-file">Adding a file</h3>
+<p>To add a file to a folder, press the <code>+</code> button near a folder where you want to place it, and select <code>Add file</code>. </p>
+<p><img alt="DS add file" src="../../_static/ds_add_file.png" /></p>
+<p>A new window appear and allows to upload the file. The following fields are available : </p>
+<ul>
+<li><strong>Filename</strong> : Name of the file to upload. Automatically detected when a file is selected,</li>
+<li><strong>Description</strong> : An optional description of the file,</li>
+<li><strong>Password</strong> : An optional password to encrypt the file in a zip with. Files marked as IOC are automatically protected with <code>infected</code> unless specified otherwise in this field,</li>
+<li><strong>Tags</strong> : Optional tags to help filtering later on, </li>
+<li><strong>File is IOC</strong> : If set, the file is stored on a separate folder on the server and is automatically protected with <code>infected</code> unless specified otherwise in the password field. The file is also added to the IOC tab of the case, </li>
+<li><strong>File is evidence</strong> : If set, the file is stored on a separate folder on the server and is added to the Evidences tab of the case. </li>
+</ul>
+<p>A file can be both IOC and Evidence, in which case it is handled as an IOC and also added to the Evidence tab of the case. </p>
+<p><img alt="DS Add file" src="../../_static/ds_add_file_modal.png" /></p>
+<p>Depending on the file size, the upload might take some time. We are aware that the Nginx introduces a delay compared to a direct upload. We have not yet found a configuration that does not impact the speed upload.  </p>
+<p>Once uploaded, and depending on the options selected, the file appear in the target folder with specific icons. A mouse hover explains what each icon means. </p>
+<h3 id="files-operations">Files operations</h3>
+<p>Once a file is added, a left-click on it shows a dropdown with multiple options.  </p>
+<p><img alt="DS drop file" src="../../_static/ds_drop_file.png" /></p>
+<ul>
+<li><strong>Link</strong> : Copies in the clipboard a direct link to the file, </li>
+<li><strong>Markdown link</strong> : Copies in the clipboard a link in markdown format for direct use in a note or summary. If the file is an image, the copied link is an image tag,  </li>
+<li><strong>Download</strong> : Download the file. If the file is password protected, the resulting file is a password protected zip,</li>
+<li><strong>Info</strong> : Shows multiple information on the file such as password, file size, hash, internal name, ID, UUID, etc, </li>
+<li><strong>Edit</strong> : Allows to edit the file information. Uploading a new file replaces the original, the link stays the same. It is however not possible to set a password after the initial upload,  </li>
+<li><strong>Move</strong> : Move file to another directory. Once selected, click on the target directory and validate the move,</li>
+<li><strong>Delete</strong> : Delete the file entry and the file from the server. The potential entries added in IOC and Evidences are not updated. </li>
+</ul>
+<p>Batch operations such as moving and deleting are also available by clicking on <code>Select</code> at the top right, and then selecting the files. </p>
+<h3 id="pasting-in-notes-and-summary">Pasting in notes and summary</h3>
+<p>Images can now be directly pasted in notes an summary. Only images are supported. Once an image is pasted, the file is automatically uploaded in the datastore in the folder <code>Notes Upload</code> and a link to the file is inserted. </p>
+<p><strong>Example of pasted image</strong><br />
+<img alt="DS Paste" src="../../_static/ds_paste_image.png" /></p>
+<p>The image is by default sized to <code>40%</code>. Changing the end of the link <code>=SIZE%xSIZE%</code> allows to resize the image.  </p>
+<p>The file is now available in the DS and can be replaced if needed. The ID of the file is the one provided in the link, which can help finding out when names are updated.  </p>
+<p><img alt="DS Paste 2" src="../../_static/ds__paste_2.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">Note</p>
+<p>Under certain conditions (browser, version, OS) the image copy/paste cannot be done directly. This is a known issue, not directly linked to IRIS but related to how browsers handle files in clipboards. If you face this issue, try to open the image and copy it from there instead of the file manager. Otherwise you need to upload it via the Datastore and then get a link from it.  </p>
+</div>
+<h2 id="folders">Folders</h2>
+<h3 id="adding-a-folder">Adding a folder</h3>
+<p>To add folder, press the <code>+</code> button near a folder where you want to place it, and select <code>Add subfolder</code>. </p>
+<p><img alt="DS add folder" src="../../_static/ds_add_subfolder.png" /></p>
+<p>A new window appear requesting the name of the folder to create. Validate and the new folder appears in the folder tree. Files can then be added to it. </p>
+<h3 id="moving-folders">Moving folders</h3>
+<p>Folders can be moved within other folders. When doing so, every files and subfolders are also moved, like we are used to with files managers.  </p>
+<p>Click on the <code>+</code> near the folder to move, and then select <code>Move</code>. The target folder is underlined in blue. Select then the target folder which should appear underline in orange. Then validate the move.  </p>
+<p><img alt="DS add folder" src="../../_static/ds_folder_move.png" /></p>
+<p>The folder and all its children are moved in the target directory. </p>
+<p><img alt="DS add folder" src="../../_static/ds_folder_has_moved.png" /></p>
+<h2 id="searching">Searching</h2>
+<p>When dozens of files are added, the filtering bar can be used to quickly find a file. The filtering mechanism is similar to the one in the timeline. </p>
+<p>The query schema is : <code>target_element:search_value AND target_element2:search_value2</code>.
+There is no OR condition and searching without target does not work.</p>
+<p>The following target elements can be used to filter :</p>
+<ul>
+<li>name: Name of the file</li>
+<li>id: ID of the file</li>
+<li>uuid: UUID of the file</li>
+<li>storage_name: Name of the file on the FS</li>
+<li>tag: Tag of the file</li>
+<li>description: Description of the file</li>
+<li>is_ioc : Set to any value to filter files which are IOCs</li>
+<li>is_evidence: Set to any value to filter files which are evidences</li>
+<li>has_password: Set to any value to filter files which have passwords</li>
+<li>sha256: SHA256 to filter files with</li>
+</ul>
+<p><img alt="DS search" src="../../_static/ds_search.png" /></p>
+<h2 id="under-the-hood">Under the hood</h2>
+<p>Here a are a few concepts to better understand how the datastore is working.  </p>
+<p>Folders represented on the datastore are virtual and do not represent the folders on the system. This is to ensure smooth files operations. The files are never touched again (unless overwritten or deleted) once uploaded. When a file or directory is moved or renamed, only its parent references are updated.</p>
+<p>Files are saved by GUID instead of their real names on the system. They are saved under the mapped volume <code>/home/iris/server_data/datastore</code> by default. Then three directories are created : </p>
+<ul>
+<li><code>Evidences</code></li>
+<li><code>IOCs</code></li>
+<li><code>Regulars</code></li>
+</ul>
+<p>Within each of these, a new subdirectory with the case ID is created when a file is uploaded. This is ensure IOC, which can be harmful, are formally identified on the server itself. Files can be found on the system by looking up the <code>Storage UUID</code> of the file (eg: <code>dsf-f86926ec-513d-4e47-88fa-02110e7fb412</code>) in these directories. </p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-03-20
+      2022-06-09
     
   </small>
 </div>
@@ -1908,7 +1365,7 @@ AnalysisStatus, EventCategory, EventType, etc.</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../global_search/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Global search" rel="prev">
+        <a href="../api/" class="md-footer__link md-footer__link--prev" aria-label="Previous: API" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1917,20 +1374,20 @@ AnalysisStatus, EventCategory, EventType, etc.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Global search
+              API
             </div>
           </div>
         </a>
       
       
         
-        <a href="../users/" class="md-footer__link md-footer__link--next" aria-label="Next: Users" rel="next">
+        <a href="../reports/" class="md-footer__link md-footer__link--next" aria-label="Next: Reports" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Users
+              Reports
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -2001,10 +1458,10 @@ AnalysisStatus, EventCategory, EventType, etc.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.indexes", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.indexes", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      <script src="../../assets/javascripts/bundle.467223ff.min.js"></script>
       
     
   </body>

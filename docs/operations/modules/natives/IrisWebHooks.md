@@ -21,13 +21,36 @@ The source code is available [here](https://github.com/dfir-iris/iris-webhooks-m
 
 !!! check "Requires IRIS >= 1.4.0"
 
+### Online
 The module is published on Pypi and can be directly installed through pip on the app docker container.  
 
-```bash title="Install the pip package on the server"
+```bash title="Install the pip package on the dockers"
+# Install on IrisWebApp
 docker exec -ti <iris_app_instance> /bin/bash
+pip3 install iris-webhooks-module
+
+# Install on the worker
+docker exec -ti <iris_worker_instance> /bin/bash
 pip3 install iris-webhooks-module
 ```
 
+Then [register the module](#register-the-module-in-iris). 
+
+### Offline
+If your server is not connected to internet, you can still do an offline install. 
+
+1. Download the wheel from Pypi : [https://pypi.org/project/iris-webhooks-module/#files](https://pypi.org/project/iris-webhooks-module/#files)
+2. Copy the wheel to the Iris Web App docker : `docker cp iris_webhooks_module-XXXX-py3-none-any.whl <iris_app_instance>:/iriswebapp/dependencies/` 
+3. Install the module 
+```bash
+docker exec -ti <iris_app_instance> /bin/bash   
+pip3 install ./iriswebapp/dependencies/iris_webhooks_module-XXXX-py3-none-any.whl
+```
+4. Do the same for the worker 
+
+Then [register the module](#register-the-module-in-iris). 
+
+### Register the module in IRIS
 Then go to the modules management in `Advanced > Modules`. Click on the `+` on the top right.   
 
 ![Add module](../../../_static/iwbh_add_module.png)
@@ -168,8 +191,8 @@ As any IRIS module, IrisWebhooks is logged into DIM Tasks. You can check the sta
 
 ![DIM Check](../../../_static/iwbh_dim_check.png)
 
-## Important Notes
+## Important Notes and know issues
 
 - The module is in beta and will improve over time. More customization should be brought on the messages. 
-- For a complete experience, some features are missing on the server side - such as case info and user info passed to modules. They will be added in the next release and this module will be updated.   
+- For a complete experience, some features are missing on the server side - such as case info and user info passed to modules. They will be added in the next release and this module will be updated. For instance, IOC events do not hold case info, assets update events do not hold the user info who made the change.  
 - Deletions hooks are not working as expected in IRIS v1.4.5 and the module thus fails to notify upon objects deletions. This will be fix in the next release of IRIS.   

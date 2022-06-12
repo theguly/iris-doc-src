@@ -1345,7 +1345,7 @@ The source code is available <a href="https://github.com/dfir-iris/iris-webhooks
 <li>Copy the wheel to the Iris Web App docker : <code>docker cp iris_webhooks_module-XXXX-py3-none-any.whl &lt;iris_app_instance&gt;:/iriswebapp/dependencies/</code> </li>
 <li>Install the module 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker <span class="nb">exec</span> -ti &lt;iris_app_instance&gt; /bin/bash   
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>pip3 install ./iriswebapp/dependencies/iris_webhooks_module-XXXX-py3-none-any.whl
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>pip3 install /iriswebapp/dependencies/iris_webhooks_module-XXXX-py3-none-any.whl
 </code></pre></div></li>
 <li>Do the same for the worker </li>
 </ol>

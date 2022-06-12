@@ -590,8 +590,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#important-notes" class="md-nav__link">
-    Important Notes
+  <a href="#important-notes-and-know-issues" class="md-nav__link">
+    Important Notes and know issues
   </a>
   
 </li>
@@ -1234,8 +1234,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#important-notes" class="md-nav__link">
-    Important Notes
+  <a href="#important-notes-and-know-issues" class="md-nav__link">
+    Important Notes and know issues
   </a>
   
 </li>
@@ -1274,8 +1274,13 @@ The source code is available <a href="https://github.com/dfir-iris/iris-webhooks
 <p class="admonition-title">Requires IRIS &gt;= 1.4.0</p>
 </div>
 <p>The module is published on Pypi and can be directly installed through pip on the app docker container.  </p>
-<div class="highlight"><span class="filename">Install the pip package on the server</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker <span class="nb">exec</span> -ti &lt;iris_app_instance&gt; /bin/bash
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pip3 install iris-webhooks-module
+<div class="highlight"><span class="filename">Install the pip package on the dockers</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Install on IrisWebApp</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>docker <span class="nb">exec</span> -ti &lt;iris_app_instance&gt; /bin/bash
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>pip3 install iris-webhooks-module
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Install on the worker</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>docker <span class="nb">exec</span> -ti &lt;iris_worker_instance&gt; /bin/bash
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>pip3 install iris-webhooks-module
 </code></pre></div>
 <p>Then go to the modules management in <code>Advanced &gt; Modules</code>. Click on the <code>+</code> on the top right.   </p>
 <p><img alt="Add module" src="../../../../_static/iwbh_add_module.png" /></p>
@@ -1404,10 +1409,10 @@ For each webhook:<ul>
 <p>The module only handles JSON POST for the moment. If the target webhook receiver needs another type of request, please contact us so we can add it.  </p>
 <p>As any IRIS module, IrisWebhooks is logged into DIM Tasks. You can check the status of the requests made in these. Go to <code>DIM Tasks</code> and then filter with <code>webhooks</code>. You can then check details info by clicking in the Task ID. More info might be available in the Docker worker logs depending on the situation. </p>
 <p><img alt="DIM Check" src="../../../../_static/iwbh_dim_check.png" /></p>
-<h2 id="important-notes">Important Notes</h2>
+<h2 id="important-notes-and-know-issues">Important Notes and know issues</h2>
 <ul>
 <li>The module is in beta and will improve over time. More customization should be brought on the messages. </li>
-<li>For a complete experience, some features are missing on the server side - such as case info and user info passed to modules. They will be added in the next release and this module will be updated.   </li>
+<li>For a complete experience, some features are missing on the server side - such as case info and user info passed to modules. They will be added in the next release and this module will be updated. For instance, IOC events do not hold case info, assets update events do not hold the user info who made the change.  </li>
 <li>Deletions hooks are not working as expected in IRIS v1.4.5 and the module thus fails to notify upon objects deletions. This will be fix in the next release of IRIS.   </li>
 </ul>
 

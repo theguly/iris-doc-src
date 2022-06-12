@@ -1,0 +1,12 @@
+[
+    {
+        "default": {},
+        "mandatory": false,
+        "param_description": "JSON Web hooks configuration",
+        "param_human_name": "Web hooks configuration",
+        "param_name": "wh_configuration",
+        "section": "Templates",
+        "type": "textfield_json",
+        "value": "{   \n    \"instance_url\": \"https://iris.local\",\n    \"webhooks\": [\n        {\n            \"name\": \"Discord\",\n            \"active\": false,\n            \"trigger_on\": [\n                    \"all\"\n                ],\n            \"request_url\": \"https://discord.com/api/webhooks/984827515195490304/BDIZwvAGXGX4RwDxCnyKA5ppSPSbbm5q72zT3-Il04cSqo6YDXPmX49UxutO-Owb8hn8\",\n            \"request_rendering\": \"markdown\", \n            \"request_body\": {\n                \"embeds\": [{\n                    \"description\" : \"%DESCRIPTION%\",\n                    \"title\" : \"%TITLE%\"\n                }]\n            }\n        },\n        {\n            \"name\": \"Slack\",\n            \"trigger_on\": [\n                    \"all\"\n                ],\n            \"request_url\": \"https://hooks.slack.com/services/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\",\n            \"request_rendering\": \"markdown_slack\",\n            \"request_body\": {\n                \"text\": \"%TITLE%\",\n                \"blocks\": [\n                \t{\n                \t\t\"type\": \"section\",\n                \t\t\"text\": {\n                \t\t\t\"type\": \"mrkdwn\",\n                \t\t\t\"text\": \"*%TITLE%*\"\n                \t\t}\n                \t},\n                \t{\n                \t\t\"type\": \"section\",\n                \t\t\"block_id\": \"section567\",\n                \t\t\"text\": {\n                \t\t\t\"type\": \"mrkdwn\",\n                \t\t\t\"text\": \"%DESCRIPTION%\"\n                \t\t}\n                \t}\n                ]\n            }\n        }\n    ]\n}"
+    }
+]

@@ -19,5 +19,6 @@ By default IRIS is shipped with multiple modules.
 
 - [IrisVTModule](natives/IrisVT.md)  : Processor module offering VirusTotal insights (installed and registered)
 - [IrisMispModule](natives/IrisMISP.md)  : Processor module offering MISP insights (installed and registered)
+- [IrisWebHooksModule](natives/IrisWebHooks.md)  : Processor module offering webhooks support (manual installation)
 - IrisCheckModule : A basic processor module logging every hooks. Used to check the good functionning. (installed and registered) 
 - IrisEVTXModule : A pipeline module offers EVTX import into Splunk through IRIS (installed but not registered) 

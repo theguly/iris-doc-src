@@ -6,7 +6,7 @@ This module offers an interface with VirusTotal and IRIS to automatically enrich
 The source code is available [here](https://github.com/dfir-iris/iris-vt-module). It is installed by default but needs to be configured to be enabled.  
 
 ## Features
-Two types of enrichement mecanism are proposed : 
+Two types of enrichment mechanism are proposed : 
 
 - **Manual** : right-click on one or more IOCs and select ``Get VT insight``. This sends the targets IOCs to the module and insights will be fetched and applied. 
 - **Automatic**:

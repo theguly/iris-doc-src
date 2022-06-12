@@ -107,7 +107,7 @@ For each webhook:
         - `%DESCRIPTION%`: Description of the event, e.g "UserX created IOC mimi.exe in case #54"
 
 ### Checking IRIS hooks registration
-Each time a webhook is added, the module subscribes to the specified hooks. After saving the configuration, one can check the registration was successful by filtering the `Registered hooks table`. 
+Each time a webhook is added, the module subscribes to the specified hooks. After saving the configuration, one can check the registration was successful by filtering the `Registered hooks table` (don't forget to refresh the table !).  
 
 ![Hooks registration](../../../_static/iwbh_hooks_registration.png)
 

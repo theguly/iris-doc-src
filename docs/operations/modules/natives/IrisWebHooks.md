@@ -44,7 +44,7 @@ If your server is not connected to internet, you can still do an offline install
 3. Install the module 
 ```bash
 docker exec -ti <iris_app_instance> /bin/bash   
-pip3 install ./iriswebapp/dependencies/iris_webhooks_module-XXXX-py3-none-any.whl
+pip3 install /iriswebapp/dependencies/iris_webhooks_module-XXXX-py3-none-any.whl
 ```
 4. Do the same for the worker 
 

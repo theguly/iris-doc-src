@@ -1341,11 +1341,11 @@ The source code is available <a href="https://github.com/dfir-iris/iris-webhooks
 <h3 id="offline">Offline</h3>
 <p>If your server is not connected to internet, you can still do an offline install. </p>
 <ol>
-<li>Download the wheel from Pypi : https://pypi.org/project/iris-webhooks-module/#files </li>
+<li>Download the wheel from Pypi : <a href="https://pypi.org/project/iris-webhooks-module/#files">https://pypi.org/project/iris-webhooks-module/#files</a></li>
 <li>Copy the wheel to the Iris Web App docker : <code>docker cp iris_webhooks_module-XXXX-py3-none-any.whl &lt;iris_app_instance&gt;:/iriswebapp/dependencies/</code> </li>
 <li>Install the module 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker <span class="nb">exec</span> -ti &lt;iris_app_instance&gt; /bin/bash   
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>pip3 install iris-webhooks-module
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>pip3 install ./iriswebapp/dependencies/iris_webhooks_module-XXXX-py3-none-any.whl
 </code></pre></div></li>
 <li>Do the same for the worker </li>
 </ol>

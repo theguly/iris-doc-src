@@ -14,6 +14,9 @@ Attributes offer the ability to :
 
 This section only describes how an administrator can add or delete attributes to an object.  
 
+!!! tip 
+    We have publish a detailed article of custom attributes with advanced usage on [our blog](https://blog.dfir-iris.org/deep_dives/custom_attributes_dive/). 
+
 ## Management page
 
 Custom attributes can be changed in the ``Advanced`` > ``Custom Attributes`` section on the left panel. 

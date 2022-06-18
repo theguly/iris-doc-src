@@ -8,3 +8,4 @@ You can directly contact us, should you need direct support, a demo, further inf
 
 :material-twitter: [Twitter](https://twitter.com/dfir_iris)
 
+:material-matrix: [Matrix](https://matrix.to/#/#dfir-iris:matrix.org)

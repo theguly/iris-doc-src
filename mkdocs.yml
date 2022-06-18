@@ -46,6 +46,8 @@ extra:
       link: mailto:<contact@dfir-iris.org>
     - icon: material/discord
       link: https://discord.gg/76tM6QUJza
+    - icon: material/matrix
+      link: https://matrix.to/#/#dfir-iris:matrix.org
 
 repo_url: https://github.com/dfir-iris/iris-web
 site_url: https://dfir-iris.org

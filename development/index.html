@@ -91,7 +91,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Documentation" class="md-header__button md-logo" aria-label="Documentation" data-md-component="logo">
+    <a href="https://dfir-iris.org" title="Documentation" class="md-header__button md-logo" aria-label="Documentation" data-md-component="logo">
       
   <img src="../_static/logo-white.png" alt="logo">
 
@@ -188,7 +188,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
+    <a href="https://dfir-iris.org" title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
       
   <img src="../_static/logo-white.png" alt="logo">
 
@@ -1046,6 +1046,48 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-repositories-conventions" class="md-nav__link">
+    General repositories conventions
+  </a>
+  
+    <nav class="md-nav" aria-label="General repositories conventions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#branches" class="md-nav__link">
+    Branches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commits" class="md-nav__link">
+    Commits
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sections" class="md-nav__link">
+    Sections
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1062,8 +1104,29 @@
 <div class="admonition info">
 <p class="admonition-title">This section is under construction and more elements will be added over time</p>
 </div>
-<p>This documentation is not a detailed how-to develop IRIS. It gives some insights to help understand the basic code of the project.  </p>
-<p><strong>What's here</strong>  </p>
+<p>This documentation is not a detailed how-to develop IRIS. It gives some insights to help understand the basic code of the project and how to contribute.  </p>
+<h2 id="general-repositories-conventions">General repositories conventions</h2>
+<h3 id="branches">Branches</h3>
+<p>We are using the <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow">Gitflow Workflow</a> to manage our git branches.<br />
+In a nutshell :  </p>
+<ul>
+<li><code>master</code> contains only "production-ready" code</li>
+<li><code>develop</code> contains the major development code. When ready it is tagged and merged into <code>master</code></li>
+<li>The sub-branches of <code>develop</code> contains either : <ul>
+<li>A new feature in development, in which case the naming convention is <code>new_feature</code></li>
+<li>An issue fixe, in which case the name convention is <code>iXX_issue_title</code>, with XX being the issue number </li>
+</ul>
+</li>
+</ul>
+<h3 id="commits">Commits</h3>
+<p>The commits convention is the following : </p>
+<ul>
+<li>Create commits as small as possible, i.e atomic commits  </li>
+<li>If it's not related to an issue, the format <code>[action] Commit message</code> is used, with <code>action</code> being a 3 letters action related to the commit, eg <code>ADD</code>for additions, <code>DEL</code> for deletions, <code>IMP</code> for improvements, etc.</li>
+<li>If it's related to an issue, prepend with the issue ID, i.e <code>[#issue_id][action] Commit message</code> </li>
+</ul>
+<h2 id="sections">Sections</h2>
+<p>The following sections are available in this documentation : </p>
 <ul>
 <li><a href="structure/">Structure overview</a> : general structure of IRIS code </li>
 <li><a href="environment/">Environment setup</a> : guide to setup a development environment </li>
@@ -1078,7 +1141,7 @@
   <small>
     
       Last update:
-      2022-06-02
+      2022-06-21
     
   </small>
 </div>

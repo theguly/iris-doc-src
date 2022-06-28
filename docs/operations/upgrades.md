@@ -218,7 +218,7 @@ A patch exists for this version. Please directly upgrade to [v1.4.4](#v144)
     if (cversion === tversion) {
        div.innerHTML = `<div class="admonition question">
             <p class="admonition-title">Let's talk</p>
-            <p>We're not sure that's really useful. Coffee instead ?</p>
+            <p>We're not sure that's really useful. Coffee instead?</p>
             </div>`;
         return;
     }

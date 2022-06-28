@@ -41,7 +41,7 @@ class IrisDummyModule(IrisModuleInterface):
     pass 
 ```
 
-That's it ! Actually this class is not doing anything right now. We'll need to add a few methods to register our hook later.  
+That's it! Actually this class is not doing anything right now. We'll need to add a few methods to register our hook later.  
 
 But first we need to indicate to IRIS what is our main interface class. Remember, there is no convention restriction, so IRIS has no way to know which class it should instantiate to call our module.  
 
@@ -56,7 +56,7 @@ To do so, we need to set a specific variable in our `__init__.py`.
 __iris_module_interface = "IrisDummyModule"
 ```
 
-Our module is now recognizable by IRIS :heart: Pretty simple right ? 
+Our module is now recognizable by IRIS :heart: Pretty simple right? 
 
 
 ## Writing the configuration 
@@ -295,5 +295,5 @@ def hooks_handler(self, hook_name: str, data):
     return InterfaceStatus.I2Success(data=data, logs=list(self.message_queue))
 ```
 
-**We are done !**  
+**We are done!**  
 Our module is now fully ready to register, subscribe to a hook and act when notified.  

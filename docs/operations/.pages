@@ -1,5 +1,6 @@
 nav:
   - API: api.md
+  - Access control: access_control
   - Datastore: datastore.md
   - Reports: reports.md
   - Custom attributes: custom_attributes.md

@@ -4,7 +4,7 @@ The most straight forward and recommended way to use IRIS is with Docker. This i
 
 !!! warning "Disclaimer"
 
-    IRIS is in its early stage. It can already be used in production, but please set backups of the database and DO NOT expose the interface on the Internet.
+    IRIS is in its early stage. It can already be used in production, but please [set backups of the database](/operations/upgrades/#backing-up-db) and DO NOT expose the interface on the Internet.
     We highly recommended the use of a private dedicated and secured network. 
     
 

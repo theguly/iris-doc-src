@@ -60,6 +60,9 @@ The users manager should load and present a list of both users already in the or
 Alternatively, a user can be directly removed from withing the organisation manager. Click on the orange minus next to the user to remove and confirm the deletion. 
 ![Remove user from org](../../_static/access_control/remove_user_from_org.png)
 
+#### Setting the default organisation of a user
+Please see [set home organisation](). 
+
 ### Cases
 #### Adding cases to the organisation 
 Access to one or multiple existing cases can be granted to an organisation. From within the `organisation manager`, go to the `Cases access` tab and click `Set case access`.  
@@ -83,3 +86,12 @@ Once the desired access is selected, press `Set access`.
 #### Removing cases from the organisation 
 From within the `organisation manager`, go to the `Cases access` tab. Click on the orange minus next to the case to remove and confirm the deletion.
 ![Remove case from org](../../_static/access_control/remove_case_from_org.png)
+
+## Removing an organisation
+An organisation can be deleted by clicking on its name in the list and then `Delete` at the bottom of the `Info` tab.  
+![Delete organisation](../../_static/access_control/delete_organisation.png)
+
+!!! danger "Attention"
+    If the error `Cannot delete organisation because it set as home organisation for X users` is issued, the users who have this organisation as primary organisation must be updated before deleting the organisation. 
+    To quickly find out which users has this organisation as primary org, go to the `Members` tab > `Manage`. Select and deselect all users, then click `Save`. The remaining users are the ones that need to be updated. 
+    ![Delete org error](../../_static/access_control/error_deletion_org.png)

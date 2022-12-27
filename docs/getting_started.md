@@ -23,6 +23,12 @@ the official website of [Docker](https://docs.docker.com/get-docker/).
 
 The platform is tested on Linux and MacOS (including Apple Silicon). While it should work on Windows, some path needed by the dockers to store permanent files might need to be changed in the dockerfiles. 
 
+## Versioning
+Starting from version 2.0.0, Iris is following the [Semantic Versioning 2.0](https://semver.org/) guidelines.   
+The code ready for production is always tagged with a version number. 
+``alpha`` and ``beta`` versions are **not** production-ready.  
+
+Do not use the ``master`` branch in production. 
 
 ## Build and run
 
@@ -43,12 +49,12 @@ Each service can be built independently, which is useful when developing. In thi
 git clone https://github.com/dfir-iris/iris-web.git
 cd iris-web
 
-# Optional, checkout to the latest version 
-git checkout v1.4.4
+# Checkout to the last non-beta tagged version -
+git checkout v1.4.5
 
 # Copy the environment file 
 cp .env.model .env
-# [... optionally, do some configuration as specified below ...]
+# [... optionally, do some configuration as specified in section below ...]
 
 # Build the dockers
 docker-compose build

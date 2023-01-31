@@ -45,11 +45,10 @@ We will however implement a server side search in next releases.
 Yes. Cases are identified with a unique number, so they can have the same name. 
 
 #### Can I restrict the view of case to a set of users?
-No. Please see Security. 
+Yes it is since v2.0.0. See [Access control](operations/access_control).  
 
 #### Can I change the name or customer of an existing case?
-These changes are not possible for now but it might be implemented in future versions. 
-
+Yes it is since v2.0.0. 
 
 Operations
 ----------
@@ -63,34 +62,8 @@ No, not for now. This wasn't a priority for us, it will be released in future ve
 
 
 #### I lost the administrator password, can I recover it?
-Passwords are hashed so they can't be recovered. But you can change it. 
-
-- If you have another admin user :  
-    Being logged as this user, simply head to the Advanced > Users section, and change the administrator password. 
-
-- If you don't have another admin user:   
-    You can't do the change via Iris, you need to update the DB manually. 
-
-
-!!! danger "Danger!"
-    Do not delete and recreate any users from the DB! This will create inconsistencies in the relations and likely corrupt everything. 
-
-1. Generate the hash of the new password with Python BCrypt 
-   
-    ```python
-    import bcrypt
-    print(bcrypt.hashpw(<new_password>.encode('utf-8'), bcrypt.gensalt())
-    ```
-
-2. Connect to the DB docker then the Postgresql database `iris_db` and update the password 
-
-    ```bash
-    docker exec -ti <db_id> /bin/bash
-    / # su postgres
-    / # psql
-    postgres=# \c iris_db 
-    postgres=# UPDATE "user" SET password = '<hash>' WHERE "user".name = 'administrator';
-    ```
+Passwords are hashed so they can't be recovered. But you can change it.  
+Please see [changing a lost password](operations/access_control/authentication.md#changing-a-lost-password).  
 
 #### Can I delete a user?
 No. To keep consistencies in the database, users unfortunately cannot be deleted if they have done some activities.  
@@ -99,17 +72,11 @@ You can however disable them to prevent them appearing in the UI and connecting 
 #### Can I delete a customer?   
 No. To keep consistencies in the database, customers unfortunately cannot be deleted if they are linked to cases. 
 
-#### Can I create organizations or groups?
-No. It might be possible in future versions but for now it is better to spin up a new instance for restricted cases. 
-
-#### Can I create more roles?
-No. It might be possible in future versions but for now it is better to spin up a new instance for restricted cases. 
-
 #### Can I prevent backrefs of assets and IOCs?
 No. It might be possible in future versions but for now it is better to spin up a new instance for restricted cases. The backref is however automatically disabled for performance reasons, for cases with more than 300 assets. We are working on a more efficient way to backref. 
 
 #### My report template is not generated and generates an error
-Please triple check typos in tags as there is no fault tolerance. 
+Please triple check typos in tags as there is no fault tolerance. You can reach us in case of troubles.  
 
 
 # Integration
@@ -123,7 +90,7 @@ Yes, you can find it [on our Github](https://github.com/dfir-iris/iris-client).
 # Security
 
 #### Can I restrict cases? 
-No. It might be possible in future versions but for now it is better to spin up a new instance for restricted cases. 
+Yes it is since v2.0.0. See [Access control](operations/access_control).  
 
 #### Can I expose IRIS on the Internet?
 NO! Please don't. This platform should only be accessible in a restricted environment. 

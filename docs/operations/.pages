@@ -1,10 +1,11 @@
 nav:
-  - API: api.md
   - Access control: access_control
-  - Datastore: datastore.md
-  - Reports: reports.md
+  - API: api.md
   - Custom attributes: custom_attributes.md
-  - Server settings: server_settings.md
+  - Datastore: datastore.md
+  - Logging: logging.md
   - Modules: modules
-  - Upgrades: upgrades.md 
+  - Reports: reports.md
+  - Server settings: server_settings.md
   - Tutorials: tutorials.md
+  - Upgrades: upgrades.md 

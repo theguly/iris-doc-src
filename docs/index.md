@@ -1,9 +1,9 @@
 # DFIR-IRIS Documentation
 
 Welcome to the DFIR-IRIS documentation :octicons-book-24:  
-Here you can find anything related to the IRIS web application [operations](/operations/), as well as some documentation on the [modules](/operations/modules) and [developments](/development) among other things. 
+Here you can find anything related to the IRIS web application [operations](operations/), as well as some documentation on the [modules](operations/modules) and [developments](development) among other things. 
 
-!!! hint  "**New to IRIS ?** [This is where you can start.](/getting_started/)" 
+!!! hint  "**New to IRIS ?** [This is where you can start.](getting_started/)" 
 
 !!! hint "Want to try out IRIS easily?" 
     We have set up a free demonstration instance of the upcoming version v2.0.0 [here](https://v200.beta.dfir-iris.org). 

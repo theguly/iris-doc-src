@@ -297,3 +297,15 @@ def hooks_handler(self, hook_name: str, data):
 
 **We are done!**  
 Our module is now fully ready to register, subscribe to a hook and act when notified.  
+
+
+## Installing and registering the module 
+We need now need to build and install the module. To do so, you'll need [this script](buildnpush2iris.sh) and an IRIS docker instance running on the same machine.  
+
+The script will build the module, copy it to the docker instances, install it within them and restart the dockers.  
+
+1. From within the root directory of the module, paste the script 
+2. Make it executable `chmox +x buildnpush2iris.sh` 
+3. Execute it `./buildnpush2iris.sh -a` 
+
+The module should now be installed. We can register it in IRIS as explained [here](/operations/modules/mod_management/). 

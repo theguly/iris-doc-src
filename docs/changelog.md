@@ -3,6 +3,53 @@
 For upgrades instructions, please see the [Upgrades page](/operations/upgrades). 
 !!! danger "Please read [upgrades instructions](https://docs.dfir-iris.org/operations/upgrades/#v141) if you are upgrading from v1.3.1 or lower." 
 
+## [v2.0.0](https://github.com/dfir-iris/iris-web/releases/tag/v2.0.0) <small>_ April 1, 2023 _</small> 
+
+### What's Changed
+
+In addition to the features listed below, we are changing the way we are issuing releases. From now on, IRIS follows the [Semantic Versioning 2.0](https://semver.org/) guidelines.   
+The code ready for production is always tagged with a version number. 
+``alpha`` and ``beta`` versions are **not** production-ready.   
+
+Do not use the ``master`` branch in production.  
+
+A website with the current development version is also provided and freely accessible. It serves as a beta before public releases.   
+
+**Added** 
+
+* Groups management 
+* Case access control and basic permissions
+* Comments support on a call objects
+* Markdown editors in all case objects 
+* Customers dedicated pages with additional informations and cases statistiques 
+* LDAP authentication 
+* Markdown reporting
+* Case owners, classifications, outcome and tags
+* Possibility to update case basic infornations 
+* Case overview page 
+* Unique UUID on all case objects 
+* Multiple assignees support in case tasks 
+* Deletion confirmation prompt on all case objects as an option
+* IOC in events plus optional synchronization with assets
+* Events flagging in the timeline
+* MD links on every case objects
+
+**Improved**
+
+* Dark mode
+* Uniformity of modals
+* Overall UI and UX 
+* Compromised status in assets 
+* Error reporting in the UI 
+
+**Fixed** 
+
+* Manual call of modules when multiple modules are availables 
+* Multiples bugs fixes 
+* Security fixes 
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v1.4.5...v2.0.0)  
+
 ## [v1.4.5](https://github.com/dfir-iris/iris-web/releases/tag/v1.4.4) <small>_ June 9, 2022 _</small> 
 
 **What's Changed**

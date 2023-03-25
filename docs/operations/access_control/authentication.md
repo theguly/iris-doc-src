@@ -82,7 +82,7 @@ LDAP_USER_SUFFIX=ou=people,dc=example,dc=com
 ## Set to True to use LDAPS
 LDAP_USE_SSL=False
 
-## Set to True ti verify the server certificate validity 
+## Set to True to verify the server certificate validity 
 LDAP_VALIDATE_CERTIFICATE=True
 
 ## TLS version to use LDAPS

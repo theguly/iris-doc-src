@@ -1,6 +1,7 @@
 nav:
   - Access control: access_control
   - API: api.md
+  - Configuration: configuration.md
   - Custom attributes: custom_attributes.md
   - Datastore: datastore.md
   - Logging: logging.md

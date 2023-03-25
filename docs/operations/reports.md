@@ -11,6 +11,13 @@ There is two types of reports :
 - **Investigation**; these contains the investigation data and can produces a custom-ready document
 - **Activities**; these contains activities done on the case and can be used as a follow-up  
 
+## Supported formats 
+The following report formats are supported: 
+
+- docx 
+- markdown (.md)
+- html 
+
 ## Structure of templates
 Reports templates are made of tags, which are then processed and filed by the template engine of IRIS.   
 The templates can have any forms as soon as they respect the tags. We are providing two example of reports. 

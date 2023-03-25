@@ -50,7 +50,7 @@ git clone https://github.com/dfir-iris/iris-web.git
 cd iris-web
 
 # Checkout to the last non-beta tagged version -
-git checkout v1.4.5
+git checkout v2.0.0
 
 # Copy the environment file 
 cp .env.model .env
@@ -63,7 +63,7 @@ docker-compose build
 docker-compose up
 ```
 
-IRIS should be available on the host interface, port 4433, HTTPS protocol.  `https://hostip:4433` 
+IRIS should be available on the host interface, port 443, HTTPS protocol.  `https://hostip` 
 By default, an ``administrator`` account is created. The password is printed in stdout the very first time IRIS is started. It won't be printed anymore after that.  
 You can search for ``WARNING :: post_init :: create_safe_admin :: >>>`` in the logs to find the password.  
 

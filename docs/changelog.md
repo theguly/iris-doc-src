@@ -3,7 +3,7 @@
 For upgrades instructions, please see the [Upgrades page](/operations/upgrades). 
 !!! danger "Please read [upgrades instructions](https://docs.dfir-iris.org/operations/upgrades/#v141) if you are upgrading from v1.3.1 or lower." 
 
-## [v2.0.0](https://github.com/dfir-iris/iris-web/releases/tag/v2.0.0) <small>_ April 1, 2023 _</small> 
+## [v2.0.0](https://github.com/dfir-iris/iris-web/releases/tag/v2.0.0) <small>_ March 26, 2023 _</small> 
 
 ### What's Changed
 
@@ -21,7 +21,7 @@ A website with the current development version is also provided and freely acces
 * Case access control and basic permissions
 * Comments support on a call objects
 * Markdown editors in all case objects 
-* Customers dedicated pages with additional informations and cases statistiques 
+* Customers dedicated pages with additional information and cases stats 
 * LDAP authentication 
 * Markdown reporting
 * Case owners, classifications, outcome and tags

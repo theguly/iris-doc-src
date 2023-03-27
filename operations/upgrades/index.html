@@ -1468,7 +1468,7 @@ These commands needs to be run from the root of the repository (<code>pwd</code>
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>python3<span class="w"> </span>upgrades/upgrade_to_2.0.0.py<span class="w"> </span>--install
 </code></pre></div>
 <p>The script will take care of migrating the environment variables to reflect the changes in v2.0.0. Please review the <code>.env</code> file afterward.   </p>
-<p>The ports have been changed to 80 and 443. The script asks if the previous port should be kept or migrated to the new ones. </p>
+<p>The port have been changed 443. The script asks if the previous port should be kept or migrated to the new one. </p>
 <p>Once validated, one can proceed with the usual upgrade methodology.  </p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker-compose stop 
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>docker-compose build --no-cache 

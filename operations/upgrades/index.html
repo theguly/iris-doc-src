@@ -1453,15 +1453,13 @@
 <p>Custom made modules need to be upgraded to IRIS Module Interface v1.2.0. Please see <a href="#v200-modules-upgrades">modules upgrade for v2.0.0</a></p>
 </div>
 <h4 id="instance-migration">Instance migration</h4>
-<p>To migrate an instance from v1.4.5, one can use the script in <code>upgrades/upgrade_to_2.0.0.py</code> located in the repository.  </p>
+<p>To migrate an instance from v1.4.5, one can use the script in <code>upgrades/upgrade_to_2.0.0.py</code> located in the repository. <br />
+These commands needs to be run from the root of the repository (<code>pwd</code> should return something like <code>/iris-web</code>):  </p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Check if upgrades possible</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>python3<span class="w"> </span>upgrades/upgrade_to_2.0.0.py<span class="w"> </span>--check
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Run a dryrun</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>python3<span class="w"> </span>upgrades/upgrade_to_2.0.0.py<span class="w"> </span>--dry-run
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Run the upgrade</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>python3<span class="w"> </span>upgrades/upgrade_to_2.0.0.py<span class="w"> </span>--install
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Run the upgrade</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>python3<span class="w"> </span>upgrades/upgrade_to_2.0.0.py<span class="w"> </span>--install
 </code></pre></div>
 <p>The script will take care of migrating the environment variables to reflect the changes in v2.0.0. Please review the <code>.env</code> file afterward.   </p>
 <p>The ports have been changed to 80 and 443. The script asks if the previous port should be kept or migrated to the new ones. </p>

@@ -101,10 +101,17 @@ This version brings breaking changes on the following:
      Custom made modules need to be upgraded to IRIS Module Interface v1.2.0. Please see [modules upgrade for v2.0.0](#v200-modules-upgrades)
 
 #### Instance migration
-To migrate an instance from v1.4.5, one can use the script in `upgrades/upgrade_to_2.0.0.py`. 
+To migrate an instance from v1.4.5, one can use the script in `upgrades/upgrade_to_2.0.0.py` located in the repository.  
 
 ```bash
-python3 upgrades/upgrade_to_2.0.0.py
+# Check if upgrades possible
+python3 upgrades/upgrade_to_2.0.0.py --check
+
+# Run a dryrun
+python3 upgrades/upgrade_to_2.0.0.py --dry-run
+
+# Run the upgrade
+python3 upgrades/upgrade_to_2.0.0.py --install
 ```
 
 The script will take care of migrating the environment variables to reflect the changes in v2.0.0. Please review the `.env` file afterward.   

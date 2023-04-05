@@ -55,4 +55,5 @@ One can use `python -c 'import secrets; print(secrets.token_hex())'` to generate
 | `LDAP_TLS_VERSION` | Auth | Yes | TLS version to use LDAPS | 
 | `LDAP_SERVER_CERTIFICATE`| Auth | Yes | Path of the LDAP server certificate | 
 | `LDAP_PRIVATE_KEY`| Auth | Yes | Path of the LDAP private certificate | 
-| `LDAP_PRIVATE_KEY_PASSWORD`| Auth | Yes | Passowrd of the private key | 
+| `LDAP_PRIVATE_KEY_PASSWORD`| Auth | Yes | Password of the private key | 
+| `LDAP_AUTHENTICATION_TYPE`| Auth | Yes | Simple, SASL or NTML | 

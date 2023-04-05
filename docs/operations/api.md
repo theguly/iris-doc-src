@@ -37,7 +37,7 @@ Use the references below to check which API version applies to your IRIS version
 | v1.4.3|	[API v1.0.3](../_static/iris_api_reference_v1.0.3.html) |
 | v1.4.4|	[API v1.0.3](../_static/iris_api_reference_v1.0.3.html) |
 | v1.4.5|	[API v1.0.3](../_static/iris_api_reference_v1.0.3.html) |
-| v2.0.0|	[API v2.0.0](../_static/iris_api_reference_v2.0.0.html) |
+| v2.0.1|	[API v2.0.0](../_static/iris_api_reference_v2.0.0.html) |
 
 
 ## How to use 

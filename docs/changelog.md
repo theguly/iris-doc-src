@@ -3,6 +3,17 @@
 For upgrades instructions, please see the [Upgrades page](/operations/upgrades). 
 !!! danger "Please read [upgrades instructions](https://docs.dfir-iris.org/operations/upgrades/#v141) if you are upgrading from v1.3.1 or lower." 
 
+
+## [v2.0.1](https://github.com/dfir-iris/iris-web/releases/tag/v2.0.1) <small>_ April 05, 2023 _</small> 
+
+## What's Changed
+
+**Fixed**
+[FIX] Additional table header in case management breaking proper loading of data in [#206](https://github.com/dfir-iris/iris-web/pull/206)
+
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v2.0.0...v2.0.1)
+
 ## [v2.0.0](https://github.com/dfir-iris/iris-web/releases/tag/v2.0.0) <small>_ March 26, 2023 _</small> 
 
 ### What's Changed

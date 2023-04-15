@@ -3,6 +3,7 @@ nav:
   - API: api.md
   - Configuration: configuration.md
   - Custom attributes: custom_attributes.md
+  - Case templates: case_templates.md
   - Datastore: datastore.md
   - Logging: logging.md
   - Modules: modules

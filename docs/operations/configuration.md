@@ -27,7 +27,7 @@ One can use `python -c 'import secrets; print(secrets.token_hex())'` to generate
 | `POSTGRES_SERVER` | DB | No | Hostname or IP of the DB | 
 | `POSTGRES_PORT` | DB | No | Port of the DB server | 
 | `DOCKERIZED` | IRIS | Yes | Set to `1` when using dockers (default) | 
-| `IRIS_SECRET_KEY` | IRIS | No | Secret key used tp secure sessions - needs to be random | 
+| `IRIS_SECRET_KEY` | IRIS | No | Secret key used to secure sessions - needs to be random | 
 | `IRIS_SECURITY_PASSWORD_SALT` | IRIS | No | Secret used to salt the passwords in DB - needs to be random | 
 | `IRIS_UPSTREAM_SERVER` | IRIS | No | WebApp upstream server - used to configure nginx reverse proxy | 
 | `IRIS_UPSTREAM_PORT` | IRIS | No | WebApp upstream server port - used to configure nginx reverse proxy | 
@@ -42,7 +42,7 @@ One can use `python -c 'import secrets; print(secrets.token_hex())'` to generate
 | `IRIS_DEMO_ADM_SEED` | Demo | No | Random seed to generate admin users for demo | 
 | `CELERY_BROKER` | Celery | No | Broker URL used to handle IRIS tasks | 
 | `IRIS_AUTHENTICATION_TYPE` | Auth | No | IRIS auth mode : `local` or `ldap` | 
-| `IRIS_ADM_PASSWORD` | Auth | Yes | Set to use as initial password of the administrator account. Only works for the very first run of IRIS. Needs to match the passowrd policy | 
+| `IRIS_ADM_PASSWORD` | Auth | Yes | Set to use as initial password of the administrator account. Only works for the very first run of IRIS. Needs to match the password policy | 
 | `IRIS_ADM_API_KEY` | Auth | Yes | Set to use as initial API Key of the administrator | 
 | `IRIS_ADM_EMAIL` | Auth | Yes | Set to use as initial email of the administrator | 
 | `IRIS_ADM_USERNAME`| Auth | Yes | Set to use as initial username of the administrator | 
@@ -56,4 +56,4 @@ One can use `python -c 'import secrets; print(secrets.token_hex())'` to generate
 | `LDAP_SERVER_CERTIFICATE`| Auth | Yes | Path of the LDAP server certificate | 
 | `LDAP_PRIVATE_KEY`| Auth | Yes | Path of the LDAP private certificate | 
 | `LDAP_PRIVATE_KEY_PASSWORD`| Auth | Yes | Password of the private key | 
-| `LDAP_AUTHENTICATION_TYPE`| Auth | Yes | Simple, SASL or NTML | 
+| `LDAP_AUTHENTICATION_TYPE`| Auth | Yes | Simple, SASL or NTLM | 

@@ -2,177 +2,177 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dfir-iris.org/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/changelog/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/contact/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/credits/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/getting_started/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/roadmap/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/support_us/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/zqa/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/development/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/development/code-tips/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/development/db-migration/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/development/environment/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/development/hooks/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/development/structure/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/development/modules/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/development/modules/quick_start/processor/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/operations/api/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/operations/configuration/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/operations/custom_attributes/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/operations/datastore/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/operations/logging/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/operations/reports/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/operations/server_settings/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/operations/tutorials/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/operations/upgrades/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/operations/access_control/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/operations/access_control/authentication/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/operations/access_control/groups/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/operations/access_control/users/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/operations/modules/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/operations/modules/mod_management/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/operations/modules/natives/IrisMISP/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/operations/modules/natives/IrisVT/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/operations/modules/natives/IrisWebHooks/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dfir-iris.org/python_client/</loc>
-         <lastmod>2023-04-18</lastmod>
+         <lastmod>2023-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

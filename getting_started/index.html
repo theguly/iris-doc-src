@@ -1287,13 +1287,7 @@ Running <code>docker compose logs app | grep 'admin'</code> should help to find 
 <p>Each service can be built independently, which is useful when developing. In this QuickStart, all services are built at once.  </p>
 <p><img align="center" alt="IRIS Structure" src="/_static/iris_structure.png" /></p>
 <h2 id="optional-configuration">Optional configuration</h2>
-<p>You can skip this part if you just want to try or develop. If used in production, please configure the <code>.env</code> file at the root of the project:</p>
-<ul>
-<li>Nginx: you might want to specify your own certificate</li>
-<li>Database credentials: <strong>POSTGRES_PASSWORD</strong> and <strong>DB_PASS</strong> (you can also customize the usernames)</li>
-<li>IRIS secrets: <strong>SECRET_KEY</strong> and <strong>SECURITY_PASSWORD_SALT</strong></li>
-</ul>
-<p>The very first time the app builds might take quite a while. After that if a service needs an update, the building process is faster.</p>
+<p>Please see <a href="../operations/configuration/">configuration</a> for more details.</p>
 
   <hr>
 <div class="md-source-file">

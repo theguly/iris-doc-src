@@ -1231,7 +1231,7 @@
 <p class="admonition-title">Authentication</p>
 <p>Looking for authentication settings? <a href="../authentication/">It's here</a></p>
 </div>
-<p>Whatever the authentication mechanism used (Local or LDAP), the users have to be declared in IRIS.   </p>
+<p><strong>Whatever the authentication mechanism used (Local or LDAP), the users have to be declared in IRIS.</strong> This is done in <code>Advanced</code> &gt; <code>Access Control</code> &gt; <code>Users</code>. </p>
 <h2 id="adding-a-user">Adding a user</h2>
 <p>Head to <code>Advanced</code> &gt; <code>Access Control</code> &gt; <code>Users</code> and click <code>Add user</code>.<br />
 All fields of the form are required. All information can be changed after the creation.   </p>
@@ -1243,8 +1243,13 @@ All fields of the form are required. All information can be changed after the cr
 <li><strong>Full Name</strong> : Name of the user to add </li>
 <li><strong>Login</strong> : Username used to login in IRIS. Has to be unique on the instance </li>
 <li><strong>Email</strong> : Email of the user to add. Has to be unique on the instance  </li>
-<li><strong>Password</strong>: Password respecting the policy defined in <code>Advanced</code> &gt; <code>Server settings</code>. The password also has to be set when using LDAP. It is however not used for the authentication.    </li>
+<li><strong>Password</strong>: Password respecting the policy defined in <code>Advanced</code> &gt; <code>Server settings</code>. The password also has to be set when using LDAP. It is however not used for the authentication. A random password can be set when using LDAP. No password is required when the user is set a service account.  </li>
+<li><strong>Is service account</strong> : If the user is a server account, check this box. Server accounts are used to connect to the API. They cannot login to the UI. </li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Service accounts</p>
+<p>Service accounts users can use the API to perform any actions on the instance. They cannot login to the UI and they don't have a password.</p>
+</div>
 <p><img alt="Create new user" src="../../../_static/access_control/add_user1.png" /> </p>
 <h2 id="editing-a-user">Editing a user</h2>
 <p>A user can be edited by clicking on its name or ID in <code>Advanced</code> &gt; <code>Access Control</code> &gt; <code>Users</code>.  A window opens and display the user's information. Tabs at the top allows to configure multiple settings related to the user.   </p>

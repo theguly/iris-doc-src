@@ -401,13 +401,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#settings" class="md-nav__link">
-    Settings
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#changing-a-lost-password" class="md-nav__link">
     Changing a lost password
   </a>
@@ -428,7 +421,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#settings_1" class="md-nav__link">
+  <a href="#settings" class="md-nav__link">
     Settings
   </a>
   
@@ -443,6 +436,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#setting-up-for-active-directory" class="md-nav__link">
+    Setting up for Active Directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#setting-up-ldap-after-iris-already-ran" class="md-nav__link">
     Setting up LDAP after IRIS already ran
   </a>
@@ -451,6 +451,13 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap-certificates" class="md-nav__link">
+    LDAP certificates
+  </a>
   
 </li>
         
@@ -1188,13 +1195,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#settings" class="md-nav__link">
-    Settings
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#changing-a-lost-password" class="md-nav__link">
     Changing a lost password
   </a>
@@ -1215,7 +1215,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#settings_1" class="md-nav__link">
+  <a href="#settings" class="md-nav__link">
     Settings
   </a>
   
@@ -1230,6 +1230,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#setting-up-for-active-directory" class="md-nav__link">
+    Setting up for Active Directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#setting-up-ldap-after-iris-already-ran" class="md-nav__link">
     Setting up LDAP after IRIS already ran
   </a>
@@ -1238,6 +1245,13 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap-certificates" class="md-nav__link">
+    LDAP certificates
+  </a>
   
 </li>
         
@@ -1267,20 +1281,6 @@
 <h2 id="local-authentication">Local authentication</h2>
 <p>Local authentication is the default setting. The password is validated against the local IRIS database.<br />
 Passwords are stored salted and hashed, it is thus not possible to retrieve them in case they are lost. It is however possible to change them.   </p>
-<h3 id="settings">Settings</h3>
-<p>Two settings present in <code>.env</code> when dealing with IRIS authentication.  </p>
-<div class="admonition danger">
-<p class="admonition-title">Critical settings</p>
-<p>These settings are critical and need to be set properly otherwise authentication bypass may occur </p>
-</div>
-<ul>
-<li><code>IRIS_SECRET_KEY</code> : The key used by IRIS to generate session tokens. If known or not random, a malicious actor could craft a session token that could effectively bypass the authentication  </li>
-<li><code>IRIS_SECURITY_PASSWORD_SALT</code>: The salt used to hash the <code>random_salt + password</code> </li>
-</ul>
-<p>These values can be generated with Python 3 and the following lines.<br />
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">secrets</span> 
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">secrets</span><span class="o">.</span><span class="n">token_hex</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
-</code></pre></div></p>
 <h3 id="changing-a-lost-password">Changing a lost password</h3>
 <p><strong>If another administrative user exists</strong> : Being logged as this user, head to the <code>Advanced</code> &gt; <code>Access Control</code> &gt; <code>Users</code> section, and change the administrator password. </p>
 <p><strong>If no other administrative user exists</strong> : the change cannot be done via IRIS and an access to the backend is needed.  </p>
@@ -1291,17 +1291,17 @@ Passwords are stored salted and hashed, it is thus not possible to retrieve them
 <ol>
 <li>
 <p>Generate the hash of the new password with Python BCrypt in Python prompt</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">bcrypt</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">bcrypt</span><span class="o">.</span><span class="n">hashpw</span><span class="p">(</span><span class="o">&lt;</span><span class="n">new_password</span><span class="o">&gt;.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span> <span class="n">bcrypt</span><span class="o">.</span><span class="n">gensalt</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">bcrypt</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">bcrypt</span><span class="o">.</span><span class="n">hashpw</span><span class="p">(</span><span class="o">&lt;</span><span class="n">new_password</span><span class="o">&gt;.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span> <span class="n">bcrypt</span><span class="o">.</span><span class="n">gensalt</span><span class="p">())</span>
 </code></pre></div>
 </li>
 <li>
 <p>Connect to the DB docker then the Postgresql database <code>iris_db</code> and update the password </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-ti<span class="w"> </span>&lt;db_docker_id&gt;<span class="w"> </span>/bin/bash
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>/<span class="w"> </span><span class="c1"># su postgres</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>/<span class="w"> </span><span class="c1"># psql</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nv">postgres</span><span class="o">=</span><span class="c1"># \c iris_db </span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nv">postgres</span><span class="o">=</span><span class="c1"># UPDATE &quot;user&quot; SET password = &#39;&lt;hash&gt;&#39; WHERE &quot;user&quot;.name = &#39;administrator&#39;;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-ti<span class="w"> </span>&lt;db_docker_id&gt;<span class="w"> </span>/bin/bash
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>/<span class="w"> </span><span class="c1"># su postgres</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>/<span class="w"> </span><span class="c1"># psql</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nv">postgres</span><span class="o">=</span><span class="c1"># \c iris_db </span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nv">postgres</span><span class="o">=</span><span class="c1"># UPDATE &quot;user&quot; SET password = &#39;&lt;hash&gt;&#39; WHERE &quot;user&quot;.name = &#39;administrator&#39;;</span>
 </code></pre></div>
 </li>
 </ol>
@@ -1315,66 +1315,97 @@ Passwords are stored salted and hashed, it is thus not possible to retrieve them
     C --&gt;|No| E[Authentication failed]
     D --&gt;|Yes| F[Authentication succeeded]
     D --&gt;|No| E[Authentication failed]</code></pre>
-<h3 id="settings_1">Settings</h3>
-<p>The LDAP settings are present in the <code>.env</code>. The following values can be set.  </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">IRIS_AUTHENTICATION_TYPE</span><span class="o">=</span><span class="n">ldap</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">## IP address or FQDN of the ldap server</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">LDAP_SERVER</span><span class="o">=</span><span class="mf">127.0.0.1</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1">## Port of the LDAP server</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">LDAP_PORT</span><span class="o">=</span><span class="mi">3890</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1">## Prefix to search the users within </span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">LDAP_USER_PREFIX</span><span class="o">=</span><span class="n">uid</span><span class="o">=</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1">## Suffix to search the users within</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="n">LDAP_USER_SUFFIX</span><span class="o">=</span><span class="n">ou</span><span class="o">=</span><span class="n">people</span><span class="p">,</span><span class="n">dc</span><span class="o">=</span><span class="n">example</span><span class="p">,</span><span class="n">dc</span><span class="o">=</span><span class="n">com</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1">## Set to True to use LDAPS</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="n">LDAP_USE_SSL</span><span class="o">=</span><span class="kc">False</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="c1">## Set to True to verify the server certificate validity </span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="n">LDAP_VALIDATE_CERTIFICATE</span><span class="o">=</span><span class="kc">True</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="c1">## TLS version to use LDAPS</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="n">LDAP_TLS_VERSION</span><span class="o">=</span><span class="mf">1.2</span>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="c1">## Path of the LDAP server certificate and private key. </span>
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="c1">## When using docker, the path should be a valid path within the docker. </span>
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="c1">## The default mounted directories in IRIS can be used for permanent storage. </span>
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="n">LDAP_SERVER_CERTIFICATE</span><span class="o">=</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="n">LDAP_PRIVATE_KEY</span><span class="o">=</span>
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="n">LDAP_PRIVATE_KEY_PASSWORD</span><span class="o">=</span>
+<h3 id="settings">Settings</h3>
+<p>The LDAP settings are present in the <code>.env</code>. Once the LDAP server information is set, reboot the Iris WebApp docker needs to be restarted.  </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker-compose<span class="w"> </span>restart<span class="w"> </span>app
 </code></pre></div>
-<p>Once the LDAP server information is set, reboot the Iris WebApp docker.<br />
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker-compose<span class="w"> </span>restart<span class="w"> </span>app
-</code></pre></div></p>
 <h4 id="setting-up-ldap-for-the-first-runtime-of-iris">Setting up LDAP for the first runtime of IRIS</h4>
 <p>To set up LDAP without having run IRIS priorly, and as the app needs the accounts to be created first before using LDAP, one have to set the <code>IRIS_ADM_EMAIL</code> environment with the LDAP Email of the administrator user.  </p>
-<div class="highlight"><span class="filename">Example of LDAP configuration for first run</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">IRIS_AUTHENTICATION_TYPE</span><span class="o">=</span>ldap
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1">## IP address or FQDN of the ldap server</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nv">LDAP_SERVER</span><span class="o">=</span><span class="m">127</span>.0.0.1
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1">## Port of the LDAP server</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nv">LDAP_PORT</span><span class="o">=</span><span class="m">3890</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1">## Prefix to search the users within </span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nv">LDAP_USER_PREFIX</span><span class="o">=</span><span class="nv">uid</span><span class="o">=</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1">## Suffix to search the users within</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="nv">LDAP_USER_SUFFIX</span><span class="o">=</span><span class="nv">ou</span><span class="o">=</span>people,dc<span class="o">=</span>example,dc<span class="o">=</span>com
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="c1">## Set to True to use LDAPS</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="nv">LDAP_USE_SSL</span><span class="o">=</span>False
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="c1"># Set email address of admin </span>
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="nv">IRIS_ADM_EMAIL</span><span class="o">=</span>adm@example.com<span class="w"> </span>
+<div class="highlight"><span class="filename">Example of LDAP configuration for first run</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">IRIS_AUTHENTICATION_TYPE</span><span class="o">=</span>ldap
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">## IP address or FQDN of the ldap server</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nv">LDAP_SERVER</span><span class="o">=</span>dc1.domain.local
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1">## Port of the LDAP server</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nv">LDAP_PORT</span><span class="o">=</span><span class="m">636</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1">## LDAP Authentication type</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nv">LDAP_AUTHENTICATION_TYPE</span><span class="o">=</span>SIMPLE
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1">## Prefix to search the users within </span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="nv">LDAP_USER_PREFIX</span><span class="o">=</span><span class="nv">uid</span><span class="o">=</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c1">## Suffix to search the users within</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="nv">LDAP_USER_SUFFIX</span><span class="o">=</span><span class="nv">ou</span><span class="o">=</span>people,dc<span class="o">=</span>example,dc<span class="o">=</span>com
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="c1">## Set to True to use LDAPS</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="nv">LDAP_USE_SSL</span><span class="o">=</span>True
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="c1">## Set to True to verify the server certificate validity</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="nv">LDAP_VALIDATE_CERTIFICATE</span><span class="o">=</span>True
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="c1">## TLS version to use LDAPS</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="nv">LDAP_TLS_VERSION</span><span class="o">=</span><span class="m">1</span>.2
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="c1">## LDAP TLS configuration </span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="nv">LDAP_CUSTOM_TLS_CONFIG</span><span class="o">=</span>False
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="c1"># Set email address of the first user, that will be the admin </span>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="nv">IRIS_ADM_EMAIL</span><span class="o">=</span>adm@example.com<span class="w"> </span>
+</code></pre></div>
+<h4 id="setting-up-for-active-directory">Setting up for Active Directory</h4>
+<p>To use LDAP with an Active Directory, the following settings can be used: </p>
+<div class="highlight"><span class="filename">Example of LDAP configuration for first run with Active Directory</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">IRIS_AUTHENTICATION_TYPE</span><span class="o">=</span>ldap
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">## IP address or FQDN of the ldap server</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nv">LDAP_SERVER</span><span class="o">=</span>dc1.domain.local
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1">## Port of the LDAP server</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nv">LDAP_PORT</span><span class="o">=</span><span class="m">636</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1">## LDAP Authentication type</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="nv">LDAP_AUTHENTICATION_TYPE</span><span class="o">=</span>SIMPLE
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="c1">## Prefix to search the users within</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="nv">LDAP_USER_PREFIX</span><span class="o">=</span>DOMAIN<span class="se">\</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="c1">## Suffix to search the users within</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="nv">LDAP_USER_SUFFIX</span><span class="o">=</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="c1">## Set to True to verify the server certificate validity</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="nv">LDAP_VALIDATE_CERTIFICATE</span><span class="o">=</span>True
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="c1">## TLS version to use LDAPS</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="nv">LDAP_TLS_VERSION</span><span class="o">=</span><span class="m">1</span>.2
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="c1">## LDAP TLS configuration </span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="nv">LDAP_CUSTOM_TLS_CONFIG</span><span class="o">=</span>False
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="c1"># Set email address of the first user, that will be the admin</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="nv">IRIS_ADM_EMAIL</span><span class="o">=</span>adm@example.com<span class="w"> </span>
 </code></pre></div>
 <h4 id="setting-up-ldap-after-iris-already-ran">Setting up LDAP after IRIS already ran</h4>
-<p>To set up LDAP after IRIS was already run, one only needs to set up the settings described previously.  </p>
+<p>To set up LDAP after IRIS was already run, one only needs to set up the settings described previously without # Set email address of admin 
+<code>IRIS_ADM_EMAIL=adm@example.com</code> and restart the docker.  </p>
 <div class="admonition info">
 <p class="admonition-title"><strong>Usernames in IRIS have to match the ones set in LDAP for the authentication to succeed.</strong></p>
 </div>
+<h3 id="ldap-certificates">LDAP certificates</h3>
+<p>If the LDAP server uses a self-signed certificate, it is possible to add it to the trusted certificates of the IRIS WebApp docker. </p>
+<ol>
+<li>Copy the certificate to the <code>certificates/ldap</code> folder of the IRIS root directory.</li>
+<li>Set the <code>LDAP_VALIDATE_CERTIFICATE</code> environment variable to <code>True</code> in the <code>.env</code> file.</li>
+<li>Set the <code>LDAP_CUSTOM_TLS_CONFIG</code> environment variable to <code>True</code> in the <code>.env</code> file.</li>
+<li>Set the <code>LDAP_CA_CERTIFICATE</code> environment variable to the TLS version used by the LDAP server in the <code>.env</code> file.</li>
+</ol>
+<p>If the LDAP server requires a client certificate, it is possible to add it to the trusted certificates of the IRIS WebApp docker. </p>
+<ol>
+<li>Copy the certificate and key to the <code>certificates/ldap</code> folder of the IRIS root directory.</li>
+<li>Set the <code>LDAP_VALIDATE_CERTIFICATE</code> environment variable to <code>True</code> in the <code>.env</code> file.</li>
+<li>Set the <code>LDAP_CUSTOM_TLS_CONFIG</code> environment variable to <code>True</code> in the <code>.env</code> file.</li>
+<li>Set the <code>LDAP_PRIVATE_KEY</code> environment to the file name of the key in the <code>.env</code> file </li>
+<li>Set the <code>LDAP_PRIVATE_KEY_PASSWORD</code> environment variable to the password of the key in the <code>.env</code> file - if needed </li>
+</ol>
 
   <hr>
 <div class="md-source-file">

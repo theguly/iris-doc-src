@@ -9041,57 +9041,584 @@ paths:
             application/json:
               schema:
                 type: object
+                x-examples:
+                  Example 1:
+                    status: success
+                    message: ''
+                    data:
+                      owner: null
+                      alert_note: A note on
+                      alert_source: Test Source
+                      alert_title: Low-reputation arbitrary code executed by signed executable
+                      modification_history:
+                        '1683900374.955318':
+                          user: administrator
+                          user_id: 1
+                          action: Alert created
+                      assets:
+                        - asset_enrichment:
+                            enrich1:
+                              A key: A value
+                          asset_ip: 1.1.1.1
+                          user_id: null
+                          asset_uuid: ddf4c674-3853-4cc6-914a-f43f03f426d5
+                          asset_description: Asset description
+                          asset_type:
+                            asset_name: Account
+                            asset_description: Generic Account
+                            asset_icon_not_compromised: user.png
+                            asset_icon_compromised: ioc_user.png
+                            asset_id: 1
+                          asset_id: 7650
+                          case_id: null
+                          asset_name: My super asset
+                          analysis_status_id: null
+                          date_added: null
+                          asset_domain: ''
+                          custom_attributes: null
+                          asset_type_id: 1
+                          asset_info: null
+                          date_update: null
+                          asset_tags: 'tag1,tag2'
+                          asset_compromise_status_id: null
+                      classification:
+                        name: 'abusive-content:spam'
+                        name_expanded: 'Abusive-Content: spam'
+                        creation_date: '2023-05-11T16:37:28.571756'
+                        description: 'Spam or ‘unsolicited bulk e-mail’, meaning that the recipient has not granted verifiable permission for the message to be sent and that the message is sent as part of a larger collection of messages, all having identical content.'
+                        id: 1
+                      alert_id: 3826
+                      alert_source_link: 'https://source_link.com'
+                      severity:
+                        severity_name: Medium
+                        severity_id: 4
+                        severity_description: Medium
+                      iocs:
+                        - ioc_tlp_id: 1
+                          ioc_type_id: 2
+                          user_id: null
+                          ioc_id: 7651
+                          ioc_misp: null
+                          ioc_value: tarzan5
+                          ioc_uuid: 1c055831-67bb-4c1b-9e49-c1c0e42301b8
+                          ioc_description: description of Tarzan
+                          ioc_enrichment:
+                            provider_1:
+                              data: 2
+                              new_data: 3
+                            provider_3:
+                              enric: 'true'
+                          custom_attributes: null
+                          ioc_type:
+                            type_name: aba-rtn
+                            type_validation_regex: null
+                            type_id: 2
+                            type_description: ABA routing transit number
+                            type_validation_expect: null
+                            type_taxonomy: null
+                          ioc_tags: 'tag1,tag2'
+                        - ioc_tlp_id: 2
+                          ioc_type_id: 4
+                          user_id: null
+                          ioc_id: 7652
+                          ioc_misp: null
+                          ioc_value: tarzan2
+                          ioc_uuid: 06c0073e-1336-4daa-8321-995116484dd2
+                          ioc_description: description_hey
+                          ioc_enrichment:
+                            provider_1:
+                              data: |-
+                                a very long
+                                blablablabdjsjofiasofiasjdxaisjhfaiosxhd bla
+                                ddijwedoijwedw
+                                dhasdhaifuhafiassfsakjfhaskljfhaslkfjhaslkfdjhdqwleiuhxioauwedhoqwiuhzndoqwuehxdnzoiuwehfoqwiufhxnwoquhoiwefhxnqwoiuhwqomifuhqzwofuhqwofeuzhqwofeiuqhwe fifuhqwiofuh qwofuqh fuq hwfoiqwhfoiquhfe quhfqiouwhf qoufhq hufou qufhqowiufhowufih qwfuhqwioufh wqoufh wifhufdhas
+                              new_data: 3
+                            provider_3:
+                              enric: 'true'
+                          custom_attributes: null
+                          ioc_type:
+                            type_name: anonymised
+                            type_validation_regex: null
+                            type_id: 4
+                            type_description: Anonymised value - described with the anonymisation object via a relationship
+                            type_validation_expect: null
+                            type_taxonomy: null
+                          ioc_tags: 'tag1,tag2'
+                      alert_context:
+                        context_key: context_value
+                      alert_classification_id: 1
+                      alert_source_content:
+                        _id: 603f704aaf7417985bbf3b22
+                        contextId: 206e2965-6533-48a6-ba9e-794364a84bf9
+                        description: Contoso user performed 11 suspicious activities MITRE Technique used Account Discovery (T1087) and subtechnique used Domain Account (T1087.002)
+                        entities:
+                          - entityRole: Source
+                            entityType: 2
+                            id: 6204bdaf-ad46-4e99-a25d-374a0532c666
+                            inst: 0
+                            label: user1
+                            pa: user1@contoso.com
+                            saas: 11161
+                            type: account
+                          - entityRole: Related
+                            id: 55017817-27af-49a7-93d6-8af6c5030fdb
+                            label: DC3
+                            type: device
+                          - id: 20940
+                            label: Active Directory
+                            type: service
+                          - entityRole: Related
+                            id: 95c59b48-98c1-40ff-a444-d9040f1f68f2
+                            label: DC4
+                            type: device
+                          - id: 5bfd18bfab73c36ba10d38ca
+                            label: Honeytoken activity
+                            policyType: ANOMALY_DETECTION
+                            type: policyRule
+                          - entityRole: Source
+                            id: 34f3ecc9-6903-4df7-af79-14fe2d0d4553
+                            label: Client1
+                            type: device
+                          - entityRole: Related
+                            id: d68772fe-1171-4124-9f73-0f410340bd54
+                            label: DC1
+                            type: device
+                          - type: groupTag
+                            id: 5f759b4d106abbe4a504ea5d
+                            label: All Users
+                        idValue: 15795464
+                        isSystemAlert: false
+                        resolutionStatusValue: 0
+                        severityValue: 5
+                        statusValue: 1
+                        stories:
+                          - 0
+                        threatScore: 34
+                        timestamp: 1621941916475
+                        title: Honeytoken activity
+                        comment: ''
+                        handledByUser: administrator@contoso.com
+                        resolveTime: '2021-05-13T14:02:34.904Z'
+                        URL: 'https://contoso.portal.cloudappsecurity.com/#/alerts/603f704aaf7417985bbf3b22'
+                      alert_tags: 'defender,anothertag'
+                      alert_severity_id: 4
+                      alert_source_ref: Test-123
+                      alert_status_id: 3
+                      customer:
+                        customer_name: IrisInitialClient
+                        client_uuid: a3d0f1e2-05dd-4439-a6d8-83cee72bb9ec
+                        customer_sla: null
+                        last_update_date: '2023-05-11T16:37:29.709361'
+                        customer_id: 1
+                        customer_description: null
+                        custom_attributes: null
+                        creation_date: '2023-05-11T16:37:29.709361'
+                      alert_owner_id: null
+                      alert_description: 'This is a test alert, courtesy of MS'
+                      alert_creation_time: '2023-05-12T14:06:14.930955'
+                      cases: []
+                      alert_source_event_time: '2023-03-26T03:00:30'
+                      alert_customer_id: 1
+                      status:
+                        status_id: 3
+                        status_name: Assigned
+                        status_description: Alert is assigned to a user and pending investigation
+                      comments: []
+                      alert_uuid: 98ab0a1f-06fd-4b26-8b4c-9441e3f46b79
                 properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
                   data:
                     type: object
                     properties:
-                      custom_attributes:
+                      owner:
+                        nullable: true
+                      alert_note:
+                        type: string
+                      alert_source:
+                        type: string
+                      alert_title:
+                        type: string
+                      modification_history:
                         type: object
-                        properties: {}
-                      date_added:
-                        type: string
-                      file_description:
-                        type: string
-                      file_hash:
-                        type: string
-                      file_size:
+                      assets:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            asset_enrichment:
+                              type: object
+                              properties:
+                                enrich1:
+                                  type: object
+                                  properties:
+                                    A key:
+                                      type: string
+                            asset_ip:
+                              type: string
+                            user_id:
+                              nullable: true
+                            asset_uuid:
+                              type: string
+                            asset_description:
+                              type: string
+                            asset_type:
+                              type: object
+                              properties:
+                                asset_name:
+                                  type: string
+                                asset_description:
+                                  type: string
+                                asset_icon_not_compromised:
+                                  type: string
+                                asset_icon_compromised:
+                                  type: string
+                                asset_id:
+                                  type: integer
+                            asset_id:
+                              type: integer
+                            case_id:
+                              nullable: true
+                            asset_name:
+                              type: string
+                            analysis_status_id:
+                              nullable: true
+                            date_added:
+                              nullable: true
+                            asset_domain:
+                              type: string
+                            custom_attributes:
+                              nullable: true
+                            asset_type_id:
+                              type: integer
+                            asset_info:
+                              nullable: true
+                            date_update:
+                              nullable: true
+                            asset_tags:
+                              type: string
+                            asset_compromise_status_id:
+                              nullable: true
+                      classification:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                          name_expanded:
+                            type: string
+                          creation_date:
+                            type: string
+                          description:
+                            type: string
+                          id:
+                            type: integer
+                      alert_id:
                         type: integer
-                      file_uuid:
+                      alert_source_link:
                         type: string
-                      filename:
-                        type: string
-                      id:
+                      severity:
+                        type: object
+                        properties:
+                          severity_name:
+                            type: string
+                          severity_id:
+                            type: integer
+                          severity_description:
+                            type: string
+                      iocs:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            ioc_tlp_id:
+                              type: integer
+                            ioc_type_id:
+                              type: integer
+                            user_id:
+                              nullable: true
+                            ioc_id:
+                              type: integer
+                            ioc_misp:
+                              nullable: true
+                            ioc_value:
+                              type: string
+                            ioc_uuid:
+                              type: string
+                            ioc_description:
+                              type: string
+                            ioc_enrichment:
+                              type: object
+                            custom_attributes:
+                              nullable: true
+                            ioc_type:
+                              type: object
+                              properties:
+                                type_name:
+                                  type: string
+                                type_validation_regex:
+                                  nullable: true
+                                type_id:
+                                  type: integer
+                                type_description:
+                                  type: string
+                                type_validation_expect:
+                                  nullable: true
+                                type_taxonomy:
+                                  nullable: true
+                            ioc_tags:
+                              type: string
+                      alert_context:
+                        type: object
+                        properties:
+                          context_key:
+                            type: string
+                      alert_classification_id:
                         type: integer
-                  message:
-                    type: string
-                  status:
-                    type: string
-                x-examples:
-                  Example 1:
-                    data:
-                      custom_attributes: {}
-                      date_added: '2023-03-20T09:31:24.531497'
-                      file_description: string
-                      file_hash: string
-                      file_size: 0
-                      file_uuid: d4a2c706-d533-4821-8f94-95b716a4f9ab
-                      filename: string
-                      id: 27
-                    message: Evidence added
-                    status: success
+                      alert_tags:
+                        type: string
+                      alert_severity_id:
+                        type: integer
+                      alert_source_ref:
+                        type: string
+                      alert_status_id:
+                        type: integer
+                      customer:
+                        type: object
+                        properties:
+                          customer_name:
+                            type: string
+                          client_uuid:
+                            type: string
+                          customer_sla:
+                            nullable: true
+                          last_update_date:
+                            type: string
+                          customer_id:
+                            type: integer
+                          customer_description:
+                            nullable: true
+                          custom_attributes:
+                            nullable: true
+                          creation_date:
+                            type: string
+                      alert_owner_id:
+                        nullable: true
+                      alert_description:
+                        type: string
+                      alert_creation_time:
+                        type: string
+                      cases:
+                        type: array
+                        items:
+                          type: object
+                      alert_source_event_time:
+                        type: string
+                      alert_customer_id:
+                        type: integer
+                      status:
+                        type: object
+                        properties:
+                          status_id:
+                            type: integer
+                          status_name:
+                            type: string
+                          status_description:
+                            type: string
+                      comments:
+                        type: array
+                        items:
+                          type: object
+                      alert_uuid:
+                        type: string
+                      alert_source_content:
+                        type: object
               examples:
-                example-1:
+                Example 1:
                   value:
+                    status: success
+                    message: ''
                     data:
-                      date_added: string
-                      file_description: string
-                      file_hash: string
-                      file_size: 0
-                      filename: string
-                      id: 0
-                      custom_attributes: {}
-                    message: string
-                    status: string
+                      owner: null
+                      alert_note: A note on the alert
+                      alert_source: Test Source
+                      alert_title: Low-reputation arbitrary code executed by signed executable
+                      modification_history:
+                        '1683900374.955318':
+                          user: administrator
+                          user_id: 1
+                          action: Alert created
+                      assets:
+                        - asset_enrichment:
+                            enrich1:
+                              A key: A value
+                          asset_ip: 1.1.1.1
+                          user_id: null
+                          asset_uuid: ddf4c674-3853-4cc6-914a-f43f03f426d5
+                          asset_description: Asset description
+                          asset_type:
+                            asset_name: Account
+                            asset_description: Generic Account
+                            asset_icon_not_compromised: user.png
+                            asset_icon_compromised: ioc_user.png
+                            asset_id: 1
+                          asset_id: 7650
+                          case_id: null
+                          asset_name: My super asset
+                          analysis_status_id: null
+                          date_added: null
+                          asset_domain: ''
+                          custom_attributes: null
+                          asset_type_id: 1
+                          asset_info: null
+                          date_update: null
+                          asset_tags: 'tag1,tag2'
+                          asset_compromise_status_id: null
+                      classification:
+                        name: 'abusive-content:spam'
+                        name_expanded: 'Abusive-Content: spam'
+                        creation_date: '2023-05-11T16:37:28.571756'
+                        description: 'Spam or ‘unsolicited bulk e-mail’, meaning that the recipient has not granted verifiable permission for the message to be sent and that the message is sent as part of a larger collection of messages, all having identical content.'
+                        id: 1
+                      alert_id: 3826
+                      alert_source_link: 'https://source_link.com'
+                      severity:
+                        severity_name: Medium
+                        severity_id: 4
+                        severity_description: Medium
+                      iocs:
+                        - ioc_tlp_id: 1
+                          ioc_type_id: 2
+                          user_id: null
+                          ioc_id: 7651
+                          ioc_misp: null
+                          ioc_value: tarzan5
+                          ioc_uuid: 1c055831-67bb-4c1b-9e49-c1c0e42301b8
+                          ioc_description: description of Tarzan
+                          ioc_enrichment:
+                            provider_1:
+                              data: 2
+                              new_data: 3
+                            provider_3:
+                              enric: 'true'
+                          custom_attributes: null
+                          ioc_type:
+                            type_name: aba-rtn
+                            type_validation_regex: null
+                            type_id: 2
+                            type_description: ABA routing transit number
+                            type_validation_expect: null
+                            type_taxonomy: null
+                          ioc_tags: 'tag1,tag2'
+                        - ioc_tlp_id: 2
+                          ioc_type_id: 4
+                          user_id: null
+                          ioc_id: 7652
+                          ioc_misp: null
+                          ioc_value: tarzan2
+                          ioc_uuid: 06c0073e-1336-4daa-8321-995116484dd2
+                          ioc_description: description_hey
+                          ioc_enrichment:
+                            provider_1:
+                              data: |-
+                                a very long
+                                blablablabdjsjofiasofiasjdxaisjhfaiosxhd bla
+                                ddijwedoijwedw
+                                dhasdhaifuhafiassfsakjfhaskljfhaslkfjhaslkfdjhdqwleiuhxioauwedhoqwiuhzndoqwuehxdnzoiuwehfoqwiufhxnwoquhoiwefhxnqwoiuhwqomifuhqzwofuhqwofeuzhqwofeiuqhwe fifuhqwiofuh qwofuqh fuq hwfoiqwhfoiquhfe quhfqiouwhf qoufhq hufou qufhqowiufhowufih qwfuhqwioufh wqoufh wifhufdhas
+                              new_data: 3
+                            provider_3:
+                              enric: 'true'
+                          custom_attributes: null
+                          ioc_type:
+                            type_name: anonymised
+                            type_validation_regex: null
+                            type_id: 4
+                            type_description: Anonymised value - described with the anonymisation object via a relationship
+                            type_validation_expect: null
+                            type_taxonomy: null
+                          ioc_tags: 'tag1,tag2'
+                      alert_context:
+                        context_key: context_value
+                      alert_classification_id: 1
+                      alert_source_content:
+                        _id: 603f704aaf7417985bbf3b22
+                        contextId: 206e2965-6533-48a6-ba9e-794364a84bf9
+                        description: Contoso user performed 11 suspicious activities MITRE Technique used Account Discovery (T1087) and subtechnique used Domain Account (T1087.002)
+                        entities:
+                          - entityRole: Source
+                            entityType: 2
+                            id: 6204bdaf-ad46-4e99-a25d-374a0532c666
+                            inst: 0
+                            label: user1
+                            pa: user1@contoso.com
+                            saas: 11161
+                            type: account
+                          - entityRole: Related
+                            id: 55017817-27af-49a7-93d6-8af6c5030fdb
+                            label: DC3
+                            type: device
+                          - id: 20940
+                            label: Active Directory
+                            type: service
+                          - entityRole: Related
+                            id: 95c59b48-98c1-40ff-a444-d9040f1f68f2
+                            label: DC4
+                            type: device
+                          - id: 5bfd18bfab73c36ba10d38ca
+                            label: Honeytoken activity
+                            policyType: ANOMALY_DETECTION
+                            type: policyRule
+                          - entityRole: Source
+                            id: 34f3ecc9-6903-4df7-af79-14fe2d0d4553
+                            label: Client1
+                            type: device
+                          - entityRole: Related
+                            id: d68772fe-1171-4124-9f73-0f410340bd54
+                            label: DC1
+                            type: device
+                          - type: groupTag
+                            id: 5f759b4d106abbe4a504ea5d
+                            label: All Users
+                        idValue: 15795464
+                        isSystemAlert: false
+                        resolutionStatusValue: 0
+                        severityValue: 5
+                        statusValue: 1
+                        stories:
+                          - 0
+                        threatScore: 34
+                        timestamp: 1621941916475
+                        title: Honeytoken activity
+                        comment: ''
+                        handledByUser: administrator@contoso.com
+                        resolveTime: '2021-05-13T14:02:34.904Z'
+                        URL: 'https://contoso.portal.cloudappsecurity.com/#/alerts/603f704aaf7417985bbf3b22'
+                      alert_tags: 'defender,anothertag'
+                      alert_severity_id: 4
+                      alert_source_ref: Test-123
+                      alert_status_id: 3
+                      customer:
+                        customer_name: IrisInitialClient
+                        client_uuid: a3d0f1e2-05dd-4439-a6d8-83cee72bb9ec
+                        customer_sla: null
+                        last_update_date: '2023-05-11T16:37:29.709361'
+                        customer_id: 1
+                        customer_description: null
+                        custom_attributes: null
+                        creation_date: '2023-05-11T16:37:29.709361'
+                      alert_owner_id: null
+                      alert_description: 'This is a test alert, courtesy of MS'
+                      alert_creation_time: '2023-05-12T14:06:14.930955'
+                      cases: []
+                      alert_source_event_time: '2023-03-26T03:00:30'
+                      alert_customer_id: 1
+                      status:
+                        status_id: 3
+                        status_name: Assigned
+                        status_description: Alert is assigned to a user and pending investigation
+                      comments: []
+                      alert_uuid: 98ab0a1f-06fd-4b26-8b4c-9441e3f46b79
         '':
           content:
             application/json:
@@ -16312,7 +16839,6 @@ paths:
         content:
           application/json:
             schema:
-              description: ''
               type: object
               x-examples:
                 example-1:
@@ -16341,6 +16867,10 @@ paths:
                   description: 'Context case ID. If not set, a default case is used.'
                 custom_attributes:
                   type: object
+                case_template_id:
+                  type: integer
+                classification_id:
+                  type: integer
               required:
                 - case_soc_id
                 - case_customer
@@ -16367,390 +16897,242 @@ paths:
           content:
             application/json:
               schema:
-                description: ''
                 type: object
                 properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
                   data:
                     type: array
-                    uniqueItems: true
-                    minItems: 1
                     items:
-                      required:
-                        - case_close_date
-                        - case_description
-                        - case_id
-                        - case_name
-                        - case_open_date
-                        - case_soc_id
-                        - client_name
-                        - opened_by
+                      type: object
                       properties:
-                        case_close_date:
+                        case_name:
                           type: string
                         case_description:
                           type: string
-                          minLength: 1
-                        case_id:
-                          type: number
-                        case_name:
-                          type: string
-                          minLength: 1
-                        case_open_date:
-                          type: string
-                          minLength: 1
-                        case_soc_id:
-                          type: string
-                          minLength: 1
                         client_name:
                           type: string
-                          minLength: 1
+                        case_open_date:
+                          type: string
+                        case_close_date:
+                          type: string
+                        case_soc_id:
+                          type: string
+                        opened_by_user_id:
+                          type: integer
                         opened_by:
                           type: string
-                          minLength: 1
-                  message:
-                    type: string
-                  status:
-                    type: string
-                    minLength: 1
-                required:
-                  - data
-                  - message
-                  - status
+                        owner_id:
+                          type: integer
+                        owner:
+                          type: string
+                        case_id:
+                          type: integer
+                        case_uuid:
+                          type: string
+                        classification_id:
+                          type:
+                            - integer
+                            - 'null'
+                        classification:
+                          type:
+                            - 'null'
+                            - string
+                        state_id:
+                          type:
+                            - integer
+                            - 'null'
+                        state_name:
+                          type:
+                            - 'null'
+                            - string
+                        access_level:
+                          type: integer
                 x-examples:
-                  example-1:
-                    data:
-                      - case_close_date: ''
-                        case_description: |-
-                          Heeeellloooo from 
-
-
-                          SAlut toi 
-                        case_id: 1
-                        case_name: '#1 - Initial Demo'
-                        case_open_date: 01/05/2022
-                        case_soc_id: soc_id_demo
-                        client_name: IrisInitialClient
-                        opened_by: administrator
-                      - case_close_date: ''
-                        case_description: test
-                        case_id: 2
-                        case_name: '#2 - tes'
-                        case_open_date: 01/10/2022
-                        case_soc_id: test
-                        client_name: IrisInitialClient
-                        opened_by: administrator
-                      - case_close_date: ''
-                        case_description: Super description
-                        case_id: 5
-                        case_name: '#5 - Super name'
-                        case_open_date: 01/12/2022
-                        case_soc_id: ''
-                        client_name: test
-                        opened_by: administrator
-                      - case_close_date: ''
-                        case_description: Super description
-                        case_id: 6
-                        case_name: '#6 - Super name'
-                        case_open_date: 01/12/2022
-                        case_soc_id: ''
-                        client_name: test
-                        opened_by: administrator
-                      - case_close_date: ''
-                        case_description: Super description
-                        case_id: 7
-                        case_name: '#7 - Super name'
-                        case_open_date: 01/12/2022
-                        case_soc_id: ''
-                        client_name: test
-                        opened_by: administrator
-                      - case_close_date: ''
-                        case_description: Super description
-                        case_id: 8
-                        case_name: '#8 - Super name'
-                        case_open_date: 01/12/2022
-                        case_soc_id: ''
-                        client_name: test
-                        opened_by: administrator
-                      - case_close_date: ''
-                        case_description: Super description
-                        case_id: 9
-                        case_name: '#9 - Super name'
-                        case_open_date: 01/12/2022
-                        case_soc_id: ''
-                        client_name: test
-                        opened_by: administrator
-                      - case_close_date: ''
-                        case_description: coucou
-                        case_id: 10
-                        case_name: '#10 - coucou'
-                        case_open_date: 01/12/2022
-                        case_soc_id: coucou
-                        client_name: testas
-                        opened_by: administrator
-                      - case_close_date: ''
-                        case_description: My new summary booooyyyy
-                        case_id: 32
-                        case_name: '#32 - Super case test'
-                        case_open_date: 01/12/2022
-                        case_soc_id: coucoulesoc
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: Super description
-                        case_id: 11
-                        case_name: '#11 - Super name'
-                        case_open_date: 01/12/2022
-                        case_soc_id: ''
-                        client_name: test
-                        opened_by: administrator
-                      - case_close_date: ''
-                        case_description: test
-                        case_id: 12
-                        case_name: '#12 - tes'
-                        case_open_date: 01/12/2022
-                        case_soc_id: test
-                        client_name: Hello there
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: Super description
-                        case_id: 13
-                        case_name: '#13 - Super name'
-                        case_open_date: 01/12/2022
-                        case_soc_id: ''
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: Super description
-                        case_id: 14
-                        case_name: '#14 - Super name'
-                        case_open_date: 01/12/2022
-                        case_soc_id: ''
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: Super description
-                        case_id: 15
-                        case_name: '#15 - Super name'
-                        case_open_date: 01/12/2022
-                        case_soc_id: ''
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: Super description
-                        case_id: 16
-                        case_name: '#16 - Super name'
-                        case_open_date: 01/12/2022
-                        case_soc_id: ''
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: Super description
-                        case_id: 17
-                        case_name: '#17 - Super name'
-                        case_open_date: 01/12/2022
-                        case_soc_id: ''
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: Super description
-                        case_id: 18
-                        case_name: '#18 - Super name'
-                        case_open_date: 01/12/2022
-                        case_soc_id: ''
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: Yeay
-                        case_id: 19
-                        case_name: '#19 - Super case test'
-                        case_open_date: 01/12/2022
-                        case_soc_id: coucoulesoc
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: Yeay
-                        case_id: 20
-                        case_name: '#20 - Super case test'
-                        case_open_date: 01/12/2022
-                        case_soc_id: coucoulesoc
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: My new summary booooyyyy
-                        case_id: 22
-                        case_name: '#22 - Super case test'
-                        case_open_date: 01/12/2022
-                        case_soc_id: coucoulesoc
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: My new summary booooyyyy
-                        case_id: 33
-                        case_name: '#33 - Super case test'
-                        case_open_date: 01/12/2022
-                        case_soc_id: coucoulesoc
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: My new summary booooyyyy
-                        case_id: 23
-                        case_name: '#23 - Super case test'
-                        case_open_date: 01/12/2022
-                        case_soc_id: coucoulesoc
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: My new summary booooyyyy
-                        case_id: 24
-                        case_name: '#24 - Super case test'
-                        case_open_date: 01/12/2022
-                        case_soc_id: coucoulesoc
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: My new summary booooyyyy
-                        case_id: 25
-                        case_name: '#25 - Super case test'
-                        case_open_date: 01/12/2022
-                        case_soc_id: coucoulesoc
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: My new summary booooyyyy
-                        case_id: 34
-                        case_name: '#34 - Super case test'
-                        case_open_date: 01/12/2022
-                        case_soc_id: coucoulesoc
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: My new summary booooyyyy
-                        case_id: 26
-                        case_name: '#26 - Super case test'
-                        case_open_date: 01/12/2022
-                        case_soc_id: coucoulesoc
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: My new summary booooyyyy
-                        case_id: 27
-                        case_name: '#27 - Super case test'
-                        case_open_date: 01/12/2022
-                        case_soc_id: coucoulesoc
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: My new summary booooyyyy
-                        case_id: 28
-                        case_name: '#28 - Super case test'
-                        case_open_date: 01/12/2022
-                        case_soc_id: coucoulesoc
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: My new summary booooyyyy
-                        case_id: 35
-                        case_name: '#35 - Super case test'
-                        case_open_date: 01/12/2022
-                        case_soc_id: coucoulesoc
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: My new summary booooyyyy
-                        case_id: 29
-                        case_name: '#29 - Super case test'
-                        case_open_date: 01/12/2022
-                        case_soc_id: coucoulesoc
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: My new summary booooyyyy
-                        case_id: 30
-                        case_name: '#30 - Super case test'
-                        case_open_date: 01/12/2022
-                        case_soc_id: coucoulesoc
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: My new summary booooyyyy
-                        case_id: 31
-                        case_name: '#31 - Super case test'
-                        case_open_date: 01/12/2022
-                        case_soc_id: coucoulesoc
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: 01/19/2022
-                        case_description: Test
-                        case_id: 4
-                        case_name: '#4 - Test'
-                        case_open_date: 01/12/2022
-                        case_soc_id: Test
-                        client_name: IrisInitialClient
-                        opened_by: Super user
-                      - case_close_date: ''
-                        case_description: My new summary booooyyyy
-                        case_id: 21
-                        case_name: '#21 - Super case test'
-                        case_open_date: 01/12/2022
-                        case_soc_id: coucoulesoc
-                        client_name: test
-                        opened_by: polus
-                      - case_close_date: ''
-                        case_description: Super description
-                        case_id: 3
-                        case_name: '#3 - Super name'
-                        case_open_date: 01/12/2022
-                        case_soc_id: ''
-                        client_name: test
-                        opened_by: administrator
-                      - case_close_date: ''
-                        case_description: test
-                        case_id: 37
-                        case_name: '#37 - test'
-                        case_open_date: 01/19/2022
-                        case_soc_id: test
-                        client_name: Hello there
-                        opened_by: administrator
-                      - case_close_date: ''
-                        case_description: A super nice description
-                        case_id: 38
-                        case_name: '#38 - My Case API'
-                        case_open_date: 01/20/2022
-                        case_soc_id: SOC_154
-                        client_name: IrisInitialClient
-                        opened_by: administrator
-                      - case_close_date: ''
-                        case_description: A super nice description
-                        case_id: 41
-                        case_name: '#41 - My Case API'
-                        case_open_date: 01/20/2022
-                        case_soc_id: SOC_154
-                        client_name: IrisInitialClient
-                        opened_by: administrator
-                    message: ''
+                  Example 1:
                     status: success
+                    message: ''
+                    data:
+                      - case_name: '#1 - Initial Demo'
+                        case_description: This is a demonstration.
+                        client_name: IrisInitialClient
+                        case_open_date: 05/11/2023
+                        case_close_date: ''
+                        case_soc_id: soc_id_demo
+                        opened_by_user_id: 1
+                        opened_by: administrator
+                        owner_id: 1
+                        owner: administrator
+                        case_id: 1
+                        case_uuid: 507a5fab-358a-4946-82d0-625ef8a9fa0d
+                        classification_id: null
+                        classification: null
+                        state_id: null
+                        state_name: null
+                        access_level: 4
+                      - case_name: '#2 -  [ALERT] Data Exfiltration 2208'
+                        case_description: |-
+                          *Alert escalated by administrator*
+
+                          ### Alert description
+
+                          Sensitive data has been detected leaving the network.
+
+                          ### IRIS alert link
+
+                          [<i class='fa-solid fa-bell'></i> #2209](/alerts?alert_id=2209)
+                        client_name: IrisInitialClient
+                        case_open_date: 05/12/2023
+                        case_close_date: ''
+                        case_soc_id: '2209'
+                        opened_by_user_id: 1
+                        opened_by: administrator
+                        owner_id: 1
+                        owner: administrator
+                        case_id: 2
+                        case_uuid: 4ee6ceb6-41a3-4400-8234-f2b60a2a22dd
+                        classification_id: 4
+                        classification: 'malicious-code:virus'
+                        state_id: 3
+                        state_name: Opened
+                        access_level: 4
+                      - case_name: '#3 -  [ALERT] Insider Threat 1412'
+                        case_description: |-
+                          *Alert escalated by administrator*
+
+                          ### Alert description
+
+                          Suspicious activity from an internal user has been detected.
+
+                          ### IRIS alert link
+
+                          [<i class='fa-solid fa-bell'></i> #1413](/alerts?alert_ids=1413)
+                        client_name: IrisInitialClient
+                        case_open_date: 05/12/2023
+                        case_close_date: ''
+                        case_soc_id: '1413'
+                        opened_by_user_id: 1
+                        opened_by: administrator
+                        owner_id: 1
+                        owner: administrator
+                        case_id: 3
+                        case_uuid: ccc8c45e-6fc0-49de-8966-c1c58fd7bb25
+                        classification_id: 3
+                        classification: 'abusive-content:violence'
+                        state_id: 3
+                        state_name: Opened
+                        access_level: 4
+                      - case_name: '#4 - test'
+                        case_description: test
+                        client_name: IrisInitialClient
+                        case_open_date: 05/12/2023
+                        case_close_date: ''
+                        case_soc_id: ''
+                        opened_by_user_id: 1
+                        opened_by: administrator
+                        owner_id: 1
+                        owner: administrator
+                        case_id: 4
+                        case_uuid: b0d28c89-cfd9-4999-8cb2-8cc10f300151
+                        classification_id: 9
+                        classification: 'malicious-code:dialer'
+                        state_id: 2
+                        state_name: In progress
+                        access_level: 4
               examples:
                 Success request:
                   value:
+                    status: success
+                    message: ''
                     data:
-                      - case_close_date: ''
-                        case_description: Testing case number24
-                        case_id: 26
-                        case_name: Test 24
-                        case_open_date: 10/19/2021
-                        case_soc_id: SOC24
-                        client_name: client_63
-                        opened_by: User 110
-                      - case_close_date: ''
-                        case_description: Testing case number0
+                      - case_name: '#1 - Initial Demo'
+                        case_description: This is a demonstration.
+                        client_name: IrisInitialClient
+                        case_open_date: 05/11/2023
+                        case_close_date: ''
+                        case_soc_id: soc_id_demo
+                        opened_by_user_id: 1
+                        opened_by: administrator
+                        owner_id: 1
+                        owner: administrator
+                        case_id: 1
+                        case_uuid: 507a5fab-358a-4946-82d0-625ef8a9fa0d
+                        classification_id: null
+                        classification: null
+                        state_id: null
+                        state_name: null
+                        access_level: 4
+                      - case_name: '#2 -  [ALERT] Data Exfiltration 2208'
+                        case_description: |-
+                          *Alert escalated by administrator*
+
+                          ### Alert description
+
+                          Sensitive data has been detected leaving the network.
+
+                          ### IRIS alert link
+
+                          [<i class='fa-solid fa-bell'></i> #2209](/alerts?alert_id=2209)
+                        client_name: IrisInitialClient
+                        case_open_date: 05/12/2023
+                        case_close_date: ''
+                        case_soc_id: '2209'
+                        opened_by_user_id: 1
+                        opened_by: administrator
+                        owner_id: 1
+                        owner: administrator
                         case_id: 2
-                        case_name: Test 0
-                        case_open_date: 10/19/2021
-                        case_soc_id: SOC0
-                        client_name: client_65
-                        opened_by: User 12
-                    message: string
-                    status: string
+                        case_uuid: 4ee6ceb6-41a3-4400-8234-f2b60a2a22dd
+                        classification_id: 4
+                        classification: 'malicious-code:virus'
+                        state_id: 3
+                        state_name: Opened
+                        access_level: 4
+                      - case_name: '#3 -  [ALERT] Insider Threat 1412'
+                        case_description: |-
+                          *Alert escalated by administrator*
+
+                          ### Alert description
+
+                          Suspicious activity from an internal user has been detected.
+
+                          ### IRIS alert link
+
+                          [<i class='fa-solid fa-bell'></i> #1413](/alerts?alert_ids=1413)
+                        client_name: IrisInitialClient
+                        case_open_date: 05/12/2023
+                        case_close_date: ''
+                        case_soc_id: '1413'
+                        opened_by_user_id: 1
+                        opened_by: administrator
+                        owner_id: 1
+                        owner: administrator
+                        case_id: 3
+                        case_uuid: ccc8c45e-6fc0-49de-8966-c1c58fd7bb25
+                        classification_id: 3
+                        classification: 'abusive-content:violence'
+                        state_id: 3
+                        state_name: Opened
+                        access_level: 4
+                      - case_name: '#4 - test'
+                        case_description: test
+                        client_name: IrisInitialClient
+                        case_open_date: 05/12/2023
+                        case_close_date: ''
+                        case_soc_id: ''
+                        opened_by_user_id: 1
+                        opened_by: administrator
+                        owner_id: 1
+                        owner: administrator
+                        case_id: 4
+                        case_uuid: b0d28c89-cfd9-4999-8cb2-8cc10f300151
+                        classification_id: 9
+                        classification: 'malicious-code:dialer'
+                        state_id: 2
+                        state_name: In progress
+                        access_level: 4
       description: 'Returns a list of all the cases, open and closed. '
       parameters: []
       security:
@@ -16872,12 +17254,13 @@ paths:
                     data: []
                     message: Tried to close an non-existing case
                     status: error
-      description: 'The case will be listed under closed case. That''s the only difference with an open case. It will stay editable and searchable. '
+      description: 'This endpoint is deprecated - use the POST equivalent. '
       security:
         - Bearer <bearer>: []
       tags:
         - Manage case
       parameters: []
+      deprecated: true
     parameters:
       - schema:
           type: integer
@@ -16885,6 +17268,110 @@ paths:
         in: path
         description: Case ID
         required: true
+    post:
+      summary: ''
+      operationId: post-manage-cases-close-case_id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  Example 1:
+                    status: success
+                    message: Case closed successfully
+                    data:
+                      case_uuid: 507a5fab-358a-4946-82d0-625ef8a9fa0d
+                      case_id: 1
+                      case_name: '#1 - Initial Demo'
+                      closing_note: null
+                      user_id: 1
+                      owner_id: 1
+                      case_customer: 1
+                      status_id: 0
+                      case_soc_id: soc_id_demo
+                      open_date: '2023-05-11'
+                      modification_history:
+                        '1683900741.546554':
+                          user: administrator
+                          user_id: 1
+                          action: case closed
+                      custom_attributes: null
+                      close_date: '2023-05-12'
+                      case_description: This is a demonstration.
+                      state_id: 9
+                      classification_id: null
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      case_uuid:
+                        type: string
+                      case_id:
+                        type: integer
+                      case_name:
+                        type: string
+                      closing_note:
+                        nullable: true
+                      user_id:
+                        type: integer
+                      owner_id:
+                        type: integer
+                      case_customer:
+                        type: integer
+                      status_id:
+                        type: integer
+                      case_soc_id:
+                        type: string
+                      open_date:
+                        type: string
+                      modification_history:
+                        type: object
+                      custom_attributes:
+                        nullable: true
+                      close_date:
+                        type: string
+                      case_description:
+                        type: string
+                      state_id:
+                        type: integer
+                      classification_id:
+                        nullable: true
+              examples:
+                Example 1:
+                  value:
+                    status: success
+                    message: Case closed successfully
+                    data:
+                      case_uuid: 507a5fab-358a-4946-82d0-625ef8a9fa0d
+                      case_id: 1
+                      case_name: '#1 - Initial Demo'
+                      closing_note: null
+                      user_id: 1
+                      owner_id: 1
+                      case_customer: 1
+                      status_id: 0
+                      case_soc_id: soc_id_demo
+                      open_date: '2023-05-11'
+                      modification_history:
+                        '1683900741.546554':
+                          user: administrator
+                          user_id: 1
+                          action: case closed
+                      custom_attributes: null
+                      close_date: '2023-05-12'
+                      case_description: This is a demonstration.
+                      state_id: 9
+                      classification_id: null
+      tags:
+        - Manage Cases
+      description: 'The case will be listed under closed case. That''s the only difference with an open case. It will stay editable and searchable. '
   '/manage/cases/reopen/{case_id}':
     get:
       summary: Reopen a case
@@ -17032,12 +17519,13 @@ paths:
                     data: []
                     message: Resource not found
                     status: error
-      description: 'Reopen a case previously closed. A case can be reopened even if it is not closed. '
+      description: 'This endpoint is deprecated. Use the POST equivalent.  '
       security:
         - Bearer <bearer>: []
       tags:
         - Manage case
       parameters: []
+      deprecated: true
     parameters:
       - schema:
           type: integer
@@ -17045,6 +17533,88 @@ paths:
         in: path
         description: Case ID
         required: true
+    post:
+      summary: ''
+      operationId: post-manage-cases-reopen-case_id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  Example 1:
+                    status: success
+                    message: Case reopened successfully
+                    data:
+                      case_uuid: 507a5fab-358a-4946-82d0-625ef8a9fa0d
+                      case_id: 1
+                      case_name: '#1 - Initial Demo'
+                      closing_note: null
+                      user_id: 1
+                      owner_id: 1
+                      case_customer: 1
+                      status_id: 0
+                      case_soc_id: soc_id_demo
+                      open_date: '2023-05-11'
+                      modification_history:
+                        '1683900741.546554':
+                          user: administrator
+                          user_id: 1
+                          action: case closed
+                        '1683901251.748556':
+                          user: administrator
+                          user_id: 1
+                          action: case reopened
+                      custom_attributes: null
+                      close_date: null
+                      case_description: This is a demonstration.
+                      state_id: 3
+                      classification_id: null
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      case_uuid:
+                        type: string
+                      case_id:
+                        type: integer
+                      case_name:
+                        type: string
+                      closing_note:
+                        nullable: true
+                      user_id:
+                        type: integer
+                      owner_id:
+                        type: integer
+                      case_customer:
+                        type: integer
+                      status_id:
+                        type: integer
+                      case_soc_id:
+                        type: string
+                      open_date:
+                        type: string
+                      modification_history:
+                        type: object
+                      custom_attributes:
+                        nullable: true
+                      close_date:
+                        nullable: true
+                      case_description:
+                        type: string
+                      state_id:
+                        type: integer
+                      classification_id:
+                        nullable: true
+      description: 'Reopen a case previously closed. A case can be reopened even if it is not closed. '
+      tags:
+        - Manage Cases
   '/manage/cases/delete/{case_id}':
     post:
       summary: Delete a case
@@ -17151,33 +17721,137 @@ paths:
           content:
             application/json:
               schema:
-                description: ''
                 type: object
                 x-examples:
-                  example-1:
-                    data: []
-                    message: Case successfully deleted
+                  Example 1:
                     status: success
+                    message: Case updated
+                    data:
+                      case_tags: 'tag1,tag2'
+                      case_name: '#1 - Dummy '
+                      custom_attributes: {}
+                      case_soc_id: soc_id_demo
+                      status_id: 1
+                      open_date: '2023-05-11'
+                      case_id: 1
+                      modification_history:
+                        '1683900741.546554':
+                          user: administrator
+                          user_id: 1
+                          action: case closed
+                        '1683901251.748556':
+                          user: administrator
+                          user_id: 1
+                          action: case reopened
+                        '1683902199.288591':
+                          user: administrator
+                          user_id: 1
+                          action: case info updated
+                      user_id: 1
+                      case_uuid: 507a5fab-358a-4946-82d0-625ef8a9fa0d
+                      protagonists:
+                        - role: Lead
+                          name: administrator
+                          contact: administrator@iris.local
+                      case_description: This is a demonstration.
+                      closing_note: null
+                      close_date: null
+                      classification_id: 2
+                      owner_id: 1
+                      state_id: 3
+                      case_customer: 1
                 properties:
-                  data:
-                    type: array
-                    items:
-                      type: object
-                  message:
-                    type: string
-                    minLength: 1
                   status:
                     type: string
-                    minLength: 1
-                required:
-                  - message
-                  - status
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      case_tags:
+                        type: string
+                      case_name:
+                        type: string
+                      custom_attributes:
+                        type: object
+                      case_soc_id:
+                        type: string
+                      status_id:
+                        type: integer
+                      open_date:
+                        type: string
+                      case_id:
+                        type: integer
+                      modification_history:
+                        type: object
+                      user_id:
+                        type: integer
+                      case_uuid:
+                        type: string
+                      protagonists:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            role:
+                              type: string
+                            name:
+                              type: string
+                            contact:
+                              type: string
+                      case_description:
+                        type: string
+                      closing_note:
+                        nullable: true
+                      close_date:
+                        nullable: true
+                      classification_id:
+                        type: integer
+                      owner_id:
+                        type: integer
+                      state_id:
+                        type: integer
+                      case_customer:
+                        type: integer
               examples:
                 Case deleted successfully:
                   value:
-                    data: []
-                    message: Case successfully deleted
                     status: success
+                    message: Case updated
+                    data:
+                      case_tags: 'tag1,tag2'
+                      case_name: '#1 - Dummy '
+                      custom_attributes: {}
+                      case_soc_id: soc_id_demo
+                      status_id: 1
+                      open_date: '2023-05-11'
+                      case_id: 1
+                      modification_history:
+                        '1683900741.546554':
+                          user: administrator
+                          user_id: 1
+                          action: case closed
+                        '1683901251.748556':
+                          user: administrator
+                          user_id: 1
+                          action: case reopened
+                        '1683902199.288591':
+                          user: administrator
+                          user_id: 1
+                          action: case info updated
+                      user_id: 1
+                      case_uuid: 507a5fab-358a-4946-82d0-625ef8a9fa0d
+                      protagonists:
+                        - role: Lead
+                          name: administrator
+                          contact: administrator@iris.local
+                      case_description: This is a demonstration.
+                      closing_note: null
+                      close_date: null
+                      classification_id: 2
+                      owner_id: 1
+                      state_id: 3
+                      case_customer: 1
         '400':
           description: Bad Request
           headers: {}
@@ -17223,17 +17897,18 @@ paths:
               type: object
               x-examples:
                 Example 1:
-                  csrf_token: IjYyYzcxZWM0ZDk2OWIxZWNmYzNmYTQzZTI2NTViYzNjNTVhYzRjNTki.ZBhaGw.0oFpht9kCw6XCjwZS_9wsv_TipQ
-                  case_name: 'Dummy '
-                  case_soc_id: soc_id_demo
-                  classification_id: '2'
-                  owner_id: '2'
-                  status_id: '1'
+                  csrf_token: IjUxYmJhNGRkYjFhMGRkZTA5ODdhNGU2OGMyOTQ2Y2Y2ZGVkOWQ1ZTgi.ZF5IzQ.STgl1Re3jEO9W3DU0oyYHytj3dc
+                  case_name: test
+                  case_soc_id: ''
+                  classification_id: '9'
+                  owner_id: '1'
+                  state_id: '2'
+                  status_id: '0'
                   protagonists:
-                    - role: Lead
+                    - role: Analyst
                       name: administrator
                       contact: administrator@iris.local
-                  case_tags: 'tag1,tag2'
+                  case_tags: ''
                   custom_attributes: {}
               properties:
                 case_name:
@@ -17243,6 +17918,8 @@ paths:
                 classification_id:
                   type: string
                 owner_id:
+                  type: string
+                state_id:
                   type: string
                 status_id:
                   type: string
@@ -17261,14 +17938,6 @@ paths:
                   type: string
                 custom_attributes:
                   type: object
-              required:
-                - case_name
-                - case_soc_id
-                - classification_id
-                - owner_id
-                - status_id
-                - case_tags
-                - custom_attributes
             examples:
               Example 1:
                 value:
@@ -18294,69 +18963,74 @@ paths:
           content:
             application/json:
               schema:
-                description: ''
                 type: object
-                x-examples:
-                  example-1:
-                    data:
-                      active: true
-                      id: 157
-                      user_email: login_3
-                      user_login: login_3
-                      user_name: Test
-                      user_password: $2b$12$BiyvDbWuMFKrO6T.5zj5K.bwxN7PEEeeqH.6ks5KrdxrLzvXuWE4q
-                    message: user created
-                    status: success
                 properties:
-                  data:
-                    type: object
-                    required:
-                      - active
-                      - id
-                      - user_email
-                      - user_login
-                      - user_name
-                      - user_password
-                    properties:
-                      active:
-                        type: boolean
-                      id:
-                        type: number
-                      user_email:
-                        type: string
-                        minLength: 1
-                      user_login:
-                        type: string
-                        minLength: 1
-                      user_name:
-                        type: string
-                        minLength: 1
-                      user_password:
-                        type: string
-                        minLength: 1
-                        description: Hashed user password
-                  message:
-                    type: string
-                    minLength: 1
                   status:
                     type: string
-                    minLength: 1
-                required:
-                  - data
-                  - message
-                  - status
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      user_is_service_account:
+                        type: boolean
+                      user_name:
+                        type: string
+                      has_deletion_confirmation:
+                        type: boolean
+                      uuid:
+                        type: string
+                      active:
+                        type: boolean
+                      user_login:
+                        type: string
+                      user_email:
+                        type: string
+                      id:
+                        type: integer
+                      in_dark_mode:
+                        type: 'null'
+                      external_id:
+                        type: 'null'
+                      has_mini_sidebar:
+                        type: boolean
+                      user_api_key:
+                        type: string
+                x-examples:
+                  Example 1:
+                    status: success
+                    message: user created
+                    data:
+                      user_is_service_account: true
+                      user_name: strsinsg
+                      has_deletion_confirmation: false
+                      uuid: bb807755-62fa-412b-b242-fd930a24be13
+                      active: true
+                      user_login: strsing
+                      user_email: stringa
+                      id: 4
+                      in_dark_mode: null
+                      external_id: null
+                      has_mini_sidebar: false
+                      user_api_key: ViYIIkN_LL062yNOcq2kJA3ZMscOAoHmLy8GEh_JYKBWwspLB_E65jhYLg9CsR0J-kP8DmmM3RO31_xixrG8rw
               examples:
                 example-1:
                   value:
+                    status: success
+                    message: user created
                     data:
+                      user_is_service_account: true
+                      user_name: strsinsg
+                      has_deletion_confirmation: false
+                      uuid: bb807755-62fa-412b-b242-fd930a24be13
                       active: true
-                      id: 0
-                      user_email: string
-                      user_login: string
-                      user_name: string
-                      user_password: string
-                    message: string
-                    status: string
+                      user_login: strsing
+                      user_email: stringa
+                      id: 4
+                      in_dark_mode: null
+                      external_id: null
+                      has_mini_sidebar: false
+                      user_api_key: ViYIIkN_LL062yNOcq2kJA3ZMscOAoHmLy8GEh_JYKBWwspLB_E65jhYLg9CsR0J-kP8DmmM3RO31_xixrG8rw
         '400':
           description: Bad Request
           content:
@@ -18397,7 +19071,6 @@ paths:
         content:
           application/json:
             schema:
-              description: ''
               type: object
               x-examples:
                 example-1:
@@ -18422,11 +19095,13 @@ paths:
                   type: string
                   minLength: 1
                   description: 'Must satisfy policy of 12chars, 1 uppercase, 1 number'
+                user_is_service_account:
+                  type: boolean
               required:
                 - user_name
                 - user_login
                 - user_email
-                - user_password
+        description: ''
       security:
         - Bearer <bearer>: []
       parameters: []
@@ -18947,6 +19622,23 @@ paths:
             application/json:
               schema:
                 type: object
+                x-examples:
+                  Example 1:
+                    data:
+                      - user_active: true
+                        user_email: administrator@iris.local
+                        user_id: 1
+                        user_login: administrator
+                        user_name: administrator
+                        user_uuid: 87d6cfcd-6871-43ea-85ab-eea705c08845
+                      - user_active: true
+                        user_email: string
+                        user_id: 2
+                        user_login: string
+                        user_name: string
+                        user_uuid: bfb2c85d-72d6-4c97-9823-8b29ceb2fc7e
+                    message: ''
+                    status: success
                 properties:
                   data:
                     type: array
@@ -18965,45 +19657,46 @@ paths:
                           type: string
                         user_uuid:
                           type: string
+                        user_is_service_account:
+                          type: boolean
                   message:
                     type: string
                   status:
                     type: string
-                x-examples:
-                  Example 1:
-                    data:
-                      - user_active: true
-                        user_email: administrator@iris.local
-                        user_id: 1
-                        user_login: administrator
-                        user_name: administrator
-                        user_uuid: 87d6cfcd-6871-43ea-85ab-eea705c08845
-                      - user_active: true
-                        user_email: string
-                        user_id: 2
-                        user_login: string
-                        user_name: string
-                        user_uuid: bfb2c85d-72d6-4c97-9823-8b29ceb2fc7e
-                    message: ''
-                    status: success
               examples:
                 Example 1:
                   value:
-                    data:
-                      - user_active: true
-                        user_email: administrator@iris.local
-                        user_id: 1
-                        user_login: administrator
-                        user_name: administrator
-                        user_uuid: 87d6cfcd-6871-43ea-85ab-eea705c08845
-                      - user_active: true
-                        user_email: string
-                        user_id: 2
-                        user_login: string
-                        user_name: string
-                        user_uuid: bfb2c85d-72d6-4c97-9823-8b29ceb2fc7e
-                    message: ''
                     status: success
+                    message: ''
+                    data:
+                      - user_id: 1
+                        user_uuid: 815be41e-9a7d-4a2e-9e69-db2ceeba6ad2
+                        user_name: administrator
+                        user_login: administrator
+                        user_email: administrator@iris.local
+                        user_active: true
+                        user_is_service_account: false
+                      - user_id: 2
+                        user_uuid: 17e16ccd-a461-4fb0-b219-07f13231d6ce
+                        user_name: automation
+                        user_login: automation
+                        user_email: automation@automation
+                        user_active: true
+                        user_is_service_account: true
+                      - user_id: 3
+                        user_uuid: 06e9d803-d8fc-401f-9487-d76e83072b2b
+                        user_name: string
+                        user_login: string
+                        user_email: string
+                        user_active: true
+                        user_is_service_account: true
+                      - user_id: 4
+                        user_uuid: bb807755-62fa-412b-b242-fd930a24be13
+                        user_name: strsinsg
+                        user_login: strsing
+                        user_email: stringa
+                        user_active: true
+                        user_is_service_account: true
       operationId: get-manage-users-list
       description: Return a list of available users.
       tags:

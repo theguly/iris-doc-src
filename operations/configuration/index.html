@@ -461,6 +461,73 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#production-configuration" class="md-nav__link">
+    Production configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Production configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#secrets" class="md-nav__link">
+    Secrets
+  </a>
+  
+    <nav class="md-nav" aria-label="Secrets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-changes" class="md-nav__link">
+    Required changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optionnal-changes" class="md-nav__link">
+    Optionnal changes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certificates" class="md-nav__link">
+    Certificates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ldap" class="md-nav__link">
+    LDAP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#available-settings" class="md-nav__link">
     Available settings
   </a>
@@ -1132,6 +1199,73 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#production-configuration" class="md-nav__link">
+    Production configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Production configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#secrets" class="md-nav__link">
+    Secrets
+  </a>
+  
+    <nav class="md-nav" aria-label="Secrets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-changes" class="md-nav__link">
+    Required changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optionnal-changes" class="md-nav__link">
+    Optionnal changes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certificates" class="md-nav__link">
+    Certificates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ldap" class="md-nav__link">
+    LDAP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#available-settings" class="md-nav__link">
     Available settings
   </a>
@@ -1158,271 +1292,310 @@
 <p>Since v2.0.0 the entire configuration is done through the <code>.env</code> file at the root of the IRIS directory.  </p>
 <h2 id="default-configuration">Default configuration</h2>
 <p>The default configuration is provided through a <code>.env.model</code> file at the root of the IRIS directory. One need to copy this file to <code>.env</code> and modify it if needed.  </p>
-<p>The default configuration is suitable for testing only. The following parameters need to be changed for production:  </p>
+<p><strong>The default configuration is suitable for testing only.</strong>  See the section below to configure IRIS for production.  </p>
+<h2 id="production-configuration">Production configuration</h2>
+<h3 id="secrets">Secrets</h3>
+<h4 id="required-changes">Required changes</h4>
+<p>The following secrets in the <code>.env</code> need to be changed for production.<br />
+We recommend using SSL to generate different values from each secret: <br />
+<code>openssl rand -base64 64</code></p>
 <ul>
-<li><code>IRIS_SECRET_KEY</code>: Key used by Flask to secure the session cookies. Needs to be random. </li>
-<li><code>IRIS_SECURITY_PASSWORD_SALT</code>: A salt used for password encryption in the DB. Needs to be random and different from <code>IRIS_SECRET_KEY</code>. </li>
+<li><code>POSTGRES_PASSWORD</code>: Password of the postgres user</li>
+<li><code>POSTGRES_ADMIN_PASSWORD</code>: Password of the db admin user </li>
+<li><code>IRIS_SECRET_KEY</code>: Key used by Flask to secure the session cookies</li>
+<li><code>IRIS_SECURITY_PASSWORD_SALT</code>: A salt used for password encryption in the DB </li>
 </ul>
-<p>One can use <code>python -c 'import secrets; print(secrets.token_hex())'</code> to generate a theses values. </p>
+<div class="admonition danger">
+<p class="admonition-title">Critical configuration</p>
+<p>These settings are critical and need to be set properly otherwise authentication bypass may occur. </p>
+</div>
+<h4 id="optionnal-changes">Optionnal changes</h4>
+<p>To automate the provisionning of IRIS, one might need to set the default administrator API token and password. This can be achieve with the following environment variables. <br />
+If those variables are not set, random ones are generated during the very first boot of the application.   </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The administrator password is printed in the logs. It is recommended to change it as soon as possible.
+The set of the following environment variables has no effect once the administrator account is created, i.e after the very first boot.</p>
+</div>
+<ul>
+<li><code>IRIS_ADM_PASSWORD</code>: Password of the administrator account. The password need to match the default password policy or the administrator won't be able to login,  </li>
+<li><code>IRIS_ADM_API_KEY</code>: API key of the administrator. A random long string. No verification for the complexity is done. We recommend using <code>openssl rand -base64 64</code></li>
+</ul>
+<h3 id="certificates">Certificates</h3>
+<p>IRIS is configured to use a self-signed certificate by default. This is suitable for testing only. <br />
+To use your own certificate, you need to set the following environment variables:  </p>
+<ul>
+<li><code>KEY_FILENAME</code>: The filename of the key file in the <code>certificates/web-_certificates</code> directory at the root of the IRIS directory</li>
+<li><code>CERT_FILENAME</code>: The filename of the certificate file in the <code>certificates/web-_certificates</code> directory at the root of the IRIS directory</li>
+</ul>
+<p>Once the changes are done, nginx docker container need to be rebuilt with the following command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker-compose<span class="w"> </span>stop<span class="w"> </span>nginx
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>docker-compose<span class="w"> </span>build<span class="w"> </span>nginx<span class="w"> </span>--no-cache
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>docker-compose<span class="w"> </span>up<span class="w"> </span>
+</code></pre></div>
+<h3 id="authentication">Authentication</h3>
+<h4 id="ldap">LDAP</h4>
+<p>IRIS can be configured to use LDAP authentication. See the <a href="/operations/access_control/authentication/#ldap-authentication">Authentication section</a> for more details.</p>
 <h2 id="available-settings">Available settings</h2>
+<p>These environment variables are availabled to be set.  </p>
 <table>
 <thead>
 <tr>
-<th>Key</th>
+<th align="center">Key</th>
 <th>Section</th>
-<th>Optionnal</th>
+<th>Opt</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>SERVER_NAME</code></td>
+<td align="center"><code>SERVER_NAME</code></td>
 <td>Nginx</td>
 <td>No</td>
 <td>Passed to the server_name in NGINX configuration</td>
 </tr>
 <tr>
-<td><code>KEY_FILENAME</code></td>
+<td align="center"><code>KEY_FILENAME</code></td>
 <td>Nginx</td>
 <td>No</td>
 <td>SSL Cert key filename passed to the NGINX configuration</td>
 </tr>
 <tr>
-<td><code>CERT_FILENAME</code></td>
+<td align="center"><code>CERT_FILENAME</code></td>
 <td>Nginx</td>
 <td>No</td>
 <td>SSL Cert filename passed to the NGINX configuration</td>
 </tr>
 <tr>
-<td><code>INTERFACE_HTTPS_PORT</code></td>
+<td align="center"><code>INTERFACE_HTTPS_PORT</code></td>
 <td>Nginx</td>
 <td>Yes</td>
 <td>Listening interface of IRIS</td>
 </tr>
 <tr>
-<td><code>POSTGRES_USER</code></td>
+<td align="center"><code>POSTGRES_USER</code></td>
 <td>DB</td>
 <td>No</td>
 <td>Name of the POSTGRES user</td>
 </tr>
 <tr>
-<td><code>POSTGRES_PASSWORD</code></td>
+<td align="center"><code>POSTGRES_PASSWORD</code></td>
 <td>DB</td>
 <td>No</td>
 <td>Password of the POSTGRES user</td>
 </tr>
 <tr>
-<td><code>POSTGRES_ADMIN_USER</code></td>
+<td align="center"><code>POSTGRES_ADMIN_USER</code></td>
 <td>DB</td>
 <td>No</td>
 <td>Name of the admin user</td>
 </tr>
 <tr>
-<td><code>POSTGRES_ADMIN_PASSWORD</code></td>
+<td align="center"><code>POSTGRES_ADMIN_PASSWORD</code></td>
 <td>DB</td>
 <td>No</td>
 <td>Password of the ADMIN user</td>
 </tr>
 <tr>
-<td><code>POSTGRES_DB</code></td>
+<td align="center"><code>POSTGRES_DB</code></td>
 <td>DB</td>
 <td>No</td>
 <td>Name of the DB used by IRIS</td>
 </tr>
 <tr>
-<td><code>POSTGRES_SERVER</code></td>
+<td align="center"><code>POSTGRES_SERVER</code></td>
 <td>DB</td>
 <td>No</td>
 <td>Hostname or IP of the DB</td>
 </tr>
 <tr>
-<td><code>POSTGRES_PORT</code></td>
+<td align="center"><code>POSTGRES_PORT</code></td>
 <td>DB</td>
 <td>No</td>
 <td>Port of the DB server</td>
 </tr>
 <tr>
-<td><code>DOCKERIZED</code></td>
+<td align="center"><code>DOCKERIZED</code></td>
 <td>IRIS</td>
 <td>Yes</td>
 <td>Set to <code>1</code> when using dockers (default)</td>
 </tr>
 <tr>
-<td><code>IRIS_SECRET_KEY</code></td>
+<td align="center"><code>IRIS_SECRET_KEY</code></td>
 <td>IRIS</td>
 <td>No</td>
 <td>Secret key used tp secure sessions - needs to be random</td>
 </tr>
 <tr>
-<td><code>IRIS_SECURITY_PASSWORD_SALT</code></td>
+<td align="center"><code>IRIS_SECURITY_PASSWORD_SALT</code></td>
 <td>IRIS</td>
 <td>No</td>
 <td>Secret used to salt the passwords in DB - needs to be random</td>
 </tr>
 <tr>
-<td><code>IRIS_UPSTREAM_SERVER</code></td>
+<td align="center"><code>IRIS_UPSTREAM_SERVER</code></td>
 <td>IRIS</td>
 <td>No</td>
 <td>WebApp upstream server - used to configure nginx reverse proxy</td>
 </tr>
 <tr>
-<td><code>IRIS_UPSTREAM_PORT</code></td>
+<td align="center"><code>IRIS_UPSTREAM_PORT</code></td>
 <td>IRIS</td>
 <td>No</td>
 <td>WebApp upstream server port - used to configure nginx reverse proxy</td>
 </tr>
 <tr>
-<td><code>IRIS_ORGANISATION_NAME</code></td>
+<td align="center"><code>IRIS_ORGANISATION_NAME</code></td>
 <td>IRIS</td>
 <td>No</td>
 <td>Name of the company / organisation. Used on the UI</td>
 </tr>
 <tr>
-<td><code>IRIS_UPLOADED_PATH</code></td>
+<td align="center"><code>IRIS_UPLOADED_PATH</code></td>
 <td>IRIS</td>
 <td>No</td>
 <td>Path to store uploaded data.</td>
 </tr>
 <tr>
-<td><code>IRIS_BACKUP_PATH</code></td>
+<td align="center"><code>IRIS_BACKUP_PATH</code></td>
 <td>IRIS</td>
 <td>No</td>
 <td>Path to store backup files.</td>
 </tr>
 <tr>
-<td><code>IRIS_TEMPLATES_PATH</code></td>
+<td align="center"><code>IRIS_TEMPLATES_PATH</code></td>
 <td>IRIS</td>
 <td>No</td>
 <td>Path of the templates</td>
 </tr>
 <tr>
-<td><code>IRIS_DATASTORE_PATH</code></td>
+<td align="center"><code>IRIS_DATASTORE_PATH</code></td>
 <td>IRIS</td>
 <td>No</td>
 <td>Path of the datastore files</td>
 </tr>
 <tr>
-<td><code>IRIS_DEMO_ENABLED</code></td>
+<td align="center"><code>IRIS_DEMO_ENABLED</code></td>
 <td>Demo</td>
 <td>No</td>
 <td>Set to True to switch IRIS to Demo mode</td>
 </tr>
 <tr>
-<td><code>IRIS_DEMO_DOMAIN</code></td>
+<td align="center"><code>IRIS_DEMO_DOMAIN</code></td>
 <td>Demo</td>
 <td>No</td>
 <td>URL of the demonstration server</td>
 </tr>
 <tr>
-<td><code>IRIS_DEMO_USER_SEED</code></td>
+<td align="center"><code>IRIS_DEMO_USER_SEED</code></td>
 <td>Demo</td>
 <td>No</td>
 <td>Random seed to generate demo users</td>
 </tr>
 <tr>
-<td><code>IRIS_DEMO_ADM_SEED</code></td>
+<td align="center"><code>IRIS_DEMO_ADM_SEED</code></td>
 <td>Demo</td>
 <td>No</td>
 <td>Random seed to generate admin users for demo</td>
 </tr>
 <tr>
-<td><code>CELERY_BROKER</code></td>
+<td align="center"><code>CELERY_BROKER</code></td>
 <td>Celery</td>
 <td>No</td>
 <td>Broker URL used to handle IRIS tasks</td>
 </tr>
 <tr>
-<td><code>IRIS_AUTHENTICATION_TYPE</code></td>
+<td align="center"><code>IRIS_AUTHENTICATION_TYPE</code></td>
 <td>Auth</td>
 <td>No</td>
 <td>IRIS auth mode : <code>local</code> or <code>ldap</code></td>
 </tr>
 <tr>
-<td><code>IRIS_ADM_PASSWORD</code></td>
+<td align="center"><code>IRIS_ADM_PASSWORD</code></td>
 <td>Auth</td>
 <td>Yes</td>
 <td>Set to use as initial password of the administrator account. Only works for the very first run of IRIS. Needs to match the passowrd policy</td>
 </tr>
 <tr>
-<td><code>IRIS_ADM_API_KEY</code></td>
+<td align="center"><code>IRIS_ADM_API_KEY</code></td>
 <td>Auth</td>
 <td>Yes</td>
 <td>Set to use as initial API Key of the administrator</td>
 </tr>
 <tr>
-<td><code>IRIS_ADM_EMAIL</code></td>
+<td align="center"><code>IRIS_ADM_EMAIL</code></td>
 <td>Auth</td>
 <td>Yes</td>
 <td>Set to use as initial email of the administrator</td>
 </tr>
 <tr>
-<td><code>IRIS_ADM_USERNAME</code></td>
+<td align="center"><code>IRIS_ADM_USERNAME</code></td>
 <td>Auth</td>
 <td>Yes</td>
 <td>Set to use as initial username of the administrator</td>
 </tr>
 <tr>
-<td><code>LDAP_SERVER</code></td>
+<td align="center"><code>LDAP_SERVER</code></td>
 <td>Auth</td>
 <td>Yes</td>
 <td>LDAP server IP or domain</td>
 </tr>
 <tr>
-<td><code>LDAP_PORT</code></td>
+<td align="center"><code>LDAP_PORT</code></td>
 <td>Auth</td>
 <td>Yes</td>
 <td>LDAP server port</td>
 </tr>
 <tr>
-<td><code>LDAP_USER_PREFIX</code></td>
+<td align="center"><code>LDAP_USER_PREFIX</code></td>
 <td>Auth</td>
 <td>Yes</td>
 <td>Prefix to search the users within</td>
 </tr>
 <tr>
-<td><code>LDAP_USER_SUFFIX</code></td>
+<td align="center"><code>LDAP_USER_SUFFIX</code></td>
 <td>Auth</td>
 <td>Yes</td>
 <td>Suffix to search the users within</td>
 </tr>
 <tr>
-<td><code>LDAP_USE_SSL</code></td>
+<td align="center"><code>LDAP_USE_SSL</code></td>
 <td>Auth</td>
 <td>Yes</td>
 <td>Set to True to use LDAPS</td>
 </tr>
 <tr>
-<td><code>LDAP_VALIDATE_CERTIFICATE</code></td>
+<td align="center"><code>LDAP_VALIDATE_CERTIFICATE</code></td>
 <td>Auth</td>
 <td>Yes</td>
 <td>Set to True to verify the server certificate validity</td>
 </tr>
 <tr>
-<td><code>LDAP_TLS_VERSION</code></td>
+<td align="center"><code>LDAP_TLS_VERSION</code></td>
 <td>Auth</td>
 <td>Yes</td>
 <td>TLS version to use LDAPS</td>
 </tr>
 <tr>
-<td><code>LDAP_SERVER_CERTIFICATE</code></td>
+<td align="center"><code>LDAP_SERVER_CERTIFICATE</code></td>
 <td>Auth</td>
 <td>Yes</td>
 <td>Path of the LDAP server certificate</td>
 </tr>
 <tr>
-<td><code>LDAP_PRIVATE_KEY</code></td>
+<td align="center"><code>LDAP_PRIVATE_KEY</code></td>
 <td>Auth</td>
 <td>Yes</td>
 <td>Path of the LDAP private certificate</td>
 </tr>
 <tr>
-<td><code>LDAP_PRIVATE_KEY_PASSWORD</code></td>
+<td align="center"><code>LDAP_PRIVATE_KEY_PASSWORD</code></td>
 <td>Auth</td>
 <td>Yes</td>
 <td>Password of the private key</td>
 </tr>
 <tr>
-<td><code>LDAP_AUTHENTICATION_TYPE</code></td>
+<td align="center"><code>LDAP_AUTHENTICATION_TYPE</code></td>
 <td>Auth</td>
 <td>Yes</td>
 <td>Simple, SASL or NTML</td>

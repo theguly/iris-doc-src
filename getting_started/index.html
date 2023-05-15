@@ -311,7 +311,7 @@
       
         <li class="md-nav__item">
   <a href="#build-and-run" class="md-nav__link">
-    Build and run
+    Build and Run
   </a>
   
 </li>
@@ -1192,7 +1192,7 @@
       
         <li class="md-nav__item">
   <a href="#build-and-run" class="md-nav__link">
-    Build and run
+    Build and Run
   </a>
   
 </li>
@@ -1231,49 +1231,60 @@ We highly recommended the use of a private dedicated and secured network. </p>
 <h3 id="hardware">Hardware</h3>
 <p>IRIS is not very resourceful and can be run on a small laptop (4 cores, 8Gb of RAM). However, for large organization and heavy usage, 
 it will need to be greatly scaled up.<br />
-We don't have benchmarks yet but keep in mind that the database can grow rapidly and modules can be resourceful depending on their purposes.<br />
-The source code includes a burst test that you can adjust to recreate the load IRIS might face.   </p>
+We don't have benchmarks yet but keep in mind that the database can grow rapidly and modules can be resourceful depending on their purposes.  </p>
 <h3 id="docker">Docker</h3>
 <p>Docker and docker compose are needed to build and run the project. Depending on the OS you will find all the information to install them on 
 the official website of <a href="https://docs.docker.com/get-docker/">Docker</a>.  </p>
-<p>The platform is tested on Linux and MacOS (including Apple Silicon). While it should work on Windows, some path needed by the dockers to store permanent files might need to be changed in the dockerfiles. </p>
+<p>The platform is officially support on most Linux and MacOS. While it should work on Windows, some path needed by the dockers to store permanent files might need to be changed in the dockerfiles. </p>
 <h2 id="versioning">Versioning</h2>
 <p>Starting from version 2.0.0, Iris is following the <a href="https://semver.org/">Semantic Versioning 2.0</a> guidelines. <br />
 The code ready for production is always tagged with a version number. 
 <code>alpha</code> and <code>beta</code> versions are <strong>not</strong> production-ready.  </p>
-<p>Do not use the <code>master</code> branch in production. </p>
-<h2 id="build-and-run">Build and run</h2>
-<p>You have found a home for IRIS and installed Docker and Docker compose, it is time to build the containers.</p>
-<p>IRIS is split on 5 Docker services, each with a different role.</p>
+<p><strong>Do not use the <code>master</code> branch in production.</strong> </p>
+<h2 id="build-and-run">Build and Run</h2>
+<p>To build and run IRIS, follow these steps:</p>
+<ol>
+<li>
+<p>Clone the <code>iris-web</code> repository:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/dfir-iris/iris-web.git
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>iris-web
+</code></pre></div>
+</li>
+<li>
+<p>Check out the latest <strong>non-beta</strong> tagged version: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>v2.0.2
+</code></pre></div>
+</li>
+<li>
+<p>Copy the environment file </p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cp .env.model .env
+</code></pre></div>
+You can optionnaly configure the environment file as specified in the section below. </p>
+</li>
+<li>
+<p>Build the Docker containers:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker-compose build
+</code></pre></div>
+</li>
+<li>
+<p>Start IRIS:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker-compose<span class="w"> </span>up
+</code></pre></div>
+</li>
+</ol>
+<p>IRIS should now be available on the host interface, port 443, using HTTPS protocol by default. You can access it by navigating to https://hostip in your web browser.   </p>
+<p>By default, an administrator account is created when IRIS is started for the first time. The password is printed in the console output. You can search for <code>WARNING :: post_init :: create_safe_admin :: &gt;&gt;&gt;</code> in the logs to find the password. <br />
+Running <code>docker compose logs app | grep 'admin'</code> should help to find it.   </p>
+<p>If you want to define an admin password at the first start, you can create and define the environment variable <code>IRIS_ADM_PASSWORD</code> in the <code>.env</code>. <strong>This has no effect once the administrator account is created.</strong>   </p>
+<p>Note that IRIS is split into five Docker services, each with a different role:</p>
 <ul>
-<li><code>app - iris_webapp</code>: The core, including web server, DB management, module management etc.</li>
-<li><code>db</code>: A PostgresSQL database</li>
-<li><code>RabbitMQ</code>: A RabbitMQ engine to handle jobs queuing and processing</li>
-<li><code>worker</code>: Jobs handler relying on RabbitMQ</li>
+<li><code>app</code> - iris_webapp: The core, including web server, database management, module management, etc.</li>
+<li><code>db</code>: A PostgreSQL database</li>
+<li><code>RabbitMQ</code>: A RabbitMQ engine to handle job queuing and processing</li>
+<li><code>worker</code>: A job handler relying on RabbitMQ</li>
 <li><code>nginx</code>: A NGINX reverse proxy</li>
 </ul>
-<p>Each service can be built independently, which is useful when developing. In this QuickStart everything is built at once.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">#  Clone the iris-web repository</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/dfir-iris/iris-web.git
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>iris-web
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Checkout to the last non-beta tagged version -</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>git<span class="w"> </span>checkout<span class="w"> </span>v2.0.0
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># Copy the environment file </span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>cp<span class="w"> </span>.env.model<span class="w"> </span>.env
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># [... optionally, do some configuration as specified in section below ...]</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># Build the dockers</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>docker-compose<span class="w"> </span>build
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1"># Run IRIS </span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>docker-compose<span class="w"> </span>up
-</code></pre></div>
-<p>IRIS should be available on the host interface, port 443, HTTPS protocol.  <code>https://hostip</code> 
-By default, an <code>administrator</code> account is created. The password is printed in stdout the very first time IRIS is started. It won't be printed anymore after that.<br />
-You can search for <code>WARNING :: post_init :: create_safe_admin :: &gt;&gt;&gt;</code> in the logs to find the password.  </p>
-<p>If you want to define an admin password at the first start, you can also create and define the environment variable <strong>IRIS_ADM_PASSWORD</strong> in the <code>app</code> docker instance (see the webApp Dockerfile). This has no effects once the administrator account is created.   </p>
+<p>Each service can be built independently, which is useful when developing. In this QuickStart, all services are built at once.  </p>
 <h2 id="optional-configuration">Optional configuration</h2>
 <p>You can skip this part if you just want to try or develop. If used in production, please configure the <code>.env</code> file at the root of the project:</p>
 <ul>

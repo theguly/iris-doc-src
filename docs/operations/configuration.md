@@ -4,17 +4,59 @@ Since v2.0.0 the entire configuration is done through the `.env` file at the roo
 ## Default configuration 
 The default configuration is provided through a `.env.model` file at the root of the IRIS directory. One need to copy this file to `.env` and modify it if needed.  
 
-The default configuration is suitable for testing only. The following parameters need to be changed for production:  
+**The default configuration is suitable for testing only.**  See the section below to configure IRIS for production.  
 
-- `IRIS_SECRET_KEY`: Key used by Flask to secure the session cookies. Needs to be random. 
-- `IRIS_SECURITY_PASSWORD_SALT`: A salt used for password encryption in the DB. Needs to be random and different from `IRIS_SECRET_KEY`. 
+## Production configuration
+### Secrets 
+#### Required changes
+The following secrets in the `.env` need to be changed for production.  
+We recommend using SSL to generate different values from each secret:   
+`openssl rand -base64 64`
 
-One can use `python -c 'import secrets; print(secrets.token_hex())'` to generate a theses values. 
+- `POSTGRES_PASSWORD`: Password of the postgres user
+- `POSTGRES_ADMIN_PASSWORD`: Password of the db admin user 
+- `IRIS_SECRET_KEY`: Key used by Flask to secure the session cookies
+- `IRIS_SECURITY_PASSWORD_SALT`: A salt used for password encryption in the DB 
+
+!!! danger "Critical configuration"
+    These settings are critical and need to be set properly otherwise authentication bypass may occur. 
+
+
+#### Optionnal changes 
+To automate the provisionning of IRIS, one might need to set the default administrator API token and password. This can be achieve with the following environment variables.   
+If those variables are not set, random ones are generated during the very first boot of the application.   
+
+!!! Warning 
+    The administrator password is printed in the logs. It is recommended to change it as soon as possible.
+    The set of the following environment variables has no effect once the administrator account is created, i.e after the very first boot.
+
+- `IRIS_ADM_PASSWORD`: Password of the administrator account. The password need to match the default password policy or the administrator won't be able to login,  
+- `IRIS_ADM_API_KEY`: API key of the administrator. A random long string. No verification for the complexity is done. We recommend using `openssl rand -base64 64`
+
+### Certificates
+IRIS is configured to use a self-signed certificate by default. This is suitable for testing only.   
+To use your own certificate, you need to set the following environment variables:  
+
+- `KEY_FILENAME`: The filename of the key file in the `certificates/web-_certificates` directory at the root of the IRIS directory
+- `CERT_FILENAME`: The filename of the certificate file in the `certificates/web-_certificates` directory at the root of the IRIS directory
+
+Once the changes are done, nginx docker container need to be rebuilt with the following command:
+
+```bash
+docker-compose stop nginx
+docker-compose build nginx --no-cache
+docker-compose up 
+```
+
+### Authentication
+#### LDAP
+IRIS can be configured to use LDAP authentication. See the [Authentication section](/operations/access_control/authentication/#ldap-authentication) for more details.
 
 ## Available settings
+These environment variables are availabled to be set.  
 
-| Key | Section | Optionnal | Description | 
-|-----|---------|-----|------|
+| Key | Section | Opt | Description | 
+|:-----:|---------|-----|------|
 | `SERVER_NAME` | Nginx | No | Passed to the server_name in NGINX configuration | 
 | `KEY_FILENAME` | Nginx | No | SSL Cert key filename passed to the NGINX configuration | 
 | `CERT_FILENAME` | Nginx | No | SSL Cert filename passed to the NGINX configuration | 

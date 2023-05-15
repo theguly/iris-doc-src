@@ -1,12 +1,61 @@
 # Changelog
 
 For upgrades instructions, please see the [Upgrades page](/operations/upgrades). 
-!!! danger "Please read [upgrades instructions](https://docs.dfir-iris.org/operations/upgrades/#v141) if you are upgrading from v1.3.1 or lower." 
 
+
+## [v2.1.0](https://github.com/dfir-iris/iris-web/releases/tag/v2.1.0) <small>_ May 15, 2023 _</small> 
+**If you are using custom SSL certificates, please read the [upgrade instructions](https://docs.dfir-iris.org/operations/upgrades/#v210) when upgrading from previous versions.**  
+
+### What's Changed
+**Added**    
+
+* Full support of alerts 
+* Case templates 
+* Provisioning of users 
+* Service accounts 
+* New permissions 
+
+**Fixed**  
+
+* Variable LDAP_AUTHENTICATION_TYPE in .env.model by @c8y3 in [#217](https://github.com/dfir-iris/iris-web/pull/217)
+* Automatic creation of users with ldap authentication by @c8y3 in [#227](https://github.com/dfir-iris/iris-web/pull/227)
+* Update nginx.conf for Security HTTP headers to work. by @oikuda in [#216](https://github.com/dfir-iris/iris-web/pull/216)
+* Columns in manage cases [#205](https://github.com/dfir-iris/iris-web/issues/205)
+* Customer contact deletion [#239](https://github.com/dfir-iris/iris-web/issues/239)
+* Search permissions [#237](https://github.com/dfir-iris/iris-web/issues/237)
+* Customer permissions [#235](https://github.com/dfir-iris/iris-web/issues/235)
+* Toast split [#226](https://github.com/dfir-iris/iris-web/issues/226)
+* Assets exporting [#224](https://github.com/dfir-iris/iris-web/issues/224)
+* Assets IOC filtering [#223](https://github.com/dfir-iris/iris-web/issues/223)
+* ADM username not enforced [#218](https://github.com/dfir-iris/iris-web/issues/218)
+* JIT provisioning of users in LDAP [#203](https://github.com/dfir-iris/iris-web/issues/203)
+
+
+**New Contributors**   
+
+* @c8y3 made their first contribution in [#217](https://github.com/dfir-iris/iris-web/pull/217)
+* @oikuda made their first contribution in [#216](https://github.com/dfir-iris/iris-web/pull/216)
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v2.0.2...v2.1.0)
+
+
+## [v2.0.2](https://github.com/dfir-iris/iris-web/releases/tag/v2.0.2) <small>_ April 18, 2023 _</small> 
+### What's Changed
+**Fixed**   
+* Update case_notes_db.py for bug fix #200 by @LoneWolf-96 in [#208](https://github.com/dfir-iris/iris-web/pull/208)
+* Do not escape_filter_chars for NTLM username by @juadde in [#212](https://github.com/dfir-iris/iris-web/pull/212)
+* docker-compose cleanup by @juadde in [#213](https://github.com/dfir-iris/iris-web/pull/213)
+* Listening port not being propagated in nginx docker 
+
+**New Contributors**    
+* @LoneWolf-96 made their first contribution in [#208](https://github.com/dfir-iris/iris-web/pull/208)
+* @juadde made their first contribution in [#212](https://github.com/dfir-iris/iris-web/pull/212)
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v2.0.1...v2.0.2)
 
 ## [v2.0.1](https://github.com/dfir-iris/iris-web/releases/tag/v2.0.1) <small>_ April 05, 2023 _</small> 
 
-## What's Changed
+### What's Changed
 
 **Fixed**
 [FIX] Additional table header in case management breaking proper loading of data in [#206](https://github.com/dfir-iris/iris-web/pull/206)

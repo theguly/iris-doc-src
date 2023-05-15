@@ -15,59 +15,72 @@ The most straight forward and recommended way to use IRIS is with Docker. This i
 IRIS is not very resourceful and can be run on a small laptop (4 cores, 8Gb of RAM). However, for large organization and heavy usage, 
 it will need to be greatly scaled up.  
 We don't have benchmarks yet but keep in mind that the database can grow rapidly and modules can be resourceful depending on their purposes.  
-The source code includes a burst test that you can adjust to recreate the load IRIS might face.   
 
 ### Docker
 Docker and docker compose are needed to build and run the project. Depending on the OS you will find all the information to install them on 
 the official website of [Docker](https://docs.docker.com/get-docker/).  
 
-The platform is tested on Linux and MacOS (including Apple Silicon). While it should work on Windows, some path needed by the dockers to store permanent files might need to be changed in the dockerfiles. 
+The platform is officially support on most Linux and MacOS. While it should work on Windows, some path needed by the dockers to store permanent files might need to be changed in the dockerfiles. 
 
 ## Versioning
 Starting from version 2.0.0, Iris is following the [Semantic Versioning 2.0](https://semver.org/) guidelines.   
 The code ready for production is always tagged with a version number. 
 ``alpha`` and ``beta`` versions are **not** production-ready.  
 
-Do not use the ``master`` branch in production. 
+**Do not use the ``master`` branch in production.** 
 
-## Build and run
+## Build and Run
 
-You have found a home for IRIS and installed Docker and Docker compose, it is time to build the containers.
+To build and run IRIS, follow these steps:
 
-IRIS is split on 5 Docker services, each with a different role.
+1. Clone the `iris-web` repository:
 
-- ``app - iris_webapp``: The core, including web server, DB management, module management etc.
-- ``db``: A PostgresSQL database
-- ``RabbitMQ``: A RabbitMQ engine to handle jobs queuing and processing
-- ``worker``: Jobs handler relying on RabbitMQ
-- ``nginx``: A NGINX reverse proxy
+    ```bash
+    git clone https://github.com/dfir-iris/iris-web.git
+    cd iris-web
+    ```
 
-Each service can be built independently, which is useful when developing. In this QuickStart everything is built at once.
+2. Check out the latest **non-beta** tagged version: 
 
-``` bash
-#  Clone the iris-web repository
-git clone https://github.com/dfir-iris/iris-web.git
-cd iris-web
+    ```bash
+    git checkout v2.0.2
+    ```
 
-# Checkout to the last non-beta tagged version -
-git checkout v2.0.0
+3. Copy the environment file 
 
-# Copy the environment file 
-cp .env.model .env
-# [... optionally, do some configuration as specified in section below ...]
+    ```
+    cp .env.model .env
+    ```
+    You can optionnaly configure the environment file as specified in the section below. 
 
-# Build the dockers
-docker-compose build
+4. Build the Docker containers:
 
-# Run IRIS 
-docker-compose up
-```
+    ```
+    docker-compose build
+    ```
 
-IRIS should be available on the host interface, port 443, HTTPS protocol.  `https://hostip` 
-By default, an ``administrator`` account is created. The password is printed in stdout the very first time IRIS is started. It won't be printed anymore after that.  
-You can search for ``WARNING :: post_init :: create_safe_admin :: >>>`` in the logs to find the password.  
+5. Start IRIS:
 
-If you want to define an admin password at the first start, you can also create and define the environment variable **IRIS_ADM_PASSWORD** in the `app` docker instance (see the webApp Dockerfile). This has no effects once the administrator account is created.   
+    ```bash
+    docker-compose up
+    ```
+
+IRIS should now be available on the host interface, port 443, using HTTPS protocol by default. You can access it by navigating to https://hostip in your web browser.   
+
+By default, an administrator account is created when IRIS is started for the first time. The password is printed in the console output. You can search for ```WARNING :: post_init :: create_safe_admin :: >>>``` in the logs to find the password.   
+Running `docker compose logs app | grep 'admin'` should help to find it.   
+
+If you want to define an admin password at the first start, you can create and define the environment variable `IRIS_ADM_PASSWORD` in the `.env`. **This has no effect once the administrator account is created.**   
+
+Note that IRIS is split into five Docker services, each with a different role:
+
+- `app` - iris_webapp: The core, including web server, database management, module management, etc.
+- `db`: A PostgreSQL database
+- `RabbitMQ`: A RabbitMQ engine to handle job queuing and processing
+- `worker`: A job handler relying on RabbitMQ
+- `nginx`: A NGINX reverse proxy
+
+Each service can be built independently, which is useful when developing. In this QuickStart, all services are built at once.  
 
 ## Optional configuration
 

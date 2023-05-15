@@ -1,28 +1,24 @@
-# DFIR-IRIS Documentation
+# 
 
-Welcome to the DFIR-IRIS documentation :octicons-book-24:  
-Here you can find anything related to the IRIS web application operations, as well as some documentation on the [modules](operations/modules) and [development](development) among other things. 
+![Timeline Example](_static/logo_blue.png){ align=center}
 
-!!! hint  "**New to IRIS ?** [This is where you can start.](getting_started/)" 
+This documentation serves as a comprehensive guide to the IRIS web application operations, modules, and development. 
 
-!!! hint "Want to try out IRIS easily?" 
-    We have set up a free demonstration instance of the upcoming version v2.0.0 [here](https://v200.beta.dfir-iris.org). 
+If you're new to IRIS, we recommend starting with our [Getting Started guide](getting_started/) to learn the basics. 
 
-This documentation is in constant evolution, so if you don't find what you are looking for, you can come back later or even better [contact us](/contact) so we can add the missing piece. 
+For those who want to try out IRIS easily, we offer a free demonstration instance of the rolling beta version [here](https://v200.beta.dfir-iris.org). 
 
+Our documentation is constantly evolving, so if you don't find what you're looking for, please [contact us](/contact) so we can add the missing piece. 
 
-## What's IRIS ?
-In a nutshell, IRIS is a collaborative platform for incident response analysts that helps to share investigations at a technical level.  
-It's web application, so it can be either installed on a fixed-server, or on a laptop for roaming investigations where internet might not be available. 
+## What is IRIS?
+IRIS is a collaborative platform for incident response analysts that helps to share investigations at a technical level. It's a web application that can be installed on a fixed-server or on a laptop for roaming investigations where internet might not be available. 
 
-It is born following the struggle to share long and complex investigations among analysts. 
+IRIS was born out of the struggle to share long and complex investigations among analysts. 
 
-The project is available on our [Github organisation](https://github.com/dfir-iris)
+The project is available on our [Github organization](https://github.com/dfir-iris).
 
 !!! warning "Disclaimer"
-
-    IRIS is still in its early stage. It can already be used in production, but please [set backups of the database](/operations/upgrades/#backing-up-db) and DO NOT expose the interface on the Internet.
-    We highly recommended the use of a private dedicated and secured network. 
+    IRIS is still in its early stages. It can already be used in production, but please [set backups of the database](/operations/upgrades/#backing-up-db) and DO NOT expose the interface on the Internet.
+    We highly recommend the use of a private dedicated and secured network. 
 
 ![Timeline Example](_static/timeline_speed.gif){ align=center }
-

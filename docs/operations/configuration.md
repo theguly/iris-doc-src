@@ -99,3 +99,5 @@ These environment variables are availabled to be set.
 | `LDAP_PRIVATE_KEY`| Auth | Yes | Path of the LDAP private certificate | 
 | `LDAP_PRIVATE_KEY_PASSWORD`| Auth | Yes | Password of the private key | 
 | `LDAP_AUTHENTICATION_TYPE`| Auth | Yes | Simple, SASL or NTML | 
+| `LDAP_CUSTOM_TLS_CONFIG`| Auth | Yes | If set to true, the TLS configuration is not set by IRIS and taken from the defined environment. Default to False |
+ 

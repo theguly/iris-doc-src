@@ -43,7 +43,7 @@ To build and run IRIS, follow these steps:
 2. Check out the latest **non-beta** tagged version: 
 
     ```bash
-    git checkout v2.0.2
+    git checkout v2.1.0
     ```
 
 3. Copy the environment file 
@@ -51,7 +51,7 @@ To build and run IRIS, follow these steps:
     ```
     cp .env.model .env
     ```
-    You can optionnaly configure the environment file as specified in the section below. 
+    You can optionnaly configure the environment file as specified in the [configuration section](operations/configuration.md). 
 
 4. Build the Docker containers:
 
@@ -82,15 +82,12 @@ Note that IRIS is split into five Docker services, each with a different role:
 
 Each service can be built independently, which is useful when developing. In this QuickStart, all services are built at once.  
 
+![IRIS Structure](/_static/iris_structure.png){ align=center }
+
 ## Optional configuration
 
-You can skip this part if you just want to try or develop. If used in production, please configure the `.env` file at the root of the project:
+Please see [configuration](operations/configuration.md) for more details.
 
-- Nginx: you might want to specify your own certificate
-- Database credentials: **POSTGRES_PASSWORD** and **DB_PASS** (you can also customize the usernames)
-- IRIS secrets: **SECRET_KEY** and **SECURITY_PASSWORD_SALT**
-
-The very first time the app builds might take quite a while. After that if a service needs an update, the building process is faster.
 
 
 

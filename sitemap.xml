@@ -81,6 +81,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dfir-iris.org/operations/alerts/</loc>
+         <lastmod>2023-05-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dfir-iris.org/operations/api/</loc>
          <lastmod>2023-05-16</lastmod>
          <changefreq>daily</changefreq>

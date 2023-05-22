@@ -1077,6 +1077,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v220-may-22-2023" class="md-nav__link">
+    v2.2.0  May 22, 2023 
+  </a>
+  
+    <nav class="md-nav" aria-label="v2.2.0  May 22, 2023 ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-changed" class="md-nav__link">
+    What's Changed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v210-may-15-2023" class="md-nav__link">
     v2.1.0  May 15, 2023 
   </a>
@@ -1085,7 +1105,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#whats-changed" class="md-nav__link">
+  <a href="#whats-changed_1" class="md-nav__link">
     What's Changed
   </a>
   
@@ -1105,7 +1125,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#whats-changed_1" class="md-nav__link">
+  <a href="#whats-changed_2" class="md-nav__link">
     What's Changed
   </a>
   
@@ -1125,7 +1145,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#whats-changed_2" class="md-nav__link">
+  <a href="#whats-changed_3" class="md-nav__link">
     What's Changed
   </a>
   
@@ -1145,7 +1165,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#whats-changed_3" class="md-nav__link">
+  <a href="#whats-changed_4" class="md-nav__link">
     What's Changed
   </a>
   
@@ -1284,6 +1304,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v220-may-22-2023" class="md-nav__link">
+    v2.2.0  May 22, 2023 
+  </a>
+  
+    <nav class="md-nav" aria-label="v2.2.0  May 22, 2023 ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-changed" class="md-nav__link">
+    What's Changed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v210-may-15-2023" class="md-nav__link">
     v2.1.0  May 15, 2023 
   </a>
@@ -1292,7 +1332,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#whats-changed" class="md-nav__link">
+  <a href="#whats-changed_1" class="md-nav__link">
     What's Changed
   </a>
   
@@ -1312,7 +1352,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#whats-changed_1" class="md-nav__link">
+  <a href="#whats-changed_2" class="md-nav__link">
     What's Changed
   </a>
   
@@ -1332,7 +1372,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#whats-changed_2" class="md-nav__link">
+  <a href="#whats-changed_3" class="md-nav__link">
     What's Changed
   </a>
   
@@ -1352,7 +1392,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#whats-changed_3" class="md-nav__link">
+  <a href="#whats-changed_4" class="md-nav__link">
     What's Changed
   </a>
   
@@ -1444,9 +1484,31 @@
 
 <h1 id="changelog">Changelog</h1>
 <p>For upgrades instructions, please see the <a href="/operations/upgrades">Upgrades page</a>. </p>
+<h2 id="v220-may-22-2023"><a href="https://github.com/dfir-iris/iris-web/releases/edit/v2.2.0">v2.2.0</a> <small><em> May 22, 2023 </em></small></h2>
+<h3 id="whats-changed">What's Changed</h3>
+<p><strong>Added</strong>   </p>
+<ul>
+<li>Basic csv events file import (with default options) by @realsec in <a href="https://github.com/dfir-iris/iris-web/pull/240">#240</a></li>
+<li>New endpoints to search for manageable objects such as assets types etc, </li>
+<li>New search by asset IDs, IOC IDs and events IDs in the timeline</li>
+</ul>
+<p><strong>Fixes</strong>   </p>
+<ul>
+<li>Some configuration checks when LDAP and automatic user creation are set by @c8y3 in <a href="https://github.com/dfir-iris/iris-web/pull/246">#246</a></li>
+<li>Ensure database connectivity before trying to create tables by @weslambert in <a href="https://github.com/dfir-iris/iris-web/pull/248">#248</a></li>
+<li>Merge of multiple alerts in one case not merging the IOCs and assets</li>
+<li>Bug allowing to add an asset to a timeline not belonging to the same case </li>
+<li>UI bug fixes</li>
+</ul>
+<p><strong>New Contributors</strong>   </p>
+<ul>
+<li>@realsec made their first contribution in <a href="https://github.com/dfir-iris/iris-web/pull/240">#240</a></li>
+<li>@weslambert made their first contribution in <a href="https://github.com/dfir-iris/iris-web/pull/248">#248</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: https://github.com/dfir-iris/iris-web/compare/v2.1.0...v2.2.0</p>
 <h2 id="v210-may-15-2023"><a href="https://github.com/dfir-iris/iris-web/releases/tag/v2.1.0">v2.1.0</a> <small><em> May 15, 2023 </em></small></h2>
 <p><strong>If you are using custom SSL certificates, please read the <a href="https://docs.dfir-iris.org/operations/upgrades/#v210">upgrade instructions</a> when upgrading from previous versions.</strong>  </p>
-<h3 id="whats-changed">What's Changed</h3>
+<h3 id="whats-changed_1">What's Changed</h3>
 <p><strong>Added</strong>    </p>
 <ul>
 <li>Full support of alerts </li>
@@ -1477,7 +1539,7 @@
 </ul>
 <p><a href="https://github.com/dfir-iris/iris-web/compare/v2.0.2...v2.1.0">Full Changelog</a></p>
 <h2 id="v202-april-18-2023"><a href="https://github.com/dfir-iris/iris-web/releases/tag/v2.0.2">v2.0.2</a> <small><em> April 18, 2023 </em></small></h2>
-<h3 id="whats-changed_1">What's Changed</h3>
+<h3 id="whats-changed_2">What's Changed</h3>
 <p><strong>Fixed</strong> <br />
 * Update case_notes_db.py for bug fix #200 by @LoneWolf-96 in <a href="https://github.com/dfir-iris/iris-web/pull/208">#208</a>
 * Do not escape_filter_chars for NTLM username by @juadde in <a href="https://github.com/dfir-iris/iris-web/pull/212">#212</a>
@@ -1488,12 +1550,12 @@
 * @juadde made their first contribution in <a href="https://github.com/dfir-iris/iris-web/pull/212">#212</a></p>
 <p><a href="https://github.com/dfir-iris/iris-web/compare/v2.0.1...v2.0.2">Full Changelog</a></p>
 <h2 id="v201-april-05-2023"><a href="https://github.com/dfir-iris/iris-web/releases/tag/v2.0.1">v2.0.1</a> <small><em> April 05, 2023 </em></small></h2>
-<h3 id="whats-changed_2">What's Changed</h3>
+<h3 id="whats-changed_3">What's Changed</h3>
 <p><strong>Fixed</strong>
 [FIX] Additional table header in case management breaking proper loading of data in <a href="https://github.com/dfir-iris/iris-web/pull/206">#206</a></p>
 <p><a href="https://github.com/dfir-iris/iris-web/compare/v2.0.0...v2.0.1">Full Changelog</a></p>
 <h2 id="v200-march-26-2023"><a href="https://github.com/dfir-iris/iris-web/releases/tag/v2.0.0">v2.0.0</a> <small><em> March 26, 2023 </em></small></h2>
-<h3 id="whats-changed_3">What's Changed</h3>
+<h3 id="whats-changed_4">What's Changed</h3>
 <p>In addition to the features listed below, we are changing the way we are issuing releases. From now on, IRIS follows the <a href="https://semver.org/">Semantic Versioning 2.0</a> guidelines. <br />
 The code ready for production is always tagged with a version number. 
 <code>alpha</code> and <code>beta</code> versions are <strong>not</strong> production-ready.   </p>

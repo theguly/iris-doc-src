@@ -317,8 +317,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#optional-configuration" class="md-nav__link">
-    Optional configuration
+  <a href="#additional-configuration" class="md-nav__link">
+    Additional configuration
   </a>
   
 </li>
@@ -1315,8 +1315,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#optional-configuration" class="md-nav__link">
-    Optional configuration
+  <a href="#additional-configuration" class="md-nav__link">
+    Additional configuration
   </a>
   
 </li>
@@ -1374,9 +1374,12 @@ The code ready for production is always tagged with a version number.
 </li>
 <li>
 <p>Copy the environment file </p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cp .env.model .env
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cp .env.model .env
 </code></pre></div>
-You can optionnaly configure the environment file as specified in the <a href="../operations/configuration/">configuration section</a>. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The default configuration is suitable for testing only. To configure IRIS for production, see the <a href="../operations/configuration/">configuration section</a>. </p>
+</div>
 </li>
 <li>
 <p>Build the Docker containers:</p>
@@ -1403,7 +1406,7 @@ Running <code>docker compose logs app | grep 'admin'</code> should help to find 
 </ul>
 <p>Each service can be built independently, which is useful when developing. In this QuickStart, all services are built at once.  </p>
 <p><img align="center" alt="IRIS Structure" src="/_static/iris_structure.png" /></p>
-<h2 id="optional-configuration">Optional configuration</h2>
+<h2 id="additional-configuration">Additional configuration</h2>
 <p>Please see <a href="../operations/configuration/">configuration</a> for more details.</p>
 
   <hr>

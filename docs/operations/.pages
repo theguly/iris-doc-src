@@ -1,7 +1,10 @@
 nav:
   - Access control: access_control
+  - Alerts: alerts.md
   - API: api.md
+  - Cases: cases
   - Configuration: configuration.md
+  - Case Templates: case_templates.md
   - Custom attributes: custom_attributes.md
   - Datastore: datastore.md
   - Logging: logging.md

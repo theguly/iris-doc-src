@@ -8,5 +8,6 @@ nav:
   - Roadmap : roadmap.md
   - Contact: contact.md 
   - Changelog: changelog.md 
+  - Security Advisories: security-advisories.md
   - Credits: credits.md
   - Supporting us: support_us.md

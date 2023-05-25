@@ -3,7 +3,7 @@
 !!! tip "Authentication"
     Looking for authentication settings? [It's here](authentication.md)
 
-Whatever the authentication mechanism used (Local or LDAP), the users have to be declared in IRIS.   
+**Whatever the authentication mechanism used (Local or LDAP), the users have to be declared in IRIS.** This is done in `Advanced` > `Access Control` > `Users`. 
 
 ## Adding a user 
 Head to `Advanced` > `Access Control` > `Users` and click `Add user`.  
@@ -15,7 +15,12 @@ All fields of the form are required. All information can be changed after the cr
 - **Full Name** : Name of the user to add 
 - **Login** : Username used to login in IRIS. Has to be unique on the instance 
 - **Email** : Email of the user to add. Has to be unique on the instance  
-- **Password**: Password respecting the policy defined in `Advanced` > `Server settings`. The password also has to be set when using LDAP. It is however not used for the authentication.    
+- **Password**: Password respecting the policy defined in `Advanced` > `Server settings`. The password also has to be set when using LDAP. It is however not used for the authentication. A random password can be set when using LDAP. No password is required when the user is set a service account.  
+- **Is service account** : If the user is a server account, check this box. Server accounts are used to connect to the API. They cannot login to the UI. 
+
+!!! Warning "Service accounts"
+    Service accounts users can use the API to perform any actions on the instance. They cannot login to the UI and they don't have a password.
+
 
 ![Create new user](../../_static/access_control/add_user1.png) 
 

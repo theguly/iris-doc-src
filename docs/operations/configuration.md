@@ -10,7 +10,7 @@ The default configuration is provided through a `.env.model` file at the root of
 ### Secrets 
 #### Required changes
 The following secrets in the `.env` need to be changed for production.  
-We recommend using SSL to generate different values from each secret:   
+We recommend using OpenSSL to generate different values from each secret:   
 `openssl rand -base64 64`
 
 - `POSTGRES_PASSWORD`: Password of the postgres user

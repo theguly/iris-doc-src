@@ -2,6 +2,50 @@
 
 For upgrades instructions, please see the [Upgrades page](/operations/upgrades). 
 
+## [v2.2.1](https://github.com/dfir-iris/iris-web/releases/tag/v2.2.1) <small>_ May 24, 2023 _</small>
+## What's Changed
+
+**Note 1**: This version contains a security fix for iris-web (see [CVE-2023-30615](/security-advisories/#cve-2021-32737-may-24-2023))    
+**Note 2**: `on_postload_case_info_update` hook has been renamed to `on_postload_case_update` 
+
+**Added**
+
+* Add newly created users after a LDAP authentication to group Analysts by @c8y3 in [#247](https://github.com/dfir-iris/iris-web/pull/247)
+
+**Fixed**
+
+* Security fix of CVE-2023-30615 - [GHSA-gc6j-6276-2m49](https://github.com/dfir-iris/iris-web/security/advisories/GHSA-gc6j-6276-2m49) impacting iris-web < v2.2.1
+* Deletion of cases with assigned tasks 
+* Merge of multiple alerts 
+* Import of IOCs and Assets in case multiple alerts are merged 
+
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v2.2.0...v2.2.1) 
+
+## [v2.2.0](https://github.com/dfir-iris/iris-web/releases/tag/v2.2.0) <small>_ May 22, 2023 _</small>
+### What's Changed
+**Added**   
+
+* Basic csv events file import (with default options) by @realsec in [#240](https://github.com/dfir-iris/iris-web/pull/240)
+* New endpoints to search for manageable objects such as assets types etc, 
+* New search by asset IDs, IOC IDs and events IDs in the timeline
+
+**Fixes**   
+
+* Some configuration checks when LDAP and automatic user creation are set by @c8y3 in [#246](https://github.com/dfir-iris/iris-web/pull/246)
+* Ensure database connectivity before trying to create tables by @weslambert in [#248](https://github.com/dfir-iris/iris-web/pull/248)
+* Merge of multiple alerts in one case not merging the IOCs and assets
+* Bug allowing to add an asset to a timeline not belonging to the same case 
+* UI bug fixes
+
+
+**New Contributors**   
+
+* @realsec made their first contribution in [#240](https://github.com/dfir-iris/iris-web/pull/240)
+* @weslambert made their first contribution in [#248](https://github.com/dfir-iris/iris-web/pull/248)
+
+[Full Changelog]https://github.com/dfir-iris/iris-web/compare/v2.1.0...v2.2.0)
+
 
 ## [v2.1.0](https://github.com/dfir-iris/iris-web/releases/tag/v2.1.0) <small>_ May 15, 2023 _</small> 
 **If you are using custom SSL certificates, please read the [upgrade instructions](https://docs.dfir-iris.org/operations/upgrades/#v210) when upgrading from previous versions.**  

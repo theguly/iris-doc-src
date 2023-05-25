@@ -51,7 +51,9 @@ To build and run IRIS, follow these steps:
     ```
     cp .env.model .env
     ```
-    You can optionnaly configure the environment file as specified in the [configuration section](operations/configuration.md). 
+
+    !!! warning "Warning"
+        The default configuration is suitable for testing only. To configure IRIS for production, see the [configuration section](operations/configuration.md). 
 
 4. Build the Docker containers:
 
@@ -84,7 +86,7 @@ Each service can be built independently, which is useful when developing. In thi
 
 ![IRIS Structure](/_static/iris_structure.png){ align=center }
 
-## Optional configuration
+## Additional configuration
 
 Please see [configuration](operations/configuration.md) for more details.
 

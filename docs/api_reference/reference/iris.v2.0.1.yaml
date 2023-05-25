@@ -3755,7 +3755,7 @@ paths:
                     message: ''
                     status: success
       operationId: get-case-timeline-get-filter
-      description: 'Fetch all the events of the timeline. '
+      description: 'The endpoint is deprecated. Use `case/timeline/advanced-filter`. '
       parameters:
         - schema:
             type: integer
@@ -3765,6 +3765,7 @@ paths:
           required: true
       security:
         - Bearer <bearer>: []
+      deprecated: true
     parameters: []
   /case/timeline/state:
     get:

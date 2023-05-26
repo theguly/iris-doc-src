@@ -25,7 +25,7 @@ Once `Save` is clicked, the task is created.
 
 ## Update a task
 
-Task metadata can be updated by clicking on the task title in the `Case` > `Tasks` menu. A popup appears and allows to change required and non-required fields.
+Task metadata can be updated by clicking on the task title in the `Case` > `Tasks` table. A popup appears and allows to change required and non-required fields.
 
 ![Tasks](/_static/tasks/update_task.png){ align=center }
 

@@ -21,11 +21,11 @@ The following information is optional:
 
 ![IOCS](/_static/iocs/create_ioc2.png){ align=center }
 
-Once `Save` is clicked, the task is created.
+Once `Save` is clicked, the ioc is created.
 
 ## Update an IoC
 
-IoC object data can be updated by clicking on the IoC value in the `Case` > `IOC` menu. A popup appears and allows to change required and non-required fields.
+IoC object data can be updated by clicking on the IoC value in the `Case` > `IOC` table. A popup appears and allows to change required and non-required fields.
 
 ![IOCS](/_static/iocs/update_ioc.png){ align=center }
 
@@ -37,15 +37,16 @@ IoC objects can be enriched in order to add valuable information to it.
 
 ### Comment an IoC
 
-To comment an IoC, one can right click on it, in the `Case` > `IOC` menu, and select `Comment`. A new pop-up appears and allows to leave comments. This is also achievable by clicking on the IoC value in the `Case` > `IOC` menu, and by clicking on the `Comment` button.
+To comment an IoC, one can right click on it, in the `Case` > `IOC` menu, and select `Comment`. A new pop-up appears and allows to leave comments. This is also achievable by clicking on the IoC value in the `Case` > `IOC` table, and by clicking on the `Comment` button.
 
 ![IOCS](/_static/iocs/comment_ioc.png){ align=center }
 
 ### Launch a module on an IoC
 
-!!! info "To have more information about modules, see the `Modules` section."
+!!! info "To have more information about modules, see the [Modules](/docs/operations/modules/) section."
 
-A set of modules could be launched to enrich IoCs. To do so, one can either right click on the IoC , in the `Case` > `IOC` menu, and select the module his/her choice. This is also achievable by clicking on the IoC value in the `Case` > `IOC` menu, and by clicking on `Option` button, and selecting the desired module.
+A set of modules can be launched to enrich IoCs. To do so, one can right click on the IoC , in the `Case` > `IOC` table, and select the module of choice.    
+This is also achievable by clicking on the IoC value in the `Case` > `IOC` table, by clicking the `Option` button, and selecting the desired module.
 
 ![IOCS](/_static/iocs/launch_module_ioc.png){ align=center }
 
@@ -57,6 +58,9 @@ The results of the module will appear in newly created tabs, in the IoC details.
 
 !!! warning  "This will permanently delete the IoC and its attributes"
 
-To delete an issue, one could either right click on the IoC, and select `Delete`, or click on the IoC value, and click on the `Delete` button.
+To delete an IoC, one could either right click on the IoC, and select `Delete`, or click on the IoC value, and click on the `Delete` button.
 
 ![IOCS](/_static/iocs/delete_ioc.png){ align=center }
+
+
+!!! note "The IOC is only unlinked from the case if it references other cases"

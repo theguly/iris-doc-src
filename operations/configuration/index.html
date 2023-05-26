@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://dfir-iris.org/operations/configuration/">
       
       
-        <link rel="prev" href="../cases/notes/">
+        <link rel="prev" href="../cases/tasks/">
       
       
         <link rel="next" href="../case_templates/">
@@ -453,6 +453,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
@@ -487,8 +491,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../cases/iocs/" class="md-nav__link">
+        IOCs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../cases/notes/" class="md-nav__link">
         Notes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cases/tasks/" class="md-nav__link">
+        Tasks
       </a>
     </li>
   
@@ -1541,7 +1573,7 @@ To use your own certificate, you need to set the following environment variables
 <td align="center"><code>IRIS_SECRET_KEY</code></td>
 <td>IRIS</td>
 <td>No</td>
-<td>Secret key used tp secure sessions - needs to be random</td>
+<td>Secret key used to secure sessions - needs to be random</td>
 </tr>
 <tr>
 <td align="center"><code>IRIS_SECURITY_PASSWORD_SALT</code></td>
@@ -1631,7 +1663,7 @@ To use your own certificate, you need to set the following environment variables
 <td align="center"><code>IRIS_ADM_PASSWORD</code></td>
 <td>Auth</td>
 <td>Yes</td>
-<td>Set to use as initial password of the administrator account. Only works for the very first run of IRIS. Needs to match the passowrd policy</td>
+<td>Set to use as initial password of the administrator account. Only works for the very first run of IRIS. Needs to match the password policy</td>
 </tr>
 <tr>
 <td align="center"><code>IRIS_ADM_API_KEY</code></td>
@@ -1715,7 +1747,7 @@ To use your own certificate, you need to set the following environment variables
 <td align="center"><code>LDAP_AUTHENTICATION_TYPE</code></td>
 <td>Auth</td>
 <td>Yes</td>
-<td>Simple, SASL or NTML</td>
+<td>Simple, SASL or NTLM</td>
 </tr>
 <tr>
 <td align="center"><code>LDAP_CUSTOM_TLS_CONFIG</code></td>
@@ -1731,7 +1763,7 @@ To use your own certificate, you need to set the following environment variables
   <small>
     
       Last update:
-      2023-05-16
+      2023-05-25
     
   </small>
 </div>

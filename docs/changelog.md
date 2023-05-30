@@ -2,6 +2,21 @@
 
 For upgrades instructions, please see the [Upgrades page](/operations/upgrades). 
 
+
+## [v2.2.2](https://github.com/dfir-iris/iris-web/releases/tag/v2.2.2) <small>_ May 30, 2023 _</small>
+### Added
+
+- Possibility to pivot on assets and IOCs from the alerts graph
+
+### Fixed
+- Delete character escaping for passwords by @juadde in [#253](https://github.com/dfir-iris/iris-web/pull/253)
+- Case template of tasks without tags 
+- Shortening of case names during updates 
+- Bad handling of certain requests without CID
+- Deletion of assets related to alerts once merge into a case 
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v2.2.1...v2.2.2)
+
 ## [v2.2.1](https://github.com/dfir-iris/iris-web/releases/tag/v2.2.1) <small>_ May 24, 2023 _</small>
 ## What's Changed
 
@@ -44,7 +59,7 @@ For upgrades instructions, please see the [Upgrades page](/operations/upgrades).
 * @realsec made their first contribution in [#240](https://github.com/dfir-iris/iris-web/pull/240)
 * @weslambert made their first contribution in [#248](https://github.com/dfir-iris/iris-web/pull/248)
 
-[Full Changelog]https://github.com/dfir-iris/iris-web/compare/v2.1.0...v2.2.0)
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v2.1.0...v2.2.0)
 
 
 ## [v2.1.0](https://github.com/dfir-iris/iris-web/releases/tag/v2.1.0) <small>_ May 15, 2023 _</small> 

@@ -63,6 +63,14 @@ Hook name| Description|
 |on_postload_case_create|Triggered on case creation, after commit in DB|
 |on_preload_case_delete|Triggered on case deletion, before commit in DB|
 |on_postload_case_delete|Triggered on case deletion, after commit in DB|
+|on_postload_case_update|Triggered on case update, before commit in DB|
+|on_manual_trigger_case|Triggered upon user action|
+|on_postload_alert_create| Triggered on alert creation, after commit in DB|
+|on_postload_alert_update| Triggered on alert update, after commit in DB|
+|on_postload_alert_delete| Triggered on alert deletion, after commit in DB|
+|on_postload_alert_escalate| Triggered on alert escalation, after commit in DB|
+|on_postload_alert_merge| Triggered on alert merge, after commit in DB|
+|on_postload_alert_unmerge| Triggered on alert unmerge, after commit in DB|
 |on_preload_asset_create|Triggered on asset creation, before commit in DB|
 |on_postload_asset_create|Triggered on asset creation, after commit in DB|
 |on_preload_asset_update|Triggered on asset update, before commit in DB|
@@ -117,3 +125,24 @@ Hook name| Description|
 |on_postload_report_create|Triggered on report creation, before download of the document|
 |on_preload_activities_report_create|Triggered on activities report creation, before generation in DB|
 |on_postload_activities_report_create|Triggered on activities report creation, before download of the document|
+|on_postload_asset_commented| Triggered on asset comment, after commit in DB|
+|on_postload_asset_comment_update| Triggered on asset comment update, after commit in DB|
+|on_postload_asset_comment_delete| Triggered on asset comment deletion, after commit in DB|
+|on_postload_evidence_commented| Triggered on evidence comment, after commit in DB|
+|on_postload_evidence_comment_update| Triggered on evidence comment update, after commit in DB|
+|on_postload_evidence_comment_delete| Triggered on evidence comment deletion, after commit in DB|
+|on_postload_task_commented| Triggered on task comment, after commit in DB| 
+|on_postload_task_comment_update| Triggered on task comment update, after commit in DB|
+|on_postload_task_comment_delete| Triggered on task comment deletion, after commit in DB|
+|on_postload_ioc_commented| Triggered on ioc comment, after commit in DB|
+|on_postload_ioc_comment_update| Triggered on ioc comment update, after commit in DB|
+|on_postload_ioc_comment_delete| Triggered on ioc comment deletion, after commit in DB|
+|on_postload_event_commented| Triggered on event comment, after commit in DB|
+|on_postload_event_comment_update| Triggered on event comment update, after commit in DB|
+|on_postload_event_comment_delete| Triggered on event comment deletion, after commit in DB|
+|on_postload_note_commented| Triggered on note comment, after commit in DB|
+|on_postload_note_comment_update| Triggered on note comment update, after commit in DB|
+|on_postload_note_comment_delete| Triggered on note comment deletion, after commit in DB|
+|on_postload_alert_commented| Triggered on alert comment, after commit in DB|
+|on_postload_alert_comment_update| Triggered on alert comment update, after commit in DB|
+|on_postload_alert_comment_delete| Triggered on alert comment deletion, after commit in DB|

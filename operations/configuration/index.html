@@ -1474,8 +1474,8 @@ The set of the following environment variables has no effect once the administra
 <p>IRIS is configured to use a self-signed certificate by default. This is suitable for testing only. <br />
 To use your own certificate, you need to set the following environment variables:  </p>
 <ul>
-<li><code>KEY_FILENAME</code>: The filename of the key file in the <code>certificates/web-_certificates</code> directory at the root of the IRIS directory</li>
-<li><code>CERT_FILENAME</code>: The filename of the certificate file in the <code>certificates/web-_certificates</code> directory at the root of the IRIS directory</li>
+<li><code>KEY_FILENAME</code>: The filename of the key file in the <code>certificates/web_certificates</code> directory at the root of the IRIS directory</li>
+<li><code>CERT_FILENAME</code>: The filename of the certificate file in the <code>certificates/web_certificates</code> directory at the root of the IRIS directory</li>
 </ul>
 <p>Once the changes are done, nginx docker container need to be rebuilt with the following command:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker-compose<span class="w"> </span>stop<span class="w"> </span>nginx
@@ -1598,6 +1598,18 @@ To use your own certificate, you need to set the following environment variables
 <td>IRIS</td>
 <td>No</td>
 <td>Name of the company / organisation. Used on the UI</td>
+</tr>
+<tr>
+<td align="center"><code>IRIS_LOGIN_BANNER_TEXT</code></td>
+<td>IRIS</td>
+<td>No</td>
+<td>Text displayed on the login page</td>
+</tr>
+<tr>
+<td align="center"><code>IRIS_LOGIN_PTFM_CONTACT</code></td>
+<td>IRIS</td>
+<td>No</td>
+<td>Contact information displayed on the login page</td>
 </tr>
 <tr>
 <td align="center"><code>IRIS_UPLOADED_PATH</code></td>

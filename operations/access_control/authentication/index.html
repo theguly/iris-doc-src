@@ -1545,7 +1545,7 @@ Passwords are stored salted and hashed, it is thus not possible to retrieve them
 <li>Copy the certificate to the <code>certificates/ldap</code> folder of the IRIS root directory.</li>
 <li>Set the <code>LDAP_VALIDATE_CERTIFICATE</code> environment variable to <code>True</code> in the <code>.env</code> file.</li>
 <li>Set the <code>LDAP_CUSTOM_TLS_CONFIG</code> environment variable to <code>True</code> in the <code>.env</code> file.</li>
-<li>Set the <code>LDAP_CA_CERTIFICATE</code> environment variable to the TLS version used by the LDAP server in the <code>.env</code> file.</li>
+<li>Set the <code>LDAP_CA_CERTIFICATE</code> environment variable certificate path used by the LDAP server in the <code>.env</code> file.</li>
 </ol>
 <p>If the LDAP server requires a client certificate, it is possible to add it to the trusted certificates of the IRIS WebApp docker. </p>
 <ol>

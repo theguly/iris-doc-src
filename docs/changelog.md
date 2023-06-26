@@ -2,13 +2,38 @@
 
 For upgrades instructions, please see the [Upgrades page](/operations/upgrades). 
 
+## [v2.2.3](https://github.com/dfir-iris/iris-web/releases/tag/v2.2.3) <small>_ June 19, 2023 _</small>
+### What's Changed
+
+
+**Added**
+
+- Possibility to use LDAP and local auth as fallback 
+- Possibility to add multiple IOCs at once from the UI 
+- Possibility to add multiple assets at once from the UI 
+- Support for hooks and module calls in alerts 
+- URL redirection after login 
+
+**Fixed**
+
+- Similarities in alerts when no assets are provided
+- Assertion of data in marshmallow
+- MD editor new lines handling
+- Unicode in datastore
+- Alerts share links 
+- Modules info when registering a module
+- UI fixes
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v2.2.2...v2.2.3)
 
 ## [v2.2.2](https://github.com/dfir-iris/iris-web/releases/tag/v2.2.2) <small>_ May 30, 2023 _</small>
-### Added
+### What's Changed
+
+**Added**
 
 - Possibility to pivot on assets and IOCs from the alerts graph
 
-### Fixed
+**Fixed**
 - Delete character escaping for passwords by @juadde in [#253](https://github.com/dfir-iris/iris-web/pull/253)
 - Case template of tasks without tags 
 - Shortening of case names during updates 

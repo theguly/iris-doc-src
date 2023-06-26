@@ -138,8 +138,8 @@ If the LDAP server uses a self-signed certificate, it is possible to add it to t
 
 1. Copy the certificate to the `certificates/ldap` folder of the IRIS root directory.
 2. Set the `LDAP_VALIDATE_CERTIFICATE` environment variable to `True` in the `.env` file.
-3. Set the `LDAP_CUSTOM_TLS_CONFIG` environment variable to `True` in the `.env` file.
-4. Set the `LDAP_CA_CERTIFICATE` environment variable to the TLS version used by the LDAP server in the `.env` file.
+3. Set the `LDAP_CUSTOM_TLS_CONFIG` environment variable to `False` in the `.env` file.
+4. Set the `LDAP_CA_CERTIFICATE` environment variable certificate path used by the LDAP server in the `.env` file.
 
 If the LDAP server requires a client certificate, it is possible to add it to the trusted certificates of the IRIS WebApp docker. 
 

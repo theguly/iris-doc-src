@@ -53,7 +53,7 @@ docker-compose restart app
 ```
 
 #### Setting up LDAP for the first runtime of IRIS 
-To set up LDAP without having run IRIS priorly, and as the app needs the accounts to be created first before using LDAP, one have to set the `IRIS_ADM_EMAIL` environment with the LDAP Email of the administrator user.  
+To set up LDAP without having run IRIS priorly, and as the app needs the accounts to be created first before using LDAP, one has to set the `IRIS_ADM_EMAIL` environment with the LDAP Email of the administrator user.  
 
 ```bash title="Example of LDAP configuration for first run"
 IRIS_AUTHENTICATION_TYPE=ldap

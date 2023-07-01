@@ -15,7 +15,7 @@ All fields of the form are required. All information can be changed after the cr
 - **Full Name** : Name of the user to add 
 - **Login** : Username used to login in IRIS. Has to be unique on the instance 
 - **Email** : Email of the user to add. Has to be unique on the instance  
-- **Password**: Password respecting the policy defined in `Advanced` > `Server settings`. The password also has to be set when using LDAP. It is however not used for the authentication. A random password can be set when using LDAP. No password is required when the user is set a service account.  
+- **Password**: Password respecting the policy defined in `Advanced` > `Server settings`. The password also has to be set when using LDAP, it is then however not used for the authentication. A random password can be set when using LDAP. No password is required when the user is set as a service account.  
 - **Is service account** : If the user is a server account, check this box. Server accounts are used to connect to the API. They cannot login to the UI. 
 
 !!! Warning "Service accounts"
@@ -25,7 +25,7 @@ All fields of the form are required. All information can be changed after the cr
 ![Create new user](../../_static/access_control/add_user1.png) 
 
 ## Editing a user 
-A user can be edited by clicking on its name or ID in `Advanced` > `Access Control` > `Users`.  A window opens and display the user's information. Tabs at the top allows to configure multiple settings related to the user.   
+A user can be edited by clicking on its name or ID in `Advanced` > `Access Control` > `Users`.  A window opens and display the user's information. Tabs at the top allow to configure multiple settings related to the user.   
 
 
 ## Setting permissions
@@ -37,7 +37,7 @@ Groups can be set by clicking on the `Groups` tab of the user's window and then 
 
 ![Manage user](../../_static/access_control/add_user2.png) 
 
-A new window appear with the possibility to select the groups the user should belong to. 
+A new window appears with the possibility to select the groups the user should belong to. 
 ![Manage user](../../_static/access_control/add_user3.png) 
 
 After saving, the permissions of the user are updated. This can be verified in the `Permissions` tab.   
@@ -49,7 +49,7 @@ To set the access of a user on a case, click on the `Cases access` tab of the us
 
 ![Manage user](../../_static/access_control/add_user5.png) 
 
-As for the Groups, a selector appear and allows to select one or multiple cases and the access to associate.       
+As for the Groups, a selector appears and allows to select one or multiple cases and the access to associate.       
 ![Manage user](../../_static/access_control/add_user6.png) 
 
 !!! info 

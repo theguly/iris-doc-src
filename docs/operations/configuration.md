@@ -37,8 +37,8 @@ If those variables are not set, random ones are generated during the very first 
 IRIS is configured to use a self-signed certificate by default. This is suitable for testing only.   
 To use your own certificate, you need to set the following environment variables:  
 
-- `KEY_FILENAME`: The filename of the key file in the `certificates/web-_certificates` directory at the root of the IRIS directory
-- `CERT_FILENAME`: The filename of the certificate file in the `certificates/web-_certificates` directory at the root of the IRIS directory
+- `KEY_FILENAME`: The filename of the key file in the `certificates/web_certificates` directory at the root of the IRIS directory
+- `CERT_FILENAME`: The filename of the certificate file in the `certificates/web_certificates` directory at the root of the IRIS directory
 
 Once the changes are done, nginx docker container need to be rebuilt with the following command:
 
@@ -74,6 +74,8 @@ These environment variables are availabled to be set.
 | `IRIS_UPSTREAM_SERVER` | IRIS | No | WebApp upstream server - used to configure nginx reverse proxy | 
 | `IRIS_UPSTREAM_PORT` | IRIS | No | WebApp upstream server port - used to configure nginx reverse proxy | 
 | `IRIS_ORGANISATION_NAME`| IRIS | No | Name of the company / organisation. Used on the UI | 
+| `IRIS_LOGIN_BANNER_TEXT`| IRIS | No | Text displayed on the login page |
+| `IRIS_LOGIN_PTFM_CONTACT`| IRIS | No | Contact information displayed on the login page |
 | `IRIS_UPLOADED_PATH` | IRIS | No | Path to store uploaded data. | 
 | `IRIS_BACKUP_PATH` | IRIS | No | Path to store backup files. | 
 | `IRIS_TEMPLATES_PATH` | IRIS | No | Path of the templates | 

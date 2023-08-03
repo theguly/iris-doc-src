@@ -2,6 +2,57 @@
 
 For upgrades instructions, please see the [Upgrades page](/operations/upgrades). 
 
+## [v2.3.2](https://github.com/dfir-iris/iris-web/releases/tag/v2.3.2) <small>_ August 2, 2023 _</small>
+## What's Changed
+
+**Fixed**
+
+Patches a critical issue corrupting files uploaded to the DataStore via the IOC option or when a password is set 
+
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v2.3.1...v2.3.2)
+
+## [v2.3.1](https://github.com/dfir-iris/iris-web/releases/tag/v2.3.1) <small>_ July 23, 2023 _</small>
+### What's Changed
+
+**Improved**
+
+- Overview page and quick view layout
+- Auto assignment of alerts when not assigned 
+- Possibility to filter tags by clicking on them in alerts
+
+**Fixed**
+
+- Call of modules when done from the modals
+- UI
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v2.3.0...v2.3.1)
+
+
+## [v2.3.0](https://github.com/dfir-iris/iris-web/releases/tag/v2.3.0) <small>_ July 09, 2023 _</small>
+### What's Changed
+
+**Added**
+
+- Collaborative editor in notes 
+- Possibility to add case peer-reviews 
+- Alerts resolution status
+- Auto closing of alerts with resolution for linked alerts
+- New webhook module
+- Enhanced overview page
+- Attributed open cases in dashboard
+- Assets and IOCs multi-additions from the UI
+- New UI design
+
+**Fixed**
+
+- Password change for users
+- Description breaking in alerts and events
+- Missing icons in MD rendering for know links
+- Alerts rendering
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v2.2.3...v2.3.0)
+
 ## [v2.2.3](https://github.com/dfir-iris/iris-web/releases/tag/v2.2.3) <small>_ June 19, 2023 _</small>
 ### What's Changed
 

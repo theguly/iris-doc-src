@@ -1,10 +1,8 @@
 # Module IRIS Webhooks
 
-!!! tip "Note"
-    This module is not yet bundled with IRIS and is in beta. It will be included in next versions of IRIS but can already be installed manually. 
 
 
-This module offers webhooks support for IRIS. It can be configured to send almost any events to to an external service supporting webhooks, such as Discord, Slack or Microsoft Teams. 
+This module offers webhooks support for IRIS. It can be configured to send almost any events to to an external service supporting webhooks, such as Discord, Slack or Microsoft Teams. It can also be used with automation tools such as Tines and Shufle to further automate IRIS.  
 The source code is available [here](https://github.com/dfir-iris/iris-webhooks-module). 
 
 ## Features 
@@ -17,49 +15,6 @@ The source code is available [here](https://github.com/dfir-iris/iris-webhooks-m
 
 ![Webhook example](../../../_static/iwbh_example.png)
 
-## Installation 
-
-!!! check "Requires IRIS >= 1.4.0"
-
-### Online
-The module is published on Pypi and can be directly installed through pip on the app docker container.  
-
-```bash title="Install the pip package on the dockers"
-# Install on IrisWebApp
-docker exec -ti <iris_app_instance> /bin/bash
-pip3 install iris-webhooks-module
-
-# Install on the worker
-docker exec -ti <iris_worker_instance> /bin/bash
-pip3 install iris-webhooks-module
-```
-
-Then [register the module](#register-the-module-in-iris). 
-
-### Offline
-If your server is not connected to internet, you can still do an offline install. 
-
-1. Download the wheel from Pypi : [https://pypi.org/project/iris-webhooks-module/#files](https://pypi.org/project/iris-webhooks-module/#files)
-2. Copy the wheel to the Iris Web App docker : `docker cp iris_webhooks_module-XXXX-py3-none-any.whl <iris_app_instance>:/iriswebapp/dependencies/` 
-3. Install the module 
-```bash
-docker exec -ti <iris_app_instance> /bin/bash   
-pip3 install /iriswebapp/dependencies/iris_webhooks_module-XXXX-py3-none-any.whl
-```
-4. Do the same for the worker 
-
-Then [register the module](#register-the-module-in-iris). 
-
-### Register the module in IRIS
-Then go to the modules management in `Advanced > Modules`. Click on the `+` on the top right.   
-
-![Add module](../../../_static/iwbh_add_module.png)
-
-In `Module name`, input `iris_webhooks_module` and validate. 
-
-![Add module](../../../_static/iwbh_add_module-1.png)
-
-The module should be imported and can now be configured. 
 
 ## Configuration 
 The expected configuration is a JSON file, following the structure : 
@@ -73,12 +28,14 @@ The expected configuration is a JSON file, following the structure :
             "active": false,
             "trigger_on": [<LIST OF HOOKS TO LISTEN TO>],
             "request_url": "<URL OF THE WEBHOOK>",
+            "use_rendering": true,
             "request_rendering": "<RENDERING TYPE OF THE MESSAGE>", 
             "request_body": {<BODY OF THE REQUET TO SEND>}
         },
         {
             "name": "Another hook",
             "active": false,
+            "use_rendering": false,
             "trigger_on": [<LIST OF HOOKS TO LISTEN TO>],
             "request_url": "<URL OF THE WEBHOOK 2>",
             "request_rendering": "<RENDERING TYPE OF THE MESSAGE>", 
@@ -102,16 +59,31 @@ For each webhook:
         - `markdown`: Format the message as markdown. This can be used with Discord for instance 
         - `markdown_slack`: Format the message as markdown, with some specificities of Slack. 
         - `html`: Format the message as HTML. 
-    - `request_body`: The request body to be sent to the webhook receiver. Two markups can be used to set the content of the webhook. The request has to be in JSON format and is sent as-is after replacements of the markups. 
+    - `request_body`: The request body to be sent to the webhook receiver. If `use_rendering` is true, then two markups can be used to set the content of the webhook. The request has to be in JSON format and is sent as-is after replacements of the markups. 
         - `%TITLE%`: Is replaced with name of the case and event title, e.g "[#54 - Ransomware] IOC created"
         - `%DESCRIPTION%`: Description of the event, e.g "UserX created IOC mimi.exe in case #54"
+    If `use_rendering` is false, then a raw json representation of the object related to the hook is available. See examples for more details.  
+    - `manual_trigger_name`: The name of the manual trigger in the UI. This should be set if the registered hook is of type `on_manual_trigger`. This name is displayed as a new menu option in the UI for the target object.  
+    - `use_rendering`: Whether the data should be formated in Markdown or not. If set to false, then the request body field can use the raw data such as `assets`. This will result in a request with the body containing the assets JSON representation related to the call of the hook. See examples for more details. 
 
 ### Checking IRIS hooks registration
 Each time a webhook is added, the module subscribes to the specified hooks. After saving the configuration, one can check the registration was successful by filtering the `Registered hooks table` (don't forget to refresh the table).  
 
 ![Hooks registration](../../../_static/iwbh_hooks_registration.png)
 
-### Example
+### Examples without rendering
+The following example is a combination of webhooks that can be used to further automate IRIS. It uses Tines as an example, but this is reproductible with any automation tool that can sent HTTP requests. A Tines story is created and is set up to receive a webhook, such as `https://anothertest.tines.io/webhook/xxxx/xxxxx`.   
+In this scenario, two IRIS webhooks are added: 
+
+- One to add an option to publish an IOC on MISP from the UI. This is an `on_manual_trigger_ioc_update` hook. 
+- Another one to send a message on Mattermost each time a new case is created. This is an `on_postload_case_create` hook. 
+
+We use the same Tines story and thus Tines webhook for both and dispatch the incoming request depending on its parameters. 
+
+# TODO 
+
+
+### Examples using rendering
 
 The following is an example of combined webhooks configuration. It can be directly imported in the module with the import feature. 
 **Please note that after import, the configuration should be opened and change to match your URL webhook receiver.**
@@ -195,4 +167,3 @@ As any IRIS module, IrisWebhooks is logged into DIM Tasks. You can check the sta
 
 - The module is in beta and will improve over time. More customization should be brought on the messages. 
 - For a complete experience, some features are missing on the server side - such as case info and user info passed to modules. They will be added in the next release and this module will be updated. For instance, IOC events do not hold case info, assets update events do not hold the user info who made the change.  
-- Deletions hooks are not working as expected in IRIS v1.4.5 and the module thus fails to notify upon objects deletions. This will be fix in the next release of IRIS.   

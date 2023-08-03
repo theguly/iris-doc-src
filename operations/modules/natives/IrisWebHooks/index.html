@@ -777,40 +777,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
-  </a>
-  
-    <nav class="md-nav" aria-label="Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#online" class="md-nav__link">
-    Online
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#offline" class="md-nav__link">
-    Offline
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#register-the-module-in-iris" class="md-nav__link">
-    Register the module in IRIS
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#configuration" class="md-nav__link">
     Configuration
   </a>
@@ -826,11 +792,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
+  <a href="#examples-using-rendering" class="md-nav__link">
+    Examples using rendering
   </a>
   
-    <nav class="md-nav" aria-label="Example">
+    <nav class="md-nav" aria-label="Examples using rendering">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1373,40 +1339,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
-  </a>
-  
-    <nav class="md-nav" aria-label="Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#online" class="md-nav__link">
-    Online
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#offline" class="md-nav__link">
-    Offline
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#register-the-module-in-iris" class="md-nav__link">
-    Register the module in IRIS
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#configuration" class="md-nav__link">
     Configuration
   </a>
@@ -1422,11 +1354,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
+  <a href="#examples-using-rendering" class="md-nav__link">
+    Examples using rendering
   </a>
   
-    <nav class="md-nav" aria-label="Example">
+    <nav class="md-nav" aria-label="Examples using rendering">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1484,11 +1416,7 @@
 
 
 <h1 id="module-iris-webhooks">Module IRIS Webhooks</h1>
-<div class="admonition tip">
-<p class="admonition-title">Note</p>
-<p>This module is not yet bundled with IRIS and is in beta. It will be included in next versions of IRIS but can already be installed manually. </p>
-</div>
-<p>This module offers webhooks support for IRIS. It can be configured to send almost any events to to an external service supporting webhooks, such as Discord, Slack or Microsoft Teams. 
+<p>This module offers webhooks support for IRIS. It can be configured to send almost any events to to an external service supporting webhooks, such as Discord, Slack or Microsoft Teams. It can also be used with automation tools such as Tines and Shufle to further automate IRIS.<br />
 The source code is available <a href="https://github.com/dfir-iris/iris-webhooks-module">here</a>. </p>
 <h2 id="features">Features</h2>
 <ul>
@@ -1498,62 +1426,31 @@ The source code is available <a href="https://github.com/dfir-iris/iris-webhooks
 </ul>
 <p><strong>Slack Example</strong>  </p>
 <p><img alt="Webhook example" src="../../../../_static/iwbh_example.png" /></p>
-<h2 id="installation">Installation</h2>
-<div class="admonition check">
-<p class="admonition-title">Requires IRIS &gt;= 1.4.0</p>
-</div>
-<h3 id="online">Online</h3>
-<p>The module is published on Pypi and can be directly installed through pip on the app docker container.  </p>
-<div class="highlight"><span class="filename">Install the pip package on the dockers</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Install on IrisWebApp</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-ti<span class="w"> </span>&lt;iris_app_instance&gt;<span class="w"> </span>/bin/bash
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>pip3<span class="w"> </span>install<span class="w"> </span>iris-webhooks-module
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Install on the worker</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-ti<span class="w"> </span>&lt;iris_worker_instance&gt;<span class="w"> </span>/bin/bash
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>pip3<span class="w"> </span>install<span class="w"> </span>iris-webhooks-module
-</code></pre></div>
-<p>Then <a href="#register-the-module-in-iris">register the module</a>. </p>
-<h3 id="offline">Offline</h3>
-<p>If your server is not connected to internet, you can still do an offline install. </p>
-<ol>
-<li>Download the wheel from Pypi : <a href="https://pypi.org/project/iris-webhooks-module/#files">https://pypi.org/project/iris-webhooks-module/#files</a></li>
-<li>Copy the wheel to the Iris Web App docker : <code>docker cp iris_webhooks_module-XXXX-py3-none-any.whl &lt;iris_app_instance&gt;:/iriswebapp/dependencies/</code> </li>
-<li>Install the module 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-ti<span class="w"> </span>&lt;iris_app_instance&gt;<span class="w"> </span>/bin/bash<span class="w">   </span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>pip3<span class="w"> </span>install<span class="w"> </span>/iriswebapp/dependencies/iris_webhooks_module-XXXX-py3-none-any.whl
-</code></pre></div></li>
-<li>Do the same for the worker </li>
-</ol>
-<p>Then <a href="#register-the-module-in-iris">register the module</a>. </p>
-<h3 id="register-the-module-in-iris">Register the module in IRIS</h3>
-<p>Then go to the modules management in <code>Advanced &gt; Modules</code>. Click on the <code>+</code> on the top right.   </p>
-<p><img alt="Add module" src="../../../../_static/iwbh_add_module.png" /></p>
-<p>In <code>Module name</code>, input <code>iris_webhooks_module</code> and validate. </p>
-<p><img alt="Add module" src="../../../../_static/iwbh_add_module-1.png" /></p>
-<p>The module should be imported and can now be configured. </p>
 <h2 id="configuration">Configuration</h2>
 <p>The expected configuration is a JSON file, following the structure : </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span><span class="w">   </span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;instance_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;IRIS_INSTANCE_URL&gt;&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;webhooks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Name of the webhook for internal reference only&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">            </span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">            </span><span class="nt">&quot;trigger_on&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">&lt;LIST</span><span class="w"> </span><span class="err">OF</span><span class="w"> </span><span class="err">HOOKS</span><span class="w"> </span><span class="err">TO</span><span class="w"> </span><span class="err">LISTEN</span><span class="w"> </span><span class="err">TO&gt;</span><span class="p">],</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">            </span><span class="nt">&quot;request_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;URL OF THE WEBHOOK&gt;&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">            </span><span class="nt">&quot;request_rendering&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;RENDERING TYPE OF THE MESSAGE&gt;&quot;</span><span class="p">,</span><span class="w"> </span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">            </span><span class="nt">&quot;request_body&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">&lt;BODY</span><span class="w"> </span><span class="err">OF</span><span class="w"> </span><span class="err">THE</span><span class="w"> </span><span class="err">REQUET</span><span class="w"> </span><span class="err">TO</span><span class="w"> </span><span class="err">SEND&gt;</span><span class="p">}</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="p">},</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Another hook&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">            </span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">            </span><span class="nt">&quot;trigger_on&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">&lt;LIST</span><span class="w"> </span><span class="err">OF</span><span class="w"> </span><span class="err">HOOKS</span><span class="w"> </span><span class="err">TO</span><span class="w"> </span><span class="err">LISTEN</span><span class="w"> </span><span class="err">TO&gt;</span><span class="p">],</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">            </span><span class="nt">&quot;request_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;URL OF THE WEBHOOK 2&gt;&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">            </span><span class="nt">&quot;request_rendering&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;RENDERING TYPE OF THE MESSAGE&gt;&quot;</span><span class="p">,</span><span class="w"> </span>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">            </span><span class="nt">&quot;request_body&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">&lt;BODY</span><span class="w"> </span><span class="err">OF</span><span class="w"> </span><span class="err">THE</span><span class="w"> </span><span class="err">REQUEST</span><span class="w"> </span><span class="err">TO</span><span class="w"> </span><span class="err">SEND</span><span class="w"> </span><span class="mi">2</span><span class="err">&gt;</span><span class="p">}</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="p">]</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span><span class="w">   </span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;instance_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;IRIS_INSTANCE_URL&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;webhooks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Name of the webhook for internal reference only&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">            </span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">            </span><span class="nt">&quot;trigger_on&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">&lt;LIST</span><span class="w"> </span><span class="err">OF</span><span class="w"> </span><span class="err">HOOKS</span><span class="w"> </span><span class="err">TO</span><span class="w"> </span><span class="err">LISTEN</span><span class="w"> </span><span class="err">TO&gt;</span><span class="p">],</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">            </span><span class="nt">&quot;request_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;URL OF THE WEBHOOK&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">            </span><span class="nt">&quot;use_rendering&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">            </span><span class="nt">&quot;request_rendering&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;RENDERING TYPE OF THE MESSAGE&gt;&quot;</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">            </span><span class="nt">&quot;request_body&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">&lt;BODY</span><span class="w"> </span><span class="err">OF</span><span class="w"> </span><span class="err">THE</span><span class="w"> </span><span class="err">REQUET</span><span class="w"> </span><span class="err">TO</span><span class="w"> </span><span class="err">SEND&gt;</span><span class="p">}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="p">},</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Another hook&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">            </span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">            </span><span class="nt">&quot;use_rendering&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">            </span><span class="nt">&quot;trigger_on&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">&lt;LIST</span><span class="w"> </span><span class="err">OF</span><span class="w"> </span><span class="err">HOOKS</span><span class="w"> </span><span class="err">TO</span><span class="w"> </span><span class="err">LISTEN</span><span class="w"> </span><span class="err">TO&gt;</span><span class="p">],</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">            </span><span class="nt">&quot;request_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;URL OF THE WEBHOOK 2&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">            </span><span class="nt">&quot;request_rendering&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;RENDERING TYPE OF THE MESSAGE&gt;&quot;</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">            </span><span class="nt">&quot;request_body&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">&lt;BODY</span><span class="w"> </span><span class="err">OF</span><span class="w"> </span><span class="err">THE</span><span class="w"> </span><span class="err">REQUEST</span><span class="w"> </span><span class="err">TO</span><span class="w"> </span><span class="err">SEND</span><span class="w"> </span><span class="mi">2</span><span class="err">&gt;</span><span class="p">}</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="p">]</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="p">}</span>
 </code></pre></div>
 <ul>
 <li><code>instance_url</code>: Base URL of IRIS. This is used to set the links in the messages</li>
@@ -1574,79 +1471,82 @@ For each webhook:<ul>
 <li><code>html</code>: Format the message as HTML. </li>
 </ul>
 </li>
-<li><code>request_body</code>: The request body to be sent to the webhook receiver. Two markups can be used to set the content of the webhook. The request has to be in JSON format and is sent as-is after replacements of the markups. <ul>
+<li><code>request_body</code>: The request body to be sent to the webhook receiver. If <code>use_rendering</code> is true, then two markups can be used to set the content of the webhook. The request has to be in JSON format and is sent as-is after replacements of the markups. <ul>
 <li><code>%TITLE%</code>: Is replaced with name of the case and event title, e.g "[#54 - Ransomware] IOC created"</li>
-<li><code>%DESCRIPTION%</code>: Description of the event, e.g "UserX created IOC mimi.exe in case #54"</li>
+<li><code>%DESCRIPTION%</code>: Description of the event, e.g "UserX created IOC mimi.exe in case #54"
+If <code>use_rendering</code> is false, then a raw json representation of the object related to the hook is available. See examples for more details.  </li>
 </ul>
 </li>
+<li><code>manual_trigger_name</code>: The name of the manual trigger in the UI. This should be set if the registered hook is of type <code>on_manual_trigger</code>. This name is displayed as a new menu option in the UI for the target object.  </li>
+<li><code>use_rendering</code>: Whether the data should be formated in Markdown or not. If set to false, then the request body field can use the raw data such as <code>assets</code>. This will result in a request with the body containing the assets JSON representation related to the call of the hook. See examples for more details. </li>
 </ul>
 </li>
 </ul>
 <h3 id="checking-iris-hooks-registration">Checking IRIS hooks registration</h3>
 <p>Each time a webhook is added, the module subscribes to the specified hooks. After saving the configuration, one can check the registration was successful by filtering the <code>Registered hooks table</code> (don't forget to refresh the table).  </p>
 <p><img alt="Hooks registration" src="../../../../_static/iwbh_hooks_registration.png" /></p>
-<h3 id="example">Example</h3>
+<h3 id="examples-using-rendering">Examples using rendering</h3>
 <p>The following is an example of combined webhooks configuration. It can be directly imported in the module with the import feature. 
 <strong>Please note that after import, the configuration should be opened and change to match your URL webhook receiver.</strong></p>
 <p><a href="../examples_config/IrisWebHooks_configuration_export.json">Download webhooks combined configuration example</a> </p>
 <h4 id="discord">Discord</h4>
-<div class="highlight"><span class="filename">Discord webhook example - selection of events</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span><span class="w">   </span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&quot;instance_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://iris.local&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;webhooks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Discord&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">            </span><span class="nt">&quot;trigger_on&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">                    </span><span class="s2">&quot;on_postload_ioc_create&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">                    </span><span class="s2">&quot;on_postload_ioc_update&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">                    </span><span class="s2">&quot;on_postload_note_create&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">                    </span><span class="s2">&quot;on_postload_note_update&quot;</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">                </span><span class="p">],</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">            </span><span class="nt">&quot;request_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://discord.com/api/webhooks/XXXX/XXXX&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">            </span><span class="nt">&quot;request_rendering&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;markdown&quot;</span><span class="p">,</span><span class="w"> </span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">            </span><span class="nt">&quot;request_body&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">                </span><span class="nt">&quot;embeds&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">                    </span><span class="nt">&quot;description&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;%DESCRIPTION%&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">                    </span><span class="nt">&quot;title&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;%TITLE%&quot;</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">                </span><span class="p">}]</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="p">]</span>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="p">}</span>
+<div class="highlight"><span class="filename">Discord webhook example - selection of events</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span><span class="w">   </span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;instance_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://iris.local&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;webhooks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Discord&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">            </span><span class="nt">&quot;trigger_on&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">                    </span><span class="s2">&quot;on_postload_ioc_create&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">                    </span><span class="s2">&quot;on_postload_ioc_update&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">                    </span><span class="s2">&quot;on_postload_note_create&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">                    </span><span class="s2">&quot;on_postload_note_update&quot;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">                </span><span class="p">],</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">            </span><span class="nt">&quot;request_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://discord.com/api/webhooks/XXXX/XXXX&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">            </span><span class="nt">&quot;request_rendering&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;markdown&quot;</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">            </span><span class="nt">&quot;request_body&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">                </span><span class="nt">&quot;embeds&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">                    </span><span class="nt">&quot;description&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;%DESCRIPTION%&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">                    </span><span class="nt">&quot;title&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;%TITLE%&quot;</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">                </span><span class="p">}]</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="p">]</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="p">}</span>
 </code></pre></div>
 <h4 id="slack">Slack</h4>
-<div class="highlight"><span class="filename">Slack webhook example - all events</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span><span class="w">   </span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&quot;instance_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://iris.local&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;webhooks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Slack&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">            </span><span class="nt">&quot;trigger_on&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">                    </span><span class="s2">&quot;all&quot;</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">                </span><span class="p">],</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">            </span><span class="nt">&quot;request_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://hooks.slack.com/services/&lt;XXX&gt;/&lt;XXX&gt;/&lt;XXX&gt;&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">            </span><span class="nt">&quot;request_rendering&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;markdown_slack&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">            </span><span class="nt">&quot;request_body&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">                </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;%TITLE%&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">                </span><span class="nt">&quot;blocks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">                    </span><span class="p">{</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">                        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;section&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">                        </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">                            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mrkdwn&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">                            </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*%TITLE%*&quot;</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">                        </span><span class="p">}</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">                    </span><span class="p">},</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">                    </span><span class="p">{</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">                        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;section&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">                        </span><span class="nt">&quot;block_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;section567&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">                        </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">                            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mrkdwn&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">                            </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;%DESCRIPTION%&quot;</span>
-<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">                        </span><span class="p">}</span>
-<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">                    </span><span class="p">}</span>
-<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">                </span><span class="p">]</span>
-<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">    </span><span class="p">]</span>
-<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="p">}</span>
+<div class="highlight"><span class="filename">Slack webhook example - all events</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span><span class="w">   </span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;instance_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://iris.local&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;webhooks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Slack&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">            </span><span class="nt">&quot;trigger_on&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">                    </span><span class="s2">&quot;all&quot;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">                </span><span class="p">],</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">            </span><span class="nt">&quot;request_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://hooks.slack.com/services/&lt;XXX&gt;/&lt;XXX&gt;/&lt;XXX&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">            </span><span class="nt">&quot;request_rendering&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;markdown_slack&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">            </span><span class="nt">&quot;request_body&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">                </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;%TITLE%&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">                </span><span class="nt">&quot;blocks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">                    </span><span class="p">{</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">                        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;section&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">                        </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">                            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mrkdwn&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">                            </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*%TITLE%*&quot;</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">                        </span><span class="p">}</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">                    </span><span class="p">},</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">                    </span><span class="p">{</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">                        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;section&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">                        </span><span class="nt">&quot;block_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;section567&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">                        </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">                            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mrkdwn&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">                            </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;%DESCRIPTION%&quot;</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">                        </span><span class="p">}</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">                    </span><span class="p">}</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">                </span><span class="p">]</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">    </span><span class="p">]</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="p">}</span>
 </code></pre></div>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p>Webhooks receivers are expecting specific message formatting to successfully process them. Please carefully read their documentations.   </p>
@@ -1657,7 +1557,6 @@ For each webhook:<ul>
 <ul>
 <li>The module is in beta and will improve over time. More customization should be brought on the messages. </li>
 <li>For a complete experience, some features are missing on the server side - such as case info and user info passed to modules. They will be added in the next release and this module will be updated. For instance, IOC events do not hold case info, assets update events do not hold the user info who made the change.  </li>
-<li>Deletions hooks are not working as expected in IRIS v1.4.5 and the module thus fails to notify upon objects deletions. This will be fix in the next release of IRIS.   </li>
 </ul>
 
   <hr>

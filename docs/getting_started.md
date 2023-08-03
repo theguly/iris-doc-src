@@ -92,15 +92,11 @@ Please see [configuration](operations/configuration.md) for more details.
 
 
 
-## kubernetes
+### Kubernetes
 
-Kubernetes, a powerful container orchestration platform that simplifies the deployment, scaling, and management of containerized applications. Utilizing Kubernetes, you can efficiently run your applications across a cluster of machines, ensuring high availability and seamless scaling as demand fluctuates.
+For enterprises wishing to run their instance of IRIS, utilizing the projects official Helm charts and/or Kustomize manifests, allows them to significantly enhance their deployment and management, presenting a powerful solution to streamline their IRIS deployment and management processes, efficiently running across a cluster of machines, ensuring high availability and seamless scaling as demand fluctuates.
 
-### Helm Chart and Manifest for iris-web Enterprises:
-
-For iris-web enterprises, utilizing Helm charts and manifests can significantly enhance the deployment and management of their applications on Kubernetes. Helm is a package manager for Kubernetes that enables the templating and versioning of Kubernetes manifests. It allows iris-web enterprises to define, install, and upgrade complex Kubernetes applications with ease.
-
- Kubernetes, along with Helm charts and manifests, presents a powerful solution for iris-web enterprises to streamline their application deployment and management processes. The deploy directory in the iris-web GitHub repository provides a practical starting point for leveraging Helm and Kubernetes to deploy iris-web and related services effectively.
+The deploy directory in the iris-web GitHub repository provides a practical starting point for deploying IRIS on their preferred managed k8s platform. We've created two variants: eks and gke, feel free to customize each with your own values.
 
 For more details, please visit the deploy directory on GitHub: [deploy](https://github.com/dfir-iris/iris-web/tree/master/deploy)
 

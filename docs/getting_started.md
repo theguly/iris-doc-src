@@ -90,8 +90,6 @@ Each service can be built independently, which is useful when developing. In thi
 
 Please see [configuration](operations/configuration.md) for more details.
 
-
-
 ### Kubernetes
 
 For enterprises wishing to run their instance of IRIS, utilizing the projects official Helm charts and/or Kustomize manifests, allows them to significantly enhance their deployment and management, presenting a powerful solution to streamline their IRIS deployment and management processes, efficiently running across a cluster of machines, ensuring high availability and seamless scaling as demand fluctuates.
@@ -99,9 +97,3 @@ For enterprises wishing to run their instance of IRIS, utilizing the projects of
 The deploy directory in the iris-web GitHub repository provides a practical starting point for deploying IRIS on their preferred managed k8s platform. We've created two variants: eks and gke, feel free to customize each with your own values.
 
 For more details, please visit the deploy directory on GitHub: [deploy](https://github.com/dfir-iris/iris-web/tree/master/deploy)
-
-
-
-
-
-

@@ -30,6 +30,7 @@ Passwords are stored salted and hashed, it is thus not possible to retrieve them
     postgres=# UPDATE "user" SET password = '<hash>' WHERE "user".name = 'administrator';
     postgres=# \q
     exit
+    exit
     ```
 
 

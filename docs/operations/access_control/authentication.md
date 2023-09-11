@@ -28,6 +28,8 @@ Passwords are stored salted and hashed, it is thus not possible to retrieve them
     / # psql
     postgres=# \c iris_db 
     postgres=# UPDATE "user" SET password = '<hash>' WHERE "user".name = 'administrator';
+    postgres=# \q
+    exit
     ```
 
 

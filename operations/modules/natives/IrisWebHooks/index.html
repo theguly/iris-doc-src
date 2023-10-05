@@ -792,48 +792,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#examples-using-rendering" class="md-nav__link">
-    Examples using rendering
-  </a>
-  
-    <nav class="md-nav" aria-label="Examples using rendering">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#discord" class="md-nav__link">
-    Discord
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slack" class="md-nav__link">
-    Slack
+  <a href="#examples-without-rendering" class="md-nav__link">
+    Examples without rendering
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    Troubleshooting
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#important-notes-and-know-issues" class="md-nav__link">
-    Important Notes and know issues
-  </a>
   
 </li>
       
@@ -1354,48 +1320,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#examples-using-rendering" class="md-nav__link">
-    Examples using rendering
-  </a>
-  
-    <nav class="md-nav" aria-label="Examples using rendering">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#discord" class="md-nav__link">
-    Discord
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#slack" class="md-nav__link">
-    Slack
+  <a href="#examples-without-rendering" class="md-nav__link">
+    Examples without rendering
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    Troubleshooting
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#important-notes-and-know-issues" class="md-nav__link">
-    Important Notes and know issues
-  </a>
   
 </li>
       
@@ -1485,6 +1417,15 @@ If <code>use_rendering</code> is false, then a raw json representation of the ob
 <h3 id="checking-iris-hooks-registration">Checking IRIS hooks registration</h3>
 <p>Each time a webhook is added, the module subscribes to the specified hooks. After saving the configuration, one can check the registration was successful by filtering the <code>Registered hooks table</code> (don't forget to refresh the table).  </p>
 <p><img alt="Hooks registration" src="../../../../_static/iwbh_hooks_registration.png" /></p>
+<h3 id="examples-without-rendering">Examples without rendering</h3>
+<p>The following example is a combination of webhooks that can be used to further automate IRIS. It uses Tines as an example, but this is reproductible with any automation tool that can sent HTTP requests. A Tines story is created and is set up to receive a webhook, such as <code>https://anothertest.tines.io/webhook/xxxx/xxxxx</code>. <br />
+In this scenario, two IRIS webhooks are added: </p>
+<ul>
+<li>One to add an option to publish an IOC on MISP from the UI. This is an <code>on_manual_trigger_ioc_update</code> hook. </li>
+<li>Another one to send a message on Mattermost each time a new case is created. This is an <code>on_postload_case_create</code> hook. </li>
+</ul>
+<p>We use the same Tines story and thus Tines webhook for both and dispatch the incoming request depending on its parameters. </p>
+<h1 id="todo">TODO</h1>
 <h3 id="examples-using-rendering">Examples using rendering</h3>
 <p>The following is an example of combined webhooks configuration. It can be directly imported in the module with the import feature. 
 <strong>Please note that after import, the configuration should be opened and change to match your URL webhook receiver.</strong></p>
@@ -1564,7 +1505,7 @@ If <code>use_rendering</code> is false, then a raw json representation of the ob
   <small>
     
       Last update:
-      2022-06-28
+      2023-08-03
     
   </small>
 </div>

@@ -865,6 +865,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#v234" class="md-nav__link">
+    v2.3.4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#v210" class="md-nav__link">
     v2.1.0
   </a>
@@ -1413,6 +1420,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#v234" class="md-nav__link">
+    v2.3.4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#v210" class="md-nav__link">
     v2.1.0
   </a>
@@ -1551,6 +1565,7 @@
     <option value="v2.3.1">v2.3.1</option>
     <option value="v2.3.2">v2.3.2</option>
     <option value="v2.3.3">v2.3.3</option>
+    <option value="v2.3.3">v2.3.4</option>
 </select></p>
 <p><label for="tversion-select">Upgrading to:</label>
 <select name="target_version" class="md-select" id="tversion-select">
@@ -1576,6 +1591,7 @@
     <option value="v2.3.1">v2.3.1</option>
     <option value="v2.3.2">v2.3.2</option>
     <option value="v2.3.3">v2.3.3</option>
+    <option value="v2.3.3">v2.3.4</option>
 </select></p>
 <p><button class="md-button" onclick='check_versions();'>
   <span class="">Check upgrades conditions</span>
@@ -1616,7 +1632,7 @@
 <p>Get the last version of Iris 
     <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git checkout &lt;last_tagged_version&gt;
 </code></pre></div></p>
-<p>eg <code>git checkout v2.3.3</code></p>
+<p>eg <code>git checkout v2.3.4</code></p>
 </li>
 <li>
 <p>Build the new versions 
@@ -1644,6 +1660,10 @@
 </ol>
 <hr />
 <h2 id="version-specific-upgrades">Version specific upgrades</h2>
+<h3 id="v234">v2.3.4</h3>
+<p>❗ The layout of the reporting has slightly changed. Custom report templates might not work anymore.
+You can use <code>https://&lt;server&gt;/case/export?cid=&lt;case_id&gt;</code> to get all the possible fields.</p>
+<p>No other impact is to be expected.   </p>
 <h3 id="v210">v2.1.0</h3>
 <p>The default location of the SSL certificates have been changed from <code>dockers/nginx/dev_certs</code> to <code>certificates/nginx/web_certificates</code>.<br />
 The <code>docker-compose.yml</code> has thus been updated to mount this volume on the nginx Docker.   </p>

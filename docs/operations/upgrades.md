@@ -27,6 +27,8 @@ Most of the time, Iris handles upgrades of the database automatically when a new
         <option value="v2.3.0">v2.3.0</option>
         <option value="v2.3.1">v2.3.1</option>
         <option value="v2.3.2">v2.3.2</option>
+        <option value="v2.3.3">v2.3.3</option>
+        <option value="v2.3.3">v2.3.4</option>
     </select>
 
     <label for="tversion-select">Upgrading to:</label>
@@ -52,6 +54,8 @@ Most of the time, Iris handles upgrades of the database automatically when a new
         <option value="v2.3.0">v2.3.0</option>
         <option value="v2.3.1">v2.3.1</option>
         <option value="v2.3.2">v2.3.2</option>
+        <option value="v2.3.3">v2.3.3</option>
+        <option value="v2.3.3">v2.3.4</option>
     </select>
 
     <button class="md-button" onclick='check_versions();'>
@@ -97,7 +101,7 @@ Only if you run in production and/or data is critical.
     git checkout <last_tagged_version>
     ```
     
-    eg ``git checkout v2.3.2``
+    eg ``git checkout v2.3.4``
 
 4. Build the new versions 
     ```
@@ -127,6 +131,14 @@ In case something went wrong, you can rollback to your previous version and rest
 
 -------------
 ## Version specific upgrades
+
+### v2.3.4
+
+❗ The layout of the reporting has slightly changed. Custom report templates might not work anymore.
+You can use `https://<server>/case/export?cid=<case_id>` to get all the possible fields.
+
+No other impact is to be expected.   
+
 
 ### v2.1.0 
 The default location of the SSL certificates have been changed from `dockers/nginx/dev_certs` to `certificates/nginx/web_certificates`.  
@@ -281,7 +293,8 @@ function check_versions() {
         "v2.2.3": `${head}<a href="#v200">v2.0.0</a></p>`,
         "v2.3.0": `${head}<a href="#v200">v2.0.0</a></p>`,
         "v2.3.1": `${head}<a href="#v200">v2.0.0</a></p>`,
-        "v2.3.2": `${head}<a href="#v200">v2.0.0</a></p>`
+        "v2.3.2": `${head}<a href="#v200">v2.0.0</a></p>`,
+        "v2.3.3": `${head}<a href="#v200">v2.0.0</a></p>`
       }, 
       "v1.3.0": {
         "v1.3.1": "Auto",
@@ -301,7 +314,8 @@ function check_versions() {
         "v2.2.3": `${head}<a href="#v200">v2.0.0</a></p>`,
         "v2.3.0": `${head}<a href="#v200">v2.0.0</a></p>`,
         "v2.3.1": `${head}<a href="#v200">v2.0.0</a></p>`,
-        "v2.3.2": `${head}<a href="#v200">v2.0.0</a></p>`
+        "v2.3.2": `${head}<a href="#v200">v2.0.0</a></p>`,
+        "v2.3.3": `${head}<a href="#v200">v2.0.0</a></p>`
       }, 
       "v1.3.1": {
         "v1.4.0": `${head}<a href="#v140">v1.4.0</a></p>`,
@@ -320,7 +334,8 @@ function check_versions() {
         "v2.2.3": `${head}<a href="#v200">v2.0.0</a></p>`,
         "v2.3.0": `${head}<a href="#v200">v2.0.0</a></p>`,
         "v2.3.1": `${head}<a href="#v200">v2.0.0</a></p>`,
-        "v2.3.2": `${head}<a href="#v200">v2.0.0</a></p>`
+        "v2.3.2": `${head}<a href="#v200">v2.0.0</a></p>`,
+        "v2.3.3": `${head}<a href="#v200">v2.0.0</a></p>`
       }, 
       "v1.4.0": {
         "v1.4.1": "Auto",
@@ -338,7 +353,8 @@ function check_versions() {
         "v2.2.3": `${head}<a href="#v200">v2.0.0</a></p>`,
         "v2.3.0": `${head}<a href="#v200">v2.0.0</a></p>`,
         "v2.3.1": `${head}<a href="#v200">v2.0.0</a></p>`,
-        "v2.3.2": `${head}<a href="#v200">v2.0.0</a></p>`
+        "v2.3.2": `${head}<a href="#v200">v2.0.0</a></p>`,
+        "v2.3.3": `${head}<a href="#v200">v2.0.0</a></p>`
       },
       "v1.4.1": {
         "v1.4.2": "Auto",
@@ -355,7 +371,8 @@ function check_versions() {
         "v2.2.3": `${head}<a href="#v200">v2.0.0</a></p>`,
         "v2.3.0": `${head}<a href="#v200">v2.0.0</a></p>`,
         "v2.3.1": `${head}<a href="#v200">v2.0.0</a></p>`,
-        "v2.3.2": `${head}<a href="#v200">v2.0.0</a></p>`
+        "v2.3.2": `${head}<a href="#v200">v2.0.0</a></p>`,
+        "v2.3.3": `${head}<a href="#v200">v2.0.0</a></p>`
       },
       "v1.4.2": {
         "v1.4.3": "Auto",
@@ -371,7 +388,8 @@ function check_versions() {
         "v2.2.3": `${head}<a href="#v200">v2.0.0</a></p>`,
         "v2.3.0": `${head}<a href="#v200">v2.0.0</a></p>`,
         "v2.3.1": `${head}<a href="#v200">v2.0.0</a></p>`,
-        "v2.3.2": `${head}<a href="#v200">v2.0.0</a></p>`
+        "v2.3.2": `${head}<a href="#v200">v2.0.0</a></p>`,
+        "v2.3.3": `${head}<a href="#v200">v2.0.0</a></p>`
       },
       "v1.4.3": {
         "v1.4.4": "Auto",
@@ -386,7 +404,8 @@ function check_versions() {
         "v2.2.3": `${head}<a href="#v200">v2.0.0</a></p>`,
         "v2.3.0": `${head}<a href="#v200">v2.0.0</a></p>`,
         "v2.3.1": `${head}<a href="#v200">v2.0.0</a></p>`,
-        "v2.3.2": `${head}<a href="#v200">v2.0.0</a></p>`
+        "v2.3.2": `${head}<a href="#v200">v2.0.0</a></p>`,
+        "v2.3.3": `${head}<a href="#v200">v2.0.0</a></p>`
       },
       "v1.4.4": {
         "v1.4.5": `${head}<a href="#v145">v1.4.5</a></p>`,
@@ -400,6 +419,7 @@ function check_versions() {
         "v2.2.3": `${head}<a href="#v200">v2.0.0</a></p>`,
         "v2.3.0": `${head}<a href="#v200">v2.0.0</a></p>`,
         "v2.3.1": `${head}<a href="#v200">v2.0.0</a></p>`,
+        "v2.3.2": `${head}<a href="#v200">v2.0.0</a></p>`,
         "v2.3.2": `${head}<a href="#v200">v2.0.0</a></p>`
       }, 
       "v1.4.5": {
@@ -413,7 +433,8 @@ function check_versions() {
         "v2.2.3": `${head}<a href="#v200">v2.0.0</a></p>`,
         "v2.3.0": `${head}<a href="#v200">v2.0.0</a></p>`,
         "v2.3.1": `${head}<a href="#v200">v2.0.0</a></p>`,
-        "v2.3.2": `${head}<a href="#v200">v2.0.0</a></p>`
+        "v2.3.2": `${head}<a href="#v200">v2.0.0</a></p>`,
+        "v2.3.3": `${head}<a href="#v200">v2.0.0</a></p>`
       }, 
       "v2.0.0": {
         "v2.0.1": "Auto",
@@ -425,7 +446,8 @@ function check_versions() {
         "v2.2.3": `${head_notes} <a href="#v210">v2.1.0</a></p>`,
         "v2.3.0": `${head_notes}<a href="#v210">v2.1.0</a></p>`,
         "v2.3.1": `${head_notes}<a href="#v210">v2.1.0</a></p>`,
-        "v2.3.2": `${head_notes}<a href="#v210">v2.1.0</a></p>`
+        "v2.3.2": `${head_notes}<a href="#v210">v2.1.0</a></p>`,
+        "v2.3.3": `${head_notes}<a href="#v210">v2.1.0</a></p>`
       }, 
       "v2.0.1": {
         "v2.0.2": "Auto", 
@@ -436,7 +458,8 @@ function check_versions() {
         "v2.2.3": `${head_notes} <a href="#v210">v2.1.0</a></p>`,
         "v2.3.0": `${head_notes} <a href="#v100">v2.1.0</a></p>`,
         "v2.3.1": `${head_notes}<a href="#v210">v2.1.0</a></p>`,
-        "v2.3.2": `${head_notes}<a href="#v210">v2.1.0</a></p>`
+        "v2.3.2": `${head_notes}<a href="#v210">v2.1.0</a></p>`,
+        "v2.3.3": `${head_notes}<a href="#v210">v2.1.0</a></p>`
       }, 
       "v2.0.2": {
         "v2.1.0": `${head_notes} <a href="#v210">v2.1.0</a></p>`,
@@ -446,7 +469,8 @@ function check_versions() {
         "v2.2.3": `${head_notes} <a href="#v210">v2.1.0</a></p>`,
         "v2.3.0": `${head_notes} <a href="#v100">v2.1.0</a></p>`,
         "v2.3.1": `${head_notes}<a href="#v210">v2.1.0</a></p>`,
-        "v2.3.2": `${head_notes}<a href="#v210">v2.1.0</a></p>`
+        "v2.3.2": `${head_notes}<a href="#v210">v2.1.0</a></p>`,
+        "v2.3.3": `${head_notes}<a href="#v210">v2.1.0</a></p>`
       }, 
       "v2.1.0": {
         "v2.2.0": "Auto",
@@ -456,6 +480,7 @@ function check_versions() {
         "v2.3.0": "Auto",
         "v2.3.1": "Auto",
         "v2.3.2": "Auto",
+        "v2.3.3": "Auto"
       }, 
       "v2.2.0": {
         "v2.2.1": "Auto",
@@ -464,31 +489,40 @@ function check_versions() {
         "v2.3.0": "Auto",
         "v2.3.1": "Auto",
         "v2.3.2": "Auto",
+        "v2.3.3": "Auto"
       },
       "v2.2.1": {
         "v2.2.2": "Auto",
         "v2.2.3": "Auto",
         "v2.3.0": "Auto",
         "v2.3.1": "Auto",
-        "v2.3.2": "Auto"
+        "v2.3.2": "Auto",
+        "v2.3.3": "Auto"
       },
       "v2.2.2": {
         "v2.2.3": "Auto",
         "v2.3.0": "Auto",
         "v2.3.1": "Auto",
-        "v2.3.2": "Auto"
+        "v2.3.2": "Auto",
+        "v2.3.3": "Auto"
       },
       "v2.2.3": {
         "v2.3.0": "Auto",
         "v2.3.1": "Auto",
-        "v2.3.2": "Auto"
+        "v2.3.2": "Auto",
+        "v2.3.3": "Auto"
       },
       "v2.3.0": {
         "v2.3.1": "Auto",
-        "v2.3.2": "Auto"
+        "v2.3.2": "Auto",
+        "v2.3.3": "Auto"
       },
       "v2.3.1": {
-        "v2.3.2": "Auto"
+        "v2.3.2": "Auto",
+        "v2.3.3": "Auto"
+      },
+      "v2.3.2": {
+        "v2.3.3": "Auto"
       }
     }
     const div = document.getElementById('migration-info');

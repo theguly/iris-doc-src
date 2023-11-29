@@ -2,6 +2,47 @@
 
 For upgrades instructions, please see the [Upgrades page](/operations/upgrades). 
 
+## [v2.3.4](https://github.com/dfir-iris/iris-web/releases/tag/v2.3.4) <small>_ November 29, 2023 _</small>
+### What's Changed
+
+**Added**
+
+* Added support for evidences types
+* Added support for cases severity
+* Improved search in context switcher
+
+**Fixed**  
+
+* Fixed overview page
+* Fixed dashboard filtering
+
+
+❗ The layout of the reporting has slightly changed. Custom report templates might not work anymore.
+You can use `https://<server>/case/export?cid=<case_id>` to get all the possible fields.
+
+Full Changelog: v2.3.3...v2.3.4
+
+
+
+## [v2.3.3](https://github.com/dfir-iris/iris-web/releases/tag/v2.3.3) <small>_ October 5, 2023 _</small>
+### What's Changed
+
+**Fixed**
+
+* Fixed breaking of manage case list if percentage in title 
+* Fixed broken title search in overview 
+* Fixed sorting of owners in overview 
+* Fixed quick look in overview 
+* Fixed alert page breaking if username contains trailing space 
+* Fixed IrisVTModule links
+* Fixed IrisWebhookModule 
+* Fixed refresh after closing of notes 
+
+@Scriptception made their first contribution in [313](https://github.com/dfir-iris/iris-web/pull/313)
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v2.3.2...v2.3.3)
+
+
 ## [v2.3.2](https://github.com/dfir-iris/iris-web/releases/tag/v2.3.2) <small>_ August 2, 2023 _</small>
 ## What's Changed
 

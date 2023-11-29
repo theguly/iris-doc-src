@@ -43,7 +43,7 @@ To build and run IRIS, follow these steps:
 2. Check out the latest **non-beta** tagged version: 
 
     ```bash
-    git checkout v2.3.2
+    git checkout v2.3.4
     ```
 
 3. Copy the environment file 

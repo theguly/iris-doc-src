@@ -7,7 +7,8 @@ info:
   description: |
     ## IRIS API 
     To use these API endpoint, an API key is needed and can be found in every user profile under `My settings` > `API Key`. 
-    This specification applies to Iris v2.1.0 and onward. The supported API version can be checked in `Advanced` > `Server settings` > `Server versions` on IRIS. 
+    This specification applies to v2.1.0 > Iris > v2.3.3. The supported API version can be checked in `Advanced` > `Server settings` > `Server versions` on IRIS.   
+    The API port is the same as the one used for the web interface, so `443` by default.  
      
     ## Changes
     ### Changes in v2.0.0
@@ -58,7 +59,7 @@ paths:
                     message: Summary updated
                     status: success
       description: |-
-        Update the summary of a case. Attention this will trigger an overwrite of the summary. Summaries are shared interactively between users. If an update summary is issued, every user will receive the change and their locale changes will be lost.  
+        Update the summary of a case. Carefull: this will trigger an overwrite of the summary. Summaries are shared interactively between users. If an update summary is issued, every user will receive the change and their locale changes will be lost.  
         The summary is a markdown-compatible text. 
       parameters: []
       requestBody:
@@ -230,7 +231,9 @@ paths:
     get:
       summary: Export a case as JSON
       operationId: get-case-export
-      description: 'Export a case in JSON format including all the information such as assets, iocs, etc. This request can take a very long time depending on the size of the case. '
+      description: |-
+        Export a case in JSON format including all the information such as assets, iocs, etc. This request can take a very long time depending on the size of the case.  
+        The datastore is not part of the response and needs to be requested manually.     
       security:
         - Bearer <bearer>: []
       parameters:
@@ -241,6 +244,685 @@ paths:
           description: ID Of the case to export
       tags:
         - Case general
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      case:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                          open_date:
+                            type: string
+                          description:
+                            type: string
+                          soc_id:
+                            type: string
+                          opened_by:
+                            type: string
+                          for_customer:
+                            type: string
+                          close_date:
+                            type: 'null'
+                          custom_attributes:
+                            type: 'null'
+                          case_id:
+                            type: integer
+                          case_uuid:
+                            type: string
+                          status_id:
+                            type: integer
+                          status_name:
+                            type: string
+                      evidences:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            filename:
+                              type: string
+                            date_added:
+                              type: string
+                            file_hash:
+                              type: string
+                            added_by:
+                              type: string
+                            custom_attributes:
+                              type: object
+                              properties: {}
+                            file_uuid:
+                              type: string
+                            id:
+                              type: integer
+                            file_size:
+                              type: integer
+                      timeline:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            event_id:
+                              type: integer
+                            event_title:
+                              type: string
+                            event_in_summary:
+                              type: boolean
+                            event_date:
+                              type: string
+                            event_tz:
+                              type: string
+                            event_date_wtz:
+                              type: string
+                            event_content:
+                              type: string
+                            event_tags:
+                              type: string
+                            event_source:
+                              type: string
+                            event_raw:
+                              type: string
+                            custom_attributes:
+                              type: object
+                              properties: {}
+                            category:
+                              type: string
+                            last_edited_by:
+                              type: string
+                            event_uuid:
+                              type: string
+                            event_in_graph:
+                              type: boolean
+                            event_color:
+                              type: string
+                            event_is_flagged:
+                              type: boolean
+                            assets:
+                              type: array
+                              items:
+                                type: string
+                            iocs:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  ioc_id:
+                                    type: integer
+                                  ioc_value:
+                                    type: string
+                                  ioc_description:
+                                    type: string
+                                  tlp_name:
+                                    type: string
+                                  type:
+                                    type: string
+                      iocs:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            ioc_value:
+                              type: string
+                            type_name:
+                              type: string
+                            ioc_tags:
+                              type: string
+                            ioc_description:
+                              type: string
+                            custom_attributes:
+                              type: object
+                              properties: {}
+                            ioc_id:
+                              type: integer
+                            ioc_uuid:
+                              type: string
+                            tlp_name:
+                              type: string
+                            added_by:
+                              type: string
+                      assets:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            asset_id:
+                              type: integer
+                            asset_uuid:
+                              type: string
+                            asset_name:
+                              type: string
+                            asset_description:
+                              type: string
+                            asset_compromise_status_id:
+                              type: integer
+                            type:
+                              type: string
+                            analysis_status:
+                              type: string
+                            date_added:
+                              type: string
+                            asset_domain:
+                              type: string
+                            asset_ip:
+                              type: string
+                            asset_info:
+                              type: string
+                            asset_tags:
+                              type: string
+                            custom_attributes:
+                              type: object
+                              properties: {}
+                            light_asset_description:
+                              type: string
+                            asset_ioc:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  ioc_value:
+                                    type: string
+                                  type_name:
+                                    type: string
+                                  ioc_description:
+                                    type: string
+                            asset_compromise_status:
+                              type: string
+                      tasks:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            task_title:
+                              type: string
+                            task_status:
+                              type: string
+                            task_tags:
+                              type: string
+                            task_open_date:
+                              type: string
+                            task_close_date:
+                              type: 'null'
+                            task_last_update:
+                              type: string
+                            task_description:
+                              type: string
+                            custom_attributes:
+                              type: object
+                              properties: {}
+                            task_uuid:
+                              type: string
+                            id:
+                              type: integer
+                            task_assignees:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  user:
+                                    type: string
+                                  name:
+                                    type: string
+                                  id:
+                                    type: integer
+                      comments:
+                        type: array
+                        items:
+                          type: object
+                          properties: {}
+                      notes:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            note_title:
+                              type: string
+                            note_content:
+                              type: string
+                            note_creationdate:
+                              type: string
+                            note_lastupdate:
+                              type: string
+                            custom_attributes:
+                              type: object
+                              properties: {}
+                            note_id:
+                              type: integer
+                            note_uuid:
+                              type: string
+                            group_title:
+                              type: string
+                            group_id:
+                              type: integer
+                            group_user:
+                              type: integer
+                      export_date:
+                        type: string
+                x-examples:
+                  Example 1:
+                    status: success
+                    message: ''
+                    data:
+                      case:
+                        name: '#1 - Initial Demo'
+                        open_date: '2023-11-29'
+                        description: Dummy description
+                        soc_id: soc_id_demo
+                        opened_by: administrator
+                        for_customer: IrisInitialClient
+                        close_date: null
+                        custom_attributes: null
+                        case_id: 1
+                        case_uuid: da80a133-d3c2-40bd-a0ba-8966ef7679a3
+                        status_id: 0
+                        status_name: unknown
+                      evidences:
+                        - filename: A super evidence
+                          date_added: '2023-11-29T15:52:11.216704'
+                          file_hash: dhjajhdkadqw
+                          added_by: administrator
+                          custom_attributes: {}
+                          file_uuid: 6287ebbc-4332-4f37-b8d8-c9e70e238c08
+                          id: 1
+                          file_size: 0
+                      timeline:
+                        - event_id: 2
+                          event_title: A second event
+                          event_in_summary: true
+                          event_date: '2023-11-03T23:03:00.003000'
+                          event_tz: '+01:00'
+                          event_date_wtz: '2023-11-04T00:03:00.003000'
+                          event_content: Super event
+                          event_tags: logs
+                          event_source: MySource
+                          event_raw: Raw event log
+                          custom_attributes: {}
+                          category: Command and Control
+                          last_edited_by: administrator
+                          event_uuid: 7c8a624f-6017-4ccd-a93f-7ef702cc24dd
+                          event_in_graph: true
+                          event_color: '#F2596199'
+                          event_is_flagged: false
+                          assets:
+                            - LinuxServer (Linux - Server)
+                            - main_router (Router)
+                          iocs:
+                            - ioc_id: 1
+                              ioc_value: root
+                              ioc_description: ''
+                              tlp_name: amber
+                              type: account
+                        - event_id: 3
+                          event_title: 'A third event '
+                          event_in_summary: true
+                          event_date: '2023-11-03T23:03:00.003000'
+                          event_tz: '+01:00'
+                          event_date_wtz: '2023-11-04T00:03:00.003000'
+                          event_content: Super event
+                          event_tags: logs
+                          event_source: MySource
+                          event_raw: Raw event log
+                          custom_attributes: {}
+                          category: Command and Control
+                          last_edited_by: administrator
+                          event_uuid: 7c8a624f-6017-4ccd-a93f-7ef702cc24dd
+                          event_in_graph: true
+                          event_color: '#F2596199'
+                          event_is_flagged: false
+                          assets:
+                            - LinuxServer (Linux - Server)
+                            - main_router (Router)
+                          iocs:
+                            - ioc_id: 1
+                              ioc_value: root
+                              ioc_description: ''
+                              tlp_name: amber
+                              type: account
+                        - event_id: 1
+                          event_title: 'An event '
+                          event_in_summary: true
+                          event_date: '2023-11-09T23:03:00.003000'
+                          event_tz: '+01:00'
+                          event_date_wtz: '2023-11-10T00:03:00.003000'
+                          event_content: Super event
+                          event_tags: logs
+                          event_source: MySource
+                          event_raw: Raw event log
+                          custom_attributes: {}
+                          category: Command and Control
+                          last_edited_by: administrator
+                          event_uuid: 7c8a624f-6017-4ccd-a93f-7ef702cc24dd
+                          event_in_graph: true
+                          event_color: '#48ABF799'
+                          event_is_flagged: false
+                          assets:
+                            - LinuxServer (Linux - Server)
+                            - main_router (Router)
+                          iocs:
+                            - ioc_id: 1
+                              ioc_value: root
+                              ioc_description: ''
+                              tlp_name: amber
+                              type: account
+                      iocs:
+                        - ioc_value: root
+                          type_name: account
+                          ioc_tags: router
+                          ioc_description: ''
+                          custom_attributes: {}
+                          ioc_id: 1
+                          ioc_uuid: 94188da2-ca10-4299-ad73-0689719a61c3
+                          tlp_name: amber
+                          added_by: administrator
+                      assets:
+                        - asset_id: 1
+                          asset_uuid: 4c8211fb-676e-4d84-9164-2c62d2c82558
+                          asset_name: LinuxServer
+                          asset_description: 'The super service   '
+                          asset_compromise_status_id: 2
+                          type: Linux - Server
+                          analysis_status: Canceled
+                          date_added: '2023-11-29T15:40:13.759084'
+                          asset_domain: local.local
+                          asset_ip: 127.0.0.1
+                          asset_info: ''
+                          asset_tags: test
+                          custom_attributes: {}
+                          light_asset_description: 'The super service   '
+                          asset_ioc:
+                            - ioc_value: root
+                              type_name: account
+                              ioc_description: ''
+                          asset_compromise_status: Not Compromised
+                        - asset_id: 2
+                          asset_uuid: 7371f6fd-17dc-42d7-b21b-43824b71abb3
+                          asset_name: main_router
+                          asset_description: ''
+                          asset_compromise_status_id: 1
+                          type: Router
+                          analysis_status: To be done
+                          date_added: '2023-11-29T15:40:41.128370'
+                          asset_domain: local.local
+                          asset_ip: 192.168.1.3
+                          asset_info: ''
+                          asset_tags: router
+                          custom_attributes: {}
+                          light_asset_description: ''
+                          asset_ioc:
+                            - ioc_value: root
+                              type_name: account
+                              ioc_description: ''
+                          asset_compromise_status: Compromised
+                      tasks:
+                        - task_title: A task
+                          task_status: In progress
+                          task_tags: task1
+                          task_open_date: '2023-11-29T15:48:49.811798'
+                          task_close_date: null
+                          task_last_update: '2023-11-29T15:48:49.811798'
+                          task_description: 'Task description    '
+                          custom_attributes: {}
+                          task_uuid: 0693c71b-b4f7-41cd-a12a-0dcd24519e7f
+                          id: 1
+                          task_assignees:
+                            - user: administrator
+                              name: administrator
+                              id: 1
+                        - task_title: Another task
+                          task_status: To do
+                          task_tags: tas
+                          task_open_date: '2023-11-29T15:49:09.053863'
+                          task_close_date: null
+                          task_last_update: '2023-11-29T15:49:09.053863'
+                          task_description: Another task description
+                          custom_attributes: {}
+                          task_uuid: 6d27e7f2-3310-454e-aebf-00432ebbfb2d
+                          id: 2
+                          task_assignees:
+                            - user: administrator
+                              name: administrator
+                              id: 1
+                      comments: []
+                      notes:
+                        - note_title: Something else
+                          note_content: A nother note content
+                          note_creationdate: '2023-11-29T15:39:02.056124'
+                          note_lastupdate: '2023-11-29T15:39:30.039339'
+                          custom_attributes: {}
+                          note_id: 1
+                          note_uuid: 71a50086-2b11-4d80-8916-e94bd93ad28b
+                          group_title: A note group A
+                          group_id: 1
+                          group_user: 1
+                        - note_title: And another thing
+                          note_content: A note content
+                          note_creationdate: '2023-11-29T15:39:11.127181'
+                          note_lastupdate: '2023-11-29T15:39:23.065014'
+                          custom_attributes: {}
+                          note_id: 2
+                          note_uuid: 641943a8-767a-4789-a02c-1475243cbb37
+                          group_title: A note group B
+                          group_id: 2
+                          group_user: 1
+                      export_date: '2023-11-29T15:52:18.839881'
+              examples:
+                Example 1:
+                  value:
+                    status: success
+                    message: ''
+                    data:
+                      case:
+                        name: '#1 - Initial Demo'
+                        open_date: '2023-11-29'
+                        description: Dummy description
+                        soc_id: soc_id_demo
+                        opened_by: administrator
+                        for_customer: IrisInitialClient
+                        close_date: null
+                        custom_attributes: null
+                        case_id: 1
+                        case_uuid: da80a133-d3c2-40bd-a0ba-8966ef7679a3
+                        status_id: 0
+                        status_name: unknown
+                      evidences:
+                        - filename: A super evidence
+                          date_added: '2023-11-29T15:52:11.216704'
+                          file_hash: dhjajhdkadqw
+                          added_by: administrator
+                          custom_attributes: {}
+                          file_uuid: 6287ebbc-4332-4f37-b8d8-c9e70e238c08
+                          id: 1
+                          file_size: 0
+                      timeline:
+                        - event_id: 2
+                          event_title: A second event
+                          event_in_summary: true
+                          event_date: '2023-11-03T23:03:00.003000'
+                          event_tz: '+01:00'
+                          event_date_wtz: '2023-11-04T00:03:00.003000'
+                          event_content: Super event
+                          event_tags: logs
+                          event_source: MySource
+                          event_raw: Raw event log
+                          custom_attributes: {}
+                          category: Command and Control
+                          last_edited_by: administrator
+                          event_uuid: 7c8a624f-6017-4ccd-a93f-7ef702cc24dd
+                          event_in_graph: true
+                          event_color: '#F2596199'
+                          event_is_flagged: false
+                          assets:
+                            - LinuxServer (Linux - Server)
+                            - main_router (Router)
+                          iocs:
+                            - ioc_id: 1
+                              ioc_value: root
+                              ioc_description: ''
+                              tlp_name: amber
+                              type: account
+                        - event_id: 3
+                          event_title: 'A third event '
+                          event_in_summary: true
+                          event_date: '2023-11-03T23:03:00.003000'
+                          event_tz: '+01:00'
+                          event_date_wtz: '2023-11-04T00:03:00.003000'
+                          event_content: Super event
+                          event_tags: logs
+                          event_source: MySource
+                          event_raw: Raw event log
+                          custom_attributes: {}
+                          category: Command and Control
+                          last_edited_by: administrator
+                          event_uuid: 7c8a624f-6017-4ccd-a93f-7ef702cc24dd
+                          event_in_graph: true
+                          event_color: '#F2596199'
+                          event_is_flagged: false
+                          assets:
+                            - LinuxServer (Linux - Server)
+                            - main_router (Router)
+                          iocs:
+                            - ioc_id: 1
+                              ioc_value: root
+                              ioc_description: ''
+                              tlp_name: amber
+                              type: account
+                        - event_id: 1
+                          event_title: 'An event '
+                          event_in_summary: true
+                          event_date: '2023-11-09T23:03:00.003000'
+                          event_tz: '+01:00'
+                          event_date_wtz: '2023-11-10T00:03:00.003000'
+                          event_content: Super event
+                          event_tags: logs
+                          event_source: MySource
+                          event_raw: Raw event log
+                          custom_attributes: {}
+                          category: Command and Control
+                          last_edited_by: administrator
+                          event_uuid: 7c8a624f-6017-4ccd-a93f-7ef702cc24dd
+                          event_in_graph: true
+                          event_color: '#48ABF799'
+                          event_is_flagged: false
+                          assets:
+                            - LinuxServer (Linux - Server)
+                            - main_router (Router)
+                          iocs:
+                            - ioc_id: 1
+                              ioc_value: root
+                              ioc_description: ''
+                              tlp_name: amber
+                              type: account
+                      iocs:
+                        - ioc_value: root
+                          type_name: account
+                          ioc_tags: router
+                          ioc_description: ''
+                          custom_attributes: {}
+                          ioc_id: 1
+                          ioc_uuid: 94188da2-ca10-4299-ad73-0689719a61c3
+                          tlp_name: amber
+                          added_by: administrator
+                      assets:
+                        - asset_id: 1
+                          asset_uuid: 4c8211fb-676e-4d84-9164-2c62d2c82558
+                          asset_name: LinuxServer
+                          asset_description: 'The super service   '
+                          asset_compromise_status_id: 2
+                          type: Linux - Server
+                          analysis_status: Canceled
+                          date_added: '2023-11-29T15:40:13.759084'
+                          asset_domain: local.local
+                          asset_ip: 127.0.0.1
+                          asset_info: ''
+                          asset_tags: test
+                          custom_attributes: {}
+                          light_asset_description: 'The super service   '
+                          asset_ioc:
+                            - ioc_value: root
+                              type_name: account
+                              ioc_description: ''
+                          asset_compromise_status: Not Compromised
+                        - asset_id: 2
+                          asset_uuid: 7371f6fd-17dc-42d7-b21b-43824b71abb3
+                          asset_name: main_router
+                          asset_description: ''
+                          asset_compromise_status_id: 1
+                          type: Router
+                          analysis_status: To be done
+                          date_added: '2023-11-29T15:40:41.128370'
+                          asset_domain: local.local
+                          asset_ip: 192.168.1.3
+                          asset_info: ''
+                          asset_tags: router
+                          custom_attributes: {}
+                          light_asset_description: ''
+                          asset_ioc:
+                            - ioc_value: root
+                              type_name: account
+                              ioc_description: ''
+                          asset_compromise_status: Compromised
+                      tasks:
+                        - task_title: A task
+                          task_status: In progress
+                          task_tags: task1
+                          task_open_date: '2023-11-29T15:48:49.811798'
+                          task_close_date: null
+                          task_last_update: '2023-11-29T15:48:49.811798'
+                          task_description: 'Task description    '
+                          custom_attributes: {}
+                          task_uuid: 0693c71b-b4f7-41cd-a12a-0dcd24519e7f
+                          id: 1
+                          task_assignees:
+                            - user: administrator
+                              name: administrator
+                              id: 1
+                        - task_title: Another task
+                          task_status: To do
+                          task_tags: tas
+                          task_open_date: '2023-11-29T15:49:09.053863'
+                          task_close_date: null
+                          task_last_update: '2023-11-29T15:49:09.053863'
+                          task_description: Another task description
+                          custom_attributes: {}
+                          task_uuid: 6d27e7f2-3310-454e-aebf-00432ebbfb2d
+                          id: 2
+                          task_assignees:
+                            - user: administrator
+                              name: administrator
+                              id: 1
+                      comments: []
+                      notes:
+                        - note_title: Something else
+                          note_content: A nother note content
+                          note_creationdate: '2023-11-29T15:39:02.056124'
+                          note_lastupdate: '2023-11-29T15:39:30.039339'
+                          custom_attributes: {}
+                          note_id: 1
+                          note_uuid: 71a50086-2b11-4d80-8916-e94bd93ad28b
+                          group_title: A note group A
+                          group_id: 1
+                          group_user: 1
+                        - note_title: And another thing
+                          note_content: A note content
+                          note_creationdate: '2023-11-29T15:39:11.127181'
+                          note_lastupdate: '2023-11-29T15:39:23.065014'
+                          custom_attributes: {}
+                          note_id: 2
+                          note_uuid: 641943a8-767a-4789-a02c-1475243cbb37
+                          group_title: A note group B
+                          group_id: 2
+                          group_user: 1
+                      export_date: '2023-11-29T15:52:18.839881'
     parameters: []
   /case/assets/list:
     get:
@@ -398,141 +1080,153 @@ paths:
               schema:
                 type: object
                 properties:
-                  value:
+                  status:
+                    type: string
+                  message:
+                    type: string
+                  data:
                     type: object
                     properties:
-                      data:
+                      asset_info:
+                        type: string
+                      asset_domain:
+                        type: string
+                      date_added:
+                        type: string
+                      asset_type:
                         type: object
                         properties:
-                          analysis_status_id:
-                            type: integer
-                          asset_compromised:
-                            type: boolean
-                          asset_description:
-                            type: string
-                          asset_domain:
-                            type: string
-                          asset_id:
-                            type: integer
-                          asset_info:
-                            type: string
-                          asset_ip:
+                          asset_icon_not_compromised:
                             type: string
                           asset_name:
                             type: string
-                          asset_tags:
+                          asset_icon_compromised:
                             type: string
-                          asset_type_id:
+                          asset_id:
                             type: integer
-                          case_id:
-                            type: integer
-                          date_added:
+                          asset_description:
                             type: string
-                          date_update:
-                            type: string
-                          linked_ioc:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                ioc_description:
-                                  type: string
-                                ioc_id:
-                                  type: integer
-                                ioc_tags:
-                                  type: string
-                                ioc_tlp_id:
-                                  type: integer
-                                ioc_type_id:
-                                  type: integer
-                                ioc_value:
-                                  type: string
-                                type_name:
-                                  type: string
-                          user_id:
-                            type: integer
-                          custom_attributes:
-                            type: object
-                            properties:
-                              WHOIS:
-                                type: object
-                                properties:
-                                  Registrant Country:
-                                    type: object
-                                    properties:
-                                      mandatory:
-                                        type: boolean
-                                      type:
-                                        type: string
-                                      value:
-                                        type: string
-                      message:
+                      asset_id:
+                        type: integer
+                      asset_ip:
                         type: string
-                      status:
+                      asset_tags:
                         type: string
+                      asset_name:
+                        type: string
+                      case_id:
+                        type: integer
+                      date_update:
+                        type: string
+                      analysis_status_id:
+                        type: integer
+                      asset_enrichment:
+                        type: 'null'
+                      asset_uuid:
+                        type: string
+                      asset_type_id:
+                        type: integer
+                      user_id:
+                        type: integer
+                      custom_attributes:
+                        type: object
+                        properties: {}
+                      asset_compromise_status_id:
+                        type: integer
+                      asset_description:
+                        type: string
+                      linked_ioc:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            ioc_id:
+                              type: integer
+                            ioc_value:
+                              type: string
+                            ioc_tags:
+                              type: string
+                            ioc_type_id:
+                              type: integer
+                            type_name:
+                              type: string
+                            ioc_description:
+                              type: string
+                            ioc_tlp_id:
+                              type: integer
                 x-examples:
                   Example 1:
-                    value:
-                      data:
-                        analysis_status_id: 2
-                        asset_compromised: true
-                        asset_description: Asset description
-                        asset_domain: My domain
-                        asset_id: 2208
-                        asset_info: Additional info
-                        asset_ip: My IP
-                        asset_name: Asset 1
-                        asset_tags: 'Asset,tags'
-                        asset_type_id: 1
-                        case_id: 2
-                        date_added: '2022-01-21T17:42:37.286192'
-                        date_update: '2022-01-21T17:42:37.286203'
-                        linked_ioc:
-                          - ioc_description: ''
-                            ioc_id: 1
-                            ioc_tags: ''
-                            ioc_tlp_id: 2
-                            ioc_type_id: 76
-                            ioc_value: Hello
-                            type_name: ip-any
-                        user_id: 1
-                        custom_attributes:
-                          WHOIS:
-                            Registrant Country:
-                              mandatory: true
-                              type: input_string
-                              value: The registrant country
-                      message: ''
-                      status: success
+                    status: success
+                    message: ''
+                    data:
+                      asset_info: ''
+                      asset_domain: local.local
+                      date_added: '2023-11-29T15:40:13.759084'
+                      asset_type:
+                        asset_icon_not_compromised: server.png
+                        asset_name: Linux - Server
+                        asset_icon_compromised: ioc_server.png
+                        asset_id: 3
+                        asset_description: Linux server
+                      asset_id: 1
+                      asset_ip: 127.0.0.1
+                      asset_tags: test
+                      asset_name: LinuxServer
+                      case_id: 1
+                      date_update: '2023-11-29T15:40:13.759090'
+                      analysis_status_id: 5
+                      asset_enrichment: null
+                      asset_uuid: 4c8211fb-676e-4d84-9164-2c62d2c82558
+                      asset_type_id: 3
+                      user_id: 1
+                      custom_attributes: {}
+                      asset_compromise_status_id: 2
+                      asset_description: 'The super service   '
+                      linked_ioc:
+                        - ioc_id: 1
+                          ioc_value: root
+                          ioc_tags: router
+                          ioc_type_id: 3
+                          type_name: account
+                          ioc_description: ''
+                          ioc_tlp_id: 2
               examples:
                 Example 1:
                   value:
-                    data:
-                      assets:
-                        - analysis_status: Started
-                          analysis_status_id: 3
-                          asset_compromise_status_id: 1
-                          asset_description: A description
-                          asset_domain: A domain
-                          asset_icon_compromised: ioc_user.png
-                          asset_icon_not_compromised: user.png
-                          asset_id: 43
-                          asset_ip: 0.0.0.0
-                          asset_name: My asset
-                          asset_tags: test
-                          asset_type: Account
-                          asset_type_id: 1
-                          asset_uuid: e935efba-5b41-4299-ad51-febcfa87997b
-                          ioc_links:
-                            - asset_id: 43
-                              ioc_id: 1
-                              ioc_value: my ioc
-                          link: []
-                      state:
-                        object_last_update: 'Mon, 06 Mar 2023 09:44:22 GMT'
-                        object_state: 91
-                    message: ''
                     status: success
+                    message: ''
+                    data:
+                      asset_info: ''
+                      asset_domain: local.local
+                      date_added: '2023-11-29T15:40:13.759084'
+                      asset_type:
+                        asset_icon_not_compromised: server.png
+                        asset_name: Linux - Server
+                        asset_icon_compromised: ioc_server.png
+                        asset_id: 3
+                        asset_description: Linux server
+                      asset_id: 1
+                      asset_ip: 127.0.0.1
+                      asset_tags: test
+                      asset_name: LinuxServer
+                      case_id: 1
+                      date_update: '2023-11-29T15:40:13.759090'
+                      analysis_status_id: 5
+                      asset_enrichment: null
+                      asset_uuid: 4c8211fb-676e-4d84-9164-2c62d2c82558
+                      asset_type_id: 3
+                      user_id: 1
+                      custom_attributes: {}
+                      asset_compromise_status_id: 2
+                      asset_description: 'The super service   '
+                      linked_ioc:
+                        - ioc_id: 1
+                          ioc_value: root
+                          ioc_tags: router
+                          ioc_type_id: 3
+                          type_name: account
+                          ioc_description: ''
+                          ioc_tlp_id: 2
         '400':
           description: Bad Request
           content:
@@ -561,7 +1255,7 @@ paths:
                     message: Invalid asset ID for this case
                     status: error
       operationId: get-case-asset
-      description: Fetch the content of an asset
+      description: 'Fetch an asset. '
       security:
         - Bearer <bearer>: []
       parameters:
@@ -570,6 +1264,7 @@ paths:
           in: query
           name: cid
           description: Case ID
+          required: true
       tags:
         - Case assets
     parameters:
@@ -724,59 +1419,119 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                status:
+                  type: string
+                message:
+                  type: string
+                data:
+                  type: object
+                  properties:
+                    asset_info:
+                      type: string
+                    asset_domain:
+                      type: string
+                    date_added:
+                      type: string
+                    asset_type:
+                      type: object
+                      properties:
+                        asset_icon_not_compromised:
+                          type: string
+                        asset_name:
+                          type: string
+                        asset_icon_compromised:
+                          type: string
+                        asset_id:
+                          type: integer
+                        asset_description:
+                          type: string
+                    asset_id:
+                      type: integer
+                    asset_ip:
+                      type: string
+                    asset_tags:
+                      type: string
+                    asset_name:
+                      type: string
+                    case_id:
+                      type: integer
+                    date_update:
+                      type: string
+                    analysis_status_id:
+                      type: integer
+                    asset_enrichment:
+                      type: 'null'
+                    asset_uuid:
+                      type: string
+                    asset_type_id:
+                      type: integer
+                    user_id:
+                      type: integer
+                    custom_attributes:
+                      type: object
+                      properties: {}
+                    asset_compromise_status_id:
+                      type: integer
+                    asset_description:
+                      type: string
               x-examples:
                 Example 1:
-                  csrf_token: IjU0MDAzMGZjYTcwMTRkN2M1MGM5N2JmNmFiYzM0MDc5YWYwNjc1NGEi.ZAW1zA.37W5-0a9EAKNMq9CiSNW6Zvs7H4
-                  asset_name: Demo asset
-                  asset_type_id: '3'
-                  asset_domain: my domain
-                  asset_ip: 0.0.0.0
-                  asset_info: Additional info
-                  asset_compromise_status_id: '1'
-                  analysis_status_id: '3'
-                  ioc_links:
-                    - '1'
-                  asset_tags: 'this,tag'
-                  asset_description: 'Asset description   '
-                  custom_attributes: {}
-              properties:
-                asset_name:
-                  type: string
-                asset_type_id:
-                  type: integer
-                asset_domain:
-                  type: string
-                asset_ip:
-                  type: string
-                asset_info:
-                  type: string
-                asset_compromise_status_id:
-                  type: integer
-                analysis_status_id:
-                  type: integer
-                ioc_links:
-                  type: integer
-                asset_tags:
-                  type: string
-                asset_description:
-                  type: string
-                custom_attributes:
-                  type: object
+                  status: success
+                  message: Asset added
+                  data:
+                    asset_info: Additional info
+                    asset_domain: my domain
+                    date_added: '2023-11-29T16:04:55.242684'
+                    asset_type:
+                      asset_icon_not_compromised: server.png
+                      asset_name: Linux - Server
+                      asset_icon_compromised: ioc_server.png
+                      asset_id: 3
+                      asset_description: Linux server
+                    asset_id: 3
+                    asset_ip: 0.0.0.0
+                    asset_tags: 'this,tag'
+                    asset_name: Demo asset
+                    case_id: 1
+                    date_update: '2023-11-29T16:04:55.242690'
+                    analysis_status_id: 3
+                    asset_enrichment: null
+                    asset_uuid: 3d617e72-2c26-4b16-bbcb-71487072e0ef
+                    asset_type_id: 3
+                    user_id: 1
+                    custom_attributes: {}
+                    asset_compromise_status_id: 1
+                    asset_description: Asset description
             examples:
               Example 1:
                 value:
-                  asset_name: Demo asset
-                  asset_type_id: 3
-                  asset_domain: my domain
-                  asset_ip: 0.0.0.0
-                  asset_info: Additional info
-                  asset_compromise_status_id: 1
-                  analysis_status_id: 3
-                  ioc_links:
-                    - 1
-                  asset_tags: 'this,tag'
-                  asset_description: Asset description
-                  custom_attributes: {}
+                  status: success
+                  message: Asset added
+                  data:
+                    asset_info: Additional info
+                    asset_domain: my domain
+                    date_added: '2023-11-29T16:04:55.242684'
+                    asset_type:
+                      asset_icon_not_compromised: server.png
+                      asset_name: Linux - Server
+                      asset_icon_compromised: ioc_server.png
+                      asset_id: 3
+                      asset_description: Linux server
+                    asset_id: 3
+                    asset_ip: 0.0.0.0
+                    asset_tags: 'this,tag'
+                    asset_name: Demo asset
+                    case_id: 1
+                    date_update: '2023-11-29T16:04:55.242690'
+                    analysis_status_id: 3
+                    asset_enrichment: null
+                    asset_uuid: 3d617e72-2c26-4b16-bbcb-71487072e0ef
+                    asset_type_id: 3
+                    user_id: 1
+                    custom_attributes: {}
+                    asset_compromise_status_id: 1
+                    asset_description: Asset description
         description: ''
       tags:
         - Case assets
@@ -799,97 +1554,126 @@ paths:
               schema:
                 type: object
                 properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
                   data:
                     type: object
                     properties:
-                      analysis_status_id:
-                        type: integer
-                      asset_compromise_status_id:
-                        type: integer
-                      asset_description:
-                        type: string
-                      asset_domain:
-                        type: string
-                      asset_id:
-                        type: integer
                       asset_info:
                         type: string
-                      asset_ip:
-                        type: string
-                      asset_name:
-                        type: string
-                      asset_tags:
-                        type: string
-                      asset_type_id:
-                        type: integer
-                      asset_uuid:
-                        type: string
-                      case_id:
-                        type: integer
-                      custom_attributes:
-                        type: object
-                        properties: {}
-                      date_added:
-                        type: string
-                      date_update:
+                      asset_domain:
                         type: string
                       ioc_links:
                         type: array
                         items:
                           type: integer
+                      date_added:
+                        type: string
+                      asset_type:
+                        type: object
+                        properties:
+                          asset_icon_not_compromised:
+                            type: string
+                          asset_name:
+                            type: string
+                          asset_icon_compromised:
+                            type: string
+                          asset_id:
+                            type: integer
+                          asset_description:
+                            type: string
+                      asset_id:
+                        type: integer
+                      asset_ip:
+                        type: string
+                      asset_tags:
+                        type: string
+                      asset_name:
+                        type: string
+                      case_id:
+                        type: integer
+                      date_update:
+                        type: string
+                      analysis_status_id:
+                        type: integer
+                      asset_enrichment:
+                        type: 'null'
+                      asset_uuid:
+                        type: string
+                      asset_type_id:
+                        type: integer
                       user_id:
                         type: integer
-                  message:
-                    type: string
-                  status:
-                    type: string
+                      custom_attributes:
+                        type: object
+                        properties: {}
+                      asset_compromise_status_id:
+                        type: integer
+                      asset_description:
+                        type: string
                 x-examples:
                   Example 1:
+                    status: success
+                    message: Updated asset string
                     data:
-                      analysis_status_id: 1
-                      asset_compromise_status_id: 0
-                      asset_description: string
-                      asset_domain: string
-                      asset_id: 43
                       asset_info: string
-                      asset_ip: string
-                      asset_name: string
-                      asset_tags: string
-                      asset_type_id: 2
-                      asset_uuid: e935efba-5b41-4299-ad51-febcfa87997b
-                      case_id: 1
-                      custom_attributes: {}
-                      date_added: '2023-03-06T09:44:22.472850'
-                      date_update: '2023-03-06T09:44:22.472860'
+                      asset_domain: string
                       ioc_links:
                         - 1
+                      date_added: '2023-11-29T15:40:13.759084'
+                      asset_type:
+                        asset_icon_not_compromised: user.png
+                        asset_name: Account
+                        asset_icon_compromised: ioc_user.png
+                        asset_id: 1
+                        asset_description: Generic Account
+                      asset_id: 1
+                      asset_ip: string
+                      asset_tags: string
+                      asset_name: string
+                      case_id: 1
+                      date_update: '2023-11-29T15:40:13.759090'
+                      analysis_status_id: 1
+                      asset_enrichment: null
+                      asset_uuid: 4c8211fb-676e-4d84-9164-2c62d2c82558
+                      asset_type_id: 1
                       user_id: 1
-                    message: Updated asset string
-                    status: success
+                      custom_attributes: {}
+                      asset_compromise_status_id: 1
+                      asset_description: string
               examples:
                 example-1:
                   value:
+                    status: success
+                    message: Updated asset string
                     data:
-                      analysis_status_id: 1
-                      asset_compromise_status_id: 0
-                      asset_description: string
-                      asset_domain: string
-                      asset_id: 43
                       asset_info: string
-                      asset_ip: string
-                      asset_name: string
-                      asset_tags: string
-                      asset_type_id: 2
-                      asset_uuid: e935efba-5b41-4299-ad51-febcfa87997b
-                      case_id: 1
-                      custom_attributes: {}
-                      date_added: '2023-03-06T09:44:22.472850'
-                      date_update: '2023-03-06T09:44:22.472860'
+                      asset_domain: string
                       ioc_links:
                         - 1
+                      date_added: '2023-11-29T15:40:13.759084'
+                      asset_type:
+                        asset_icon_not_compromised: user.png
+                        asset_name: Account
+                        asset_icon_compromised: ioc_user.png
+                        asset_id: 1
+                        asset_description: Generic Account
+                      asset_id: 1
+                      asset_ip: string
+                      asset_tags: string
+                      asset_name: string
+                      case_id: 1
+                      date_update: '2023-11-29T15:40:13.759090'
+                      analysis_status_id: 1
+                      asset_enrichment: null
+                      asset_uuid: 4c8211fb-676e-4d84-9164-2c62d2c82558
+                      asset_type_id: 1
                       user_id: 1
-                    message: Updated asset string
-                    status: success
+                      custom_attributes: {}
+                      asset_compromise_status_id: 1
+                      asset_description: string
         '400':
           description: Bad Request
           content:
@@ -942,6 +1726,22 @@ paths:
           application/json:
             schema:
               type: object
+              x-examples:
+                Example 1:
+                  asset_name: Dummy asset 1
+                  asset_type_id: 1
+                  analysis_status_id: 1
+                  asset_description: dummy desc
+                  asset_domain: dummy domain
+                  asset_ip: dummy IP
+                  asset_info: dummy info
+                  asset_compromise_status_id: 1
+                  asset_tags: 'tag1,tag2'
+                  custom_attributes: {}
+                  cid: 1
+                  ioc_links:
+                    - 1
+                    - 2
               properties:
                 asset_name:
                   type: string
@@ -963,29 +1763,10 @@ paths:
                   type: string
                 custom_attributes:
                   type: object
-                  properties: {}
-                cid:
-                  type: integer
                 ioc_links:
                   type: array
                   items:
                     type: integer
-              x-examples:
-                Example 1:
-                  asset_name: Dummy asset 1
-                  asset_type_id: 1
-                  analysis_status_id: 1
-                  asset_description: dummy desc
-                  asset_domain: dummy domain
-                  asset_ip: dummy IP
-                  asset_info: dummy info
-                  asset_compromise_status_id: 1
-                  asset_tags: 'tag1,tag2'
-                  custom_attributes: {}
-                  cid: 1
-                  ioc_links:
-                    - 1
-                    - 2
             examples:
               Example 1:
                 value:
@@ -1168,6 +1949,7 @@ paths:
           in: query
           name: cid
           description: Case ID
+          required: true
       tags:
         - Case assets
   /case/notes/groups/list:
@@ -1297,7 +2079,7 @@ paths:
                     message: ''
                     status: success
       operationId: get-case-notes-group
-      description: 'Get a list of the notes and groups. The content notes is not returned.  '
+      description: 'Get a list of the notes and groups. The content of the notes is not returned.  '
       security:
         - Bearer <bearer>: []
       parameters:
@@ -1535,7 +2317,13 @@ paths:
                     message: ''
                     status: success
       description: 'The created group is empty. '
-      parameters: []
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: cid
+          description: Case ID
+          required: true
       security:
         - Bearer <bearer>: []
       requestBody:
@@ -1551,15 +2339,10 @@ paths:
                 group_title:
                   type: string
                   minLength: 1
-                cid:
-                  type: number
-              required:
-                - cid
             examples:
               Add test group:
                 value:
                   group_title: Test
-                  cid: 5
         description: 'If the group title isn''t set, a default group name is set by the server.  '
       tags:
         - Case notes
@@ -1669,33 +2452,34 @@ paths:
                     message: Group ID 3 not found
                     status: error
       description: 'Update the title of a note group '
-      parameters: []
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: cid
+          description: case ID
+          required: true
       security:
         - Bearer <bearer>: []
       requestBody:
         content:
           application/json:
             schema:
-              description: ''
               type: object
-              properties:
-                group_title:
-                  type: string
-                  minLength: 1
-                cid:
-                  type: number
-              required:
-                - group_title
-                - cid
               x-examples:
                 example-1:
                   group_title: Test
                   cid: 5
+              properties:
+                group_title:
+                  type: string
+                  minLength: 1
+              required:
+                - group_title
             examples:
               Add test group:
                 value:
                   group_title: Test
-                  cid: 5
         description: ''
       tags:
         - Case notes
@@ -1788,6 +2572,7 @@ paths:
           in: query
           name: cid
           description: Case ID
+          required: true
       tags:
         - Case notes
   /case/notes/add:
@@ -1929,7 +2714,6 @@ paths:
                   note_title: Title of the note
                   note_content: Content of the note
                   group_id: 36
-                  cid: 2
         description: ''
       tags:
         - Case notes
@@ -2153,7 +2937,7 @@ paths:
                     message: Invalid note ID for this case
                     status: error
       operationId: post-case-delete-note
-      description: 'Delete a note. '
+      description: 'Deletes a note. '
       security:
         - Bearer <bearer>: []
       parameters:
@@ -2333,14 +3117,19 @@ paths:
                     message: ''
                     status: success
       description: 'Search in notes. The searched term is a wildcard. '
-      parameters: []
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: cid
+          description: Case ID
+          required: true
       security:
         - Bearer <bearer>: []
       requestBody:
         content:
           application/json:
             schema:
-              description: ''
               type: object
               x-examples:
                 example-1:
@@ -2352,16 +3141,12 @@ paths:
                 search_term:
                   type: string
                   minLength: 1
-                cid:
-                  type: integer
               required:
                 - search_term
-                - cid
             examples:
               Example 1:
                 value:
                   search_term: term
-                  cid: 1
         description: ''
       tags:
         - Case notes
@@ -2496,71 +3281,99 @@ paths:
             application/json:
               schema:
                 type: object
-                x-examples:
-                  Example 1:
-                    data:
-                      custom_attributes: {}
-                      ioc_description: null
-                      ioc_id: 29
-                      ioc_misp: null
-                      ioc_tags: null
-                      ioc_tlp_id: 2
-                      ioc_type: 1
-                      ioc_type_id: 1
-                      ioc_uuid: 5aecb228-8100-4ce1-a347-4794b266a721
-                      ioc_value: dummy ioc
-                      user_id: 1
-                    message: ''
-                    status: success
                 properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
                   data:
                     type: object
                     properties:
-                      custom_attributes:
-                        type: object
-                      ioc_description:
-                        type: string
-                        nullable: true
+                      ioc_enrichment:
+                        type: 'null'
+                      user_id:
+                        type: integer
                       ioc_id:
-                        type: integer
-                      ioc_misp:
-                        nullable: true
-                      ioc_tags:
-                        type: string
-                        nullable: true
-                      ioc_tlp_id:
-                        type: integer
-                      ioc_type:
                         type: integer
                       ioc_type_id:
                         type: integer
-                      ioc_uuid:
-                        type: string
+                      custom_attributes:
+                        type: object
+                        properties: {}
                       ioc_value:
                         type: string
-                      user_id:
+                      ioc_tags:
+                        type: string
+                      ioc_uuid:
+                        type: string
+                      ioc_tlp_id:
                         type: integer
-                  message:
-                    type: string
-                  status:
-                    type: string
+                      ioc_misp:
+                        type: 'null'
+                      ioc_type:
+                        type: object
+                        properties:
+                          type_description:
+                            type: string
+                          type_name:
+                            type: string
+                          type_taxonomy:
+                            type: 'null'
+                          type_validation_regex:
+                            type: 'null'
+                          type_id:
+                            type: integer
+                          type_validation_expect:
+                            type: 'null'
+                      ioc_description:
+                        type: string
+                x-examples:
+                  Example 1:
+                    status: success
+                    message: ''
+                    data:
+                      ioc_enrichment: null
+                      user_id: 1
+                      ioc_id: 1
+                      ioc_type_id: 3
+                      custom_attributes: {}
+                      ioc_value: root
+                      ioc_tags: router
+                      ioc_uuid: 94188da2-ca10-4299-ad73-0689719a61c3
+                      ioc_tlp_id: 2
+                      ioc_misp: null
+                      ioc_type:
+                        type_description: Account of any type
+                        type_name: account
+                        type_taxonomy: null
+                        type_validation_regex: null
+                        type_id: 3
+                        type_validation_expect: null
+                      ioc_description: ''
               examples:
                 example-1:
                   value:
-                    data:
-                      custom_attributes: {}
-                      ioc_description: null
-                      ioc_id: 29
-                      ioc_misp: null
-                      ioc_tags: null
-                      ioc_tlp_id: 2
-                      ioc_type: 1
-                      ioc_type_id: 1
-                      ioc_uuid: 5aecb228-8100-4ce1-a347-4794b266a721
-                      ioc_value: dummy ioc
-                      user_id: 1
-                    message: ''
                     status: success
+                    message: ''
+                    data:
+                      ioc_enrichment: null
+                      user_id: 1
+                      ioc_id: 1
+                      ioc_type_id: 3
+                      custom_attributes: {}
+                      ioc_value: root
+                      ioc_tags: router
+                      ioc_uuid: 94188da2-ca10-4299-ad73-0689719a61c3
+                      ioc_tlp_id: 2
+                      ioc_misp: null
+                      ioc_type:
+                        type_description: Account of any type
+                        type_name: account
+                        type_taxonomy: null
+                        type_validation_regex: null
+                        type_id: 3
+                        type_validation_expect: null
+                      ioc_description: ''
         '400':
           description: Bad Request
           content:
@@ -2595,7 +3408,7 @@ paths:
                     message: Invalid IOC ID for this case
                     status: error
       operationId: get-case-ioc-fetch
-      description: Fetch the content of an ioc
+      description: Fetch an IOC
       security:
         - Bearer <bearer>: []
       parameters:
@@ -2604,6 +3417,7 @@ paths:
           in: query
           name: cid
           description: Case ID
+          required: true
       tags:
         - Case IOC
     parameters:

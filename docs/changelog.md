@@ -2,7 +2,50 @@
 
 For upgrades instructions, please see the [Upgrades page](/operations/upgrades). 
 
+## [v2.3.7](https://github.com/dfir-iris/iris-web/releases/tag/v2.3.7) <small>_ December 14, 2023 _</small>
+### What's Changed
+
+**Fixed**  
+
+* Fixes an issue with download of files from the datastore #347
+* Fixes an issue with the addition of protagonist in cases
+* Fixes an issue with case edition modal
+    
+**Improved**
+
+* Improved timeline rendering
+* Improved security in Datatables
+
+
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v2.3.6...v2.3.7)
+
+
+## [v2.3.6](https://github.com/dfir-iris/iris-web/releases/tag/v2.3.6) <small>_ December 7, 2023 _</small>
+### What's Changed
+
+**Fixed**  
+
+* Fixes an error preventing the proper generation of reports 
+* Fixes an issue with filtering in the overview tab 
+* Adds more filtering options in the overview tab 
+
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v2.3.5...v2.3.6)
+
+## [v2.3.5](https://github.com/dfir-iris/iris-web/releases/tag/v2.3.5) <small>_ November 30, 2023 _</small>
+### What's Changed
+
+**Fixed**  
+
+* Fixes an issue introduced in v2.3.4 where the cases metadata are not properly saved. 
+
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v2.3.4...v2.3.5)
+
 ## [v2.3.4](https://github.com/dfir-iris/iris-web/releases/tag/v2.3.4) <small>_ November 29, 2023 _</small>
+
+**A severe bug has been introduced in this version. Please upgarde to v2.3.5.**
 ### What's Changed
 
 **Added**
@@ -20,7 +63,7 @@ For upgrades instructions, please see the [Upgrades page](/operations/upgrades).
 ❗ The layout of the reporting has slightly changed. Custom report templates might not work anymore.
 You can use `https://<server>/case/export?cid=<case_id>` to get all the possible fields.
 
-Full Changelog: v2.3.3...v2.3.4
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v2.3.3...v2.3.4)
 
 
 

@@ -4,6 +4,7 @@ nav:
   - Operations: operations
   - Python client: python_client
   - Development: development
+  - Resources: resources
   - Q&A: zqa.md
   - Roadmap : roadmap.md
   - Contact: contact.md 

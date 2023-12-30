@@ -17,7 +17,7 @@ Passwords are stored salted and hashed, it is thus not possible to retrieve them
    
     ```python
     import bcrypt
-    print(bcrypt.hashpw(<new_password>.encode('utf-8'), bcrypt.gensalt())
+    print(bcrypt.hashpw('<new_password>'.encode('utf-8'), bcrypt.gensalt()))
     ```
 
 2. Connect to the DB docker then the Postgresql database `iris_db` and update the password 
@@ -28,6 +28,9 @@ Passwords are stored salted and hashed, it is thus not possible to retrieve them
     / # psql
     postgres=# \c iris_db 
     postgres=# UPDATE "user" SET password = '<hash>' WHERE "user".name = 'administrator';
+    postgres=# \q
+    exit
+    exit
     ```
 
 
@@ -53,7 +56,7 @@ docker-compose restart app
 ```
 
 #### Setting up LDAP for the first runtime of IRIS 
-To set up LDAP without having run IRIS priorly, and as the app needs the accounts to be created first before using LDAP, one have to set the `IRIS_ADM_EMAIL` environment with the LDAP Email of the administrator user.  
+To set up LDAP without having run IRIS priorly, and as the app needs the accounts to be created first before using LDAP, one has to set the `IRIS_ADM_EMAIL` environment with the LDAP Email of the administrator user.  
 
 ```bash title="Example of LDAP configuration for first run"
 IRIS_AUTHENTICATION_TYPE=ldap

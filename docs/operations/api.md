@@ -10,12 +10,12 @@ Through the REST API, one can do almost as much as it is possible to do through 
 ## API Keys
 
 The first step is to obtain an API key. Each user is automatically attributed one when it is created.  
-It can be found on the left panel, under username and My Settings. 
+It can be found on the left panel, under username and `My Settings`. 
 
 ![Access Token](../_static/token_access.png)
 
 !!! caution "Token exposure"
-    In case the token is exposed and needs to be change, a new one can be generated with the `Renew` option.
+    In case the token is exposed and needs to be changed, a new one can be generated with the `Renew` option.
     Renewing a token revokes the previous. 
 
 

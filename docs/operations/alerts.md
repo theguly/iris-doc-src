@@ -5,7 +5,7 @@
 !!! info "Introduced in IRIS v2.1.0"
 
 
-Alerts can be feeded directly into IRIS using the [Alerts API](https://docs.dfir-iris.org/_static/iris_api_reference_v2.0.1.html#tag/Alerts).   
+Alerts can be fed directly into IRIS using the [Alerts API](https://docs.dfir-iris.org/_static/iris_api_reference_v2.0.1.html#tag/Alerts).   
 Any source can inject alerts into IRIS, as long as it can send HTTP requests and respects the alert format.    
 
 A service account with the `alert_read` and `alert_write` permission can be used to send alerts to IRIS.  
@@ -27,17 +27,17 @@ Each alert can be expanded to show more details.
 ## Alerts assignment
 Alerts can be assigned to analysts. This can be done directly from the alert view.  
 
-To self assign an unassigned alert, click on the hand icon on the left. 
+To self-assign an unassigned alert, click on the hand icon on the left. 
 
 ![Alerts](/_static/alerts/alert_assignment.png){ align=center }
 
 Clicking again on the hand icon will prompt with a list of analysts to assign the alert to.  
 
-The right button `Assign` when hovering an alert can also be used to assign the alert to an analyst.
+The right button `Assign`, when hovering above an alert, can also be used to assign the alert to an analyst.
 
 ## Merge / escalation operations
 ### Creating cases from alerts
-Alerts can be escalated/merged into a new case. When hovering an alert, a `Merge` button will appear.  
+Alerts can be escalated/merged into a new case. When hovering above an alert, a `Merge` button will appear.  
 
 ![Alerts](/_static/alerts/alert_escalate.png){ align=center }
 
@@ -49,13 +49,13 @@ Once clicked, a new window appears, requesting additional information.  In this 
 - Select the assets to import
 - Add an escalation note
 - Set the case tags 
-- Choose if the alert should be import in the timeline as event  
+- Choose if the alert should be imported in the timeline as an event  
 
 
 ### Merge alerts into an existing case
-Alerts can also be escalated/merged into an existing case. When hovering an alert, a `Merge` button will appear.  
+Alerts can also be escalated/merged into an existing case. When hovering above an alert, a `Merge` button will appear.  
 
-Once clicked a new window appears, requesting additional information.  The button `Merge into existing case` needs to be clicked.   
+Once clicked, a new window appears requesting additional information.  The button `Merge into existing case` needs to be clicked.   
 A new dropdown appears and allows to select the case to merge the alert into.   
 
 Similar to the case creation, the analyst can: 
@@ -63,17 +63,17 @@ Similar to the case creation, the analyst can:
 - Select the IOCs to import
 - Select the assets to import
 - Add an escalation note
-- Choose if the alert should be import in the timeline as event
+- Choose if the alert should be imported in the timeline as an event
 
-The selections IOCs and assets are then added to the selected case.  
+The selected IOCs and assets are then added to the selected case.  
 
 
-### Umerge alerts from a case
+### Unmerge alerts from a case
 Alerts can be unmerged from a case. 
 
 !!! info 
     When unmerging an alert, the alert is not deleted. It is only removed from the case. The alert state is not changed.  
-    The IOC and assets are not removed from the case.  
+    The IOCs and assets are not removed from the case.  
 
 
 When a case is merged, a new link appears on the alert and mentions the case it was merged into.  

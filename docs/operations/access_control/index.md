@@ -13,8 +13,8 @@ To ease the access control, users can be managed in :
 - [**Groups**](groups): Provides permissions and cases access controls
 - [**Users**](users): Provides granular per-user cases access control
 
-A user can be in one or multiple groups. The effective case access control of a user is deducted from its groups membership and its own cases access control.  
-The effective permissions are deducted from its groups membership.  
+A user can be in one or multiple groups. The effective case access control of a user is deduced from its groups membership and its own cases access control.  
+The effective permissions are deduced from its groups membership.  
 
 
 ## Cases access control overview

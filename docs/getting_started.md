@@ -1,6 +1,6 @@
 # Quick Start
 
-The most straight forward and recommended way to use IRIS is with Docker. This is presented here. 
+The most straightforward and recommended way to use IRIS is with Docker. This is presented here. 
 
 !!! warning "Disclaimer"
 
@@ -12,15 +12,15 @@ The most straight forward and recommended way to use IRIS is with Docker. This i
 
 ### Hardware
 
-IRIS is not very resourceful and can be run on a small laptop (4 cores, 8Gb of RAM). However, for large organization and heavy usage, 
-it will need to be greatly scaled up.  
-We don't have benchmarks yet but keep in mind that the database can grow rapidly and modules can be resourceful depending on their purposes.  
+IRIS does not require a lot of resources, and it can be run on a small laptop (4 cores, 8Gb of RAM). However, for large a organization and heavy usage, 
+it will need to be significantly scaled up.  
+We don't have benchmarks yet, but keep in mind that the database can grow rapidly and modules can require more resources depending on their purposes.  
 
 ### Docker
 Docker and docker compose are needed to build and run the project. Depending on the OS you will find all the information to install them on 
 the official website of [Docker](https://docs.docker.com/get-docker/).  
 
-The platform is officially support on most Linux and MacOS. While it should work on Windows, some path needed by the dockers to store permanent files might need to be changed in the dockerfiles. 
+The platform is officially supported on most Linux and MacOS. While it should work on Windows, some path needed by the containers to store permanent files might need to be changed in the dockerfiles. 
 
 ## Versioning
 Starting from version 2.0.0, Iris is following the [Semantic Versioning 2.0](https://semver.org/) guidelines.   

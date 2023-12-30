@@ -1407,7 +1407,7 @@ All fields of the form are required. All information can be changed after the cr
 <li><strong>Full Name</strong> : Name of the user to add </li>
 <li><strong>Login</strong> : Username used to login in IRIS. Has to be unique on the instance </li>
 <li><strong>Email</strong> : Email of the user to add. Has to be unique on the instance  </li>
-<li><strong>Password</strong>: Password respecting the policy defined in <code>Advanced</code> &gt; <code>Server settings</code>. The password also has to be set when using LDAP. It is however not used for the authentication. A random password can be set when using LDAP. No password is required when the user is set a service account.  </li>
+<li><strong>Password</strong>: Password respecting the policy defined in <code>Advanced</code> &gt; <code>Server settings</code>. The password also has to be set when using LDAP, it is then however not used for the authentication. A random password can be set when using LDAP. No password is required when the user is set as a service account.  </li>
 <li><strong>Is service account</strong> : If the user is a server account, check this box. Server accounts are used to connect to the API. They cannot login to the UI. </li>
 </ul>
 <div class="admonition warning">
@@ -1416,14 +1416,14 @@ All fields of the form are required. All information can be changed after the cr
 </div>
 <p><img alt="Create new user" src="../../../_static/access_control/add_user1.png" /> </p>
 <h2 id="editing-a-user">Editing a user</h2>
-<p>A user can be edited by clicking on its name or ID in <code>Advanced</code> &gt; <code>Access Control</code> &gt; <code>Users</code>.  A window opens and display the user's information. Tabs at the top allows to configure multiple settings related to the user.   </p>
+<p>A user can be edited by clicking on its name or ID in <code>Advanced</code> &gt; <code>Access Control</code> &gt; <code>Users</code>.  A window opens and display the user's information. Tabs at the top allow to configure multiple settings related to the user.   </p>
 <h2 id="setting-permissions">Setting permissions</h2>
 <p>Permissions of a user cannot be set directly. They are inherited from the groups membership. The tab <code>Permissions</code> only displays the permissions the user has from its groups memberships. 
 See <a href="../groups/">Groups</a> for more info.   </p>
 <h2 id="setting-groups">Setting groups</h2>
 <p>Groups can be set by clicking on the <code>Groups</code> tab of the user's window and then <code>Manage</code>.      </p>
 <p><img alt="Manage user" src="../../../_static/access_control/add_user2.png" /> </p>
-<p>A new window appear with the possibility to select the groups the user should belong to. 
+<p>A new window appears with the possibility to select the groups the user should belong to. 
 <img alt="Manage user" src="../../../_static/access_control/add_user3.png" /> </p>
 <p>After saving, the permissions of the user are updated. This can be verified in the <code>Permissions</code> tab. <br />
 <img alt="Manage user" src="../../../_static/access_control/add_user4.png" /> </p>
@@ -1431,7 +1431,7 @@ See <a href="../groups/">Groups</a> for more info.   </p>
 <p>Cases access are usually set through groups membership. However for granularity they can be set per user. <br />
 To set the access of a user on a case, click on the <code>Cases access</code> tab of the user's window and then <code>Set case access</code>.   </p>
 <p><img alt="Manage user" src="../../../_static/access_control/add_user5.png" /> </p>
-<p>As for the Groups, a selector appear and allows to select one or multiple cases and the access to associate.     <br />
+<p>As for the Groups, a selector appears and allows to select one or multiple cases and the access to associate.     <br />
 <img alt="Manage user" src="../../../_static/access_control/add_user6.png" /> </p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -1458,7 +1458,7 @@ To set the access of a user on a case, click on the <code>Cases access</code> ta
   <small>
     
       Last update:
-      2023-05-15
+      2023-07-01
     
   </small>
 </div>

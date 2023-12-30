@@ -321,6 +321,19 @@
     Additional configuration
   </a>
   
+    <nav class="md-nav" aria-label="Additional configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes" class="md-nav__link">
+    Kubernetes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1366,6 +1379,19 @@
     Additional configuration
   </a>
   
+    <nav class="md-nav" aria-label="Additional configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes" class="md-nav__link">
+    Kubernetes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1385,7 +1411,7 @@
 
 
 <h1 id="quick-start">Quick Start</h1>
-<p>The most straight forward and recommended way to use IRIS is with Docker. This is presented here. </p>
+<p>The most straightforward and recommended way to use IRIS is with Docker. This is presented here. </p>
 <div class="admonition warning">
 <p class="admonition-title">Disclaimer</p>
 <p>IRIS is in its early stage. It can already be used in production, but please <a href="/operations/upgrades/#backing-up-db">set backups of the database</a> and DO NOT expose the interface on the Internet.
@@ -1393,13 +1419,13 @@ We highly recommended the use of a private dedicated and secured network. </p>
 </div>
 <h2 id="pre-requisites">Pre-requisites</h2>
 <h3 id="hardware">Hardware</h3>
-<p>IRIS is not very resourceful and can be run on a small laptop (4 cores, 8Gb of RAM). However, for large organization and heavy usage, 
-it will need to be greatly scaled up.<br />
-We don't have benchmarks yet but keep in mind that the database can grow rapidly and modules can be resourceful depending on their purposes.  </p>
+<p>IRIS does not require a lot of resources, and it can be run on a small laptop (4 cores, 8Gb of RAM). However, for large a organization and heavy usage, 
+it will need to be significantly scaled up.<br />
+We don't have benchmarks yet, but keep in mind that the database can grow rapidly and modules can require more resources depending on their purposes.  </p>
 <h3 id="docker">Docker</h3>
 <p>Docker and docker compose are needed to build and run the project. Depending on the OS you will find all the information to install them on 
 the official website of <a href="https://docs.docker.com/get-docker/">Docker</a>.  </p>
-<p>The platform is officially support on most Linux and MacOS. While it should work on Windows, some path needed by the dockers to store permanent files might need to be changed in the dockerfiles. </p>
+<p>The platform is officially supported on most Linux and MacOS. While it should work on Windows, some path needed by the containers to store permanent files might need to be changed in the dockerfiles. </p>
 <h2 id="versioning">Versioning</h2>
 <p>Starting from version 2.0.0, Iris is following the <a href="https://semver.org/">Semantic Versioning 2.0</a> guidelines. <br />
 The code ready for production is always tagged with a version number. 
@@ -1455,13 +1481,17 @@ Running <code>docker compose logs app | grep 'admin'</code> should help to find 
 <p><img align="center" alt="IRIS Structure" src="/_static/iris_structure.png" /></p>
 <h2 id="additional-configuration">Additional configuration</h2>
 <p>Please see <a href="../operations/configuration/">configuration</a> for more details.</p>
+<h3 id="kubernetes">Kubernetes</h3>
+<p>For enterprises wishing to run their instance of IRIS, utilizing the projects official Helm charts and/or Kustomize manifests, allows them to significantly enhance their deployment and management, presenting a powerful solution to streamline their IRIS deployment and management processes, efficiently running across a cluster of machines, ensuring high availability and seamless scaling as demand fluctuates.</p>
+<p>The deploy directory in the iris-web GitHub repository provides a practical starting point for deploying IRIS on their preferred managed k8s platform. We've created two variants: eks and gke, feel free to customize each with your own values.</p>
+<p>For more details, please visit the deploy directory on GitHub: <a href="https://github.com/dfir-iris/iris-web/tree/master/deploy">deploy</a></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2023-11-29
+      2023-12-30
     
   </small>
 </div>

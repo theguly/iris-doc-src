@@ -1456,7 +1456,7 @@ Passwords are stored salted and hashed, it is thus not possible to retrieve them
 <li>
 <p>Generate the hash of the new password with Python BCrypt in Python prompt</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">bcrypt</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">bcrypt</span><span class="o">.</span><span class="n">hashpw</span><span class="p">(</span><span class="o">&lt;</span><span class="n">new_password</span><span class="o">&gt;.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span> <span class="n">bcrypt</span><span class="o">.</span><span class="n">gensalt</span><span class="p">())</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">bcrypt</span><span class="o">.</span><span class="n">hashpw</span><span class="p">(</span><span class="s1">&#39;&lt;new_password&gt;&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">),</span> <span class="n">bcrypt</span><span class="o">.</span><span class="n">gensalt</span><span class="p">()))</span>
 </code></pre></div>
 </li>
 <li>
@@ -1466,6 +1466,9 @@ Passwords are stored salted and hashed, it is thus not possible to retrieve them
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>/<span class="w"> </span><span class="c1"># psql</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nv">postgres</span><span class="o">=</span><span class="c1"># \c iris_db </span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nv">postgres</span><span class="o">=</span><span class="c1"># UPDATE &quot;user&quot; SET password = &#39;&lt;hash&gt;&#39; WHERE &quot;user&quot;.name = &#39;administrator&#39;;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nv">postgres</span><span class="o">=</span><span class="c1"># \q</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nb">exit</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nb">exit</span>
 </code></pre></div>
 </li>
 </ol>
@@ -1484,7 +1487,7 @@ Passwords are stored salted and hashed, it is thus not possible to retrieve them
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker-compose<span class="w"> </span>restart<span class="w"> </span>app
 </code></pre></div>
 <h4 id="setting-up-ldap-for-the-first-runtime-of-iris">Setting up LDAP for the first runtime of IRIS</h4>
-<p>To set up LDAP without having run IRIS priorly, and as the app needs the accounts to be created first before using LDAP, one have to set the <code>IRIS_ADM_EMAIL</code> environment with the LDAP Email of the administrator user.  </p>
+<p>To set up LDAP without having run IRIS priorly, and as the app needs the accounts to be created first before using LDAP, one has to set the <code>IRIS_ADM_EMAIL</code> environment with the LDAP Email of the administrator user.  </p>
 <div class="highlight"><span class="filename">Example of LDAP configuration for first run</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">IRIS_AUTHENTICATION_TYPE</span><span class="o">=</span>ldap
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">## IP address or FQDN of the ldap server</span>
@@ -1576,7 +1579,7 @@ Passwords are stored salted and hashed, it is thus not possible to retrieve them
   <small>
     
       Last update:
-      2023-06-26
+      2023-12-30
     
   </small>
 </div>

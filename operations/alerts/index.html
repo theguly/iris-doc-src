@@ -482,8 +482,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#umerge-alerts-from-a-case" class="md-nav__link">
-    Umerge alerts from a case
+  <a href="#unmerge-alerts-from-a-case" class="md-nav__link">
+    Unmerge alerts from a case
   </a>
   
 </li>
@@ -1366,8 +1366,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#umerge-alerts-from-a-case" class="md-nav__link">
-    Umerge alerts from a case
+  <a href="#unmerge-alerts-from-a-case" class="md-nav__link">
+    Unmerge alerts from a case
   </a>
   
 </li>
@@ -1407,7 +1407,7 @@
 <div class="admonition info">
 <p class="admonition-title">Introduced in IRIS v2.1.0</p>
 </div>
-<p>Alerts can be feeded directly into IRIS using the <a href="https://docs.dfir-iris.org/_static/iris_api_reference_v2.0.1.html#tag/Alerts">Alerts API</a>. <br />
+<p>Alerts can be fed directly into IRIS using the <a href="https://docs.dfir-iris.org/_static/iris_api_reference_v2.0.1.html#tag/Alerts">Alerts API</a>. <br />
 Any source can inject alerts into IRIS, as long as it can send HTTP requests and respects the alert format.    </p>
 <p>A service account with the <code>alert_read</code> and <code>alert_write</code> permission can be used to send alerts to IRIS.  </p>
 <div class="admonition warning">
@@ -1420,13 +1420,13 @@ Any source can inject alerts into IRIS, as long as it can send HTTP requests and
 <p>Each alert can be expanded to show more details.  </p>
 <h2 id="alerts-assignment">Alerts assignment</h2>
 <p>Alerts can be assigned to analysts. This can be done directly from the alert view.  </p>
-<p>To self assign an unassigned alert, click on the hand icon on the left. </p>
+<p>To self-assign an unassigned alert, click on the hand icon on the left. </p>
 <p><img align="center" alt="Alerts" src="/_static/alerts/alert_assignment.png" /></p>
 <p>Clicking again on the hand icon will prompt with a list of analysts to assign the alert to.  </p>
-<p>The right button <code>Assign</code> when hovering an alert can also be used to assign the alert to an analyst.</p>
+<p>The right button <code>Assign</code>, when hovering above an alert, can also be used to assign the alert to an analyst.</p>
 <h2 id="merge-escalation-operations">Merge / escalation operations</h2>
 <h3 id="creating-cases-from-alerts">Creating cases from alerts</h3>
-<p>Alerts can be escalated/merged into a new case. When hovering an alert, a <code>Merge</code> button will appear.  </p>
+<p>Alerts can be escalated/merged into a new case. When hovering above an alert, a <code>Merge</code> button will appear.  </p>
 <p><img align="center" alt="Alerts" src="/_static/alerts/alert_escalate.png" /></p>
 <p>Once clicked, a new window appears, requesting additional information.  In this window, the analyst can: </p>
 <ul>
@@ -1436,26 +1436,26 @@ Any source can inject alerts into IRIS, as long as it can send HTTP requests and
 <li>Select the assets to import</li>
 <li>Add an escalation note</li>
 <li>Set the case tags </li>
-<li>Choose if the alert should be import in the timeline as event  </li>
+<li>Choose if the alert should be imported in the timeline as an event  </li>
 </ul>
 <h3 id="merge-alerts-into-an-existing-case">Merge alerts into an existing case</h3>
-<p>Alerts can also be escalated/merged into an existing case. When hovering an alert, a <code>Merge</code> button will appear.  </p>
-<p>Once clicked a new window appears, requesting additional information.  The button <code>Merge into existing case</code> needs to be clicked. <br />
+<p>Alerts can also be escalated/merged into an existing case. When hovering above an alert, a <code>Merge</code> button will appear.  </p>
+<p>Once clicked, a new window appears requesting additional information.  The button <code>Merge into existing case</code> needs to be clicked. <br />
 A new dropdown appears and allows to select the case to merge the alert into.   </p>
 <p>Similar to the case creation, the analyst can: </p>
 <ul>
 <li>Select the IOCs to import</li>
 <li>Select the assets to import</li>
 <li>Add an escalation note</li>
-<li>Choose if the alert should be import in the timeline as event</li>
+<li>Choose if the alert should be imported in the timeline as an event</li>
 </ul>
-<p>The selections IOCs and assets are then added to the selected case.  </p>
-<h3 id="umerge-alerts-from-a-case">Umerge alerts from a case</h3>
+<p>The selected IOCs and assets are then added to the selected case.  </p>
+<h3 id="unmerge-alerts-from-a-case">Unmerge alerts from a case</h3>
 <p>Alerts can be unmerged from a case. </p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>When unmerging an alert, the alert is not deleted. It is only removed from the case. The alert state is not changed.<br />
-The IOC and assets are not removed from the case.  </p>
+The IOCs and assets are not removed from the case.  </p>
 </div>
 <p>When a case is merged, a new link appears on the alert and mentions the case it was merged into.<br />
 Clicking on this link allows to browse the case or to unmerge the alert. </p>
@@ -1475,7 +1475,7 @@ Clicking on this link allows to browse the case or to unmerge the alert. </p>
   <small>
     
       Last update:
-      2023-05-16
+      2023-07-01
     
   </small>
 </div>

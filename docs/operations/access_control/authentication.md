@@ -17,7 +17,7 @@ Passwords are stored salted and hashed, it is thus not possible to retrieve them
    
     ```python
     import bcrypt
-    print(bcrypt.hashpw(<new_password>.encode('utf-8'), bcrypt.gensalt())
+    print(bcrypt.hashpw('<new_password>'.encode('utf-8'), bcrypt.gensalt()))
     ```
 
 2. Connect to the DB docker then the Postgresql database `iris_db` and update the password 
@@ -28,6 +28,9 @@ Passwords are stored salted and hashed, it is thus not possible to retrieve them
     / # psql
     postgres=# \c iris_db 
     postgres=# UPDATE "user" SET password = '<hash>' WHERE "user".name = 'administrator';
+    postgres=# \q
+    exit
+    exit
     ```
 
 

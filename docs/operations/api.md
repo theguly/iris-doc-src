@@ -3,6 +3,7 @@ IRIS is meant to be plug-able and be integrated with the existing environments.
 
 Through the REST API, one can do almost as much as it is possible to do through the web interface. Under the hood, the web interface is actually talking to the API. 
 
+The API endpoints are reachable on the same port as the web interface, i.e 443/HTTPS by default.
 
 !!! hint
     A Python client is available [here](https://github.com/dfir-iris/iris-client) to ease the automation.  
@@ -40,7 +41,7 @@ Use the references below to check which API version applies to your IRIS version
 | v2.0.x|	[API v2.0.0](../_static/iris_api_reference_v2.0.0.html) |
 | v2.1.x|	[API v2.0.1](../_static/iris_api_reference_v2.0.1.html) |
 | v2.2.x|	[API v2.0.1](../_static/iris_api_reference_v2.0.1.html) |
-| v2.3.x|	[API v2.0.1](../_static/iris_api_reference_v2.0.2.html) |
+| v2.3.x|	[API v2.0.2](../_static/iris_api_reference_v2.0.2.html) |
 
 
 
@@ -50,7 +51,7 @@ For example, to list all the cases:
 
 ```bash
    curl --request GET \
-  --url http://localhost:8000/manage/cases/list?cid=1 \
+  --url http://<yourserver_ip>/manage/cases/list?cid=1 \
   --header 'Authorization: Bearer mWpCUVNzBMU5EnbIAK50jLPhYjKBTHZjobdogc_n_yixpJTmt9tzAf8WYDI7m5XgB9wCJnlaXlHIh9RZjtp2fA' \
   --header 'Content-Type: application/json'
 ```

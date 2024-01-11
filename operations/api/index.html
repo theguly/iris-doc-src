@@ -1335,6 +1335,7 @@
 <h1 id="api">API</h1>
 <p>IRIS is meant to be plug-able and be integrated with the existing environments.   </p>
 <p>Through the REST API, one can do almost as much as it is possible to do through the web interface. Under the hood, the web interface is actually talking to the API. </p>
+<p>The API endpoints are reachable on the same port as the web interface, i.e 443/HTTPS by default.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>A Python client is available <a href="https://github.com/dfir-iris/iris-client">here</a> to ease the automation.  </p>
@@ -1413,7 +1414,7 @@ Use the references below to check which API version applies to your IRIS version
 </tr>
 <tr>
 <td>v2.3.x</td>
-<td>API v2.0.2 - To come</td>
+<td><a href="../../_static/iris_api_reference_v2.0.2.html">API v2.0.2</a></td>
 </tr>
 </tbody>
 </table>
@@ -1421,7 +1422,7 @@ Use the references below to check which API version applies to your IRIS version
 <p>The API token is used as a Bearer and needs to be present in the header <code>Authorization</code> when issuing requests. 
 For example, to list all the cases: </p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">   </span>curl<span class="w"> </span>--request<span class="w"> </span>GET<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>--url<span class="w"> </span>http://localhost:8000/manage/cases/list?cid<span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>--url<span class="w"> </span>http://&lt;yourserver_ip&gt;/manage/cases/list?cid<span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>--header<span class="w"> </span><span class="s1">&#39;Authorization: Bearer mWpCUVNzBMU5EnbIAK50jLPhYjKBTHZjobdogc_n_yixpJTmt9tzAf8WYDI7m5XgB9wCJnlaXlHIh9RZjtp2fA&#39;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>--header<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span>
 </code></pre></div>
@@ -1433,7 +1434,7 @@ in the database and it becomes ineffective. </p>
   <small>
     
       Last update:
-      2023-12-30
+      2024-01-11
     
   </small>
 </div>

@@ -18,3 +18,6 @@ If you want to add your own resources, please open a pull request or [contact us
 
 - [SOC Fortress: IRIS](https://www.youtube.com/watch?v=XXyIv_aes4w) 
 
+## MISC 
+
+- [Integrating IRIS with Tines](https://www.tines.com/library/stories/1194357/process-crowdstrike-detections-check-hashes-in-virustotal-and-create-tickets-in-iris?redirected-from=%2Flibrary%2Fstories%3Fs%3Diris) by [Michael Tolan](https://www.linkedin.com/in/michaeltolaneire/)

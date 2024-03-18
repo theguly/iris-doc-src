@@ -16,7 +16,7 @@ Case templates are made of a set of informations that will be used to pre-fill t
 - **Classification**: The classification of the case. Should be a lowercase name matching an existing classification in IRIS,
 - **Tags**: A list of case tags,
 - **Tasks**: A list of dictionaries defining tasks. Tasks are defined by title (required), description, and list of tags,
-- **Notes**: A list of dictionaries defining note groups. Note groups are defined by title (required), and list of notes. Notes have title (required) and content
+- **Notes**: A list of dictionaries defining note directories. Note directories are defined by title (required), and list of notes. Notes have title (required) and content
 
 
 !!! info "Looking for case templates?"
@@ -50,7 +50,7 @@ The following defines the structure of a case template:
             "title": "Containment"
         }
     ],
-    "note_groups": [
+    "note_directories": [
         {
             "title": "Identify",
             "notes": [

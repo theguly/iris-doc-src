@@ -1,7 +1,5 @@
 # Alerts 
 
-!!! warning  "This section is under construction."
-
 !!! info "Introduced in IRIS v2.1.0"
 
 

@@ -32,7 +32,11 @@ The templates can have any forms as soon as they respect the tags. We are provid
     ![docx](../_static/docx_templating_lines.png)
 
 ## Available tags
-The following tags are available. None are mandatory. If a tag is mistyped, the generation step will produce an error message.   
+The following tags are available. None are mandatory. If a tag is mistyped, the generation step will produce an error message.    
+
+!!! hint 
+    To get the list of available tags for a specific IRIS version, head to `/case/export?cid=1`. 
+    
 
 !!! hint 
     Standard objects are accessible with ``{{ objectname }}``.

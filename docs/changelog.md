@@ -2,6 +2,34 @@
 
 For upgrades instructions, please see the [Upgrades page](/operations/upgrades). 
 
+## [v2.4.6](https://github.com/dfir-iris/iris-web/releases/tag/v2.4.6) <small>_ March 18, 2024 _</small>
+### What's changed
+⚠️ Important changes are done in the Access Control. If you are upgrading, please carefully read the upgrades instructions. 
+The layout of the reports has been changed. Reports template need to be upgraded as well. 
+
+**Improved**   
+
+* New notes layout 
+* New timeline layout with tree view 
+* New timeline feature allowing to create child events 
+* New access control feature allowing to associate users with customers 
+* CI/CD init by @c8y3 in [#401](https://github.com/dfir-iris/iris-web/pull/401), [#400](https://github.com/dfir-iris/iris-web/pull/400), [#402](https://github.com/dfir-iris/iris-web/pull/402)
+
+**Fixed**    
+
+* Fix CSS issue by @whikernel in [#377](https://github.com/dfir-iris/iris-web/pull/377)
+* Fixes addition of case templates in [#379](https://github.com/dfir-iris/iris-web/pull/379)
+* Fix issues with case templates usage in [#381](https://github.com/dfir-iris/iris-web/pull/381)
+* Fix issue with IOC lookups in the timeline in [#382](https://github.com/dfir-iris/iris-web/pull/382)
+* Fix major collaboration issue in notes in [#385](https://github.com/dfir-iris/iris-web/pull/385)
+* Fix PG Extension not being setup properly  in [#390](https://github.com/dfir-iris/iris-web/pull/390)
+* Fix multiple security issues impacting case reports and editors
+
+## New Contributors
+* @MikaelFangel made their first contribution in [#414](https://github.com/dfir-iris/iris-web/pull/414)
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v2.4.5...v2.4.6)
+
 ## [v2.3.7](https://github.com/dfir-iris/iris-web/releases/tag/v2.3.7) <small>_ December 14, 2023 _</small>
 ### What's Changed
 

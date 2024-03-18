@@ -43,6 +43,15 @@ A new window appears with the possibility to select the groups the user should b
 After saving, the permissions of the user are updated. This can be verified in the `Permissions` tab.   
 ![Manage user](../../_static/access_control/add_user4.png) 
 
+## Setting customers
+Customers can be set by clicking on the `Customers` tab of the user's window and then `Manage`.
+
+![Manage user](../../_static/access_control/add_user7.png) 
+
+A new window appears with the possibility to select the customers the user should belong to. 
+![Manage user](../../_static/access_control/add_user8.png)
+
+
 ## Setting cases access 
 Cases access are usually set through groups membership. However for granularity they can be set per user.   
 To set the access of a user on a case, click on the `Cases access` tab of the user's window and then `Set case access`.   

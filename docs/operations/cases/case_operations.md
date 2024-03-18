@@ -1,7 +1,7 @@
 # Case operations
 ## Opening a case
-To open a case from the dashboard, press `Add case` in the top right corner. 
-Otherwise, go to the `Manage Cases` tab and press `Add case` in the top right corner.  
+To open a case anywhere, press the `+` button in the top right corner.  
+A popup appears and allows to fill the basic information of the new case.
 
 ![Cases](/_static/cases/open_case_button.png){ align=center }
 
@@ -45,6 +45,9 @@ The following information can be updated:
 - **Case owner**: The owner of the case - by default set to the user who created the case
 - **Case state**: State of the case - by default set to `Open`. This defines the state of the case (open, closed, etc.). 
 - **Case outcome**: Outcome of the case - by default set to `Unknown`. This defines if the case is a true positive, false positive, etc. 
+- **Case customer**: Customer of the case 
+- **Case reviewer**: Reviewer of the case 
+- **Case severity**: Severity of the case - by default set to `Medium`
 - **Case tags**: Tags of the case - by default set to `Open`
 - **Protagonists**: Protagonists of the case - by default none. Those are the actors involved in the case.  
 

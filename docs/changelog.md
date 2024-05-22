@@ -2,6 +2,14 @@
 
 For upgrades instructions, please see the [Upgrades page](/operations/upgrades). 
 
+## [v2.4.7](https://github.com/dfir-iris/iris-web/releases/tag/v2.4.7) <small>_ March 18, 2024 _</small>
+### What's changed
+
+**Fixed**    
+* Issues in the datastore preventing to upload multiple files 
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v2.4.6...v2.4.7)
+
 ## [v2.4.6](https://github.com/dfir-iris/iris-web/releases/tag/v2.4.6) <small>_ March 18, 2024 _</small>
 ### What's changed
 ⚠️ Important changes are done in the Access Control. If you are upgrading, please carefully read the upgrades instructions. 

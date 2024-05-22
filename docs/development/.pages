@@ -6,3 +6,5 @@ nav:
   - DB Migration: db-migration.md
   - Hooks: hooks.md
   - Modules: modules
+  - Debugging: db_debug.md
+

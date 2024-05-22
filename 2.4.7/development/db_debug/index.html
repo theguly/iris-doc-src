@@ -12,20 +12,20 @@
         <meta name="author" content="DFIR-IRIS Team">
       
       
-        <link rel="canonical" href="https://dfir-iris.org/2.4.7/operations/case_templates/">
+        <link rel="canonical" href="https://dfir-iris.org/2.4.7/development/db_debug/">
       
       
-        <link rel="prev" href="../configuration/">
+        <link rel="prev" href="../modules/quick_start/processor/">
       
       
-        <link rel="next" href="../custom_attributes/">
+        <link rel="next" href="../../zqa/">
       
       <link rel="icon" href="../../_static/ico_white.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11">
     
     
       
-        <title>Case Templates - Documentation</title>
+        <title>Debugging - Documentation</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#case-templates" class="md-skip">
+        <a href="#db-debug" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Case Templates
+              Debugging
             
           </span>
         </div>
@@ -255,16 +255,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
       
       
         
@@ -303,7 +301,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Operations
@@ -340,7 +338,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../access_control/">Access control</a>
+          <a href="../../operations/access_control/">Access control</a>
           
             <label for="__nav_3_1">
               <span class="md-nav__icon md-icon"></span>
@@ -363,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../access_control/authentication/" class="md-nav__link">
+      <a href="../../operations/access_control/authentication/" class="md-nav__link">
         Authentication
       </a>
     </li>
@@ -377,7 +375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../access_control/groups/" class="md-nav__link">
+      <a href="../../operations/access_control/groups/" class="md-nav__link">
         Groups
       </a>
     </li>
@@ -391,7 +389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../access_control/users/" class="md-nav__link">
+      <a href="../../operations/access_control/users/" class="md-nav__link">
         Users
       </a>
     </li>
@@ -412,7 +410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../alerts/" class="md-nav__link">
+      <a href="../../operations/alerts/" class="md-nav__link">
         Alerts
       </a>
     </li>
@@ -426,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/" class="md-nav__link">
+      <a href="../../operations/api/" class="md-nav__link">
         API
       </a>
     </li>
@@ -477,7 +475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cases/case_operations/" class="md-nav__link">
+      <a href="../../operations/cases/case_operations/" class="md-nav__link">
         Case operations
       </a>
     </li>
@@ -491,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cases/iocs/" class="md-nav__link">
+      <a href="../../operations/cases/iocs/" class="md-nav__link">
         IOCs
       </a>
     </li>
@@ -505,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cases/notes/" class="md-nav__link">
+      <a href="../../operations/cases/notes/" class="md-nav__link">
         Notes
       </a>
     </li>
@@ -519,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cases/tasks/" class="md-nav__link">
+      <a href="../../operations/cases/tasks/" class="md-nav__link">
         Tasks
       </a>
     </li>
@@ -540,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../configuration/" class="md-nav__link">
+      <a href="../../operations/configuration/" class="md-nav__link">
         Configuration
       </a>
     </li>
@@ -552,59 +550,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Case Templates
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../operations/case_templates/" class="md-nav__link">
         Case Templates
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#structure-of-templates" class="md-nav__link">
-    Structure of templates
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-case-templates" class="md-nav__link">
-    Using case templates
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -616,7 +566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../custom_attributes/" class="md-nav__link">
+      <a href="../../operations/custom_attributes/" class="md-nav__link">
         Custom attributes
       </a>
     </li>
@@ -630,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../datastore/" class="md-nav__link">
+      <a href="../../operations/datastore/" class="md-nav__link">
         Datastore
       </a>
     </li>
@@ -644,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../logging/" class="md-nav__link">
+      <a href="../../operations/logging/" class="md-nav__link">
         Logging
       </a>
     </li>
@@ -680,7 +630,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../modules/">Modules</a>
+          <a href="../../operations/modules/">Modules</a>
           
             <label for="__nav_3_10">
               <span class="md-nav__icon md-icon"></span>
@@ -703,7 +653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../modules/mod_management/" class="md-nav__link">
+      <a href="../../operations/modules/mod_management/" class="md-nav__link">
         Management
       </a>
     </li>
@@ -752,7 +702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../modules/natives/IrisMISP/" class="md-nav__link">
+      <a href="../../operations/modules/natives/IrisMISP/" class="md-nav__link">
         Module IRIS MISP
       </a>
     </li>
@@ -766,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../modules/natives/IrisVT/" class="md-nav__link">
+      <a href="../../operations/modules/natives/IrisVT/" class="md-nav__link">
         Module IRIS VT
       </a>
     </li>
@@ -780,7 +730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../modules/natives/IrisWebHooks/" class="md-nav__link">
+      <a href="../../operations/modules/natives/IrisWebHooks/" class="md-nav__link">
         Module IRIS Webhooks
       </a>
     </li>
@@ -808,7 +758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reports/" class="md-nav__link">
+      <a href="../../operations/reports/" class="md-nav__link">
         Reports
       </a>
     </li>
@@ -822,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../server_settings/" class="md-nav__link">
+      <a href="../../operations/server_settings/" class="md-nav__link">
         Server settings
       </a>
     </li>
@@ -836,7 +786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/" class="md-nav__link">
+      <a href="../../operations/tutorials/" class="md-nav__link">
         Tutorials
       </a>
     </li>
@@ -850,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../upgrades/" class="md-nav__link">
+      <a href="../../operations/upgrades/" class="md-nav__link">
         Upgrades
       </a>
     </li>
@@ -915,14 +865,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
       
       
         
@@ -949,7 +901,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../development/">Development</a>
+          <a href="../">Development</a>
           
             <label for="__nav_5">
               <span class="md-nav__icon md-icon"></span>
@@ -957,7 +909,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Development
@@ -972,7 +924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../development/structure/" class="md-nav__link">
+      <a href="../structure/" class="md-nav__link">
         Structure overview
       </a>
     </li>
@@ -986,7 +938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../development/environment/" class="md-nav__link">
+      <a href="../environment/" class="md-nav__link">
         Environment setup
       </a>
     </li>
@@ -1000,7 +952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../development/code-tips/" class="md-nav__link">
+      <a href="../code-tips/" class="md-nav__link">
         Coding tips
       </a>
     </li>
@@ -1014,7 +966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../development/db-migration/" class="md-nav__link">
+      <a href="../db-migration/" class="md-nav__link">
         DB Migration
       </a>
     </li>
@@ -1028,7 +980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../development/hooks/" class="md-nav__link">
+      <a href="../hooks/" class="md-nav__link">
         Hooks
       </a>
     </li>
@@ -1062,7 +1014,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../development/modules/">Modules</a>
+          <a href="../modules/">Modules</a>
           
             <label for="__nav_5_7">
               <span class="md-nav__icon md-icon"></span>
@@ -1116,7 +1068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../development/modules/quick_start/processor/" class="md-nav__link">
+      <a href="../modules/quick_start/processor/" class="md-nav__link">
         Processor modules
       </a>
     </li>
@@ -1142,11 +1094,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../development/db_debug/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Debugging
       </a>
+      
     </li>
   
 
@@ -1313,28 +1275,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#structure-of-templates" class="md-nav__link">
-    Structure of templates
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-case-templates" class="md-nav__link">
-    Using case templates
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1349,89 +1289,50 @@
 
 
 
-<h1 id="case-templates">Case templates</h1>
-<div class="admonition info">
-<p class="admonition-title">Introduced in IRIS v2.1.0</p>
-</div>
-<p>Case templates are a way to pre-configure a case with a set of predefined informations.<br />
-The case templates can be managed in <code>Advanced</code> &gt; <code>Case templates</code>.   </p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>This section is only available for users with the administrator role. </p>
-</div>
-<p>Case templates are made of a set of informations that will be used to pre-fill the case creation form. The following elements can be set: </p>
-<ul>
-<li><strong>Title prefix</strong>: A prefix to add to case title,</li>
-<li><strong>Summary</strong>: content to prefill the summary,</li>
-<li><strong>Classification</strong>: The classification of the case. Should be a lowercase name matching an existing classification in IRIS,</li>
-<li><strong>Tags</strong>: A list of case tags,</li>
-<li><strong>Tasks</strong>: A list of dictionaries defining tasks. Tasks are defined by title (required), description, and list of tags,</li>
-<li><strong>Notes</strong>: A list of dictionaries defining note directories. Note directories are defined by title (required), and list of notes. Notes have title (required) and content</li>
-</ul>
-<div class="admonition info">
-<p class="admonition-title">Looking for case templates?</p>
-<p>We are providing a set of case templates in the <a href="https://github.com/dfir-iris/iris-resources/tree/main/Case%20templates">IRIS Resources repository</a>. </p>
-</div>
-<h2 id="structure-of-templates">Structure of templates</h2>
-<p>The following defines the structure of a case template: </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ransomware_infection&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ransomware Infection Template&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This case template describes first-response tasks to handle information system compromised by a ransomware.&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DFIR-IRIS&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&quot;classification&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;malicious-code:ransomware&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&quot;title_prefix&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;[RANS]&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&quot;summary&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;# Context \n\n\n# Contact \n\n\n# Actions \n\n\n&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ransomware&quot;</span><span class="p">,</span><span class="s2">&quot;malware&quot;</span><span class="p">],</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">&quot;tasks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">            </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Identify the perimeter&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The perimeter of compromise must be identified&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">            </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;identify&quot;</span><span class="p">]</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="p">},</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">            </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Collect compromised hosts&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Deploy Velociraptor and start collecting evidence&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">            </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;collect&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;velociraptor&quot;</span><span class="p">]</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="p">},</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">            </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Containment&quot;</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="p">],</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="nt">&quot;note_directories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">            </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Identify&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">            </span><span class="nt">&quot;notes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">                </span><span class="p">{</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">                    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Identify the compromised accounts&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">                    </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;# Observations\n\n&quot;</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">                </span><span class="p">}</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">            </span><span class="p">]</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">        </span><span class="p">},</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">            </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Collect&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">            </span><span class="nt">&quot;notes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">                </span><span class="p">{</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">                    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Velociraptor deployment&quot;</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">                </span><span class="p">},</span>
-<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">                </span><span class="p">{</span>
-<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">                    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Assets collected&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">                    </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;# Assets collected\n\n# Assets not collected&quot;</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">                </span><span class="p">}</span>
-<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">            </span><span class="p">]</span>
-<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="w">    </span><span class="p">]</span>
-<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="p">}</span>
+<h1 id="db-debug">DB Debug</h1>
+<p>In case a DB Debug with pgAdmin is needed, you need to follow this step :  </p>
+<p><strong>In a terminal</strong>:</p>
+<p>This creates a new virtual environment as required.</p>
+<div class="highlight"><pre><span></span><code>1. sudo mkdir /var/lib/pgadmin
+2. sudo mkdir /var/log/pgadmin
+3. sudo chown $USER /var/lib/pgadmin
+4. sudo chown $USER /var/log/pgadmin
+5. python3 -m venv pgadmin4
+6. source pgadmin4/bin/activate
+7. (pgadmin4) $ pip install pgadmin4
+8. (pgadmin4) $ pgadmin4
+NOTE: Configuring authentication for SERVER mode.
+
+Enter the email address and password to use for the initial pgAdmin user account:
+
+Email address: user@domain.com
+Password: 
+Retype password:
+Starting pgAdmin 4. Please navigate to http://127.0.0.1:5050 in your browser.
+* Serving Flask app &quot;pgadmin&quot; (lazy loading)
+* Environment: production
+  WARNING: Do not use the development server in a production environment.
+  Use a production WSGI server instead.
+* Debug mode: off
 </code></pre></div>
-<h2 id="using-case-templates">Using case templates</h2>
-<p>Case templates can be used when creating a new case. On the UI, when creating a case, select the case template to use in the <code>Case template</code> dropdown. The case will then automatically use the informations defined in the template.  </p>
+<p>Then run, http://127.0.0.1:5050/browser/ in your browser.</p>
+<p>Follow the next steps, to add iris_db :</p>
+<div class="highlight"><pre><span></span><code>1. Click right on Servers&gt;New&gt;Server.
+2. Write a name for the server in &quot;General&quot;.
+3. In &quot;Connexion&quot; write :
+hostname : localhost
+port : 5432
+database : iris_db
+username : postgres 
+4. To finish click on save.
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2024-03-18
+      2024-05-13
     
   </small>
 </div>

@@ -19,7 +19,9 @@ properties:
   state_id:
     type: integer
   classification_id:
-    type: 'null'
+    type:
+      - 'null'
+      - integer
   review_status_id:
     type: 'null'
   reviewer_id:

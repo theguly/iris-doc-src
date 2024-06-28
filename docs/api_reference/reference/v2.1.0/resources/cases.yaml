@@ -20,7 +20,7 @@ post:
               minLength: 2
               description: A short description of the case. This will be the summary of the case.
             case_customer:
-              type: number
+              type: integer
               description: 'The customer ID linked to the case. '
             case_soc_id:
               type: string
@@ -30,7 +30,9 @@ post:
             case_template_id:
               type: integer
             classification_id:
-              type: integer
+              type:
+                - 'null'
+                - integer
           required:
             - case_soc_id
             - case_customer

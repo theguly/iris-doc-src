@@ -39358,73 +39358,7 @@ paths:
           description: 'Case opening date - higher boundary '
     parameters: []
   /api/v2/cases:
-    parameters: []
-    post:
-      summary: Create a new case
-      tags:
-        - Cases
-      operationId: post-api-v2-cases
-      responses:
-        '201':
-          description: Case successfully created
-          content:
-            application/json:
-              schema:
-                $ref: "./v2.1.0/Case.yaml"
-        '400':
-          description: Bad Request
-          headers: {}
-          content:
-            application/json:
-              schema:
-                description: 'Error message'
-                type: string
-                examples:
-                  - 'Error creating case - check server logs'
-      description: 'Creates a new case.'
-      parameters: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                case_name:
-                  type: string
-                  minLength: 2
-                  description: 'A short name for the case. The case number will be prepend. '
-                  required: true
-                case_description:
-                  type: string
-                  minLength: 2
-                  description: A short description of the case. This will be the summary of the case.
-                  required: true
-                case_customer:
-                  type: number
-                  description: 'The customer ID linked to the case. '
-                  required: true
-                case_soc_id:
-                  type: string
-                  description: 'A SOC ticket reference '
-                  required: true
-                custom_attributes:
-                  type: object
-                case_template_id:
-                  type: integer
-                classification_id:
-                  type: integer
-              required:
-                - case_soc_id
-                - case_customer
-                - case_name
-                - case_description
-            examples:
-              Valid request:
-                value:
-                  case_soc_id: SOC_154
-                  case_customer: 1
-                  case_name: My Case API
-                  case_description: A super nice description
+    $ref: "./v2.1.0/resources/cases.yaml"
 components:
   securitySchemes:
     Bearer <bearer>:

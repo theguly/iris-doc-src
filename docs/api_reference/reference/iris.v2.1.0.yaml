@@ -12,7 +12,9 @@ info:
     ### Changes in v2.1.0
     * Added POST /api/v2/cases
     * Added GET /api/v2/cases/{identifier}
+    * Added DELETE /api/v2/cases/{identifier}
     * Deprecated POST /manage/cases/add in favor of POST /api/v2/cases
+    * Deprecated POST /manage/cases/delete/{case_id} in favor of DELETE /api/v2/cases/{identifier}
 
     ### Changes in v2.0.0
     This version introduces access control. Every request now needs to have the `cid=x` parameter in the URI.  
@@ -3787,7 +3789,7 @@ paths:
                     message: Invalid asset ID for this case
                     status: error
       operationId: get-case-delete-asset
-      description: 'This endpoint is deprecated. Use the POST equivalent. '
+      description: 'This endpoint is deprecated. Use the POST equivalent.'
       security:
         - Bearer <bearer>: []
       parameters:
@@ -4733,7 +4735,7 @@ paths:
                         object_state: 215
                         object_last_update: '2024-01-04T15:50:13.728362'
       operationId: get-case-notes-group
-      description: 'This endpoint is deprecated. Use `/case/notes/directories/filter`. '
+      description: 'This endpoint is deprecated. Use `/case/notes/directories/filter`.'
       security:
         - Bearer <bearer>: []
       parameters:
@@ -4897,7 +4899,7 @@ paths:
                     message: Invalid group ID
                     status: error
       operationId: get-case-groups-fetch
-      description: 'This endpoint is deprecated and not replaced yet.  '
+      description: 'This endpoint is deprecated and not replaced yet.'
       security:
         - Bearer <bearer>: []
       parameters:
@@ -6979,7 +6981,7 @@ paths:
                         note_title: Testing note siho
                       - note_id: 88
                         note_title: Example note with code
-      description: 'This endpoint is deprecated. Use the `GET` equivalent. '
+      description: 'This endpoint is deprecated. Use the `GET` equivalent.'
       parameters:
         - schema:
             type: string
@@ -8501,7 +8503,7 @@ paths:
         '200':
           description: OK
       deprecated: true
-      description: 'This endpoint is deprecated. Use the POST equivalent.  '
+      description: 'This endpoint is deprecated. Use the POST equivalent.'
       tags:
         - Case IOC
   '/case/ioc/update/{ioc_id}':
@@ -8978,7 +8980,7 @@ paths:
                     message: string
                     status: string
       operationId: get-case-timeline-get
-      description: 'The endpoint is deprecated. Use `case/timeline/advanced-filter`. '
+      description: 'The endpoint is deprecated. Use `case/timeline/advanced-filter`.'
       parameters:
         - schema:
             type: integer
@@ -9858,7 +9860,7 @@ paths:
                     message: ''
                     status: success
       operationId: get-case-timeline-get-filter
-      description: 'The endpoint is deprecated. Use `case/timeline/advanced-filter`. '
+      description: 'The endpoint is deprecated. Use `case/timeline/advanced-filter`.'
       parameters:
         - schema:
             type: integer
@@ -28961,7 +28963,7 @@ paths:
                         - Missing data for required field.
                     message: Data error
                     status: error
-      description: 'Deprecated. Use POST /api/v2/cases instead.'
+      description: 'This endpoint is deprecated. Use POST /api/v2/cases instead.'
       parameters: []
       requestBody:
         content:
@@ -29813,7 +29815,8 @@ paths:
                     message: Tried to delete a non-existing case
                     status: error
       operationId: get-manage-cases-delete
-      description: 'This implies the deletion of everything linked to the case including summary, assets, notes, timeline, tasks and evidences. The IOCs will only be deleted if they are not referenced in another case. '
+      description: 'This endpoint is deprecated. Use DELETE /api/v2/cases/{identifier} instead.'
+      deprecated: true
       security:
         - Bearer <bearer>: []
       parameters: []

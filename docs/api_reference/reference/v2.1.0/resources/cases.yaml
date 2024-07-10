@@ -51,14 +51,6 @@ post:
           schema:
             $ref: "./v2.1.0/schemas/Case.yaml"
     '400':
-      description: Bad Request
-      headers: {}
-      content:
-        application/json:
-          schema:
-            description: 'Error message'
-            type: string
-            examples:
-              - 'Error creating case - check server logs'
+      $ref: "./v2.1.0/responses/GenericError.yaml"
   description: 'Creates a new case.'
 

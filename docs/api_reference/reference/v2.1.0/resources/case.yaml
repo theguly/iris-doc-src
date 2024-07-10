@@ -1,0 +1,17 @@
+parameters:
+  - $ref: "./v2.10/parameters/path/Identifier.yaml"
+get:
+  summary: Get a case
+  tags:
+    - Cases
+  operationId: get-api-v2-cases
+  responses:
+    '201':
+      description: Case successfully found
+      content:
+        application/json:
+          schema:
+            $ref: "./v2.1.0/schemas/Case.yaml"
+    '404':
+      $ref: "./v2.10/responses/NotFound.yaml"
+  description: 'Get a case by its identifier'

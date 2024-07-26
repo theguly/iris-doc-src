@@ -19,8 +19,17 @@ properties:
     description: "The case status identifier. It can be one of the following 0: unknown, 1: false_positive, 2: true_positive_with_impact, 3: not_applicable, 4: true_positive_without_impact, 5: legitimate"
     minimum: 0
     maximum: 5
-  state_id:
-    type: integer
+  state:
+    type: object
+    properties:
+      state_id:
+        type: integer
+      protected:
+        type: boolean
+      state_description:
+        type: string
+      state_name:
+        type: string
   classification_id:
     type:
       - 'null'
@@ -29,8 +38,17 @@ properties:
     type: 'null'
   reviewer_id:
     type: 'null'
-  owner_id:
-    type: integer
+  owner:
+    type: object
+    properties:
+      id:
+        type: integer
+      user_name:
+        type: string
+      user_login:
+        type: string
+      user_email:
+        type: string
   user_id:
     type: integer
   open_date:
@@ -52,11 +70,19 @@ examples:
     case_id: 1065
     severity_id: 4
     status_id: 0
-    state_id: 11
+    state:
+      state_name: 'Open'
+      state_description: 'Case is open'
+      state_id: 3
+      protected: true
     classification_id: null
     review_status_id: null
     reviewer_id: null
-    owner_id: 1
+    owner:
+      id: 2
+      user_name: User Std 1
+      user_login: user_std_1
+      user_email: user_std_1@iris.local
     user_id: 1
     open_date: '2024-01-10'
     close_date: null

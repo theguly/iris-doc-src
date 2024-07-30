@@ -15,11 +15,15 @@ post:
                 ioc_description:
                   type: string
                   minLength: 1
+                  description: 'A short description of the ioc. This will be the summary of the ioc.'
                 ioc_id:
                   type: number
-                ioc_misp: { }
+                  description: 'A ioc reference'
+                ioc_misp:
+                  description: 'Misp of ioc'
                 ioc_tags:
                   type: string
+                  description : 'Ioc tags'
                 ioc_tlp_id:
                   type: number
                 ioc_type:
@@ -53,8 +57,12 @@ post:
                  ioc_value: 8.8.8.8
                  user_id: 1
     responses:
-         '400':
-           description: Bad Request
-           content:
-             application/json:
-               schema:
+      '201':
+        description: Ioc successfully created
+        content:
+          application/json:
+            schema:
+              $ref: "./v2.1.0/schemas/Ioc.yaml"
+      '400':
+          $ref: "./v2.1.0/responses/GenericError.yaml"
+    description: 'Creates a new ioc.'

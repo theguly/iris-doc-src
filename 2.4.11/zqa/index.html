@@ -1716,7 +1716,8 @@ We will however implement a server side search in next releases.  </p>
 <h2 id="operations">Operations</h2>
 <h4 id="what-is-the-password-policy-can-it-be-changed">What is the password policy? Can it be changed?</h4>
 <p>Before v1.4.5, the password policy is hardcoded and cannot be changed. <br />
-It should be 12 characters minimum and contains a capital letter and a number. </p>
+It should be 12 characters minimum and contains a capital letter and a number.  <br />
+After v1.4.5, the password policy can be changed in <code>Advanced</code> &gt; <code>Server settings</code>.   </p>
 <h4 id="can-i-change-my-profile-picture">Can I change my profile picture?</h4>
 <p>No, not for now. This wasn't a priority for us, it will be released in future versions. </p>
 <h4 id="i-lost-the-administrator-password-can-i-recover-it">I lost the administrator password, can I recover it?</h4>
@@ -1736,6 +1737,9 @@ You can however disable them to prevent them appearing in the UI and connecting 
 <p>Starting from v1.4.0, it is now possible to easily develop module to enrich case objects. A module Iris VT and IRIS MISP are already provided.  </p>
 <h4 id="is-there-an-api-client">Is there an API client?</h4>
 <p>Yes, you can find it <a href="https://github.com/dfir-iris/iris-client">on our Github</a>. </p>
+<h3 id="i-added-alerts-via-the-api-but-i-dont-see-them-on-the-ui">I added alerts via the API but I don't see them on the UI</h3>
+<p>If the server replied <code>200</code> for the alert creation, it means the alert is stored in IRIS.<br />
+If your user do not see the alerts, it means it needs to be added to the appropriate customer (see <a href="../operations/alerts/">alerts</a>). </p>
 <h1 id="security">Security</h1>
 <h4 id="can-i-restrict-cases">Can I restrict cases?</h4>
 <p>Yes it is since v2.0.0. See <a href="operations/access_control">Access control</a>.  </p>

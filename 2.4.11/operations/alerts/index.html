@@ -1438,9 +1438,13 @@
 <p>Alerts can be fed directly into IRIS using the <a href="https://docs.dfir-iris.org/_static/iris_api_reference_v2.0.1.html#tag/Alerts">Alerts API</a>. <br />
 Any source can inject alerts into IRIS, as long as it can send HTTP requests and respects the alert format.    </p>
 <p>A service account with the <code>alert_read</code> and <code>alert_write</code> permission can be used to send alerts to IRIS.  </p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This section is only available for users with the <code>alert_read</code> and <code>alert_write</code> permissions.  </p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This section is only available for users with the <code>alert_read</code> and <code>alert_write</code> permissions.  </p>
+<p>Starting from IRIS v2.4.7, users who want to see the alerts must be associated with one or more corresponding customer. This is done in the Access Control section.</p>
 </div>
 <h2 id="viewing-alerts">Viewing alerts</h2>
 <p>Alerts can then be viewed in the <code>Alerts</code> section of IRIS. Analysts can then triage the alerts and create cases from them.   </p>

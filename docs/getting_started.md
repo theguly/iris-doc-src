@@ -43,7 +43,7 @@ To build and run IRIS, follow these steps:
 2. Check out the latest **non-beta** tagged version: 
 
     ```bash
-    git checkout v2.4.7
+    git checkout v2.4.11
     ```
 
 3. Copy the environment file 
@@ -64,6 +64,7 @@ To build and run IRIS, follow these steps:
 5. Start IRIS:
 
     ```bash
+    # Add "-d" to put it in the background
     docker-compose up
     ```
 

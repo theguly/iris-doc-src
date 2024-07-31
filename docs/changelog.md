@@ -2,6 +2,46 @@
 
 For upgrades instructions, please see the [Upgrades page](/operations/upgrades). 
 
+## [v2.4.11](https://github.com/dfir-iris/iris-web/releases/tag/v2.4.11) <small>_ July 31, 2024 _</small>
+### What's changed
+
+**Fixed**    
+* Issue with change of user password
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v2.4.10...v2.4.11)
+
+## [v2.4.10](https://github.com/dfir-iris/iris-web/releases/tag/v2.4.10) <small>_ July 29, 2024 _</small>
+### What's changed
+
+**Fixed**    
+* Issue with errornous outcome setting in cases
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v2.4.9...v2.4.10)
+
+
+## [v2.4.9](https://github.com/dfir-iris/iris-web/releases/tag/v2.4.9) <small>_ July 17, 2024 _</small>
+### What's changed
+
+**Fixed**    
+* Issue with notes revisions assigning wrong user to the revision
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v2.4.8...v2.4.9)
+
+## [v2.4.8](https://github.com/dfir-iris/iris-web/releases/tag/v2.4.8) <small>_ July 16, 2024 _</small>
+### What's changed
+
+**Added**
+* Publication of the docker images on Github Container Registry (GHCR)
+* New GraphQL API endpoints for IOCs and cases 
+* Automatic load of alerts relations
+* Notes revisions history
+
+**Fixed**    
+* Mutliple issues 
+
+[Full Changelog](https://github.com/dfir-iris/iris-web/compare/v2.4.7...v2.4.8)
+
+
 ## [v2.4.7](https://github.com/dfir-iris/iris-web/releases/tag/v2.4.7) <small>_ March 18, 2024 _</small>
 ### What's changed
 

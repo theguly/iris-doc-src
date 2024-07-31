@@ -9,8 +9,11 @@ Any source can inject alerts into IRIS, as long as it can send HTTP requests and
 A service account with the `alert_read` and `alert_write` permission can be used to send alerts to IRIS.  
 
 
-!!! warning
+!!! info
     This section is only available for users with the `alert_read` and `alert_write` permissions.  
+
+!!! warning
+    Starting from IRIS v2.4.7, users who want to see the alerts must be associated with one or more corresponding customer. This is done in the Access Control section.
 
 
 ## Viewing alerts

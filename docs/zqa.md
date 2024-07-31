@@ -55,11 +55,11 @@ Operations
 
 #### What is the password policy? Can it be changed?
 Before v1.4.5, the password policy is hardcoded and cannot be changed.   
-It should be 12 characters minimum and contains a capital letter and a number. 
+It should be 12 characters minimum and contains a capital letter and a number.    
+After v1.4.5, the password policy can be changed in `Advanced` > `Server settings`.   
 
 #### Can I change my profile picture?
 No, not for now. This wasn't a priority for us, it will be released in future versions. 
-
 
 #### I lost the administrator password, can I recover it?
 Passwords are hashed so they can't be recovered. But you can change it.  
@@ -85,6 +85,10 @@ Starting from v1.4.0, it is now possible to easily develop module to enrich case
 
 #### Is there an API client?
 Yes, you can find it [on our Github](https://github.com/dfir-iris/iris-client). 
+
+### I added alerts via the API but I don't see them on the UI 
+If the server replied `200` for the alert creation, it means the alert is stored in IRIS.  
+If your user do not see the alerts, it means it needs to be added to the appropriate customer (see [alerts](operations/alerts.md)). 
 
 
 # Security

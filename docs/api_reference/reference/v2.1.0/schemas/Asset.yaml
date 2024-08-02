@@ -39,22 +39,11 @@ properties:
           type: array
           items:
             type: object
-        ioc_links:
-          type:
-            - array
-            - 'null'
-          items:
-            type: object
-            properties:
-              ioc_id:
-                type: integer
-              ioc_value:
-                type: string
-              asset_id:
-                type: integer
-            required:
-              - ioc_id
-              - asset_id
+        state:
+          type: object
+          required:
+            - object_state
+            - object_last_update
       examples:
         - asset_id: 57
           asset_uuid: c6598fd0-836a-4fc4-87c1-6f03348eadeb

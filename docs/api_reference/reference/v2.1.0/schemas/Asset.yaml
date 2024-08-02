@@ -1,45 +1,40 @@
 type: object
 properties:
-  assets:
-    type: array
-    items:
-      type: object
-      properties:
-        asset_id:
+  asset_id:
+    type: integer
+  asset_uuid:
+    type: string
+  asset_name:
+    type: string
+  asset_type:
+    type: string
+  asset_icon_compromised:
+    type: string
+  asset_icon_not_compromised:
+    type: string
+  asset_description:
+    type: string
+  asset_domain:
+    type: string
+  asset_compromise_status_id:
+    type:
+      - integer
+      - 'null'
+    asset_ip:
+        type: string
+    asset_type_id:
+        type: integer
+    analysis_status:
+        type: string
+    analysis_status_id:
           type: integer
-        asset_uuid:
+    asset_tags:
           type: string
-        asset_name:
-          type: string
-        asset_type:
-          type: string
-        asset_icon_compromised:
-          type: string
-        asset_icon_not_compromised:
-          type: string
-        asset_description:
-          type: string
-        asset_domain:
-          type: string
-        asset_compromise_status_id:
-          type:
-            - integer
-            - 'null'
-        asset_ip:
-          type: string
-        asset_type_id:
-          type: integer
-        analysis_status:
-          type: string
-        analysis_status_id:
-          type: integer
-        asset_tags:
-          type: string
-        link:
-          type: array
-          items:
-            type: object
-        state:
+    link:
+      type: array
+      items:
+          type: object
+      state:
           type: object
           required:
             - object_state

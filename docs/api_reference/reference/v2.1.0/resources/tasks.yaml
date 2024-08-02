@@ -46,4 +46,4 @@ post:
             $ref: "./v2.1.0/schemas/Task.yaml"
     '400':
       $ref: "./v2.1.0/responses/GenericError.yaml"
-  description: 'Add a new asset.'
+  description: 'Add a new task.'

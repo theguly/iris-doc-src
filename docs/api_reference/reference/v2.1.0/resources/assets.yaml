@@ -2,7 +2,7 @@ post:
   summary: Add a new asset
   tags:
     - Case assets
-  operationId: post-api-v2-assets
+  operationId: post-api-v2-cases-assets
   requestBody:
     content:
       application/json:

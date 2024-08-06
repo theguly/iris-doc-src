@@ -2,7 +2,7 @@ post:
   summary: Create a new ioc
   tags:
     - Case IOC
-  operationId: post-api-v2-cases-ioc
+  operationId: post-api-v2-ioc
   requestBody:
     content:
       application/json:

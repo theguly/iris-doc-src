@@ -1,8 +1,8 @@
 post:
-  summary: Add a new asset
+  summary: Create a new asset
   tags:
     - Case assets
-  operationId: post-api-v2-cases-assets
+  operationId: post-api-v2-assets
   requestBody:
     content:
       application/json:

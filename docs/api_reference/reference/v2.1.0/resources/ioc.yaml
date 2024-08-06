@@ -1,7 +1,7 @@
 parameters:
   - $ref: "./v2.10/parameters/path/Identifier.yaml"
 delete:
-  operationId: delete-api-v2-cases-ioc
+  operationId: delete-api-v2-ioc
   tags:
     - Case IOC
   summary: Delete an ioc
@@ -14,7 +14,7 @@ delete:
     '400':
       $ref: "./v2.1.0/responses/GenericError.yaml"
 get:
-  operationId: get-api-v2-cases-ioc
+  operationId: get-api-v2-ioc
   tags:
     - Case IOC
   summary: Get an ioc

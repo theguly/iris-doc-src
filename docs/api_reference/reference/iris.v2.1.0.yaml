@@ -24,6 +24,10 @@ info:
     * Added DELETE /api/v2/assets/{identifier}
     * Deprecated POST /manage/cases/add in favor of POST /api/v2/cases
     * Deprecated POST /manage/cases/delete/{case_id} in favor of DELETE /api/v2/cases/{identifier}
+    * Deprecated POST /case/ioc/add in favor of POST /api/v2/cases/{identifier}/iocs
+    * Deprecated GET /case/ioc/{ioc_id}  in favor of GET /api/v2/iocs/{identifier}
+    * Deprecated /case/ioc/delete/{ioc_id} in favor of DELETE api/v2/iocs/{identifier}
+    
 
     ### Changes in v2.0.0
     This version introduces access control. Every request now needs to have the `cid=x` parameter in the URI.  

@@ -16,34 +16,33 @@ post:
                   type: string
                   minLength: 1
                   description: 'A short description of the ioc. This will be the summary of the ioc.'
+                  required: true 
                 ioc_id:
                   type: number
                   description: 'A ioc reference'
+                  required: true 
                 ioc_misp:
                   description: 'Misp of ioc'
                 ioc_tags:
                   type: string
                   description : 'Ioc tags'
+                  required: true 
                 ioc_tlp_id:
                   type: number
+                  required: true 
                 ioc_type:
                   type: number
+                  required: true 
                 ioc_type_id:
                   type: number
+                  required: true 
                 ioc_value:
                   type: string
                   minLength: 1
+                  required: true 
                 user_id:
                   type: number
-              required:
-                - ioc_description
-                - ioc_id
-                - ioc_tags
-                - ioc_tlp_id
-                - ioc_type
-                - ioc_type_id
-                - ioc_value
-                - user_id
+                  required: true 
         examples:
            Valid request:
              value:

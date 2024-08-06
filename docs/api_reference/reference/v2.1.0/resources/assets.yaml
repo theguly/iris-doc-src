@@ -11,6 +11,7 @@ post:
           properties:
             asset_type_id:
               type: integer
+              required: true 
             case_id:
               type: integer
             asset_description:
@@ -31,6 +32,7 @@ post:
               type: string
             asset_name:
               type: string
+              required: true 
             asset_ip:
               type: string
             asset_tags:
@@ -41,9 +43,6 @@ post:
               type: string
             asset_domain:
               type: string
-          required:
-            - asset_type_id
-            - asset_name
         examples:
           Valid request:
             value:

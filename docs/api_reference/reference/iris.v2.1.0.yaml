@@ -31,8 +31,8 @@ info:
     * Deprecated GET /case/tasks/{task_id} in favor of GET /api/v2/tasks/{identifier}
     * Deprecated DELETE /case/tasks/delete/{task_id} in favor of DELETE /api/v2/tasks/{identifier}
     * Deprecated POST /case/assets/add in favor of POST /api/v2/cases/{identifier}/assets
-    * Deprecated GET /case/assets/{ioc_id} in favor of GET /api/v2/assets/{identifier}
-    * Deprecated DELETE /case/assets/delete/{ioc_id} in favor of DELETE /api/v2/assets/{identifier}
+    * Deprecated GET /case/assets/{asset_id} in favor of GET /api/v2/assets/{identifier}
+    * Deprecated DELETE /case/assets/delete/{asset_id} in favor of DELETE /api/v2/assets/{identifier}
     
 
     ### Changes in v2.0.0
@@ -3172,7 +3172,8 @@ paths:
                     message: Invalid asset ID for this case
                     status: error
       operationId: get-case-asset
-      description: 'Fetch an asset. '
+      description: 'This endpoint is deprecated. Use GET /api/v2/assets/{identifier} instead.'
+      deprecated: true
       security:
         - Bearer <bearer>: []
       parameters:
@@ -3378,7 +3379,8 @@ paths:
                         - Invalid analysis status ID
                     message: Data error
                     status: error
-      description: 'Create an asset and link it to the case. '
+      description:  'This endpoint is deprecated. Use POST /api/v2/cases/{identifier}/assets instead.'
+      deprecated: true
       parameters:
         - schema:
             type: integer
@@ -3808,7 +3810,8 @@ paths:
                     message: Invalid asset ID for this case
                     status: error
       operationId: get-case-delete-asset
-      description: 'This endpoint is deprecated. Use the POST equivalent.'
+      description: 'This endpoint is deprecated. Use the DELETE /api/v2/assets/{identifier} equivalent.'
+      deprecated: true
       security:
         - Bearer <bearer>: []
       parameters:

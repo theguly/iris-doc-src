@@ -13,6 +13,9 @@ info:
     * Added POST /api/v2/cases
     * Added GET /api/v2/cases/{identifier}
     * Added DELETE /api/v2/cases/{identifier}
+    * Added POST /api/v2/cases/{identifier}/iocs
+    * Added GET /api/v2/iocs/{identifier}
+    * Added DELETE /api/v2/iocs/{identifier}
     * Deprecated POST /manage/cases/add in favor of POST /api/v2/cases
     * Deprecated POST /manage/cases/delete/{case_id} in favor of DELETE /api/v2/cases/{identifier}
 

@@ -29,7 +29,7 @@ info:
     * Deprecated DELETE /case/ioc/delete/{ioc_id} in favor of DELETE /api/v2/iocs/{identifier}
     * Deprecated POST /case/tasks/add in favor of POST /api/v2/cases/{identifier}/tasks
     * Deprecated GET /case/tasks/{task_id} in favor of GET /api/v2/tasks/{identifier}
-    * Deprecated DELETE /case/task/delete/{task_id} in favor of DELETE /api/v2/tasks/{identifier}
+    * Deprecated DELETE /case/tasks/delete/{task_id} in favor of DELETE /api/v2/tasks/{identifier}
     * Deprecated POST /case/assets/add in favor of POST /api/v2/cases/{identifier}/assets
     * Deprecated GET /case/assets/{ioc_id} in favor of GET /api/v2/assets/{identifier}
     * Deprecated DELETE /case/assets/delete/{ioc_id} in favor of DELETE /api/v2/assets/{identifier}
@@ -8206,6 +8206,7 @@ paths:
                     status: error
       operationId: get-case-ioc-fetch
       description: 'This endpoint is deprecated. Use GET /api/v2/iocs/{identifier} instead.'
+      deprecated: true
       security:
         - Bearer <bearer>: []
       parameters:
@@ -8372,6 +8373,7 @@ paths:
                   - status
               examples: {}
       description: 'This endpoint is deprecated. Use POST /api/v2/cases/{identifier}/iocs.'
+      deprecated: true
       parameters:
         - schema:
             type: integer
@@ -8498,6 +8500,7 @@ paths:
                     status: error
       operationId: delete-case-ioc
       description: 'This endpoint is deprecated. Use DELETE /api/v2/iocs/{identifier} instead.'
+      deprecated: true
       security:
         - Bearer <bearer>: []
       parameters:
@@ -11429,7 +11432,8 @@ paths:
                     message: Invalid task ID for this case
                     status: error
       operationId: get-case-tasks-fetch
-      description: Fetch a task
+      description: 'This endpoint is deprecated. Use GET /api/v2/tasks/{identifier} instead.'
+      deprecated: true
       security:
         - Bearer <bearer>: []
       parameters:
@@ -11517,7 +11521,8 @@ paths:
                     message: Invalid task ID for this case
                     status: error
       operationId: get-case-tasks-delete
-      description: 'Delete a case task. '
+      description: 'This endpoint is deprecated. Use DELETE /api/v2/tasks/{identifier} instead.'
+      deprecated: true
       security:
         - Bearer <bearer>: []
       parameters:
@@ -11542,7 +11547,7 @@ paths:
           description: OK
       tags:
         - Case tasks
-      description: 'This endpoint is deprecated. Use the POST equivalent. '
+      description: 'This endpoint is deprecated. Use the DELETE /api/v2/tasks/{identifier}. '
       deprecated: true
   /case/tasks/add:
     parameters: []
@@ -11681,7 +11686,8 @@ paths:
                     data: []
                     message: task_assignee_id is not valid anymore since v1.5.0
                     status: error
-      description: 'Add a new task to the case. '
+      description: 'This endpoint is deprecated. Use POST /api/v2/cases/{identifier}/tasks instead.'
+      deprecated: true
       requestBody:
         content:
           application/json:

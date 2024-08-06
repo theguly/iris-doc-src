@@ -8205,7 +8205,7 @@ paths:
                     message: Invalid IOC ID for this case
                     status: error
       operationId: get-case-ioc-fetch
-      description: Fetch an IOC
+      description: 'This endpoint is deprecated. Use GET /api/v2/iocs/{identifier} instead.'
       security:
         - Bearer <bearer>: []
       parameters:
@@ -8371,7 +8371,7 @@ paths:
                   - message
                   - status
               examples: {}
-      description: ''
+      description: 'This endpoint is deprecated. Use POST /api/v2/cases/{identifier}/iocs.'
       parameters:
         - schema:
             type: integer
@@ -8497,7 +8497,7 @@ paths:
                     message: Not a valid IOC for this case
                     status: error
       operationId: delete-case-ioc
-      description: 'Delete an IOC from the case. If the IOC is still reference in other cases than it''s only unlinked from the current case. '
+      description: 'This endpoint is deprecated. Use DELETE /api/v2/iocs/{identifier} instead.'
       security:
         - Bearer <bearer>: []
       parameters:

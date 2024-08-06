@@ -13,15 +13,19 @@ post:
               type: string
               minLength: 2
               description: 'A short name for the case. The case number will be prepend. '
+              required: true 
             case_description:
               type: string
               minLength: 2
               description: A short description of the case. This will be the summary of the case.
+              required: true 
             case_customer:
               type: integer
               description: 'The customer ID linked to the case. '
+              required: true 
             case_soc_id:
               type: string
+              required: true 
               description: 'A SOC ticket reference '
             custom_attributes:
               type: object
@@ -31,11 +35,6 @@ post:
               type:
                 - 'null'
                 - integer
-          required:
-            - case_soc_id
-            - case_customer
-            - case_name
-            - case_description
         examples:
           Valid request:
             value:

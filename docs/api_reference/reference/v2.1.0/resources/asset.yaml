@@ -3,7 +3,7 @@ parameters:
 get:
   operationId: get-api-v2-assets
   tags:
-    - Case assets
+    - Assets
   summary: Get an asset
   description: 'Get an asset by its identifier'
   responses:
@@ -18,7 +18,7 @@ get:
 delete:
   operationId: delete-api-v2-assets
   tags:
-    - Case assets
+    - Assets
   summary: Delete an asset
   responses:
     '204':

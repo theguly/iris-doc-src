@@ -3,7 +3,7 @@ parameters:
 get:
   operationId: get-api-v2-tasks
   tags:
-    - Case tasks
+    - Tasks
   summary: Get an task
   description: 'Get an task by its identifier'
   responses:
@@ -18,7 +18,7 @@ get:
 delete:
   operationId: delete-api-v2-tasks
   tags:
-    - Case tasks
+    - Tasks
   summary: Delete an task
   responses:
     '204':

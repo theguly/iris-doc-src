@@ -3811,7 +3811,6 @@ paths:
                     status: error
       operationId: get-case-delete-asset
       description: 'This endpoint is deprecated. Use the DELETE /api/v2/assets/{identifier} equivalent.'
-      deprecated: true
       security:
         - Bearer <bearer>: []
       parameters:
@@ -39394,6 +39393,18 @@ paths:
     $ref: "./v2.1.0/resources/cases.yaml"
   /api/v2/cases/{identifier}:
     $ref: "./v2.1.0/resources/case.yaml"
+  /api/v2/iocs:
+    $ref: "./v2.1.0/resources/iocs.yaml"
+  /api/v2/iocs/{identifier}:
+    $ref: "./v2.1.0/resources/ioc.yaml"
+  /api/v2/tasks:
+    $ref: "./v2.1.0/resources/tasks.yaml"
+  /api/v2/tasks/{identifier}:
+    $ref: "./v2.1.0/resources/task.yaml"
+  /api/v2/assets:
+    $ref: "./v2.1.0/resources/assets.yaml"
+  /api/v2/assets/{identifier}:
+    $ref: "./v2.1.0/resources/asset.yaml"
 components:
   securitySchemes:
     Bearer <bearer>:

@@ -1,7 +1,7 @@
 post:
-  summary: Create a new task to the case
+  summary: Create a new task
   tags:
-    - Case tasks
+    - Tasks
   operationId: post-api-v2-tasks
   requestBody:
     content:

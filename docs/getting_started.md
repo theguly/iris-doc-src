@@ -58,14 +58,14 @@ To build and run IRIS, follow these steps:
 4. Build the Docker containers:
 
     ```
-    docker-compose build
+    docker compose build
     ```
 
 5. Start IRIS:
 
     ```bash
     # Add "-d" to put it in the background
-    docker-compose up
+    docker compose up
     ```
 
 IRIS should now be available on the host interface, port 443, using HTTPS protocol by default. You can access it by navigating to https://hostip in your web browser.   

@@ -80,3 +80,6 @@ A user can be deactivated, which has the following impact:
 It is usually not possible to delete a user. This is to keep consistency in the database. A user can be deleted if it has done absolutely no actions on the platform. If a user leaves the organisation, it is recommended to rename the user and deactivate it.  
 
 ![Manage user](../../_static/access_control/delete_user.png) 
+
+## Setting customers
+Customers can be set by clicking on the `Customers` tab of the user's window and then `Manage`. 

@@ -12,6 +12,9 @@ A service account with the `alerts_read` and `alerts_write` permission can be us
 !!! warning
     This section is only available for users with the `alerts_read` and `alerts_write` permissions.  
 
+!!! warning
+    Starting from IRIS v2.4.7, users who want to see the alerts must be associated with one or more corresponding customer. This is done in the Access Control section.
+
 
 ## Viewing alerts
 

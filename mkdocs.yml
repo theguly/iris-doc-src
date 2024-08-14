@@ -51,8 +51,6 @@ extra:
       link: mailto:<contact@dfir-iris.org>
     - icon: fontawesome/brands/discord
       link: https://discord.gg/76tM6QUJza
-    - icon: material/matrix
-      link: https://matrix.to/#/#dfir-iris:matrix.org
   homepage: https://dfir-iris.org
   version:
     provider: mike
@@ -67,7 +65,7 @@ site_author: "DFIR-IRIS Team"
 repo_name: DFIR-IRIS Web
 edit_uri: ""
 
-copyright: Copyright &copy; 2021-2023 - DFIR-IRIS Team
+copyright: Copyright &copy; 2021-2024 - DFIR-IRIS Team
 
 plugins:
   - git-revision-date

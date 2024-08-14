@@ -118,6 +118,7 @@ Only if you run in production and/or data is critical.
 
 3. Get the last version of Iris 
     ```
+    git pull 
     git checkout <last_tagged_version>
     ```
     
@@ -662,13 +663,13 @@ function check_versions() {
         "v2.3.5": "Auto",
         "v2.3.6": "Auto",
         "v2.3.7": "Auto",
-        "v2.4.5": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.6": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.7": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.8": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.9": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.10": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.11": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`
+        "v2.4.5": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.6": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.7": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.8": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.9": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.10": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.11": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`
       }, 
       "v2.2.0": {
         "v2.2.1": "Auto",
@@ -682,13 +683,13 @@ function check_versions() {
         "v2.3.5": "Auto",
         "v2.3.6": "Auto",
         "v2.3.7": "Auto",
-        "v2.4.5": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.6": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.7": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.8": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.9": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.10": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.11": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`
+        "v2.4.5": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.6": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.7": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.8": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.9": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.10": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.11": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`
       },
       "v2.2.1": {
         "v2.2.2": "Auto",
@@ -701,13 +702,13 @@ function check_versions() {
         "v2.3.5": "Auto",
         "v2.3.6": "Auto",
         "v2.3.7": "Auto",
-        "v2.4.5": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.6": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.7": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.8": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.9": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.10": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.11": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`
+        "v2.4.5": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.6": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.7": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.8": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.9": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.10": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.11": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`
       },
       "v2.2.2": {
         "v2.2.3": "Auto",
@@ -719,13 +720,13 @@ function check_versions() {
         "v2.3.5": "Auto",
         "v2.3.6": "Auto",
         "v2.3.7": "Auto",
-        "v2.4.5": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.6": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.7": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.8": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.9": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.10": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.11": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`
+        "v2.4.5": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.6": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.7": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.8": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.9": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.10": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.11": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`
       },
       "v2.2.3": {
         "v2.3.0": "Auto",
@@ -736,13 +737,13 @@ function check_versions() {
         "v2.3.5": "Auto",
         "v2.3.6": "Auto",
         "v2.3.7": "Auto",
-        "v2.4.5": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.6": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.7": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.8": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.9": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.10": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.11": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`
+        "v2.4.5": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.6": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.7": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.8": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.9": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.10": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.11": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`
       },
       "v2.3.0": {
         "v2.3.1": "Auto",
@@ -752,13 +753,13 @@ function check_versions() {
         "v2.3.5": "Auto",
         "v2.3.6": "Auto",
         "v2.3.7": "Auto",
-        "v2.4.5": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.6": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.7": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.8": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.9": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.10": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.11": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`
+        "v2.4.5": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.6": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.7": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.8": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.9": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.10": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.11": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`
       },
       "v2.3.1": {
         "v2.3.2": "Auto",
@@ -767,102 +768,102 @@ function check_versions() {
         "v2.3.5": "Auto",
         "v2.3.6": "Auto",
         "v2.3.7": "Auto",
-        "v2.4.5": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.6": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.7": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.8": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.9": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.10": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.11": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`
+        "v2.4.5": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.6": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.7": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.8": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.9": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.10": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.11": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`
       },
       "v2.3.2": {
         "v2.3.3": "Auto",
         "v2.3.4": "Auto",
         "v2.3.5": "Auto",
         "v2.3.6": "Auto",
-        "v2.4.5": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.6": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.7": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.8": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.9": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.10": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.11": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`
+        "v2.4.5": `${head_notes}<a href="#v240-to-v247">v2.4.o to v2.4.7</a></p>`,
+        "v2.4.6": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.7": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.8": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.9": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.10": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.11": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`
       },
       "v2.3.3": {
         "v2.3.4": "Auto",
         "v2.3.5": "Auto",
         "v2.3.6": "Auto",
         "v2.3.7": "Auto",
-        "v2.4.5": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.6": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.7": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.8": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.9": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.10": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.11": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`
+        "v2.4.5": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.6": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.7": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.8": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.9": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.10": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.11": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`
       }, 
       "v2.3.4": {
         "v2.3.5": "Auto",
         "v2.3.6": "Auto",
         "v2.3.7": "Auto",
-        "v2.4.5": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.6": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.7": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.8": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.9": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.10": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.11": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`
+        "v2.4.5": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.6": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.7": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.8": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.9": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.10": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.11": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`
       },
       "v2.3.5": {
         "v2.3.6": "Auto",
         "v2.3.7": "Auto",
-        "v2.4.5": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.6": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.7": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.8": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.9": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.10": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.11": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`
+        "v2.4.5": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.6": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.7": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.8": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.9": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.10": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.11": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`
       },
       "v2.3.6": {
         "v2.3.7": "Auto",
-        "v2.4.5": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.6": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.7": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.8": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.9": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.10": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.11": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`
+        "v2.4.5": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.6": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.7": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.8": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.9": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.10": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.11": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`
       },
       "v2.3.7": {
-        "v2.4.5": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.6": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.7": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.8": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.9": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.10": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`,
-        "v2.4.11": `${head_notes}<a href="#v240tov247">v2.4.o to v2.4.7</a></p>`
+        "v2.4.5": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.6": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.7": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.8": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.9": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.10": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`,
+        "v2.4.11": `${head_notes}<a href="#v240-to-v247">v2.4.0 to v2.4.7</a></p>`
       },
       "v2.4.5": {
         "v2.4.6": "Auto",
         "v2.4.7": "Auto",
-        "v2.4.8": `${head_notes}<a href="#v248andonwards">v2.4.8 and onwards</a></p>`,
-        "v2.4.9": `${head_notes}<a href="#v248andonwards">v2.4.8 and onwards</a></p>`,
-        "v2.4.10": `${head_notes}<a href="#v248andonwards">v2.4.8 and onwards</a></p>`,
-        "v2.4.11": `${head_notes}<a href="#v248andonwards">v2.4.8 and onwards</a></p>`
+        "v2.4.8": `${head_notes}<a href="#v248-and-onwards">v2.4.8 and onwards</a></p>`,
+        "v2.4.9": `${head_notes}<a href="#v248-and-onwards">v2.4.8 and onwards</a></p>`,
+        "v2.4.10": `${head_notes}<a href="#v248-and-onwards">v2.4.8 and onwards</a></p>`,
+        "v2.4.11": `${head_notes}<a href="#v248-and-onwards">v2.4.8 and onwards</a></p>`
       },
       "v2.4.6": {
         "v2.4.7": "Auto",
-        "v2.4.8": `${head_notes}<a href="#v248andonwards">v2.4.8 and onwards</a></p>`,
-        "v2.4.9": `${head_notes}<a href="#v248andonwards">v2.4.8 and onwards</a></p>`,
-        "v2.4.10": `${head_notes}<a href="#v248andonwards">v2.4.8 and onwards</a></p>`,
-        "v2.4.11": `${head_notes}<a href="#v248andonwards">v2.4.8 and onwards</a></p>`
+        "v2.4.8": `${head_notes}<a href="#v248-and-onwards">v2.4.8 and onwards</a></p>`,
+        "v2.4.9": `${head_notes}<a href="#v248-and-onwards">v2.4.8 and onwards</a></p>`,
+        "v2.4.10": `${head_notes}<a href="#v248-and-onwards">v2.4.8 and onwards</a></p>`,
+        "v2.4.11": `${head_notes}<a href="#v248-and-onwards">v2.4.8 and onwards</a></p>`
       },
       "v2.4.7": {
-        "v2.4.8": `${head_notes}<a href="#v248andonwards">v2.4.8 and onwards</a></p>`,
-        "v2.4.9": `${head_notes}<a href="#v248andonwards">v2.4.8 and onwards</a></p>`,
-        "v2.4.10": `${head_notes}<a href="#v248andonwards">v2.4.8 and onwards</a></p>`,
-        "v2.4.11": `${head_notes}<a href="#v248andonwards">v2.4.8 and onwards</a></p>`
+        "v2.4.8": `${head_notes}<a href="#v248-and-onwards">v2.4.8 and onwards</a></p>`,
+        "v2.4.9": `${head_notes}<a href="#v248-and-onwards">v2.4.8 and onwards</a></p>`,
+        "v2.4.10": `${head_notes}<a href="#v248-and-onwards">v2.4.8 and onwards</a></p>`,
+        "v2.4.11": `${head_notes}<a href="#v248-and-onwards">v2.4.8 and onwards</a></p>`
       },
       "v2.4.8":{
         "v2.4.9": "Auto",
